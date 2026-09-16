@@ -1,0 +1,18 @@
+# Local secrets and state
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.tfstate
+*.tfstate.*
+.azure/
+private/
+unsanitized/
+*.local.json
+# Editor and operating system files
+.DS_Store
+Thumbs.db
+.vscode/
