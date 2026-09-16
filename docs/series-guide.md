@@ -1,6 +1,6 @@
 # MRTG Azure Administrator Lab Series
 
-Version 1.3 • September 16, 2026 • Curriculum and lab task cards
+Version 1.4 • September 16, 2026 • Curriculum and lab task cards
 
 ## Mission
 
@@ -76,7 +76,57 @@ Verified against the author's course-player screenshots supplied September 16, 2
 
 **Immediate next action:** begin with lectures 2–5 and the Lab 01 subscription/cost baseline. If already watched, proceed directly to verification. Return to the command exercise when reaching section 3. No course or lab work has been marked complete from these screenshots.
 
-Sections 6 onward still need enrolled-course screenshots or a copied outline for exact lecture-number mapping. The earlier public-page topic mapping remains available as a provisional guide.
+Sections 1–15 are now confirmed from enrolled-course screenshots. Sections 16 onward still need screenshots or a copied outline for exact lecture-number mapping.
+
+### Enrolled-course alignment — sections 6–15 confirmed
+
+Verified from the author's course-player screenshots supplied September 16, 2026. Lecture numbers below are confirmed; course and lab completion remain unverified. This extends the exact mapping through lecture 121.
+
+| Section / lectures | Topic | MRTG action and checkpoint |
+|---|---|---|
+| 6 / 38–39 | RBAC and administrative roles | Lab 04: distinguish directory administration from Azure resource permissions and define test identities/scopes. |
+| 6 / 40–42 | Storage identity access | Do the minimum Lab 13 account/container setup, then Lab 14 identity authorization tests. Record allowed and denied data actions separately from management access. |
+| 6 / 43 | Custom roles | Optional Lab 04 extension: inspect/modify a narrowly scoped test role if required; understand built-in roles first. Remove test assignments and custom definitions afterward. |
+| 6 / 44–45 | Resource-group scope and assignment interpretation | Finish Lab 04: compare direct/inherited access across two disposable groups. Update the access matrix with observed results. |
+| 7 / 46–48 | Hierarchy, subscription, cost tools | Labs 02 and 07; revisit Lab 01 cost baseline without repeating account creation. |
+| 7 / 49–52 | Locks and policies | Lab 05: test audit/deny and deletion protection on disposable targets. Record distinct causes of failure. |
+| 7 / 53 | Tags | Lab 02: apply MRTG metadata and verify resources as well as resource groups. |
+| 7 / 54 | Resource moves | Inspect supported moves now; reserve VM move validation for Lab 20 once its dependencies exist. |
+| 7 / 55–56 | Policy scripting and management groups | Labs 05 and 02: scoped automation and hierarchy review; do not relocate the existing subscription merely to mirror the demo. |
+| 7 / 57–58 | Subscription/policy exercises | Reuse course work for Labs 02/05/07 when the validation and cleanup requirements are met. |
+| 8 / 59–61 | Account creation and redundancy | Lab 13: choose a small appropriate account configuration and explain the redundancy tradeoff. |
+| 8 / 62 | Access tiers | Labs 13/15: compare tier suitability for the tiny synthetic dataset; estimate retrieval/retention implications before changes. |
+| 8 / 63 | Public/private networking | Review now; perform full private-path validation after Labs 08–12. Record the pending practical dependency. |
+| 8 / 64 | Data protection | Lab 15: create test versions/deletions and verify recovery. |
+| 8 / 65–67 | Encryption, account completion, storage services | Lab 13: inspect selected settings; do not create every storage service simply because it is listed. |
+| 8 / 68–70 | Keys, SAS, stored policies, Entra authorization | Lab 14: test scoped access, expiry/revocation, and credential boundaries on disposable data. Keep credentials out of evidence. |
+| 8 / 71–72 | Storage hands-on exercises | Reuse validated Lab 13/14 work; supplement with MRTG denial tests and cleanup. |
+| 9 / 73 | Lifecycle management | Lab 15: configure the rule and distinguish configuration evidence from observing a later scheduled action. |
+| 9 / 74 | Object replication | Lab 17: satisfy prerequisites, copy a small object, verify the destination, and clean up both sides. |
+| 9 / 75–76 | AzCopy and storage browser | Lab 13: transfer synthetic files and verify contents/counts. |
+| 10 / 77–78 | File shares and snapshots | Lab 16: create a small share and verify recovery; track identity-based SMB prerequisites separately. |
+| 11 / 79–83 | VM creation, disks, networking, management, connection | Lab 19 with a minimal Lab 08 network prerequisite. Inspect costs and access before deployment; verify an actual connection. |
+| 11 / 84 | VM availability | Lab 21: compare availability design choices and validate only the feasible lab configuration. |
+| 11 / 85–86 | Resize and extra disks | Labs 19–20: inspect constraints, perform supported changes, and verify test data. |
+| 11 / 87 | Bastion | Lab 12 administration-access portion; check prerequisites and price before a short deployment. Do not require all later networking labs first. |
+| 11 / 88–90 | Scale sets and scaling | Lab 21: set a small maximum instance count, validate scaling, and delete the test estate. |
+| 11 / 91 | PowerShell VM deployment | Repeat a selected Lab 19 operation through reviewed commands; explain parameters and scope. |
+| 11 / 92–93 | VM and scale-set exercises | Consolidate Labs 19–21; account for image resources and supporting disks in cleanup. |
+| 12 / 94–98 | ARM reading, modification, and deployment | Lab 18: parameterize a small workload, inspect the proposed change, deploy, and validate. |
+| 12 / 99–103 | Exports, extensions, VHD use, and practice | Lab 18: examine exported templates and dependencies. Treat extensions/VHD examples as selected exercises, not a requirement to deploy every variant. |
+| 13 / 104–107 | Bicep, editing/deployment, ARM decompilation | Complete Lab 18: modify and rebuild a small configuration; inspect decompiled output and validate it. |
+| 14 / 108–109 | SSE and Azure Disk Encryption | Labs 19–20: compare encryption layers and follow the current guidance below. ADE is conceptual/legacy review by default. |
+| 15 / 110–114 | App Service deployment, settings, GitHub integration | Lab 23: deploy a tiny application and verify its response. Repository deployment automation is optional until the basic app works. |
+| 15 / 115–116 | App scaling | Lab 24: compare scale up/out, choose supported settings, cap test capacity, and verify observed behavior. |
+| 15 / 117–118 | Backup and networking | Labs 23–24: inspect plan support and prerequisites; test recovery/network behavior only within the priced session. |
+| 15 / 119–120 | Custom DNS and TLS | Lab 23: validate applicable HTTPS settings; document domain/certificate mapping as design-only if prerequisites are unavailable. |
+| 15 / 121 | App Service practice | Consolidate Labs 23–24. Include explicit staging/slot-swap and rollback exercises where supported, even if a lecture title does not name slots. |
+
+**Dependency order:** The course teaches VM deployment before ARM/Bicep. Build the first small VM through the portal, then use Lab 18 to reproduce selected configuration when sections 12–13 arrive. Lab numbering does not force templates before the initial VM. Repeat only enough to demonstrate reproducibility.
+
+**Encryption update:** Lecture 109 covers ADE. Microsoft's current [managed disk encryption guidance](https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview) recommends encryption at host for new VMs and schedules ADE retirement for September 15, 2028. Study the distinctions, but use an eligible encryption-at-host configuration for the new MRTG workload rather than making ADE deployment a core requirement. Verify supported VM/disk combinations before deploying.
+
+No screenshot supplied here demonstrates a completed Azure build. Keep all lab results pending until actually performed.
 
 ### Verified opening course sequence
 
@@ -99,7 +149,7 @@ A course demo can satisfy an MRTG build step when you use MRTG naming, verify th
 
 ### Later topic mapping — exact course order pending
 
-Follow these topics when they appear in your course player. These rows are not asserted to be Udemy sections 11–26.
+Follow these topics when they appear in your course player. These rows are topic references, not section-number claims; use the confirmed section mapping above where available.
 
 | Topic encountered | MRTG labs | Learn companion |
 |---|---|---|
