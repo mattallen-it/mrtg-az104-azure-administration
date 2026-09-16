@@ -1,6 +1,6 @@
 # MRTG Azure Administrator Lab Series
 
-Version 1.2 • September 15, 2026 • Curriculum and lab task cards
+Version 1.3 • September 16, 2026 • Curriculum and lab task cards
 
 ## Mission
 
@@ -48,6 +48,35 @@ The primary course is [AZ-104 Microsoft Azure Administrator — Complete Exam Pr
 Use Udemy to set the topic order, Microsoft Learn to explain and verify behavior, and MRTG to practice and prove it. The official exam study guide remains the coverage checklist. When a lecture differs from current documentation or observed behavior, investigate and document the difference.
 
 Lab numbers remain stable references. Use the study order here instead of completing labs strictly 01–32. This preserves earlier links and avoids rebuilding the whole curriculum around changing lecture numbers.
+
+### Enrolled-course alignment — sections 1–5 confirmed
+
+Verified against the author's course-player screenshots supplied September 16, 2026 (screenshots dated September 15). This confirms the displayed sequence, not completion of the lectures or Azure tasks. Section counters display zero completed; one lecture checkbox appears selected. Do not infer completion from that inconsistent display. Lab statuses remain Planned.
+
+| Section / lectures | Course activity | MRTG action and completion checkpoint |
+|---|---|---|
+| 1 / 1 | Welcome | Understand the series workflow; no Azure build required. |
+| 1 / 2–3 | Account options; sign-in assignment | Start Lab 01: sign in to the existing dedicated MRTG account, identify the actual subscription, status, and role. Do not create another account just to follow the demonstration. |
+| 1 / 4–5 | Budget lesson and assignment | Continue Lab 01: inspect costs, verify available credits rather than assuming them, and review/create the budget. Finish the empty tagged resource-group and cleanup exercise from the lab checklist. |
+| 1 / 6–10 | Player guidance, study guide, study plan, FAQ, resources | Use for orientation. Download course resources privately; do not redistribute course PDFs or screenshots into this public repository. The course's 30-day plan is optional, not a deadline. |
+| 2 / 11–14 | Azure services, compute, storage, networking overview | Review familiar fundamentals. Explain where MRTG's tenant, subscription, workload, data, and network fit; preview Lab 02. No extra paid deployment required. |
+| 3 / 15–17 | Scripting expectations, command patterns, management tools | Complete Lab 01's read-only command exercise; begin Lab 07 inventory. Explain the commands rather than running unexplained copied scripts. |
+| 3 / 18 | PowerShell Core and Az module installation demo | Follow the demonstrated setup if using local PowerShell; record the actual environment/tool versions. Validate authentication and resource-group listing. |
+| 3 / 19 | Subscription switching | Inspect and explicitly select the intended MRTG subscription; verify context before any mutation. One subscription is sufficient—do not create a second solely for this exercise. |
+| 4 / 20–22 | Entra purpose, editions, multiple directories | Prepare Lab 03: inspect the existing tenant, identity types, permissions, and available licenses. Explain AD DS versus Entra ID. |
+| 4 / 23–25 | Tenant-creation changes, creation, switching | Study the workflow and verify the intended existing tenant. A new tenant is not a prerequisite for this series. |
+| 4 / 26–27 | Premium P2 trial and purchase demonstrations | Review only by default. Neither activation nor purchase is required; record licensing-dependent practical gaps. |
+| 4 / 28 | Custom domains | Review the process. Use the existing tenant domain for core labs; domain purchase is not required. |
+| 5 / 29 | Exam-change note | Check the current official objective list against the course note. |
+| 5 / 30–32 | Users, groups, licenses | Perform Lab 03 using synthetic users and assigned groups. Perform license changes only when a suitable unused entitlement exists. Validate membership and document cleanup. |
+| 5 / 33–34 | Administrative units and devices | Review and inspect available information; optional MRTG context, not new core labs or a reason to enroll personal devices. |
+| 5 / 35 | Bulk operations | Extend Lab 03 with a tiny synthetic CSV operation if supported. Record successes and errors; remove test objects afterward. |
+| 5 / 36 | External users | Continue Lab 03 using an owned secondary identity if available; record the practical gap otherwise. |
+| 5 / 37 | Self-service password reset | Perform Lab 06 if appropriately licensed; otherwise document the configuration and validation plan as Design-only. |
+
+**Immediate next action:** begin with lectures 2–5 and the Lab 01 subscription/cost baseline. If already watched, proceed directly to verification. Return to the command exercise when reaching section 3. No course or lab work has been marked complete from these screenshots.
+
+Sections 6 onward still need enrolled-course screenshots or a copied outline for exact lecture-number mapping. The earlier public-page topic mapping remains available as a provisional guide.
 
 ### Verified opening course sequence
 
