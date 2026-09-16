@@ -1,6 +1,6 @@
 # MRTG Azure Administrator Lab Series
 
-Version 1.6 • September 16, 2026 • Curriculum and lab task cards
+Version 1.7 • September 16, 2026 • Curriculum and lab task cards
 
 ## Mission
 
@@ -43,7 +43,7 @@ The original lab numbering groups related infrastructure work. The course-led st
 
 ## Course-led study order — Scott Duffy + Microsoft Learn + MRTG
 
-The primary course is [AZ-104 Microsoft Azure Administrator — Complete Exam Prep](https://www.udemy.com/course/70533-azure/) by Scott Duffy. The public curriculum was checked September 15, 2026. It exposes ten opening sections and indicates sixteen further sections without exposing their detailed sequence. The opening mapping below is verified against those visible headings; later mappings are by topic, not invented lecture numbers. Your private progress and the title of the linked lecture were not available from the public page.
+The primary course is [AZ-104 Microsoft Azure Administrator — Complete Exam Prep](https://www.udemy.com/course/70533-azure/) by Scott Duffy. The public curriculum was checked September 15, 2026. It exposes ten opening sections and indicates sixteen further sections without exposing their detailed sequence. The initial public-page mapping has now been supplemented by enrolled-course screenshots for all 26 sections. Exact lecture mappings appear below. Private course progress is not inferred from the curriculum screenshots.
 
 Use Udemy to set the topic order, Microsoft Learn to explain and verify behavior, and MRTG to practice and prove it. The official exam study guide remains the coverage checklist. When a lecture differs from current documentation or observed behavior, investigate and document the difference.
 
@@ -76,7 +76,7 @@ Verified against the author's course-player screenshots supplied September 16, 2
 
 **Immediate next action:** begin with lectures 2–5 and the Lab 01 subscription/cost baseline. If already watched, proceed directly to verification. Return to the command exercise when reaching section 3. No course or lab work has been marked complete from these screenshots.
 
-Sections 1–24 are now confirmed from enrolled-course screenshots. Sections 25–26 still need screenshots or a copied outline for exact lecture-number mapping.
+All 26 sections, lectures 1–187, the displayed practice test, and both role plays are now confirmed from enrolled-course screenshots. Use the detailed mapping below; no additional course-outline screenshots are needed.
 
 ### Enrolled-course alignment — sections 6–15 confirmed
 
@@ -155,7 +155,7 @@ Confirmed from the author's course-player screenshots supplied September 16, 202
 
 ### Enrolled-course alignment — sections 21–24 confirmed
 
-Confirmed from course-player screenshots supplied September 16, 2026. The screenshot-based mapping now covers sections 1–24 and lectures 1–177. Sections 25–26, listed in the earlier public curriculum count, have not been supplied; do not infer their titles or content. No Azure completion evidence is established by these screenshots.
+Confirmed from course-player screenshots supplied September 16, 2026. The screenshot-based mapping now covers sections 1–24 and lectures 1–177. Sections 25–26 are now mapped in the following completion section. No Azure completion evidence is established by these screenshots.
 
 | Section / lectures | Topic | MRTG action and checkpoint |
 |---|---|---|
@@ -177,7 +177,31 @@ Confirmed from course-player screenshots supplied September 16, 2026. The screen
 
 **Explicit completion tasks not established by these titles:** Keep Lab 26's alert rule, action group, alert-processing rule, and actual notification tests; Lab 27's Connection Monitor work; Lab 28's comparison of Recovery Services vault and Backup vault; and Lab 12's endpoint exercises. A title-only mapping cannot establish whether these are covered inside the videos. Perform or document each applicable lab task and use the official objective list for the final coverage review.
 
-**After technical study:** Labs 30–32 remain the MRTG lifecycle scenario, capstone, and independent readiness review. They integrate course learning rather than requiring an additional course. The remaining course sections can be mapped when screenshots are available.
+**After technical study:** Labs 30–32 remain the MRTG lifecycle scenario, capstone, and independent readiness review. They integrate course learning rather than requiring an additional course. Sections 25–26 below supply the final review and role-play mapping.
+
+### Enrolled-course alignment — sections 25–26 confirmed; mapping complete
+
+Confirmed from course-player screenshots dated September 16, 2026. All 26 sections and numbered lectures 1–187 are now mapped, including the separately displayed practice test and two role plays. This is curriculum alignment, not certification, course completion, or proof that every exam objective has been practiced.
+
+| Section / item | Topic | MRTG action and checkpoint |
+|---|---|---|
+| 25 / 178 | Identity/governance review | Lab 32: answer unfamiliar scenarios, inspect the access matrix, and repeat weak tasks from Labs 01–07 and 30. |
+| 25 / 179 | Storage review | Lab 32: revisit Labs 13–17 where knowledge checks or practical evidence show gaps. Explain permissions, redundancy, and recovery tradeoffs. |
+| 25 / 180 | Compute review | Lab 32: revisit Labs 18–24. Explain deployment dependencies and demonstrate a selected rebuild without a walkthrough. |
+| 25 / 181 | Networking review | Lab 32: revisit Labs 08–12 and 27. Trace an actual allowed and failed connection and explain the relevant layer. |
+| 25 / 182 | Monitoring/maintenance review | Lab 32: revisit Labs 25–29. Explain the alert signal, response, and verified recovery result; distinguish simulated work from live tests. |
+| 26 / 183 | Congratulations | Course wrap-up only. Do not mark AZ-104 passed or labs validated based on reaching this lecture. |
+| 26 / 184 | Certification renewal | Record a future maintenance action after certification is earned; verify current Microsoft renewal rules at that time. |
+| 26 / 185 | AI-supported exam preparation | Use AI for explanations and practice review. Complete readiness assessments independently first; verify technical suggestions against documentation and observed behavior. AI assistance is not part of the real exam workflow. |
+| 26 / 186 | Study guide | Use the supplied material privately as a review aid. Do not republish course files in the public repository. Check remaining coverage against the official objective list. |
+| 26 / Practice Test 1 | Azure administrator practice test | Lab 32: take an independent attempt, record score/date and topic-level weaknesses, then investigate mistakes. Do not publish proprietary questions, answer keys, or screenshots of test items. |
+| 26 / Role Play 1 | Critical VM outage: restore and report | Labs 28/31: rehearse incident triage, recovery choices, and a concise handover using the incident template. Label the role play simulated; it does not replace an actual restore test. |
+| 26 / Role Play 2 | Cost optimization strategy | Labs 07/31: explain the actual cost ledger, propose justified changes, and discuss tradeoffs. If using hypothetical figures, label them synthetic. Do not claim savings that were not measured. |
+| 26 / 187 | Further practice-test resources | Lab 32: use additional practice only to resolve readiness gaps. No additional purchase is required merely because a bonus lesson links to it. |
+
+**Final study sequence:** finish the technical topics, perform Labs 30–31, and use section 25 plus section 26's test/role plays within Lab 32. Revisit weak tasks selectively. Keep course completion, lab validation, and passing the certification exam as three separate milestones.
+
+**Readiness record:** date; domain; independent assessment result; reason for each error; corrective lab/task; retest result; remaining design-only gaps. Store topic summaries and original explanations, not proprietary test questions.
 
 ### Verified opening course sequence
 
@@ -198,7 +222,7 @@ The topic labels below are abbreviated from the visible curriculum. Lab actions 
 
 A course demo can satisfy an MRTG build step when you use MRTG naming, verify the result, and capture evidence. Do not repeat identical deployments merely because Udemy and Learn both demonstrate them. Keep the distinctive MRTG access tests, troubleshooting, and cleanup.
 
-### Later topic mapping — exact course order pending
+### Topic-to-lab quick reference
 
 Follow these topics when they appear in your course player. These rows are topic references, not section-number claims; use the confirmed section mapping above where available.
 
@@ -213,7 +237,7 @@ Follow these topics when they appear in your course player. These rows are topic
 | Backup and regional recovery | 28–29 | Monitoring/backup |
 | Integrated review and readiness | 30–32 | Official objectives and practice assessment |
 
-To finalize exact later section/lecture alignment, use an expanded screenshot or copied section list from the enrolled course. Until then, match by topic name; all 32 lab briefs remain available.
+Exact section/lecture alignment is now complete in the screenshot-verified tables above. This quick reference groups tasks by topic; all 32 lab briefs remain available.
 
 ### Microsoft Learn companions
 
