@@ -6,6 +6,10 @@ Udemy section/lecture:
 Microsoft Learn module:
 AZ-104 objective:
 
+## Supporting records
+
+Link the access matrix, decision record, incident report, and runbook when applicable. Use the [evidence standard](evidence-standard.md).
+
 ## MRTG requirement
 
 ## Starting state, dependencies, and required permissions
