@@ -1,6 +1,6 @@
 # MRTG Azure Administrator Lab Series
 
-Version 1.5 • September 16, 2026 • Curriculum and lab task cards
+Version 1.6 • September 16, 2026 • Curriculum and lab task cards
 
 ## Mission
 
@@ -76,7 +76,7 @@ Verified against the author's course-player screenshots supplied September 16, 2
 
 **Immediate next action:** begin with lectures 2–5 and the Lab 01 subscription/cost baseline. If already watched, proceed directly to verification. Return to the command exercise when reaching section 3. No course or lab work has been marked complete from these screenshots.
 
-Sections 1–20 are now confirmed from enrolled-course screenshots. Sections 21 onward still need screenshots or a copied outline for exact lecture-number mapping.
+Sections 1–24 are now confirmed from enrolled-course screenshots. Sections 25–26 still need screenshots or a copied outline for exact lecture-number mapping.
 
 ### Enrolled-course alignment — sections 6–15 confirmed
 
@@ -149,9 +149,35 @@ Confirmed from the author's course-player screenshots supplied September 16, 202
 | 20 / 146–148 | NSGs, effective rules, application security groups | Lab 09: inspect effective rules, test permitted and denied traffic, and identify the rule responsible. Record the traffic direction, source, destination, and protocol. |
 | 20 / 149–150 | Network troubleshooting and practice | Finish Lab 09 and introduce Lab 27 diagnostics when needed. Use evidence to distinguish DNS, routing, security-rule, and application failures; do not change multiple layers at once. |
 
-**Deferred work to close after these sections:** Return to Lab 12 and the storage networking tests in Labs 13–14 when ready to validate the private access path. The shown titles do not explicitly establish coverage of every service/private-endpoint objective, so those MRTG tasks remain on the checklist. Load balancing and full monitoring/backup mapping remain pending the remaining course screenshots.
+**Deferred work to close after these sections:** Return to Lab 12 and the storage networking tests in Labs 13–14 when ready to validate the private access path. The shown titles do not explicitly establish coverage of every service/private-endpoint objective, so those MRTG tasks remain on the checklist. Load balancing and monitoring/backup are mapped in the confirmed sections 21–24 below.
 
 **Study order:** containers (Lab 22) now follow App Service (Labs 23–24) in this course. Keep stable lab IDs and follow the actual course order. Documentation/evidence from earlier prerequisite exercises can be reused when it demonstrates the same behavior.
+
+### Enrolled-course alignment — sections 21–24 confirmed
+
+Confirmed from course-player screenshots supplied September 16, 2026. The screenshot-based mapping now covers sections 1–24 and lectures 1–177. Sections 25–26, listed in the earlier public curriculum count, have not been supplied; do not infer their titles or content. No Azure completion evidence is established by these screenshots.
+
+| Section / lectures | Topic | MRTG action and checkpoint |
+|---|---|---|
+| 21 / 151–153 | Load balancing, configuration, backend VMs | Complete Lab 11's load-balancer portion with a small disposable backend. Verify intended application responses and inspect health before introducing a fault. Reuse Lab 19 VM knowledge and Lab 09 traffic controls. |
+| 21 / 154 | Quickly deploying a test environment from GitHub | Apply Lab 18 skills: inspect the referenced repository/template, resources, permissions, and cost before deployment. Keep MRTG parameters and cleanup boundaries. Do not treat a third-party deployment as reviewed merely because it is on GitHub. |
+| 21 / 155 | Load-balancer troubleshooting | Lab 11: break one probe/backend/rule setting on the test workload, investigate the evidence, correct it, and retest. Record an incident report. |
+| 21 / 156 | Application Gateway | Optional Lab 11 comparison/extension. Compare the business purpose with the load balancer; price the deployment and dependencies first. A conceptual review can remain Design-only rather than adding an expensive mandatory deployment. |
+| 21 / 157 | Load-balancing practice | Consolidate Lab 11's evidence and cleanup; include backend VMs, disks, IPs, and balancing resources. |
+| 22 / 158–160 | Network Watcher, diagnostic logs, practice | Lab 27: investigate a scoped network fault and record the source, destination, protocol, evidence, correction, and retest. Check current collection prerequisites and remove test diagnostics/workloads after use. |
+| 23 / 161–162 | Monitor and resource diagnostics | Lab 25: answer a specific operational question using appropriate metrics/logs and a small amount of telemetry. Verify that the expected data actually arrives. |
+| 23 / 163 | Monitor and VM Insights | Labs 25–26: inspect supported instrumentation and its prerequisites before enabling it. Do not assume resource diagnostic settings alone collect all guest OS logs or performance data. |
+| 23 / 164 | Basic KQL queries | Lab 25: query a real test signal, explain each clause, and distinguish wrong time range/missing collection from an actual absence of events. |
+| 23 / 165 | Traffic-management lab | The displayed title is a load-balancer/Application Gateway lab despite its location in the Monitor section. Map it primarily to Lab 11, reusing prior evidence. Add monitoring validation only if actually performed; do not assume this lecture covers alerts. |
+| 24 / 166–169 | Backup, on-demand backup, file and full-VM recovery | Lab 28: select a small supported workload, inspect retention and cost, execute backup, and verify recovered content. A recovery point or successful job status alone is insufficient restore evidence. Perform only the feasible restore variants and label remaining gaps. |
+| 24 / 170 | On-premises backup | Optional Lab 28 MRTG extension after confirming the current local environment and applicable agent/vault prerequisites. Do not install agents on existing domain controllers merely to mirror the lecture. |
+| 24 / 171–173 | Backup reports, logs, and soft delete | Lab 28: inspect jobs/reporting, record protection and retention settings, and plan cleanup before enabling protection. Retained backup data may outlive the test workload. |
+| 24 / 174–175 | Site Recovery and test failover | Lab 29: plan source/target support, replication, isolated test networking, recovery objectives, and cost. Execute a live test only when feasible, or document a tabletop as Design-only. Record test-failover cleanup and remaining protected resources. |
+| 24 / 176–177 | Recovery practice | Consolidate Labs 28–29. Document observed restore results, elapsed time if measured, limitations, and cleanup. Keep simulated and executed recovery distinct. |
+
+**Explicit completion tasks not established by these titles:** Keep Lab 26's alert rule, action group, alert-processing rule, and actual notification tests; Lab 27's Connection Monitor work; Lab 28's comparison of Recovery Services vault and Backup vault; and Lab 12's endpoint exercises. A title-only mapping cannot establish whether these are covered inside the videos. Perform or document each applicable lab task and use the official objective list for the final coverage review.
+
+**After technical study:** Labs 30–32 remain the MRTG lifecycle scenario, capstone, and independent readiness review. They integrate course learning rather than requiring an additional course. The remaining course sections can be mapped when screenshots are available.
 
 ### Verified opening course sequence
 
