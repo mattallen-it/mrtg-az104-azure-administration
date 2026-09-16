@@ -1,6 +1,6 @@
 # MRTG Azure Administrator Lab Series
 
-Version 1.4 • September 16, 2026 • Curriculum and lab task cards
+Version 1.5 • September 16, 2026 • Curriculum and lab task cards
 
 ## Mission
 
@@ -76,7 +76,7 @@ Verified against the author's course-player screenshots supplied September 16, 2
 
 **Immediate next action:** begin with lectures 2–5 and the Lab 01 subscription/cost baseline. If already watched, proceed directly to verification. Return to the command exercise when reaching section 3. No course or lab work has been marked complete from these screenshots.
 
-Sections 1–15 are now confirmed from enrolled-course screenshots. Sections 16 onward still need screenshots or a copied outline for exact lecture-number mapping.
+Sections 1–20 are now confirmed from enrolled-course screenshots. Sections 21 onward still need screenshots or a copied outline for exact lecture-number mapping.
 
 ### Enrolled-course alignment — sections 6–15 confirmed
 
@@ -127,6 +127,31 @@ Verified from the author's course-player screenshots supplied September 16, 2026
 **Encryption update:** Lecture 109 covers ADE. Microsoft's current [managed disk encryption guidance](https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview) recommends encryption at host for new VMs and schedules ADE retirement for September 15, 2028. Study the distinctions, but use an eligible encryption-at-host configuration for the new MRTG workload rather than making ADE deployment a core requirement. Verify supported VM/disk combinations before deploying.
 
 No screenshot supplied here demonstrates a completed Azure build. Keep all lab results pending until actually performed.
+
+### Enrolled-course alignment — sections 16–20 confirmed
+
+Confirmed from the author's course-player screenshots supplied September 16, 2026. Exact coverage now extends through lecture 150. These screenshots establish the curriculum sequence, not completed lab work.
+
+| Section / lectures | Topic | MRTG action and checkpoint |
+|---|---|---|
+| 16 / 122–125 | Containers, ACI, sizing/scaling, container groups | Lab 22: deploy a small test container, inspect configuration and logs, and explain container-group resource choices. Diagnose one controlled startup or port error. |
+| 16 / 126 | Container Apps | Continue Lab 22: compare the deployment model with ACI and test a small suitable configuration within the session budget. Record actual scaling behavior rather than claiming it from settings alone. |
+| 16 / 127–129 | Registry and image push/pull | Lab 22: use a disposable registry and suitable image; verify push/pull and deployment. If earlier lessons need an image before this registry exists, use an appropriate public sample first. Remove the registry, containers, and supporting resources after validation. |
+| 17 / 130–132 | VNets, workload placement, subnet changes | Lab 08: validate an address plan against the existing MRTG ranges, deploy subnets, and explain workload placement. Revisit any temporary network used in the earlier VM labs. |
+| 17 / 133–134 | Public IP and NIC association | Labs 08/19: inspect IP/NIC relationships and implement only the access path needed for the disposable workload. Include retained public IPs in cleanup. |
+| 17 / 135 | RDP access | Labs 09/19: review the access rule, justify its source and destination, and test from the intended client. Do not copy a broadly exposed administrative-port rule into MRTG; use a narrowly scoped temporary path or the planned Bastion exercise. |
+| 18 / 136–137 | Peering and global peering | Lab 10: validate connectivity and route reasoning. Cross-region deployment is a priced optional variation; do not add a second region simply to mirror the demonstration. |
+| 18 / 138–139 | VNet gateway and gateway connection | Optional Lab 10 extension: document topology, prerequisites, routing, and a cost/cleanup estimate first. A live VPN gateway deployment is not required for the core peering exercise. If reviewed only, label it Design-only. |
+| 18 / 140 | Networking practice | Consolidate Lab 10 with allowed/failed connectivity evidence and correction of a controlled route fault. |
+| 19 / 141–143 | DNS, private zones, public zones | Lab 11: verify private name resolution; compare public-zone records and delegation. Distinguish creating a zone from proving that a public domain delegates to it. |
+| 19 / 144 | App Service custom domain | Revisit Lab 23 only if a domain is available. Reuse earlier domain/TLS evidence rather than duplicating the exercise; otherwise retain the design-only gap. |
+| 19 / 145 | DNS practice | Complete Lab 11's DNS portion with a wrong-record or resolution fault and a verified correction. Load-balancer work remains a separate portion of Lab 11. |
+| 20 / 146–148 | NSGs, effective rules, application security groups | Lab 09: inspect effective rules, test permitted and denied traffic, and identify the rule responsible. Record the traffic direction, source, destination, and protocol. |
+| 20 / 149–150 | Network troubleshooting and practice | Finish Lab 09 and introduce Lab 27 diagnostics when needed. Use evidence to distinguish DNS, routing, security-rule, and application failures; do not change multiple layers at once. |
+
+**Deferred work to close after these sections:** Return to Lab 12 and the storage networking tests in Labs 13–14 when ready to validate the private access path. The shown titles do not explicitly establish coverage of every service/private-endpoint objective, so those MRTG tasks remain on the checklist. Load balancing and full monitoring/backup mapping remain pending the remaining course screenshots.
+
+**Study order:** containers (Lab 22) now follow App Service (Labs 23–24) in this course. Keep stable lab IDs and follow the actual course order. Documentation/evidence from earlier prerequisite exercises can be reused when it demonstrates the same behavior.
 
 ### Verified opening course sequence
 
