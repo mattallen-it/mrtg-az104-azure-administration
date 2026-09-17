@@ -4,6 +4,6 @@ Series cash ceiling: $100. Record verified credits separately. Retain the existi
 
 | Date | Lab | Estimated session cost | Reported usage cost | Credit applied | Cash cost | Cumulative cash | Resources retained | Cleanup checked |
 |---|---|---|---|---|---|---|---|---|
-| Pending | 01 | Pending inventory | Pending | Unverified | Unverified | Unverified | Pending inventory | Pending |
+| 2026-09-17 (UTC record) | 01 | No paid workload deployed | USD 0.00 shown | Unverified; not assumed | Not invoiced/verified | Not finalized | Subscription and monthly USD 10 budget; no workload resources | Temporary group deleted; empty resource-group list verified |
 
 Cost reporting can lag. Check retained disks, IPs, plans, endpoints, logs, snapshots, and backup data as applicable.
