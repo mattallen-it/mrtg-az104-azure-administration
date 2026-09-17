@@ -2,7 +2,9 @@
 
 All labs begin as Planned. Track course completion, Learn completion, and lab validation separately.
 
-| 01 | [Subscription inventory and cost baseline](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) | Planned |
+| Lab | Assignment | Status |
+|---|---|---|
+| 01 | [Subscription inventory and cost baseline](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) | Validated — portal baseline; section 3 commands pending |
 | 02 | [Resource organization and management hierarchy](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) | Planned |
 | 03 | [Employee and contractor lifecycle](../labs/lab-03-employee-and-contractor-lifecycle/README.md) | Planned |
 | 04 | [Scoped administration](../labs/lab-04-scoped-administration/README.md) | Planned |
