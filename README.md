@@ -2,7 +2,7 @@
 
 Hands-on Azure administration with an identity and security focus, built for the fictional **Monroe Redstone Technology Group**.
 
-**Current state:** Repository prepared · **0/32 labs validated** · AZ-104 preparation in progress.
+**Current state:** Lab 01 baseline verified · **1/32 labs validated** · AZ-104 preparation in progress.
 
 This series follows Scott Duffy’s AZ-104 course and Microsoft Learn. It extends earlier MRTG AD/IAM and Microsoft fundamentals projects into practical cloud operations. Azure deployments and results will be recorded as they are performed.
 
