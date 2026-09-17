@@ -1,6 +1,8 @@
 # Lab 01 — Subscription inventory and cost baseline
 
-**Status: Planned — not performed or validated.**
+**Status: Validated — portal baseline and cleanup verified from user-provided screenshots and responses.**
+
+Recorded September 17, 2026 (UTC). Section 3 command practice remains a later follow-up; course completion is not inferred.
 
 ## MRTG assignment
 
@@ -15,27 +17,53 @@ Request: establish a controlled place for MRTG cloud work. Inspect tenant, subsc
 
 ## Starting state and permissions
 
-Record before executing. Confirm tenant, subscription, required roles, dependencies, and licensing.
+The dedicated MRTG account initially showed no accessible Azure subscriptions. The billing subscription list showed `MRTG-AZ900-Lab-Subscription` as Deleted. The cause of deletion was not established. Microsoft Entra ID Free remained active.
 
-## Cost and cleanup plan
+The user upgraded the billing account to pay-as-you-go with Basic support, then created `MRTG-AZ104-Lab-Subscription` in the existing Default Directory. The subscription overview confirmed Active status and Owner access. This is a personal lab subscription.
 
-Mode: A. Record estimated runtime/cost and exact resources to remove before deploying.
+## Configuration and steps performed
 
-## Steps performed
+1. Investigated the empty resource-access list through billing subscriptions and confirmed the old subscription's Deleted status.
+2. Created the new subscription with Project, Environment, Owner, CostCenter, and ManagedBy tags.
+3. Found that the subscription wizard's initial $10 budget reset annually. The user reported that the reset period could not be edited; the workflow replaced it with a monthly budget.
+4. Verified saved `budget-mrtg-az104-monthly`: subscription scope, no filters, USD 10, monthly reset, September 1, 2026 through August 31, 2028.
+5. Verified actual-cost alerts at 50%, 80%, and 100%, and forecast-cost alert at 100%. A dedicated MRTG email recipient is configured; action groups are None.
+6. Confirmed an empty resource inventory before creating one temporary resource group.
+7. Created `rg-mrtg-az104-lab01-centralus-001` in Central US with seven tags: Project=MRTG-AZ104-Administration, Lab=Lab-01, Environment=Lab, Owner=MRTG-Cloud-Operations, CostCenter=Training, ManagedBy=Azure-Portal, DeleteAfter=2026-09-17.
+8. Inspected the group's empty resource list, manually deleted the group, and verified the resource-group list was empty.
 
-Not started. Use the [lab template](../../docs/lab-template.md) to document actual work.
+## Validation and sanitized evidence record
 
-## Validation
+The following observations transcribe screenshots reviewed during the guided session. Original screenshots contain account identifiers and are not published here. This table is a written evidence record, not independently executable verification.
 
-| Test | Expected | Actual | Evidence |
+| Check | Expected | Observed evidence | Result |
 |---|---|---|---|
-| Intended behavior | Define before build | Pending | Pending |
-| Failure or denied action | Define before build | Pending | Pending |
-| Cleanup | Lab resources removed or retained with justification | Pending | Pending |
+| New subscription | Active with administrative access | Subscription overview: Active; My role: Owner | Passed |
+| Budget correction | Monthly rather than annual reset | Saved budget overview: Resets monthly; USD 10; no filters | Passed |
+| Alert configuration | Three actual thresholds and one forecast threshold | Saved overview: actual $5/$8/$10; forecast $10; recipient present | Configuration verified; delivery not tested |
+| Cost baseline | Record currently reported amount | Subscription and saved budget views: USD 0.00 | Recorded; not a final invoice |
+| Tagged group | Intended name, region, and tags | Creation review showed all seven tags; deployed overview showed group in Central US, Project/Lab tags, and five additional tags | Passed |
+| Empty group | No workload resources | Group overview: no resources listed with type/location set to all | Passed |
+| Cleanup | Temporary group absent | Resource groups list after deletion: No resource groups to display | Passed |
+
+No permission-denial test was required for this inventory exercise. The observed failure was the missing usable subscription; the retest showed the new subscription Active with Owner access. The budget-period mismatch was corrected and the saved monthly configuration rechecked.
+
+## Cost and retained state
+
+Only an empty resource group was created and removed; no VM or paid workload was deployed. Reported cost was USD 0.00 at inspection. Remaining credit was not verified and is not assumed. Retain the subscription and monthly budget. Recheck reported cost next session because reporting can lag. The $100 total series allowance is a manual planning limit, separate from the monthly alert budget.
 
 ## Troubleshooting and lessons
 
-Pending.
+- An empty resource-access subscription list did not establish deletion; the billing list supplied the Deleted status.
+- Upgrading the account did not by itself produce a visible active subscription; creation was completed afterward.
+- The creation wizard's annual budget did not match the plan. Verify saved settings rather than relying on the budget name.
+- A tenant is the identity directory holding users, groups, and applications; the portal is the management interface. A subscription is a billing and resource-management boundary linked to the directory. The initial tenant explanation required correction.
+- The learner initially believed the $10 budget would block further activity. After correction, the learner confirmed that a running VM can continue generating charges beyond the budget.
+- The learner correctly identified manual deletion as the cleanup action. DeleteAfter is metadata, not automatic deletion.
+
+## Limits and follow-up
+
+Alert configuration is verified; email delivery and threshold firing were not tested. No credit balance, final invoice, or paid-workload savings is claimed. Revisit read-only PowerShell/CLI context and inventory commands during Udemy section 3. Course and Microsoft Learn completion remain separately tracked.
 
 ## Execution checklist
 
