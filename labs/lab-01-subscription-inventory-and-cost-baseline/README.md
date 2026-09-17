@@ -8,8 +8,9 @@ Request: establish a controlled place for MRTG cloud work. Inspect tenant, subsc
 
 ## Study alignment
 
-- Udemy section/lecture: Pending
-- Microsoft Learn module: Pending
+- Udemy: section 1, lectures 2–5 (account access and budget); section 2, lectures 11–14 (concept review). Return for section 3, lectures 15–19, to practice read-only commands and subscription context.
+- Microsoft Learn: [AZ-104 administrator prerequisites](https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/) and [Manage identities and governance](https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/), focusing on subscription access, resource organization, and cost management.
+- Study progress and hands-on completion are recorded separately.
 - Follow the course mapping in [the series guide](../../docs/series-guide.md).
 
 ## Starting state and permissions
