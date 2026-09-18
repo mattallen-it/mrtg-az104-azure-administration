@@ -1,6 +1,18 @@
 # Progress
 
-All labs begin as Planned. Track course completion, Learn completion, and lab validation separately.
+**1/32 labs validated.** Lab 01’s portal baseline is complete; all other labs remain planned.
+
+## Study follow-up
+
+| Activity | State | Next action |
+|---|---|---|
+| Udemy | Completion not recorded | Review section 2; continue to section 3 commands |
+| Microsoft Learn | Completion not recorded | Record completed prerequisites/governance material when confirmed |
+| Lab 01 command practice | Pending | Verify context and resource-group inventory with CLI/PowerShell |
+
+Course completion, lab validation, and exam completion are separate milestones.
+
+## Lab index
 
 | Lab | Assignment | Status |
 |---|---|---|

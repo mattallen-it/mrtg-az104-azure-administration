@@ -1,6 +1,6 @@
 # Lab 04 — Scoped administration
 
-**Status: Planned — not performed or validated.**
+![AZ-104](https://img.shields.io/badge/AZ--104-Azure_Administrator-0078D4) ![Status: Planned](https://img.shields.io/badge/Status-Planned-lightgrey)
 
 ## MRTG assignment
 
@@ -8,30 +8,17 @@ Request: let an operator manage one lab group and let an auditor inspect it. App
 
 ## Study alignment
 
-- Udemy section/lecture: Pending
-- Microsoft Learn module: Pending
-- Follow the course mapping in [the series guide](../../docs/series-guide.md).
+- **Course:** Section 6, lectures 38–45. Storage-access exercises in 40–42 also use Labs 13–14.
+- **Microsoft Learn:** [Identity and governance](https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/).
+- Follow the [full course mapping](../../docs/series-guide.md) for prerequisites and study order.
 
-## Starting state and permissions
+## Before starting
 
-Record before executing. Confirm tenant, subscription, required roles, dependencies, and licensing.
+- [ ] Confirm the intended directory/subscription, required roles, dependencies, and licensing.
+- [ ] Estimate runtime and cost using [mode A](../../docs/series-guide.md#cost-plan); identify resources to remove or retain.
+- [ ] Define success, the controlled fault or denial, and the recovery test from the assignment.
+- [ ] Plan evidence checkpoints: configuration, observed result, fault/retest, and cleanup. Capture evidence before deleting resources.
 
-## Cost and cleanup plan
+## Execution record
 
-Mode: A. Record estimated runtime/cost and exact resources to remove before deploying.
-
-## Steps performed
-
-Not started. Use the [lab template](../../docs/lab-template.md) to document actual work.
-
-## Validation
-
-| Test | Expected | Actual | Evidence |
-|---|---|---|---|
-| Intended behavior | Define before build | Pending | Pending |
-| Failure or denied action | Define before build | Pending | Pending |
-| Cleanup | Lab resources removed or retained with justification | Pending | Pending |
-
-## Troubleshooting and lessons
-
-Pending.
+Not started. Use the [lab template](../../docs/lab-template.md) when performing the work, keeping only applicable sections. Record actual results and any design-only gaps; update [progress](../../docs/progress.md) after validation.

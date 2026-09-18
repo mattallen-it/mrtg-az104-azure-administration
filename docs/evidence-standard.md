@@ -4,7 +4,7 @@
 
 - **Planned:** instructions exist; work has not been performed.
 - **In progress:** work has started; validation is incomplete.
-- **Validated:** expected behavior, relevant failure/denial, retest, and cleanup are documented.
+- **Validated:** the stated lab scope has documented expected behavior, relevant failure/denial and retest where applicable, and cleanup. List untested extensions explicitly; a design-only core task does not qualify.
 - **Design-only:** studied or modeled, not executed; retain the practical gap.
 - **Needs repeat:** evidence or understanding is insufficient.
 
@@ -20,11 +20,9 @@
 
 Screenshots are supporting evidence. A configuration screenshot alone does not prove successful access, alert delivery, or restoration. Record measured outcomes only: no invented savings, uptime, recovery times, or production impact.
 
-## Evidence inventory
+## Evidence placement
 
-| Evidence file | Date | Test identity alias | Expected | Observed | What it proves | Sanitized |
-|---|---|---|---|---|---|---|
-| Pending | Pending | Pending | Pending | Pending | Pending | Pending |
+Plan screenshot checkpoints before executing: important configuration, observed success, relevant fault/retest, and cleanup. Capture configuration and results before removing resources. Put each image beside the step it supports with a caption explaining what it proves; avoid a duplicate gallery. Keep expected/observed results and test-identity aliases in the lab’s validation table. Record timestamps only when they help interpret a test, incident, or cost.
 
 Keep evidence next to the relevant lab. Prefer a few readable, purposeful screenshots to a capture of every click. Remove credentials, tokens, private keys, personal identifiers, billing details, and unrelated browser information. Review command output and exported configuration as well as images.
 

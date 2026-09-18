@@ -1,14 +1,12 @@
 # MRTG Azure Administrator Lab Series
 
-Version 1.7 • September 16, 2026 • Curriculum and lab task cards
-
 ## Mission
 
 Extend Monroe Redstone Technology Group (MRTG) into a simulated Azure operating environment. Learn to build, administer, troubleshoot, recover, and explain infrastructure while preparing for AZ-104. Existing AD DS, DNS, Windows Server 2022, Windows 11, GPO, and identity lifecycle work remains the on-premises foundation.
 
 The scenario: MRTG needs a small cloud environment for internal operations, controlled document access, an application, monitoring, and recovery. You are the administrator implementing change requests and resolving incidents. This is a fictional commercial Azure lab with government-contractor-style documentation; it is not an Azure Government deployment or evidence of regulatory compliance.
 
-This guide contains 32 sequenced lab briefs, completion criteria, a documentation template, and a runnable first-session checklist. It is not 32 portal click-through walkthroughs. Exact implementation steps must be checked against the current service documentation and the actual tenant before each build.
+This guide maps the course to MRTG practice and defines operating standards. Use the [lab index](progress.md) for assignments and status, and the [lab template](lab-template.md) to document performed work. Check current service documentation and tenant prerequisites before each build.
 
 ## Continuity with the existing MRTG portfolio
 
@@ -43,15 +41,13 @@ The original lab numbering groups related infrastructure work. The course-led st
 
 ## Course-led study order — Scott Duffy + Microsoft Learn + MRTG
 
-The primary course is [AZ-104 Microsoft Azure Administrator — Complete Exam Prep](https://www.udemy.com/course/70533-azure/) by Scott Duffy. The public curriculum was checked September 15, 2026. It exposes ten opening sections and indicates sixteen further sections without exposing their detailed sequence. The initial public-page mapping has now been supplemented by enrolled-course screenshots for all 26 sections. Exact lecture mappings appear below. Private course progress is not inferred from the curriculum screenshots.
+The primary course is [AZ-104 Microsoft Azure Administrator — Complete Exam Prep](https://www.udemy.com/course/70533-azure/) by Scott Duffy. The mapping below covers all 26 sections and lectures 1–187, the practice test, and both role plays, based on enrolled-course screenshots supplied September 16, 2026. These establish curriculum order, not course completion.
 
 Use Udemy to set the topic order, Microsoft Learn to explain and verify behavior, and MRTG to practice and prove it. The official exam study guide remains the coverage checklist. When a lecture differs from current documentation or observed behavior, investigate and document the difference.
 
 Lab numbers remain stable references. Use the study order here instead of completing labs strictly 01–32. This preserves earlier links and avoids rebuilding the whole curriculum around changing lecture numbers.
 
 ### Enrolled-course alignment — sections 1–5 confirmed
-
-Verified against the author's course-player screenshots supplied September 16, 2026 (screenshots dated September 15). This confirms the displayed sequence, not completion of the lectures or Azure tasks. Section counters display zero completed; one lecture checkbox appears selected. Do not infer completion from that inconsistent display. Lab statuses remain Planned.
 
 | Section / lectures | Course activity | MRTG action and completion checkpoint |
 |---|---|---|
@@ -74,13 +70,9 @@ Verified against the author's course-player screenshots supplied September 16, 2
 | 5 / 36 | External users | Continue Lab 03 using an owned secondary identity if available; record the practical gap otherwise. |
 | 5 / 37 | Self-service password reset | Perform Lab 06 if appropriately licensed; otherwise document the configuration and validation plan as Design-only. |
 
-**Immediate next action:** begin with lectures 2–5 and the Lab 01 subscription/cost baseline. If already watched, proceed directly to verification. Return to the command exercise when reaching section 3. No course or lab work has been marked complete from these screenshots.
-
-All 26 sections, lectures 1–187, the displayed practice test, and both role plays are now confirmed from enrolled-course screenshots. Use the detailed mapping below; no additional course-outline screenshots are needed.
+**Next study step:** Lab 01’s portal baseline is validated. Review section 2, then complete the read-only CLI/PowerShell exercise at section 3. Record course and Learn completion separately in [progress](progress.md).
 
 ### Enrolled-course alignment — sections 6–15 confirmed
-
-Verified from the author's course-player screenshots supplied September 16, 2026. Lecture numbers below are confirmed; course and lab completion remain unverified. This extends the exact mapping through lecture 121.
 
 | Section / lectures | Topic | MRTG action and checkpoint |
 |---|---|---|
@@ -126,11 +118,7 @@ Verified from the author's course-player screenshots supplied September 16, 2026
 
 **Encryption update:** Lecture 109 covers ADE. Microsoft's current [managed disk encryption guidance](https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption-overview) recommends encryption at host for new VMs and schedules ADE retirement for September 15, 2028. Study the distinctions, but use an eligible encryption-at-host configuration for the new MRTG workload rather than making ADE deployment a core requirement. Verify supported VM/disk combinations before deploying.
 
-No screenshot supplied here demonstrates a completed Azure build. Keep all lab results pending until actually performed.
-
 ### Enrolled-course alignment — sections 16–20 confirmed
-
-Confirmed from the author's course-player screenshots supplied September 16, 2026. Exact coverage now extends through lecture 150. These screenshots establish the curriculum sequence, not completed lab work.
 
 | Section / lectures | Topic | MRTG action and checkpoint |
 |---|---|---|
@@ -154,8 +142,6 @@ Confirmed from the author's course-player screenshots supplied September 16, 202
 **Study order:** containers (Lab 22) now follow App Service (Labs 23–24) in this course. Keep stable lab IDs and follow the actual course order. Documentation/evidence from earlier prerequisite exercises can be reused when it demonstrates the same behavior.
 
 ### Enrolled-course alignment — sections 21–24 confirmed
-
-Confirmed from course-player screenshots supplied September 16, 2026. The screenshot-based mapping now covers sections 1–24 and lectures 1–177. Sections 25–26 are now mapped in the following completion section. No Azure completion evidence is established by these screenshots.
 
 | Section / lectures | Topic | MRTG action and checkpoint |
 |---|---|---|
@@ -181,8 +167,6 @@ Confirmed from course-player screenshots supplied September 16, 2026. The screen
 
 ### Enrolled-course alignment — sections 25–26 confirmed; mapping complete
 
-Confirmed from course-player screenshots dated September 16, 2026. All 26 sections and numbered lectures 1–187 are now mapped, including the separately displayed practice test and two role plays. This is curriculum alignment, not certification, course completion, or proof that every exam objective has been practiced.
-
 | Section / item | Topic | MRTG action and checkpoint |
 |---|---|---|
 | 25 / 178 | Identity/governance review | Lab 32: answer unfamiliar scenarios, inspect the access matrix, and repeat weak tasks from Labs 01–07 and 30. |
@@ -202,42 +186,6 @@ Confirmed from course-player screenshots dated September 16, 2026. All 26 sectio
 **Final study sequence:** finish the technical topics, perform Labs 30–31, and use section 25 plus section 26's test/role plays within Lab 32. Revisit weak tasks selectively. Keep course completion, lab validation, and passing the certification exam as three separate milestones.
 
 **Readiness record:** date; domain; independent assessment result; reason for each error; corrective lab/task; retest result; remaining design-only gaps. Store topic summaries and original explanations, not proprietary test questions.
-
-### Verified opening course sequence
-
-The topic labels below are abbreviated from the visible curriculum. Lab actions and completion criteria are original MRTG adaptations.
-
-| Course stage | MRTG lab work | Learn companion |
-|---|---|---|
-| 1. Introduction, account, budget | 01: validate existing account/subscription and cost controls | Prerequisites; identity/governance |
-| 2. Azure concepts | Explain MRTG tenant, subscription, resources, and local AD boundary; preview 02 | Prerequisites |
-| 3. PowerShell and CLI | 01 command exercise below; start the inventory portion of 07 | Prerequisites |
-| 4. Entra introduction | 03 preparation: inspect current tenant, identity types, licensing | Identity/governance |
-| 5. Users and groups | 03 lifecycle work, then 06 SSPR; licensing-dependent tasks remain gated | Identity/governance |
-| 6. RBAC | 04 scoped access; 13 minimal account setup + 14 identity-access portion for the storage demos | Identity/governance; storage security |
-| 7. Subscription governance | Complete 02, 05, and 07; reserve VM-specific move work for 20 | Identity/governance |
-| 8. Storage access | 13–14; begin 15 protection tasks; defer private-network validation until 08–12 | Storage |
-| 9. Storage data management | Finish 13 transfers and 15 lifecycle work; complete 17 replication | Storage |
-| 10. Azure Files | 16 file shares, snapshots, and identity prerequisites | Storage |
-
-A course demo can satisfy an MRTG build step when you use MRTG naming, verify the result, and capture evidence. Do not repeat identical deployments merely because Udemy and Learn both demonstrate them. Keep the distinctive MRTG access tests, troubleshooting, and cleanup.
-
-### Topic-to-lab quick reference
-
-Follow these topics when they appear in your course player. These rows are topic references, not section-number claims; use the confirmed section mapping above where available.
-
-| Topic encountered | MRTG labs | Learn companion |
-|---|---|---|
-| Deployment templates and automation | 18 | Prerequisites; compute |
-| VM creation, disks, moves, availability, scaling | 19–21; run 08 first if networking basics are needed | Compute |
-| Container workloads | 22 | Compute |
-| Web hosting, slots, TLS, scaling, backup | 23–24 | Compute |
-| Networking and secure connectivity | 08–12; return to deferred storage network tests | Networking |
-| Operational telemetry and alerts | 25–27 | Monitoring/backup; networking |
-| Backup and regional recovery | 28–29 | Monitoring/backup |
-| Integrated review and readiness | 30–32 | Official objectives and practice assessment |
-
-Exact section/lecture alignment is now complete in the screenshot-verified tables above. This quick reference groups tasks by topic; all 32 lab briefs remain available.
 
 ### Microsoft Learn companions
 
@@ -283,14 +231,6 @@ Pass: explain which tenant/subscription the session uses, identify the same reso
 
 A reasonable 75–90 minute session allocates about 15–20 minutes to video, 10–15 to Learn, 35–40 to practice, and 10–15 to evidence and cleanup. This is flexible; reserve cleanup time even when the build takes longer. Documentation polishing can happen after the paid resources are removed.
 
-### Track the three learning activities separately
-
-| Topic | Udemy section/lecture | Learn module | MRTG lab/task | Video completed | Learn completed | Build tested | Fault resolved | Cleanup verified | Next action |
-|---|---|---|---|---|---|---|---|---|---|
-| Environment and cost baseline | Opening account/budget lessons | Prerequisites + governance | 01 | Pending | Pending | Pending | N/A until applicable | Pending | Inspect the existing subscription |
-
-Add rows as you progress. A watched demonstration is not a completed build. Preserve design-only labels for licensing/cost-gated work and track what remains untested. Keep all initial progress pending until you report the actual result.
-
 ### Course-specific boundaries
 
 - Reuse MRTG's existing tenant and subscription after validation. Watching account/tenant creation does not require creating another one.
@@ -302,7 +242,7 @@ Add rows as you progress. A watched demonstration is not a completed build. Pres
 
 ## Operating standards
 
-- Reuse the dedicated MRTG account and existing subscription after checking their current state. The recorded subscription name is `MRTG-AZ900-Lab-Subscription`; no rename or new account is required.
+- Use the dedicated MRTG account and `MRTG-AZ104-Lab-Subscription`, established in [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md). The previous AZ-900 subscription was confirmed deleted. Verify the current directory, subscription, and permissions at each session.
 - Default region: `Central US`. Validate service availability, quotas, and price before each deployment; document any alternate region.
 - Resource naming: `<resource-type>-mrtg-az104-labNN-<region>-<instance>`. Example: `rg-mrtg-az104-lab01-centralus-001`. Shorten names where a service's length/character rules require it; storage accounts need a globally unique compliant variant.
 - Required tags: `Project`, `Lab`, `Environment`, `Owner`, `CostCenter`, `ManagedBy`, `DeleteAfter`. Use synthetic values and UTC cleanup dates. Tags are metadata; `DeleteAfter` does not delete anything.
@@ -344,177 +284,13 @@ Each lab follows **Learn → Build → Document → Explain → Map**:
 
 Use the portal first when learning a service. Repeat selected operations with PowerShell or CLI; use both across the series. Begin reusable Bicep/ARM work in lab 18. Do not try to implement every lab in every interface.
 
-## Lab task cards
+## Lab records
 
-### Phase 1 — Establish MRTG governance
+Use the [32-lab index](progress.md) to open each assignment. Follow the course order above; lab numbering groups related work rather than prescribing session order.
 
-**01 — Subscription inventory and cost baseline [A]**  
-Request: establish a controlled place for MRTG cloud work. Inspect tenant, subscription, access, billing, credits, and existing resources. Create the series inventory and budget alerts; create and delete an empty tagged test resource group. Pass: explain tenant versus subscription, identify the billing scope, and prove that only the test group was removed. Detailed checklist below.
+Expand a planned assignment with the [lab template](lab-template.md) as work begins. [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) is the completed portal-baseline example. Keep evidence beside the step it supports, and follow the [evidence standard](evidence-standard.md). Reuse a course demonstration when it meets the MRTG validation requirements; do not repeat identical deployments for documentation.
 
-**02 — Resource organization and management hierarchy [A]**  
-Request: separate experiments from shared controls. Create two empty lab groups; model a management-group hierarchy and create a disposable management group only if permissions allow. Compare inheritance and organize tags. Fault: omit a required tag and detect the inconsistency. Pass: produce a scope diagram and inventory. Remove empty experimental groups; do not move the existing subscription casually.
-
-**03 — Employee and contractor lifecycle [A/C]**  
-Request: onboard two fictional employees and a contractor. Create users, assigned groups, and properties; use an owned secondary identity for a guest exercise if available. Inspect license availability and practice assignment/removal only with an eligible unused license. Fault: incorrect group membership. Pass: document corrected access and a tested offboarding sequence. Remove lab identities and memberships; never invite an unrelated person.
-
-**04 — Scoped administration [A]**  
-Request: let an operator manage one lab group and let an auditor inspect it. Apply built-in roles, then inspect direct and inherited assignments. Fault: an assignment at the wrong scope. Pass: test what each identity can do in both groups, including a denied write. Explain Entra directory roles versus Azure resource roles. Remove test assignments.
-
-**05 — Guardrails with policy and locks [A/B]**  
-Request: enforce an MRTG lab region/tag rule. Begin with an audit policy, then test a narrowly scoped deny policy. Apply a delete lock to a disposable group. Fault: a noncompliant deployment. Pass: distinguish policy denial, RBAC denial, and lock protection using evidence. Remove the test lock and policy before cleanup; avoid subscription-wide experimental denial.
-
-**06 — Password recovery and licensing [C]**  
-Request: reduce password-reset tickets. Inspect SSPR entitlements, configure an eligible pilot group, register a test user's methods, and test recovery. Fault: a user outside the pilot. Pass: explain eligibility, reset versus change, and the boundary between cloud recovery and AD writeback. If unlicensed, produce a configuration/test plan and mark it design-only. Do not buy licenses merely to complete the exercise. [5]
-
-**07 — Access review and cost review [A]**  
-Request: review MRTG's first operating period. Export role assignments, group membership, resource tags, and costs using CLI or PowerShell. Fault: seed an excessive lab assignment. Pass: identify and remove it, explain inherited access, and document an Advisor finding if one exists. If Advisor has no finding, record that rather than inventing one. Preserve a sanitized review report.
-
-### Phase 2 — Connect and isolate workloads
-
-**08 — Address plan and subnets [B]**  
-Request: separate MRTG application and administration traffic. Check existing local address ranges, then choose nonoverlapping Azure ranges and deploy subnets. Fault: attempt an overlapping subnet definition. Pass: explain why it fails and document a corrected address plan. Keep configurations for later rebuilds, not idle paid test machines.
-
-**09 — Traffic permissions [B]**  
-Request: permit the intended application flow while restricting administration. Use NSGs and application security groups with small test workloads; inspect effective rules. Fault: a higher-priority deny. Pass: prove one allowed and one blocked connection and identify the responsible rule. Remove workloads and ancillary resources. Do not expose administrative ports broadly.
-
-**10 — Peering and route investigation [B]**  
-Request: connect two MRTG segments. Create nonoverlapping networks, peer them, inspect effective routes, and test traffic. Introduce a blackhole route limited to a disposable test destination. Pass: diagnose and reverse it; explain why peering is not automatically transitive. Remove peerings and test resources.
-
-**11 — Name resolution and application availability [B/C]**  
-Request: provide a stable name and distribute application requests. Test private DNS and configure a small load-balanced service. Fault: unhealthy probe or wrong DNS record. Pass: identify which layer fails and restore service. Model public DNS delegation if no domain is owned. Remove backend VMs, load balancer, IPs, and zones created for this session.
-
-**12 — Private access and administrator entry [B/C]**  
-Request: restrict a small storage workload to an approved path. Compare a service-endpoint setup with a private-endpoint setup and its DNS results. Inspect Bastion availability, SKU cost, and prerequisites; implement a short session if feasible, otherwise document the workflow gap. Pass: prove an intended connection succeeds and an unapproved path fails. Remove endpoints and any Bastion deployment after use.
-
-### Phase 3 — Protect MRTG data
-
-**13 — Storage baseline and transfer [B]**  
-Request: store a tiny synthetic MRTG document collection. Choose redundancy and encryption settings; transfer and verify files using Storage Explorer and AzCopy. Fault: wrong destination or missing data permission. Pass: compare file counts/checksums and justify redundancy. Delete the disposable dataset/account after evidence capture.
-
-**14 — Data access boundaries [B]**  
-Request: let an auditor read documents without administering storage. Compare management-plane permission with data-plane access. Test a narrowly scoped, short-lived SAS and a separate stored-access-policy exercise using a compatible SAS type. Fault: expired or revoked access. Pass: explain identity, key, and token tradeoffs; test key rotation only on this disposable account. Never save token values in evidence.
-
-**15 — Recover an accidental document deletion [B]**  
-Request: restore a fictional operations document. Configure protection, create versions, delete test data, and recover it. Add a lifecycle rule and explain when it should act. Fault: overwrite the test document. Pass: restore the correct content; distinguish rule configuration from observing a scheduled lifecycle action. Clear billable data according to the chosen retention settings.
-
-**16 — Department file access and the AD bridge [B/C]**  
-Request: give an MRTG test group shared file access. Create a tiny file share and test snapshot recovery. For identity-based SMB, first document the chosen supported identity source, client state, DNS, connectivity, and permissions. Implement only after those prerequisites are met. Pass: explain and test share-level versus file-level authorization; if blocked, preserve a design-only gap. A storage-key mount is not proof of identity-based access. Reuse existing AD knowledge without assuming hybrid identity is already configured. [6]
-
-**17 — Replication and storage incident drill [B]**  
-Request: protect a small document flow between two accounts. Configure a compatible object-replication setup, including its prerequisites, and verify a new test object reaches the destination. Fault: break a narrowly scoped network/access setting and restore it. Pass: distinguish replication, redundancy, and recovery. Remove both accounts and their data after the exercise.
-
-### Phase 4 — Deploy and operate applications
-
-**18 — Reproducible MRTG deployment [A/B]**  
-Request: rebuild a small tagged environment consistently. Read and modify ARM JSON and Bicep, parameterize names/region, inspect a what-if result, and deploy. Export a small deployment or decompile an ARM template; inspect the output rather than assuming it is production-ready. Fault: invalid parameter or omitted dependency. Pass: repair it and redeploy from saved configuration. Delete the deployment's resources, not just deployment history.
-
-**19 — VM lifecycle [B]**  
-Request: run a small administration workload. Deploy a suitable VM, connect securely, inspect disks, and practice resize and deallocation. As an MRTG IAM extension, enable a managed identity and test scoped access to a disposable Blob container; compare this credential-free workload identity with your on-premises service-account lab. Review encryption-at-host compatibility before selecting an eligible configuration. Fault: connection fails because of a scoped NSG rule. Pass: diagnose it and demonstrate the final power state. Remove disks and IPs when deleting the VM.
-
-**20 — Disk recovery and relocation [B/C]**  
-Request: add a test data volume, recover its content, and reorganize ownership. Attach/initialize a disk, place a test file, and recover via a supported snapshot workflow. Perform a supported resource-group move after dependency validation. Compare subscription and regional relocation requirements as a design exercise if a second subscription/region is unavailable. Pass: verify the file after recovery and explain why not all moves use the same operation.
-
-**21 — Availability and scale [B/C]**  
-Request: sustain a small web workload through instance loss. Compare availability-set and zonal designs; deploy a minimal suitable scale set and test scaling within a strict maximum. Fault: stop one test instance. Pass: explain observed application behavior and distinguish resilience from backup. Delete all instances, network dependencies, and balancing resources after testing.
-
-**22 — Container delivery [B/C]**  
-Request: run a tiny MRTG status application. Use a disposable registry and test deployments through Container Instances and Container Apps, choosing compatible images and networking. Fault: wrong image reference or container port. Pass: use logs to fix startup and explain sizing/scaling differences. Remove registry, container resources, and any created logging dependencies.
-
-**23 — Managed web application [B/C]**  
-Request: host an MRTG internal-tools demonstration. Deploy a tiny App Service app, inspect plan capacity, HTTPS/TLS, and networking. Fault: incorrect configuration prevents the expected response. Pass: restore the endpoint and explain the hosting plan's role. Model custom-domain mapping if no domain is owned. Delete the paid plan along with the app when finished.
-
-**24 — Controlled application release [C]**  
-Request: release and roll back a small application change. Check plan support/cost for slots, scaling, backup, and required networking. Perform supported operations in a brief paid session or write the exact release/recovery test plan as a documented gap. Fault: deliberately deploy a visibly incorrect version. Pass: validate rollback, not merely deployment success. Remove paid plans and backup storage created for the exercise.
-
-### Phase 5 — Observe and recover
-
-**25 — Logs and operational questions [B]**  
-Request: show what changed and whether the service is healthy. Configure a minimal workspace and selected diagnostics; collect only useful test telemetry. Write KQL queries that answer specific incident questions. Fault: missing log category or wrong time range. Pass: locate the cause and distinguish an empty result from proof that nothing happened. Review ingestion/retention and remove unnecessary sources.
-
-**26 — Actionable alerts [B]**  
-Request: detect one MRTG service symptom. Create an alert, an action group directed to your own address, and an alert-processing rule. Trigger and resolve a controlled condition. Pass: prove notification delivery and explain suppression versus resolution. Inspect available VM/storage/network Insights; record any instrumentation prerequisites. Remove test alerts, receivers, and paid telemetry resources when finished.
-
-**27 — Network incident response [B]**  
-Request: investigate an unreachable application. Use Network Watcher and a suitable Connection Monitor setup with disposable endpoints. Introduce one routing or security-rule error at a time. Pass: show source, destination, protocol, relevant rule/route, and post-fix evidence. Remove monitoring tests, agents/workloads, and dependencies.
-
-**28 — Backup with a proven restore [B/C]**  
-Request: recover a synthetic MRTG workload. Compare Recovery Services vault and Backup vault support; select a suitable small workload, policy, and retention design. Inspect soft-delete/immutability implications before enabling protection. Run backup, change/delete test content, then restore and verify it. Pass: recover the actual data and inspect job status/reporting/alerts. Document protected-item removal, retained data, and any continuing cost; do not assume deleting a resource group clears retained backups.
-
-**29 — Regional recovery exercise [C]**  
-Request: rehearse a regional outage. Define MRTG recovery time and data-loss targets as fictional business requirements, then map a Site Recovery workflow. A live path requires feasible supported source/target resources and a priced replication/test-failover session. Use an isolated test network, verify recovery, clean up the test failover, and review replication cleanup. Budget path: a tabletop runbook and troubleshooting exercise. Pass: label live versus simulated results accurately; never claim failover was performed from a design alone.
-
-### Phase 6 — Demonstrate independent administration
-
-**30 — Joiner, mover, leaver across services [A/B]**  
-Request: onboard a fictional operator, change their job duties, and offboard them. Combine Entra groups, scoped RBAC, and one data-access path. Test with fresh sign-ins/tokens after changes and account for propagation. Fault: a lingering direct assignment bypasses the intended group removal. Pass: discover it and prove final denial. Explain which actions would also be required in MRTG's separate AD environment.
-
-**31 — MRTG Azure operations capstone [B]**  
-Request: build a small document-processing/support environment from your own requirements. Include named/tagged resources, least-privilege identities, a network boundary, protected data, one compute option, telemetry, a tested recovery method, and reproducible deployment. Reuse earlier templates. Inject three faults: access denied, application unreachable, and missing data. Pass: resolve them with evidence, give a five-minute architecture explanation, and complete a cost/cleanup review. A tested file restore is acceptable; an expensive live regional recovery estate is unnecessary.
-
-**32 — Rebuild, review, and exam readiness [A/B]**  
-Request: hand MRTG operations to another administrator. Rebuild one workload without a click-by-click guide, fix two unfamiliar variations, and finish the operations handover. Take Microsoft's practice assessment and classify misses by domain. Pass: explain both the correct answer and why alternatives fail, then repeat weak labs. Record exam completion separately from lab completion. Assessment scores are practice signals, not a guarantee of passing.
-
-## Lab 01 — First-session checklist
-
-Timebox: 60–90 minutes. New infrastructure: one empty resource group only. No VM required.
-
-1. Open the Azure portal using the dedicated MRTG account. Check the directory and subscription selector. Record the actual tenant/subscription locally; sanitize identifiers in public evidence.
-2. Open Subscriptions and inspect `MRTG-AZ900-Lab-Subscription`, or the actual MRTG subscription if its name changed. Confirm status and your assigned access. Stop configuration changes if this is an employer/client subscription.
-3. Inspect All resources and resource groups filtered to that subscription. Record existing resources and their purpose. Do not delete leftovers until ownership is understood.
-4. Open Cost Management at the subscription scope. Record month-to-date cost, currency, billing arrangement, and any verified remaining credit/expiration. Do not treat a remembered credit offer as active credit.
-5. Inspect the existing $10 monthly budget; create it if absent and supported. Add actual-cost notifications at 50%, 80%, and 100%, plus a forecast notification if available, to your own address. Record if permissions or a newly created subscription prevent budget creation; resolve this before paid deployment.
-6. Create `rg-mrtg-az104-lab01-centralus-001` in Central US. Apply `Project=MRTG-AZ104-Administration`, `Lab=Lab-01`, `Environment=Lab`, `Owner=MRTG-Cloud-Operations`, `CostCenter=Training`, `ManagedBy=Azure-Portal`, and `DeleteAfter=<today's UTC date>`.
-7. Inspect the resource group's tags and confirm it contains no resources. Record its purpose in the inventory.
-8. Explain aloud: Where do identities live? What scope holds resources and consumption? What does a budget do? What does it not do?
-9. Delete only this named empty test group, then verify it is absent. Keep the budget and inventory.
-10. Save sanitized before/after evidence and a short README. Record any cost-reporting delay and revisit reported charges at the next session.
-
-Completion evidence: correct subscription identified; baseline inventory; budget configuration or documented blocker; tagged test group; verified deletion; explanations in your own words.
-
-## Reusable lab record
-
-Copy this structure for each lab into the MRTG repository:
-
-```markdown
-# Lab NN — Title
-Status: Not started / In progress / Validated / Design-only / Needs repeat
-Date:
-AZ-104 domain:
-Udemy section and lecture title:
-Microsoft Learn module/unit:
-Course demo reused or extended:
-MRTG request or incident:
-Business outcome:
-Prerequisites and dependencies:
-Permissions and licenses required:
-Resources, region, and runtime:
-Cost estimate / cumulative cash spend / remaining allowance:
-
-## Learn
-Concept in my own words; expected result; official references.
-## Build
-Actions taken; commands/templates; relevant configuration decisions.
-## Validate
-Test | Expected | Actual | Evidence
-Include an allowed action and a denied/failed action where applicable.
-## Troubleshoot
-Symptom; hypotheses; evidence; root cause; correction; retest.
-## Explain and map
-Why this control matters; IAM/security relevance; exam connection.
-## Cleanup
-Objects removed; retained resources/data and why; continuing costs;
-verification timestamp; follow-up cost review.
-## Knowledge check
-Three questions answered without looking at instructions.
-## Gaps and next action
-Unperformed features; reason; what must be repeated hands-on.
-```
-
-Repository: [mrtg-az104-azure-administration](https://github.com/mattallen-it/mrtg-az104-azure-administration). Preserve the established cloud-series structure: root `README.md`, `docs/lab-template.md`, and `labs/lab-NN-descriptive-title/README.md` with a `screenshots/` directory per lab. Add `templates/` for ARM/Bicep, `scripts/` for automation, and `runbooks/` for recovery/handover when needed.
-
-The short lab record above is the working worksheet. For polished portfolio documentation, adapt the existing SC-900 template: change the exam mapping to AZ-104, preserve business scenario, prerequisites, required permissions, starting state, change control, steps, evidence, validation, troubleshooting, exam distinctions, IAM relevance, production considerations, cost/licensing, cleanup, and screenshot review. Omit inapplicable sections. Start every new checklist unchecked and every validation result as pending; never carry the old template's prechecked completion items into unfinished work.
-
-Preserve the AI-use disclosure accurately: AI supports planning, explanation, and documentation; the author performs and validates Azure work. Do not copy past-tense success statements into a planned lab. A diagram must distinguish deployed connections from proposed hybrid links.
+AI supports planning, explanation, and documentation; the author performs and validates Azure work. Diagrams must distinguish deployed resources from proposed connections.
 
 ## Completion and readiness rules
 

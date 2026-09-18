@@ -1,6 +1,8 @@
 # Access-control matrix
 
-**Status: proposed test design; no assignments or results verified yet.**
+**Status: proposed test roles; access tests have not been performed.**
+
+[Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) verified the setup administrator’s Owner role on `MRTG-AZ104-Lab-Subscription`. That baseline does not validate the proposed least-privilege identities below.
 
 | Identity | Business need | Proposed role | Proposed scope | Expected allowed action | Expected denied action | Actual/evidence |
 |---|---|---|---|---|---|---|

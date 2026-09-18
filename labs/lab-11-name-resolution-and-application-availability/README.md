@@ -1,6 +1,6 @@
 # Lab 11 — Name resolution and application availability
 
-**Status: Planned — not performed or validated.**
+![AZ-104](https://img.shields.io/badge/AZ--104-Azure_Administrator-0078D4) ![Status: Planned](https://img.shields.io/badge/Status-Planned-lightgrey)
 
 ## MRTG assignment
 
@@ -8,30 +8,17 @@ Request: provide a stable name and distribute application requests. Test private
 
 ## Study alignment
 
-- Udemy section/lecture: Pending
-- Microsoft Learn module: Pending
-- Follow the course mapping in [the series guide](../../docs/series-guide.md).
+- **Course:** Section 19, lectures 141–145; section 21, lectures 151–157; section 23, lecture 165. Lecture 144 also maps to Lab 23.
+- **Microsoft Learn:** [Networking](https://learn.microsoft.com/en-us/training/paths/az-104-manage-virtual-networks/).
+- Follow the [full course mapping](../../docs/series-guide.md) for prerequisites and study order.
 
-## Starting state and permissions
+## Before starting
 
-Record before executing. Confirm tenant, subscription, required roles, dependencies, and licensing.
+- [ ] Confirm the intended directory/subscription, required roles, dependencies, and licensing.
+- [ ] Estimate runtime and cost using [mode B/C](../../docs/series-guide.md#cost-plan); identify resources to remove or retain.
+- [ ] Define success, the controlled fault or denial, and the recovery test from the assignment.
+- [ ] Plan evidence checkpoints: configuration, observed result, fault/retest, and cleanup. Capture evidence before deleting resources.
 
-## Cost and cleanup plan
+## Execution record
 
-Mode: B/C. Record estimated runtime/cost and exact resources to remove before deploying.
-
-## Steps performed
-
-Not started. Use the [lab template](../../docs/lab-template.md) to document actual work.
-
-## Validation
-
-| Test | Expected | Actual | Evidence |
-|---|---|---|---|
-| Intended behavior | Define before build | Pending | Pending |
-| Failure or denied action | Define before build | Pending | Pending |
-| Cleanup | Lab resources removed or retained with justification | Pending | Pending |
-
-## Troubleshooting and lessons
-
-Pending.
+Not started. Use the [lab template](../../docs/lab-template.md) when performing the work, keeping only applicable sections. Record actual results and any design-only gaps; update [progress](../../docs/progress.md) after validation.

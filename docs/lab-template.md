@@ -1,49 +1,46 @@
 # Lab NN — Title
 
-Status: Planned
-Date:
-Udemy section/lecture:
-Microsoft Learn module:
-AZ-104 objective:
+![AZ-104](https://img.shields.io/badge/AZ--104-Azure_Administrator-0078D4) ![Status: Planned](https://img.shields.io/badge/Status-Planned-lightgrey)
 
-## Supporting records
+Use this structure as work begins. Replace prompts with actual findings, update the status badge, and omit inapplicable sections. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) for a completed example and the [evidence standard](evidence-standard.md) for completion rules.
 
-Link the access matrix, decision record, incident report, and runbook when applicable. Use the [evidence standard](evidence-standard.md).
+## Objective and business scenario
 
-## MRTG requirement
+State MRTG’s request, the task’s scope, and what success will demonstrate.
 
-## Starting state, dependencies, and required permissions
+## Environment and prerequisites
 
-## Design decision and alternatives
+Record starting state, dependencies, required permissions/licenses, naming/tags, and chosen configuration. Explain meaningful alternatives. Estimate runtime, cost, and rollback before deployment.
 
-## Cost estimate and rollback plan
+## Steps performed and evidence
 
-## Steps actually performed
+Describe only actions actually performed. Link reviewed commands/configuration and place each sanitized screenshot beside the step it proves, with meaningful alt text and a caption. Capture configuration and test results before cleanup.
 
 ## Validation
 
-| Test | Expected result | Actual result | Evidence |
+| Test | Expected | Observed | Evidence |
 |---|---|---|---|
-| Allowed action | Pending | Pending | Pending |
-| Denied action or failure | Pending | Pending | Pending |
-| Recovery/retest | Pending | Pending | Pending |
+| Define a scoped behavior before execution | Define before build | Pending | Pending |
 
-## Incident investigation
+Add success, denial/fault, and recovery rows as applicable. Identify the test identity and distinguish configured behavior from an observed result.
 
-Symptom, hypotheses, evidence, root cause, fix, retest.
+## Study alignment
 
-## Cleanup and residual costs
+Record the course section/lectures, relevant Learn material, and AZ-104 objectives. Track study completion separately from lab validation.
 
-## Explain without the walkthrough
+## Troubleshooting and lessons
 
-Who needs access? What grants it? What can fail? How would I detect and recover? What remains billable?
+If applicable: symptom, evidence, cause, correction, and retest. Explain the concept in your own words and record misunderstandings corrected during the lab.
 
-## Limitations and production considerations
+## Security and production considerations
 
-## Evidence review
+Explain relevant access boundaries, governance, and cost tradeoffs. Label proposed production improvements separately from tested lab controls. Link supporting decisions, incidents, or runbooks only when useful.
 
-- [ ] Work performed is distinguished from proposed work.
-- [ ] No passwords, secrets, tokens, or private keys are included.
-- [ ] Screenshots and command output are sanitized.
-- [ ] Results are verified.
-- [ ] Cleanup is verified or retained resources are documented.
+## Cleanup and outcome
+
+Record what was removed, how removal was verified, and what remains with its purpose and continuing cost. State the observed outcome, untested features, and next study step.
+
+- [ ] Stated scope validated with evidence.
+- [ ] Evidence reviewed for sensitive information.
+- [ ] Cleanup verified or retained resources documented.
+- [ ] Lab status and central progress updated consistently.

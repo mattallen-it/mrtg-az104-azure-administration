@@ -4,6 +4,8 @@ Hands-on Azure administration with an identity and security focus, built for the
 
 **Current state:** Lab 01 baseline verified · **1/32 labs validated** · AZ-104 preparation in progress.
 
+**Next study step:** review section 2, then complete Lab 01’s read-only CLI/PowerShell exercise at section 3.
+
 This series follows Scott Duffy’s AZ-104 course and Microsoft Learn. It extends earlier MRTG AD/IAM and Microsoft fundamentals projects into practical cloud operations. Azure deployments and results will be recorded as they are performed.
 
 ## Start here
@@ -14,7 +16,7 @@ This series follows Scott Duffy’s AZ-104 course and Microsoft Learn. It extend
 | Project stories and supporting evidence | [Case studies](case-studies/README.md) |
 | Full curriculum and course mapping | [Series guide](docs/series-guide.md) |
 | Lab index and completion status | [Progress](docs/progress.md) |
-| First hands-on task | [Lab 01: subscription and cost baseline](labs/lab-01-subscription-inventory-and-cost-baseline/README.md) |
+| Completed baseline | [Lab 01: subscription and cost baseline](labs/lab-01-subscription-inventory-and-cost-baseline/README.md) |
 
 ## What the work will demonstrate
 

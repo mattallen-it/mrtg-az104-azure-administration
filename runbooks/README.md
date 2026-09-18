@@ -1,6 +1,6 @@
 # Operating runbooks
 
-These templates are prepared; no deployment or recovery procedure is validated yet.
+These templates are prepared for future workload rebuild, recovery, and handover procedures. Lab 01’s baseline setup and cleanup are documented in its lab record; no standalone workload runbook is validated yet.
 
 - [Rebuild and cleanup](rebuild-template.md)
 - [Operations handover](handover-template.md)
