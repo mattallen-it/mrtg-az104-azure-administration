@@ -34,7 +34,7 @@ The user upgraded the billing account to pay-as-you-go with Basic support, then 
 
 ## Validation and sanitized evidence record
 
-The following observations transcribe screenshots reviewed during the guided session. Original screenshots contain account identifiers and are not published here. This table is a written evidence record, not independently executable verification.
+The following observations are supported by the sanitized screenshots below, published September 18, 2026 (UTC). Account identifiers and the alert recipient address were masked by the author; blank areas represent redaction, not missing configuration. Original unredacted screenshots are not published. Screenshots document observed portal state rather than independently executable verification.
 
 | Check | Expected | Observed evidence | Result |
 |---|---|---|---|
@@ -47,6 +47,44 @@ The following observations transcribe screenshots reviewed during the guided ses
 | Cleanup | Temporary group absent | Resource groups list after deletion: No resource groups to display | Passed |
 
 No permission-denial test was required for this inventory exercise. The observed failure was the missing usable subscription; the retest showed the new subscription Active with Owner access. The budget-period mismatch was corrected and the saved monthly configuration rechecked.
+
+## Screenshot evidence
+
+### Previous subscription investigation
+
+![Previous subscription investigation](screenshots/lab01-old-subscription-deleted.png)
+
+The billing list shows the previous AZ-900 subscription as Deleted. This establishes its status, not the cause of deletion.
+
+### New subscription and access
+
+![New subscription and access](screenshots/lab01-subscription-active-owner.png)
+
+The new AZ-104 subscription is Active, the signed-in lab administrator has Owner access, and the portal reports 0.00 cost at inspection.
+
+### Saved monthly budget
+
+![Saved monthly budget](screenshots/lab01-monthly-budget-alerts.png)
+
+The saved USD 10 budget resets monthly, with actual alerts at 50%, 80%, and 100%, plus a forecast alert at 100%. This verifies configuration, not email delivery or a spending cap.
+
+### Resource-group configuration review
+
+![Resource-group configuration review](screenshots/lab01-resource-group-tags.png)
+
+The pre-creation review records the intended group name, Central US region, and all seven tags. DeleteAfter is a cleanup reminder, not an automated deletion mechanism.
+
+### Created resource group
+
+![Created resource group](screenshots/lab01-resource-group-empty.png)
+
+The deployed group overview confirms its existence and Central US location, with no resources listed and type/location filters set to all.
+
+### Cleanup verification
+
+![Cleanup verification](screenshots/lab01-cleanup-confirmed.png)
+
+After manual deletion, the resource-group list shows no resource groups to display. The subscription and monthly budget were retained.
 
 ## Cost and retained state
 
