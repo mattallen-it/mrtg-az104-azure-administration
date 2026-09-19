@@ -150,20 +150,6 @@ I manually deleted only the named temporary group, then refreshed the resource-g
 
 The observed operational blocker was the missing usable subscription; the retest showed the new subscription Active with Owner access. No permission-denial test was performed in this inventory exercise.
 
-## AZ-104 Study Alignment
-
-**Primary area:** Manage Azure identities and governance, with emphasis on subscription administration, resource organization, tags, and cost management.
-
-| Learning source | Alignment |
-|---|---|
-| Udemy section 1, lectures 2–5 | Account access and budget setup |
-| Udemy section 2, lectures 11–14 | Azure concepts supporting the environment |
-| Udemy section 3, lectures 15–19 | Later follow-up: read-only commands and subscription context |
-| [Microsoft Learn: Administrator prerequisites](https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/) | Administration foundations |
-| [Microsoft Learn: Manage identities and governance](https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/) | Identity, resource organization, and governance |
-
-Course and Microsoft Learn completion are tracked separately from lab validation. See the [series guide](../../docs/series-guide.md) for the full course-led sequence.
-
 ## IAM and Security Relevance
 
 The lab separated three concepts:
@@ -238,8 +224,7 @@ The portal baseline and cleanup exercise are validated. MRTG has an active subsc
 - [x] Reviewed the tenant/subscription distinction and budget limitations
 - [x] Published six sanitized screenshots with captions
 
-**Follow-up:** Alert delivery remains untested. Read-only PowerShell/CLI context and inventory practice remains pending until Udemy section 3; it is not claimed as completed here.
+**Follow-up:** Alert delivery remains untested. CLI/PowerShell inventory validation was outside this portal-based lab’s scope.
 
-## Next Study Step
 
-Continue Udemy section 2, then return for the section 3 command practice. [Lab 02: Resource organization and management hierarchy](../lab-02-resource-organization-and-management-hierarchy/README.md) is the next numbered lab; follow the [course mapping](../../docs/series-guide.md) for when to perform it.
+[All labs](../../docs/progress.md)

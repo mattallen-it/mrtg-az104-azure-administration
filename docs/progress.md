@@ -1,22 +1,12 @@
-# Progress
+# Lab Portfolio
 
 **1/32 labs validated.** Lab 01’s portal baseline is complete; all other labs remain planned.
-
-## Study follow-up
-
-| Activity | State | Next action |
-|---|---|---|
-| Udemy | Completion not recorded | Review section 2; continue to section 3 commands |
-| Microsoft Learn | Completion not recorded | Record completed prerequisites/governance material when confirmed |
-| Lab 01 command practice | Pending | Verify context and resource-group inventory with CLI/PowerShell |
-
-Course completion, lab validation, and exam completion are separate milestones.
 
 ## Lab index
 
 | Lab | Assignment | Status |
 |---|---|---|
-| 01 | [Subscription inventory and cost baseline](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) | Validated — portal baseline; section 3 commands pending |
+| 01 | [Subscription inventory and cost baseline](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) | Validated — portal baseline |
 | 02 | [Resource organization and management hierarchy](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) | Planned |
 | 03 | [Employee and contractor lifecycle](../labs/lab-03-employee-and-contractor-lifecycle/README.md) | Planned |
 | 04 | [Scoped administration](../labs/lab-04-scoped-administration/README.md) | Planned |
@@ -47,4 +37,4 @@ Course completion, lab validation, and exam completion are separate milestones.
 | 29 | [Regional recovery exercise](../labs/lab-29-regional-recovery-exercise/README.md) | Planned |
 | 30 | [Joiner, mover, leaver across services](../labs/lab-30-joiner-mover-leaver-across-services/README.md) | Planned |
 | 31 | [MRTG Azure operations capstone](../labs/lab-31-mrtg-azure-operations-capstone/README.md) | Planned |
-| 32 | [Rebuild, review, and exam readiness](../labs/lab-32-rebuild-review-and-exam-readiness/README.md) | Planned |
+| 32 | [Independent rebuild and operations handover](../labs/lab-32-rebuild-review-and-exam-readiness/README.md) | Planned |
