@@ -5,5 +5,6 @@ Series cash ceiling: $100. Record verified credits separately. Retain the existi
 | Date | Lab | Estimated session cost | Reported usage cost | Credit applied | Cash cost | Cumulative cash | Resources retained | Cleanup checked |
 |---|---|---|---|---|---|---|---|---|
 | 2026-09-17 (UTC record) | 01 | No paid workload deployed | USD 0.00 shown | Unverified; not assumed | Not invoiced/verified | Not finalized | Subscription and monthly USD 10 budget; no workload resources | Temporary group deleted; empty resource-group list verified |
+| 2026-09-19 | 02 | No metered workload deployed; two empty groups | USD 0.00 at session start; no final cost capture | Unverified; not assumed | Not invoiced/verified | Not finalized | Existing subscription and budget; no Lab 02 groups | Both departmental groups deleted; empty list verified in [Lab 02](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) |
 
 Cost reporting can lag. Check retained disks, IPs, plans, endpoints, logs, snapshots, and backup data as applicable.

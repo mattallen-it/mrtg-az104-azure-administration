@@ -1,8 +1,16 @@
 # Access-control matrix
 
-**Status: proposed test roles; access tests have not been performed.**
+**Status: administrator inheritance observed; least-privilege test roles remain proposed.**
 
-[Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) verified the setup administrator’s Owner role on `MRTG-AZ104-Lab-Subscription`. That baseline does not validate the proposed least-privilege identities below.
+## Observed administration access
+
+| Identity | Role | Assignment source | Observed scope | Evidence |
+|---|---|---|---|---|
+| MRTG Cloud Operations | Owner | Subscription | Lab 02 Operations and Security resource groups, inherited | [Lab 02](../labs/lab-02-resource-organization-and-management-hierarchy/README.md); retained IAM capture covers Operations |
+
+Both temporary groups were subsequently deleted. Lab 02 created no role assignments. The administrator reported that the inherited Owner role remained visible while the Security group's `Owner` tag was removed; no separate comparison capture was retained. This metadata check does not validate least-privilege access or a denied operation.
+
+## Proposed workload access
 
 | Identity | Business need | Proposed role | Proposed scope | Expected allowed action | Expected denied action | Actual/evidence |
 |---|---|---|---|---|---|---|
@@ -11,8 +19,5 @@
 | MRTG-AZ104-Document-Readers | Read synthetic documents | Storage Blob Data Reader | One test container | Read a known blob | Upload or delete a blob | Pending |
 | Test workload managed identity | Read required application data without stored credentials | Storage Blob Data Reader | One test container | Read the required blob | Write data or access another container | Pending |
 
-These are candidate permissions, not automatic assignments. Confirm the minimum role needed for the actual task. Contributor is broader than a VM-specific operator role and requires justification.
 
-For each test, record identity type, direct and inherited assignments, group memberships, control-plane versus data-plane access, test time, and sanitized evidence. Test using the intended identity, not the setup administrator. Check for inherited grants before interpreting an unexpected success.
-
-For offboarding, record sign-in blocking, applicable session revocation, group/role removal, and retests with fresh authentication. Record propagation and token limitations. Do not assume deleting a resource group removes tenant identities.
+These candidate permissions have not been assigned or tested in this series. Contributor is broad; its suitability depends on the workload operation. Future results will need to distinguish direct and inherited grants, management and data access, and actual allowed and denied operations under the intended identity.

@@ -1,8 +1,12 @@
 # MRTG architecture
 
-**Status: Lab 01 portal baseline validated; workload architecture remains proposed.**
+**Status: Labs 01–02 baseline and organization validated; workload architecture remains proposed.**
 
 The last verified baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. This is recorded evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
+
+## Observed Azure organization
+
+[Lab 02](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) recorded the subscription directly under **Tenant Root Group**. Two empty departmental groups in Central US were created and tagged, then deleted. The final resource-group list was empty. No management groups were created and the subscription was not moved.
 
 ## Existing foundation
 
@@ -36,10 +40,12 @@ Network reachability and identity authorization must both be tested; success at 
 | On-premises domain and systems | Documented in previous IAM series | [Prior repository](https://github.com/mattallen-it/MRTG-Enterprise-IAM-Lab-Series) | Confirm health only when needed |
 | Azure directory, subscription, and budget | Baseline validated; retained at cleanup | [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) | Recheck context and costs at next session |
 | Temporary Lab 01 resource group | Created, tagged, then deleted | Lab 01 creation and cleanup evidence | Recreate only when needed |
+| Lab 02 departmental groups | Operations and Security groups created, then deleted | [Lab 02](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) | Historical evidence; no groups retained |
+| Management hierarchy | Tenant Root Group → lab subscription inspected | Lab 02 hierarchy capture | Recheck before hierarchy changes |
 | Cloud test identities and scoped roles | Planned | None | Labs 03–04 |
 | Network and storage boundary | Planned | None | Labs 08–17 |
 | Workload and managed identity | Planned | None | Lab 19 |
 | Alerts and verified restore | Planned | None | Labs 25–29 |
 | Hybrid identity or connectivity | Not implemented by this series | None | Optional later extension |
 
-Update this register and the diagram after validation. If a deployment is removed, retain its historical evidence and label it removed; do not present it as currently running.
+Removed deployments remain documented as historical evidence. The proposed workload diagram does not represent running resources.
