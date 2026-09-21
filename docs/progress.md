@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**2/32 labs validated.** Labs 01–02 document completed portal work and cleanup; Labs 03–32 remain planned.
+**3/32 labs validated.** Labs 01–03 document completed portal work and cleanup, with evidence limits stated in each lab; Labs 04–32 remain planned.
 
 ## Lab index
 
@@ -8,7 +8,7 @@
 |---|---|---|
 | 01 | [Subscription inventory and cost baseline](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md) | Validated — portal baseline |
 | 02 | [Resource organization and management hierarchy](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) | Validated — organization and inheritance |
-| 03 | [Employee and contractor lifecycle](../labs/lab-03-employee-and-contractor-lifecycle/README.md) | Planned |
+| 03 | [Employee and contractor lifecycle](../labs/lab-03-employee-and-contractor-lifecycle/README.md) | Validated — directory state |
 | 04 | [Scoped administration](../labs/lab-04-scoped-administration/README.md) | Planned |
 | 05 | [Guardrails with policy and locks](../labs/lab-05-guardrails-with-policy-and-locks/README.md) | Planned |
 | 06 | [Password recovery and licensing](../labs/lab-06-password-recovery-and-licensing/README.md) | Planned |

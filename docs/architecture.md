@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–02 baseline and organization validated; workload architecture remains proposed.**
+**Status: Labs 01–03 baseline, organization, and directory lifecycle validated; workload architecture remains proposed.**
 
 The last verified baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. This is recorded evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -42,7 +42,8 @@ Network reachability and identity authorization must both be tested; success at 
 | Temporary Lab 01 resource group | Created, tagged, then deleted | Lab 01 creation and cleanup evidence | Recreate only when needed |
 | Lab 02 departmental groups | Operations and Security groups created, then deleted | [Lab 02](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) | Historical evidence; no groups retained |
 | Management hierarchy | Tenant Root Group → lab subscription inspected | Lab 02 hierarchy capture | Recheck before hierarchy changes |
-| Cloud test identities and scoped roles | Planned | None | Labs 03–04 |
+| Lab 03 cloud identities and groups | Two synthetic users and four groups created, then cleaned up | [Lab 03](../labs/lab-03-employee-and-contractor-lifecycle/README.md); active-list cleanup captured, permanent user deletion confirmed by operator | Historical evidence; no lab objects retained |
+| Scoped workload roles | Planned; Lab 03 groups had no attached RBAC or application permissions | None | Lab 04 |
 | Network and storage boundary | Planned | None | Labs 08–17 |
 | Workload and managed identity | Planned | None | Lab 19 |
 | Alerts and verified restore | Planned | None | Labs 25–29 |
