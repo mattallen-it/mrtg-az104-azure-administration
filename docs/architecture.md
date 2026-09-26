@@ -1,12 +1,14 @@
 # MRTG architecture
 
-**Status: Labs 01–03 baseline, organization, and directory lifecycle validated; workload architecture remains proposed.**
+**Status: Labs 01–04 baseline, organization, directory lifecycle, and scoped Azure RBAC validated; workload architecture remains proposed.**
 
 The last verified baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. This is recorded evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
 ## Observed Azure organization
 
 [Lab 02](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) recorded the subscription directly under **Tenant Root Group**. Two empty departmental groups in Central US were created and tagged, then deleted. The final resource-group list was empty. No management groups were created and the subscription was not moved.
+
+[Lab 04](../labs/lab-04-scoped-administration/README.md) recreated separate temporary Operations and Security resource groups. Assigned security groups received Reader and Contributor on Operations only. A Reader tag write was rejected, while the Operator saved a tag change; that Operator received 401 on Security and could not add a role assignment on Operations. Lab 04 objects were subsequently removed according to the operator; no final deletion capture was retained.
 
 ## Existing foundation
 
@@ -18,7 +20,7 @@ Every node below is a target design, not deployment evidence. Dashed arrows deno
 
 ```mermaid
 flowchart TD
-    U["Test users and groups"] -.-> R["Scoped Azure RBAC"]
+    U["Future test users and groups"] -.-> R["Future scoped Azure RBAC"]
     R -.-> C["Disposable compute workload"]
     R -.-> S["Protected storage"]
     N["Network controls and private access"] -.-> C
@@ -43,7 +45,7 @@ Network reachability and identity authorization must both be tested; success at 
 | Lab 02 departmental groups | Operations and Security groups created, then deleted | [Lab 02](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) | Historical evidence; no groups retained |
 | Management hierarchy | Tenant Root Group → lab subscription inspected | Lab 02 hierarchy capture | Recheck before hierarchy changes |
 | Lab 03 cloud identities and groups | Two synthetic users and four groups created, then cleaned up | [Lab 03](../labs/lab-03-employee-and-contractor-lifecycle/README.md); active-list cleanup captured, permanent user deletion confirmed by operator | Historical evidence; no lab objects retained |
-| Scoped workload roles | Planned; Lab 03 groups had no attached RBAC or application permissions | None | Lab 04 |
+| Lab 04 scoped management roles | Reader and Contributor tested at temporary Operations resource-group scope; cleanup operator-confirmed | [Lab 04](../labs/lab-04-scoped-administration/README.md) | Recreate scoped assignments if needed for a workload |
 | Network and storage boundary | Planned | None | Labs 08–17 |
 | Workload and managed identity | Planned | None | Lab 19 |
 | Alerts and verified restore | Planned | None | Labs 25–29 |

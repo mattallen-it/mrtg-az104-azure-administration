@@ -1,6 +1,6 @@
 # Access-control matrix
 
-**Status: administrator inheritance observed; least-privilege test roles remain proposed.**
+**Status: subscription Owner inheritance observed; scoped Reader and Contributor tests validated in Lab 04.**
 
 ## Observed administration access
 
@@ -21,14 +21,23 @@ Both temporary groups were subsequently deleted. Lab 02 created no role assignme
 
 Groups used the `MRTG-AZ104-` prefix and were deleted afterward. Session revocation for both users was operator-confirmed, not tested against an active application session. No fresh sign-in denial, application authorization, or Azure RBAC test was captured.
 
-## Proposed workload access
+## Lab 04 — Scoped administration
+
+Two synthetic Member users each belonged to one assigned security group. [Lab 04](../labs/lab-04-scoped-administration/README.md) captured their Azure RBAC assignments **at the Operations resource-group scope**, along with allowed and denied operations. The separate Security resource group had no Lab 04 assignment; the Operator received a 401 there.
+
+| Test identity via security group | Azure role | Scope | Allowed observation | Denied observation | Cleanup |
+|---|---|---|---|---|---|
+| MRTG Lab Reader via `MRTG-AZ104-Lab04-Readers` | Reader | Operations resource group | Tags visible | Saving changed `Environment` tag returned `AuthorizationFailed`; original value persisted | Assignment, user, and group removal operator-confirmed |
+| MRTG Lab Operator via `MRTG-AZ104-Lab04-Operators` | Contributor | Operations resource group | `Environment` changed to `Test`, then restored to `Lab` | Security group overview returned 401; **Add role assignment** disabled in Operations IAM | Assignment, user, and group removal operator-confirmed |
+
+The Reader rejection screenshot has no account header; its identity is operator-identified rather than visible in the capture. The inherited subscription Owner entry belongs to the administrator, not either test group. No final cleanup capture was provided.
+
+## Proposed data access
 
 | Identity | Business need | Proposed role | Proposed scope | Expected allowed action | Expected denied action | Actual/evidence |
 |---|---|---|---|---|---|---|
-| MRTG-AZ104-Readers | Inspect lab configuration | Reader | One lab resource group | Read resource properties | Modify resources | Pending |
-| MRTG-AZ104-Operators | Operate a test workload | Contributor for broad lab operations; narrow when task permits | One lab resource group | Manage resources in scope | Assign Azure roles | Pending |
 | MRTG-AZ104-Document-Readers | Read synthetic documents | Storage Blob Data Reader | One test container | Read a known blob | Upload or delete a blob | Pending |
 | Test workload managed identity | Read required application data without stored credentials | Storage Blob Data Reader | One test container | Read the required blob | Write data or access another container | Pending |
 
 
-These candidate permissions have not been assigned or tested in this series. Contributor is broad; its suitability depends on the workload operation. Future results will need to distinguish direct and inherited grants, management and data access, and actual allowed and denied operations under the intended identity.
+These data-plane candidate permissions have not been assigned or tested in this series. Contributor is broad; its suitability depends on the workload operation. Future results must distinguish management-plane roles from storage data access.
