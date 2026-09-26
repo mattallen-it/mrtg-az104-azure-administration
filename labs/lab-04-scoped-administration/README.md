@@ -1,6 +1,6 @@
 # Lab 04 — Scoped administration
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Status](https://img.shields.io/badge/Status-Validated-2E7D32) ![Cleanup](https://img.shields.io/badge/Cleanup-Operator_confirmed-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Status](https://img.shields.io/badge/Status-Validated-2E7D32) ![Cleanup](https://img.shields.io/badge/Cleanup-Active_state_verified-2E7D32)
 
 ## Purpose
 
@@ -64,7 +64,17 @@ The portal allowed a Reader to type a new tag value, which could have been mista
 
 ## Cleanup and limits
 
-After validation the operator confirmed removal of the two Lab 04 role assignments, synthetic users, security groups, and temporary resource groups. No final cleanup screenshot was provided, so object deletion is **operator-confirmed**, not independently verified by a retained capture. The existing administrator, subscription, and budget were outside cleanup scope.
+After validation, the resource-group list filtered to `lab04` showed **no matching resource groups** under the portal's all-subscriptions and all-locations filters.
+
+![No Lab 04 resource groups match the filter](screenshots/lab04-resource-groups-cleanup-confirmed.png)
+
+The Entra groups list filtered to `lab04` showed **0 groups found**, and the active-user list showed only the original administrator.
+
+![No Lab 04 groups match the filter](screenshots/lab04-groups-cleanup-confirmed.png)
+
+![Only the original administrator remains in active users](screenshots/lab04-users-cleanup-confirmed.png)
+
+These captures verify the absence of the Lab 04 groups and resource groups from the filtered lists and the absence of the two synthetic accounts from **active users** at capture time. The operator separately confirmed the two Lab 04 role assignments were removed. The screenshots do not show a role-assignment deletion audit event, a permanent deletion check under **Deleted users**, or a complete Azure resource inventory. The existing administrator, subscription, and budget were outside cleanup scope.
 
 No metered workload was deployed. No post-session cost or invoice capture was collected; see the [cost ledger](../../docs/cost-ledger.md). The lab demonstrates Azure management-plane authorization for these specific actions, not application access, data-plane access, or regulatory compliance.
 

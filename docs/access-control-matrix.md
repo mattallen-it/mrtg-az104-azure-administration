@@ -27,10 +27,10 @@ Two synthetic Member users each belonged to one assigned security group. [Lab 04
 
 | Test identity via security group | Azure role | Scope | Allowed observation | Denied observation | Cleanup |
 |---|---|---|---|---|---|
-| MRTG Lab Reader via `MRTG-AZ104-Lab04-Readers` | Reader | Operations resource group | Tags visible | Saving changed `Environment` tag returned `AuthorizationFailed`; original value persisted | Assignment, user, and group removal operator-confirmed |
-| MRTG Lab Operator via `MRTG-AZ104-Lab04-Operators` | Contributor | Operations resource group | `Environment` changed to `Test`, then restored to `Lab` | Security group overview returned 401; **Add role assignment** disabled in Operations IAM | Assignment, user, and group removal operator-confirmed |
+| MRTG Lab Reader via `MRTG-AZ104-Lab04-Readers` | Reader | Operations resource group | Tags visible | Saving changed `Environment` tag returned `AuthorizationFailed`; original value persisted | Group and resource group absent from filtered cleanup lists; user absent from active list; role removal operator-confirmed |
+| MRTG Lab Operator via `MRTG-AZ104-Lab04-Operators` | Contributor | Operations resource group | `Environment` changed to `Test`, then restored to `Lab` | Security group overview returned 401; **Add role assignment** disabled in Operations IAM | Group and resource group absent from filtered cleanup lists; user absent from active list; role removal operator-confirmed |
 
-The Reader rejection screenshot has no account header; its identity is operator-identified rather than visible in the capture. The inherited subscription Owner entry belongs to the administrator, not either test group. No final cleanup capture was provided.
+The Reader rejection screenshot identifies `lab04.reader` in the portal header. The inherited subscription Owner entry belongs to the administrator, not either test group. Cleanup captures do not establish permanent user deletion or independently show removal of each role assignment.
 
 ## Proposed data access
 
