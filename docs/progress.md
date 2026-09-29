@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**4/32 labs validated.** Labs 01–04 document completed portal work and cleanup, with evidence limits stated in each lab; Labs 05–32 remain planned.
+**5/32 labs validated.** Labs 01–05 document completed portal work and cleanup, with evidence limits stated in each lab; Labs 06–32 remain planned.
 
 ## Lab index
 
@@ -10,7 +10,7 @@
 | 02 | [Resource organization and management hierarchy](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) | Validated — organization and inheritance |
 | 03 | [Employee and contractor lifecycle](../labs/lab-03-employee-and-contractor-lifecycle/README.md) | Validated — directory state |
 | 04 | [Scoped administration](../labs/lab-04-scoped-administration/README.md) | Validated — scoped Azure RBAC |
-| 05 | [Guardrails with policy and locks](../labs/lab-05-guardrails-with-policy-and-locks/README.md) | Planned |
+| 05 | [Guardrails with policy and locks](../labs/lab-05-guardrails-with-policy-and-locks/README.md) | Validated — policy and delete lock |
 | 06 | [Password recovery and licensing](../labs/lab-06-password-recovery-and-licensing/README.md) | Planned |
 | 07 | [Access review and cost review](../labs/lab-07-access-review-and-cost-review/README.md) | Planned |
 | 08 | [Address plan and subnets](../labs/lab-08-address-plan-and-subnets/README.md) | Planned |
