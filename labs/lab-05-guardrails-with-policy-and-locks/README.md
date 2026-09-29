@@ -2,10 +2,66 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Planned](https://img.shields.io/badge/Status-Planned-lightgrey)
 
-## Planned scope
+## Purpose
 
-Audit and deny policies, deletion locks, and the distinction between governance controls and access permissions.
+MRTG wants its lab resource groups created only in Central US and wants a temporary governance group protected from accidental deletion. This lab tests two different management-plane guardrails: **Azure Policy** decides whether a new resource group may be created in a region; a **Delete lock** blocks deletion of an existing group, even for an Owner.
 
-**Status:** Not performed. Implementation, evidence, and results will be added after execution.
+**Success:** a Central US group is created, an East US group creation is rejected by the named policy, and deleting the protected Central US group is rejected until its lock is removed. No virtual machines or other metered workloads are needed.
+
+## Design
+
+```mermaid
+flowchart TB
+    Owner["Lab administrator: Owner"] --> Subscription["MRTG lab subscription"]
+    Subscription --> Policy["Policy: Central US only, Deny"]
+    Policy -->|"Allowed"| Group["Lab 05 governance resource group"]
+    Policy -. "East US creation rejected" .-> Attempt["East US test attempt"]
+    Group --> Lock["Delete lock: group deletion rejected"]
+```
+
+The policy assignment is at **subscription scope** because the test creates new resource groups. Do not scope it to the governance resource group: a new East US group would be outside that scope. The lock is at **resource-group scope**. Azure RBAC grants the administrator permission to try these actions; policy and locks still restrict the operations.
+
+## Procedure and evidence
+
+Use `MRTG-AZ104-Lab-Subscription` throughout. Save a screenshot only when a row below calls for one. Do not treat a policy assignment's initial **Not started** or **100% (0 resources)** display as a validation result.
+
+| Step | Portal action | Expected result | Screenshot to keep |
+|---|---|---|---|
+| 1 | In **Policy → Assignments**, check this subscription for an earlier `lab05-*` assignment. Remove any abandoned Lab 05 assignment before starting. In **Resource groups**, check that abandoned Lab 05 test groups are gone. | Clean starting point; leave unrelated assignments, including `ASC Default`, alone. | None |
+| 2 | **Policy → Assignments → Assign policy**. Scope: the lab **subscription**; Exclusions: blank; definition: **Allowed locations for resource groups**; name: `lab05-deny-rg-location`; Policy enforcement: **Default**. Under **Parameters**, choose **Central US** only and **Effect: Deny**. Review and create. | The assignment controls resource-group creation anywhere in this subscription. | `lab05-deny-policy-configuration.png` — Review + create page showing scope, no exclusions, `centralus`, and Deny |
+| 3 | **Resource groups → Create**. Create `rg-mrtg-az104-lab05-governance-001` in **(US) Central US**. Leave it empty. | Creation succeeds in the allowed region. | `lab05-centralus-group-created.png` — group Overview showing subscription and Central US |
+| 4 | **Resource groups → Create**. In the same subscription, enter `rg-mrtg-az104-lab05-deny-eastus-001` and **(US) East US**. Continue through **Review + create** and attempt creation. | Azure rejects the request. Open the error details and verify they identify `RequestDisallowedByPolicy` or the `lab05-deny-rg-location` assignment. If another assignment caused the rejection, this test does **not** validate the Lab 05 policy. | `lab05-eastus-creation-denied.png` — rejection with the policy identifier visible |
+| 5 | Open the Central US governance group → **Settings → Locks → Add**. Name: `lab05-protect-governance`; lock type: **Delete**. Save. | The lock appears on this resource group. | `lab05-delete-lock-applied.png` — lock name and type |
+| 6 | On that group's Overview, select **Delete resource group**, enter its name, and submit the deletion attempt. | Azure rejects deletion because of the lock. Verify the error identifies a lock. | `lab05-locked-group-delete-denied.png` — actual rejection, not only the confirmation dialog |
+| 7 | Return to **Locks** and remove `lab05-protect-governance`. Delete the governance resource group. Then remove `lab05-deny-rg-location` from **Policy → Assignments**. Check the resource-group list and assignment list. | The temporary group and subscription-wide lab policy are gone. | `lab05-cleanup-verified.png` — capture the relevant lists, or use two clearly named screenshots if one view cannot show both |
+
+**Stop if Step 4 is allowed.** Check the exact policy definition, subscription scope, empty Exclusions, allowed location, **Effect: Deny**, and **Policy enforcement: Default**. Do not claim a successful Deny test from a compliance chart. If the portal reports a propagation delay, wait and retry with a *new* East US group name; do not delete or recreate the Central US group merely to refresh the chart.
+
+**Stop if Step 6 deletes the group.** The lock was not in force at the tested scope. Recheck the group's Locks blade before continuing. Never lock the subscription for this exercise.
+
+## Validation record
+
+Complete this table from observed portal results. A screenshot shows a configuration or operation; it does not prove a later result unless that result is visible.
+
+| Test | Observed result | Evidence |
+|---|---|---|
+| Central US creation | Pending | Pending |
+| East US creation rejected by the Lab 05 policy | Pending | Pending |
+| Delete lock applied | Pending | Pending |
+| Deletion rejected by lock | Pending | Pending |
+| Lock, group, and policy cleaned up | Pending | Pending |
+
+## Lessons and limits
+
+Record the actual error from each rejection and one practical takeaway after execution. **Deny** provides immediate creation-time evidence; the Azure Policy compliance dashboard is eventually updated and is not the checkpoint for this exercise. A Delete lock is a management-plane guardrail that overrides Owner's deletion permission; it does not replace RBAC or protect data-plane operations.
+
+The exercise uses empty resource groups, a policy assignment, and a management lock; no metered workload is planned. Verify subscription charges separately in the [cost ledger](../../docs/cost-ledger.md). Mark this lab **Validated** only after the rejection and cleanup evidence is collected.
+
+## References
+
+- [Azure Policy built-in definitions](https://learn.microsoft.com/en-us/azure/governance/policy/samples/built-in-policies)
+- [Assign a policy in the Azure portal](https://learn.microsoft.com/en-us/azure/governance/policy/assign-policy-portal)
+- [Azure Policy compliance evaluation and timing](https://learn.microsoft.com/en-us/azure/governance/policy/how-to/get-compliance-data)
+- [Lock Azure resources](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources)
 
 [All labs](../../docs/progress.md)
