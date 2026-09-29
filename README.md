@@ -8,18 +8,19 @@ Each completed lab documents the business problem, configuration decisions, work
 
 ## Labs
 
+**5 of 32 labs validated.** Labs 01–05 include completed Azure work and cleanup evidence; Labs 06–32 remain planned.
+
 | Lab | Demonstrated work | Status |
 |---|---|---|
 | [01 — Subscription inventory and cost baseline](labs/lab-01-subscription-inventory-and-cost-baseline/README.md) | Active subscription and Owner access verified; monthly budget configured; tagged resource group created and removed | Validated |
 | [02 — Resource organization and management hierarchy](labs/lab-02-resource-organization-and-management-hierarchy/README.md) | Departmental groups and tags validated; inherited Owner access and management hierarchy inspected; groups removed | Validated |
 | [03 — Employee and contractor lifecycle](labs/lab-03-employee-and-contractor-lifecycle/README.md) | Synthetic identities and memberships managed through onboarding, transfer, offboarding, and cleanup | Validated — directory state |
 | [04 — Scoped administration](labs/lab-04-scoped-administration/README.md) | Group-based Reader and Contributor access scoped to Operations; permitted and denied actions tested under separate identities | Validated — Azure RBAC |
-
-| [05 — Guardrails with policy and locks](labs/lab-05-guardrails-with-policy-and-locks/README.md) | Central US group created; East US blocked by policy; Delete lock blocked deletion; lab cleanup reviewed | Validated — governance |
+| [05 — Guardrails with policy and locks](labs/lab-05-guardrails-with-policy-and-locks/README.md) | Central US group created; East US blocked in the portal by the named policy; Delete lock prevented deletion; resource group and policy removed | Validated — governance |
 
 [View all 32 labs and their status](docs/progress.md)
 
-The planned portfolio covers Azure governance, scoped identity and data access, networking, storage, compute, monitoring, and recovery.
+The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, and policy guardrails. Upcoming labs extend the portfolio into licensing, networking, storage, compute, monitoring, and recovery.
 
 ## Environment and operating records
 
