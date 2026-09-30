@@ -17,12 +17,13 @@ Each completed lab documents the business problem, configuration decisions, work
 | [03 — Employee and contractor lifecycle](labs/lab-03-employee-and-contractor-lifecycle/README.md) | Synthetic identities and memberships managed through onboarding, transfer, offboarding, and cleanup | Validated — directory state |
 | [04 — Scoped administration](labs/lab-04-scoped-administration/README.md) | Group-based Reader and Contributor access scoped to Operations; permitted and denied actions tested under separate identities | Validated — Azure RBAC |
 | [05 — Guardrails with policy and locks](labs/lab-05-guardrails-with-policy-and-locks/README.md) | Central US group created; East US blocked in the portal by the named policy; Delete lock prevented deletion; resource group and policy removed | Validated — governance |
-
 | [06 — Password recovery readiness and licensing](labs/lab-06-password-recovery-and-licensing/README.md) | Tenant/license inventory assessed; recovery testing deferred; access error documented | Assessment complete — recovery untested |
 
 [View all 32 labs and their status](docs/progress.md)
 
 The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, and policy guardrails. The licensing assessment records prerequisites without claiming a successful password reset. Upcoming labs extend the portfolio into networking, storage, compute, monitoring, and recovery.
+
+The series uses **Microsoft Entra ID Free**. No paid Entra or Microsoft 365 license purchase or trial is planned. Labs use assigned groups, ordinary Azure RBAC, manual access reviews and managed identities; premium identity features remain study/design topics. Azure resource charges and software rights are checked separately before deployment.
 
 ## Environment and operating records
 
