@@ -2,7 +2,7 @@
 
 ## Decision
 
-No Entra P1/P2 purchase is required to continue the series with Lab 06 implemented as a readiness assessment. The original live end-user SSPR exercise requires an eligible license. This is a review of all 32 current README scopes, not a guarantee for implementations that have not yet been designed.
+**Series baseline: retain Entra Free; do not purchase paid Entra or Microsoft 365 user licenses or activate trials for this series.** Lab 06 remains a readiness assessment. The original live end-user SSPR exercise requires an eligible license. This is a review of all 32 current README scopes, not a guarantee for implementations that have not yet been designed.
 
 Entra Free is already part of the Azure environment. Azure subscription charges, Entra user licenses, operating-system/software rights, and service-tier requirements are separate. “No Entra Premium required” does not mean “free lab.”
 
@@ -76,7 +76,7 @@ Lab 24's slot test requires a supported paid App Service tier. Bastion, private 
 
 ## Operating rule
 
-Keep Entra Free for the current revised series. Before each deployment, check the exact feature, eligible identity/license, Azure SKU/region, expected runtime, retained storage and cleanup path. Reassess licensing if scope adds Conditional Access, dynamic groups, PIM, automated reviews, Lifecycle Workflows, Microsoft 365 workloads or advanced identity logs. Trial eligibility and checkout terms were not verified; no purchase or trial was activated.
+Keep Entra Free for the current revised series. Design every remaining lab to fit this baseline. Premium identity features are study/design topics, not required live exercises. If a feature cannot be demonstrated without a new user-license purchase, replace that portion with a supported hands-on alternative or explicitly labeled design assessment; do not claim the original feature was tested. Before each deployment, check the exact feature, eligible identity/license, Azure SKU/region, expected runtime, retained storage and cleanup path. Do not add Conditional Access, dynamic user groups, PIM, automated Access Reviews, Lifecycle Workflows, Microsoft 365 workloads or premium identity logs as required live tasks. A future change to the license baseline requires an explicit scope decision from the author. Trial eligibility and checkout terms were not verified; no purchase or trial was activated.
 
 ## Official references
 
