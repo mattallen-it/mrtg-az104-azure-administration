@@ -8,7 +8,7 @@ Each completed lab documents the business problem, configuration decisions, work
 
 ## Labs
 
-**5 of 32 labs validated.** Labs 01–05 include completed Azure work and cleanup evidence; Labs 06–32 remain planned.
+**5 of 32 labs validated.** Labs 01–05 include completed Azure work and cleanup evidence; Lab 06 documents a completed readiness assessment with live recovery untested; Labs 07–32 remain planned.
 
 | Lab | Demonstrated work | Status |
 |---|---|---|
@@ -18,13 +18,15 @@ Each completed lab documents the business problem, configuration decisions, work
 | [04 — Scoped administration](labs/lab-04-scoped-administration/README.md) | Group-based Reader and Contributor access scoped to Operations; permitted and denied actions tested under separate identities | Validated — Azure RBAC |
 | [05 — Guardrails with policy and locks](labs/lab-05-guardrails-with-policy-and-locks/README.md) | Central US group created; East US blocked in the portal by the named policy; Delete lock prevented deletion; resource group and policy removed | Validated — governance |
 
+| [06 — Password recovery readiness and licensing](labs/lab-06-password-recovery-and-licensing/README.md) | Tenant/license inventory assessed; recovery testing deferred; access error documented | Assessment complete — recovery untested |
+
 [View all 32 labs and their status](docs/progress.md)
 
-The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, and policy guardrails. Upcoming labs extend the portfolio into licensing, networking, storage, compute, monitoring, and recovery.
+The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, and policy guardrails. The licensing assessment records prerequisites without claiming a successful password reset. Upcoming labs extend the portfolio into networking, storage, compute, monitoring, and recovery.
 
 ## Environment and operating records
 
-[Architecture](docs/architecture.md) · [Access matrix](docs/access-control-matrix.md) · [Decisions](docs/decisions.md) · [Cost ledger](docs/cost-ledger.md)
+[Architecture](docs/architecture.md) · [Access matrix](docs/access-control-matrix.md) · [Decisions](docs/decisions.md) · [Cost ledger](docs/cost-ledger.md) · [Licensing and prerequisites](docs/licensing-and-prerequisites.md)
 
 ## Related MRTG projects
 
