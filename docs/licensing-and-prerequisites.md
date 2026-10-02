@@ -2,7 +2,7 @@
 
 ## Decision
 
-**Series baseline: retain Entra Free; do not purchase paid Entra or Microsoft 365 user licenses or activate trials for this series.** Lab 06 remains a readiness assessment. The original live end-user SSPR exercise requires an eligible license. This is a review of all 32 current README scopes, not a guarantee for implementations that have not yet been designed.
+**Series baseline: retain Entra Free; do not purchase paid Entra or Microsoft 365 user licenses or activate trials for this series.** Lab 06 is being redone as administrator-assisted password recovery; validation is pending. The original live end-user SSPR exercise requires an eligible license. This is a review of all 32 current README scopes, not a guarantee for implementations that have not yet been designed.
 
 Entra Free is already part of the Azure environment. Azure subscription charges, Entra user licenses, operating-system/software rights, and service-tier requirements are separate. “No Entra Premium required” does not mean “free lab.”
 
@@ -15,7 +15,7 @@ Entra Free is already part of the Azure environment. Azure subscription charges,
 | 03 | [Employee and contractor lifecycle](../labs/lab-03-employee-and-contractor-lifecycle/README.md) | Manual lifecycle and assigned security groups; no Lifecycle Workflows. |
 | 04 | [Scoped administration](../labs/lab-04-scoped-administration/README.md) | Ordinary Azure RBAC; no PIM. |
 | 05 | [Guardrails with policy and locks](../labs/lab-05-guardrails-with-policy-and-locks/README.md) | Azure Policy and locks. |
-| 06 | [Password recovery and licensing](../labs/lab-06-password-recovery-and-licensing/README.md) | Readiness assessment needs no paid license. Live end-user forgotten-password reset needs an eligible SSPR license. |
+| 06 | [Password reset and account recovery operations](../labs/lab-06-password-recovery-and-licensing/README.md) | Administrator-assisted reset of a cloud-created non-admin user; no paid user-license purchase planned. SSPR remains excluded. |
 | 07 | [Access review and cost review](../labs/lab-07-access-review-and-cost-review/README.md) | Manual role/membership review; automated Entra Access Reviews would require eligible P2/Governance licensing. |
 | 08 | [Address plan and subnets](../labs/lab-08-address-plan-and-subnets/README.md) | VNet/subnet planning; resource charges depend on deployed test workloads. |
 | 09 | [Traffic permissions](../labs/lab-09-traffic-permissions/README.md) | NSG/ASG rules and traffic tests. |
@@ -50,7 +50,7 @@ The classification is an engineering inference from the published scope and the 
 | Feature | Licensing implication | Series decision |
 |---|---|---|
 | Ordinary users/groups and Azure RBAC | No premium feature specified in the current exercises | Assigned security groups and ordinary role assignments |
-| Cloud-only forgotten-password SSPR | Eligible Microsoft 365 Business Standard/Business Premium or Entra P1/P2; license intended beneficiaries | Deferred; Lab 06 is assessment only |
+| Cloud-only forgotten-password SSPR | Eligible Microsoft 365 Business Standard/Business Premium or Entra P1/P2; license intended beneficiaries | Excluded from live scope; Lab 06 uses administrator assistance |
 | Hybrid password writeback | Entra P1/P2 or Microsoft 365 Business Premium | Not implemented |
 | Conditional Access | Entra P1; risk-based policies require P2 | Not required by current scopes |
 | Dynamic user group membership | P1 coverage for each unique user in dynamic groups | Use assigned memberships |
