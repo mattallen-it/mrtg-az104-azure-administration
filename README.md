@@ -8,7 +8,7 @@ Each completed lab documents the business problem, configuration decisions, work
 
 ## Labs
 
-**5 of 32 labs validated.** Labs 01–05 include completed Azure work and cleanup evidence; Lab 06 documents a completed readiness assessment with live recovery untested; Labs 07–32 remain planned.
+**5 of 32 labs validated.** Labs 01–05 include completed Azure work and cleanup evidence; Lab 06 is in progress as an administrator-assisted recovery exercise; Labs 07–32 remain planned.
 
 | Lab | Demonstrated work | Status |
 |---|---|---|
@@ -17,7 +17,7 @@ Each completed lab documents the business problem, configuration decisions, work
 | [03 — Employee and contractor lifecycle](labs/lab-03-employee-and-contractor-lifecycle/README.md) | Synthetic identities and memberships managed through onboarding, transfer, offboarding, and cleanup | Validated — directory state |
 | [04 — Scoped administration](labs/lab-04-scoped-administration/README.md) | Group-based Reader and Contributor access scoped to Operations; permitted and denied actions tested under separate identities | Validated — Azure RBAC |
 | [05 — Guardrails with policy and locks](labs/lab-05-guardrails-with-policy-and-locks/README.md) | Central US group created; East US blocked in the portal by the named policy; Delete lock prevented deletion; resource group and policy removed | Validated — governance |
-| [06 — Password recovery readiness and licensing](labs/lab-06-password-recovery-and-licensing/README.md) | Tenant/license inventory assessed; recovery testing deferred; access error documented | Assessment complete — recovery untested |
+| [06 — Password reset and account recovery operations](labs/lab-06-password-recovery-and-licensing/README.md) | Administrator-assisted reset, sign-in validation and audit review planned; earlier licensing assessment retained | In progress — results pending |
 
 [View all 32 labs and their status](docs/progress.md)
 
