@@ -6,7 +6,7 @@
 
 MRTG needs an administrator-assisted recovery workflow for a synthetic cloud-only user who has forgotten their password. This exercise created a non-admin account, established a sign-in baseline, performed an administrator reset, tested password rejection and required password change, verified recovered sign-in, reviewed audit evidence, and removed the account from active users.
 
-**Status: validated — administrator-assisted recovery and active-user cleanup.** Eleven execution screenshots were reviewed and support the revised workflow. Their GitHub publication is pending; filenames below identify reviewed captures, not repository image links. The earlier license inventory remains separate background evidence.
+**Status: validated — administrator-assisted recovery and active-user cleanup.** Eleven published execution screenshots support the revised workflow. The earlier license inventory remains separate background evidence.
 
 The exercise used Entra Free with no paid user-license purchase or trial. Administrator-assisted reset is distinct from end-user forgotten-password self-service password reset (SSPR). SSPR configuration, hybrid writeback, MFA reset, and application authorization were outside scope.
 
@@ -27,19 +27,19 @@ Separate administrator and test-user browser sessions were used in the checkpoin
 
 | Step | Reviewed result | Evidence |
 |---|---|---|
-| 1 | Reviewed enabled Member configuration; no added assignments shown | `lab06-recovery-user-review.png` |
-| 2 | Created recovery user listed as Member with on-premises sync No | `lab06-recovery-user-created.png` |
-| 3 | Initial My Account sign-in visible under the recovery identity | `lab06-initial-signin-verified.png` |
-| 4 | Administrator reset confirmation; temporary password hidden | `lab06-admin-password-reset.png` |
-| 5 | Controlled pre-reset-password test returned incorrect account/password error | `lab06-old-password-rejected.png` |
-| 6 | Update your password prompt displayed with empty fields | `lab06-password-change-required.png` |
-| 7 | My Account sign-in visible after the password-change and fresh-session procedure | `lab06-recovered-signin-verified.png` |
-| 8a | Reset password (by admin): success; Successfully completed reset | `lab06-password-reset-audit.png` |
-| 8b | Selected administrator reset targets the named recovery user and UPN | `lab06-password-reset-audit-target.png` |
-| 8c | Change password (self-service): success; recovery user is the actor | `lab06-password-change-audit.png` |
-| 9 | All users search for lab06.recovery returns 0 users | `lab06-recovery-user-cleanup.png` |
+| 1 | Reviewed enabled Member configuration; no added assignments shown | [lab06-recovery-user-review.png](screenshots/lab06-recovery-user-review.png) |
+| 2 | Created recovery user listed as Member with on-premises sync No | [lab06-recovery-user-created.png](screenshots/lab06-recovery-user-created.png) |
+| 3 | Initial My Account sign-in visible under the recovery identity | [lab06-initial-signin-verified.png](screenshots/lab06-initial-signin-verified.png) |
+| 4 | Administrator reset confirmation; temporary password hidden | [lab06-admin-password-reset.png](screenshots/lab06-admin-password-reset.png) |
+| 5 | Controlled pre-reset-password test returned incorrect account/password error | [lab06-old-password-rejected.png](screenshots/lab06-old-password-rejected.png) |
+| 6 | Update your password prompt displayed with empty fields | [lab06-password-change-required.png](screenshots/lab06-password-change-required.png) |
+| 7 | My Account sign-in visible after the password-change and fresh-session procedure | [lab06-recovered-signin-verified.png](screenshots/lab06-recovered-signin-verified.png) |
+| 8a | Reset password (by admin): success; Successfully completed reset | [lab06-password-reset-audit.png](screenshots/lab06-password-reset-audit.png) |
+| 8b | Selected administrator reset targets the named recovery user and UPN | [lab06-password-reset-audit-target.png](screenshots/lab06-password-reset-audit-target.png) |
+| 8c | Change password (self-service): success; recovery user is the actor | [lab06-password-change-audit.png](screenshots/lab06-password-change-audit.png) |
+| 9 | All users search for lab06.recovery returns 0 users | [lab06-recovery-user-cleanup.png](screenshots/lab06-recovery-user-cleanup.png) |
 
-The source upload named `lab-06-password-recovery-and-licensing.png` contained the user-creation review; its intended repository filename is `lab06-recovery-user-review.png`. Duplicate download suffixes were removed from the intended repository filenames.
+The source upload named `lab-06-password-recovery-and-licensing.png` contained the user-creation review; it is published as [lab06-recovery-user-review.png](screenshots/lab06-recovery-user-review.png). Duplicate download suffixes were removed from the final repository filenames.
 
 ## Evidence boundaries
 
