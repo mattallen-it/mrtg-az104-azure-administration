@@ -2,7 +2,7 @@
 
 ## Decision
 
-**Series baseline: retain Entra Free; do not purchase paid Entra or Microsoft 365 user licenses or activate trials for this series.** Lab 06 is being redone as administrator-assisted password recovery; validation is pending. The original live end-user SSPR exercise requires an eligible license. This is a review of all 32 current README scopes, not a guarantee for implementations that have not yet been designed.
+**Series baseline: retain Entra Free; do not purchase paid Entra or Microsoft 365 user licenses or activate trials for this series.** Lab 06 validated administrator-assisted password recovery, password-change and sign-in evidence, audit review, and active-user cleanup using this baseline. The original live end-user SSPR exercise requires an eligible license. This is a review of all 32 current README scopes, not a guarantee for implementations that have not yet been designed.
 
 Entra Free is already part of the Azure environment. Azure subscription charges, Entra user licenses, operating-system/software rights, and service-tier requirements are separate. “No Entra Premium required” does not mean “free lab.”
 

@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–04 baseline, organization, directory lifecycle, and scoped Azure RBAC validated; workload architecture remains proposed.**
+**Status: Labs 01–06 validated across baseline, organization, identity lifecycle, scoped Azure RBAC, governance, and administrator-assisted recovery; workload architecture remains proposed.**
 
 The last verified baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. This is recorded evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -46,6 +46,7 @@ Network reachability and identity authorization must both be tested; success at 
 | Management hierarchy | Tenant Root Group → lab subscription inspected | Lab 02 hierarchy capture | Recheck before hierarchy changes |
 | Lab 03 cloud identities and groups | Two synthetic users and four groups created, then cleaned up | [Lab 03](../labs/lab-03-employee-and-contractor-lifecycle/README.md); active-list cleanup captured, permanent user deletion confirmed by operator | Historical evidence; no lab objects retained |
 | Lab 04 scoped management roles | Reader and Contributor tested at temporary Operations resource-group scope; active-object cleanup captured, role removal operator-confirmed | [Lab 04](../labs/lab-04-scoped-administration/README.md) | Recreate scoped assignments if needed for a workload |
+| Lab 06 recovery identity | Created, reset, password changed, recovery sign-in captured, and removed from active users | [Lab 06](../labs/lab-06-password-recovery-and-licensing/README.md); reset and target audit evidence; permanent deletion not verified | Historical evidence; recreate only if needed |
 | Network and storage boundary | Planned | None | Labs 08–17 |
 | Workload and managed identity | Planned | None | Lab 19 |
 | Alerts and verified restore | Planned | None | Labs 25–29 |

@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**5/32 labs validated.** Labs 01–05 document completed portal work and cleanup, with evidence limits stated in each lab; Lab 06 is in progress as an administrator-assisted recovery exercise; Labs 07–32 remain planned.
+**6/32 labs validated.** Labs 01–06 document completed portal work and cleanup, with evidence limits stated in each lab; Labs 07–32 remain planned.
 
 ## Lab index
 
@@ -11,7 +11,7 @@
 | 03 | [Employee and contractor lifecycle](../labs/lab-03-employee-and-contractor-lifecycle/README.md) | Validated — directory state |
 | 04 | [Scoped administration](../labs/lab-04-scoped-administration/README.md) | Validated — scoped Azure RBAC |
 | 05 | [Guardrails with policy and locks](../labs/lab-05-guardrails-with-policy-and-locks/README.md) | Validated — policy and delete lock |
-| 06 | [Password reset and account recovery operations](../labs/lab-06-password-recovery-and-licensing/README.md) | In progress — execution and validation pending |
+| 06 | [Password reset and account recovery operations](../labs/lab-06-password-recovery-and-licensing/README.md) | Validated — administrator-assisted recovery |
 | 07 | [Access review and cost review](../labs/lab-07-access-review-and-cost-review/README.md) | Planned |
 | 08 | [Address plan and subnets](../labs/lab-08-address-plan-and-subnets/README.md) | Planned |
 | 09 | [Traffic permissions](../labs/lab-09-traffic-permissions/README.md) | Planned |

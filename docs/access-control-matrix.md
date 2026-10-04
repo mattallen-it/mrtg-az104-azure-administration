@@ -32,6 +32,15 @@ Two synthetic Member users each belonged to one assigned security group. [Lab 04
 
 The Reader rejection screenshot identifies `lab04.reader` in the portal header. The inherited subscription Owner entry belongs to the administrator, not either test group. Cleanup captures do not establish permanent user deletion or independently show removal of each role assignment.
 
+## Lab 06 — Administrator-assisted recovery
+
+| Identity | Observed operation | Evidence and boundary |
+|---|---|---|
+| Existing lab administrator | Reset the synthetic cloud-only Member's password successfully | [Lab 06](../labs/lab-06-password-recovery-and-licensing/README.md); reset confirmation and successful audit event with named target; minimum role not separately tested |
+| MRTG Lab06 Recovery User | Initial sign-in, required password change, and recovered sign-in | Account-page captures and successful password-change audit event; screenshots do not independently prove the submitted secret or session freshness |
+
+No added group or role assignments were shown at creation. The recovery account was removed from active users; permanent deletion was not verified. SSPR, MFA reset, session-revocation enforcement, and application authorization were not tested.
+
 ## Proposed data access
 
 | Identity | Business need | Proposed role | Proposed scope | Expected allowed action | Expected denied action | Actual/evidence |
