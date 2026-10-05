@@ -1,6 +1,6 @@
 # Access-control matrix
 
-**Status: subscription Owner inheritance observed; scoped Reader and Contributor tests validated in Lab 04.**
+**Status: subscription Owner inheritance observed; scoped Reader and Contributor tests validated in Lab 04; manual least-privilege remediation validated in Lab 07.**
 
 ## Observed administration access
 
@@ -40,6 +40,14 @@ The Reader rejection screenshot identifies `lab04.reader` in the portal header. 
 | MRTG Lab06 Recovery User | Initial sign-in, required password change, and recovered sign-in | Account-page captures and successful password-change audit event; screenshots do not independently prove the submitted secret or session freshness |
 
 No added group or role assignments were shown at creation. The recovery account was removed from active users; permanent deletion was not verified. SSPR, MFA reset, session-revocation enforcement, and application authorization were not tested.
+
+## Lab 07 — Manual access review
+
+| Identity via group | Business need | Finding and correction | Validation | Cleanup |
+|---|---|---|---|---|
+| MRTG Lab07 Review User via `MRTG-Lab07-Reviewers` | Read the temporary review resource group | Contributor exceeded the need; removed and replaced with Reader at resource-group scope | Check access showed group-derived Reader; reviewer loaded Overview; tag save returned AuthorizationFailed | Group role removed before resource-group deletion; group absent from search and user absent from active list |
+
+[Lab 07](../labs/lab-07-access-review-and-cost-review/README.md) distinguishes the group's administrator owner from its sole reviewer member. The existing subscription Owner remained inherited. No automated Entra Access Reviews, PIM, data-plane authorization, or post-removal session enforcement was tested.
 
 ## Proposed data access
 
