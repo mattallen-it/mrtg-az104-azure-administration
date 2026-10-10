@@ -8,7 +8,7 @@ Each completed lab documents the business problem, configuration decisions, work
 
 ## Labs
 
-**8 of 32 labs validated.** Labs 01–08 include completed Azure work and cleanup evidence, with evidence limits stated in each lab; Labs 09–32 remain planned.
+**8 of 32 labs validated.** Labs 01–08 include completed Azure work and cleanup evidence, with evidence limits stated in each lab; Lab 09 technical testing and cleanup are complete, with screenshot publication and posted cost review in progress; Labs 10–32 remain planned.
 
 | Lab | Demonstrated work | Status |
 |---|---|---|
@@ -21,9 +21,11 @@ Each completed lab documents the business problem, configuration decisions, work
 | [07 — Access review and cost review](labs/lab-07-access-review-and-cost-review/README.md) | Excessive Contributor corrected to Reader; reviewer read succeeded and tag write was denied; temporary objects removed | Validated — manual review |
 | [08 — Address plan and subnets](labs/lab-08-address-plan-and-subnets/README.md) | Two private subnets deployed; overlapping range rejected by portal validation; original subnets verified and resource group removed | Validated — address planning |
 
+| [09 — Traffic permissions](labs/lab-09-traffic-permissions/README.md) | ASG-based HTTP access tested through removal and restoration; port 8081 blocked; resource group deleted | Technical validation complete — cost review pending |
+
 [View all 32 labs and their status](docs/progress.md)
 
-The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, and policy guardrails. Lab 06 adds administrator-assisted account recovery and audit traceability; forgotten-password SSPR remains outside the tested scope. Lab 07 demonstrates a manual access review with least-privilege remediation and a denied write request. Lab 08 adds a deployed address plan and subnet overlap validation, followed by cleanup. Traffic filtering and connectivity tests remain for future labs, alongside storage, compute, monitoring, and recovery.
+The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, and policy guardrails. Lab 06 adds administrator-assisted account recovery and audit traceability; forgotten-password SSPR remains outside the tested scope. Lab 07 demonstrates a manual access review with least-privilege remediation and a denied write request. Lab 08 adds a deployed address plan and subnet overlap validation, followed by cleanup. Lab 09 demonstrates ASG-based traffic filtering with actual HTTP tests and access removal/restoration. Its reviewed evidence is being published and posted cost review remains pending. Further connectivity, storage, compute, monitoring, and recovery labs remain planned.
 
 The series uses **Microsoft Entra ID Free**. No paid Entra or Microsoft 365 license purchase or trial is planned. Labs use assigned groups, ordinary Azure RBAC, manual access reviews and managed identities; premium identity features remain study/design topics. Azure resource charges and software rights are checked separately before deployment.
 
