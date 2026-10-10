@@ -57,7 +57,7 @@ October Cost analysis showed “No cost reported during this period” and Actua
 
 ## Reviewed evidence — batch 1
 
-The following eleven screenshots were visually inspected for personal information and secrets. Duplicate upload suffixes were removed from repository filenames. The app ASG membership screenshot uses the author's redacted replacement. The outbound-subnet screenshot is held until its subscription ID is redacted. Generated recreations are not used as evidence.
+The following twelve screenshots were visually inspected for personal information and secrets. Duplicate upload suffixes were removed from repository filenames. The app ASG membership and outbound-subnet screenshots use the author's redacted replacements. Generated recreations are not used as evidence.
 
 | Screenshot | Evidence and limits |
 |---|---|
@@ -66,6 +66,7 @@ The following eleven screenshots were visually inspected for personal informatio
 | [App ASG created](screenshots/lab09-app-asg-created.png) | Provisioning succeeded; four lab tags visible; initial empty membership |
 | [App deny rule configuration](screenshots/lab09-app-deny-rule-configuration.png) | Priority 200 deny form targeting the app ASG |
 | [Initial app subnet configuration](screenshots/lab09-app-subnet-configuration.png) | Initial private-subnet form; outbound setting changed later |
+| [App subnet outbound configuration](screenshots/lab09-app-subnet-default-outbound-enabled.png) | Edit form shows private-subnet setting unchecked, app NSG selected and no NAT gateway; Subnet ID redacted |
 | [App subnet NSG association](screenshots/lab09-app-subnet-nsg-associated.png) | App NSG associated with snet-app |
 | [App VM ASG membership](screenshots/lab09-app-vm-asg-membership.png) | App NIC and private IP linked to app ASG; subscription ID redacted |
 | [App VM authentication](screenshots/lab09-app-vm-authentication.png) | SSH key generation selection and no public inbound ports; no private key content |
