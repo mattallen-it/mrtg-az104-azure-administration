@@ -2,7 +2,7 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Technical validation complete](https://img.shields.io/badge/Status-Technical_validation_complete-2E7D32)
 
-**Status:** Technical testing and resource group cleanup completed on October 10, 2026. Posted cost review remains pending. Screenshot publication is in progress; the first reviewed batch is linked below.
+**Status:** Technical testing and resource group cleanup completed on October 10, 2026. Posted cost review remains pending. Screenshot publication is in progress; reviewed batches are linked below.
 
 ## Purpose
 
@@ -73,6 +73,21 @@ The following twelve screenshots were visually inspected for personal informatio
 | [App VM advanced configuration](screenshots/lab09-app-vm-advanced-configuration.png) | No extensions, custom data or capacity reservation selected |
 | [App Run Command readiness](screenshots/lab09-app-run-command-ready.png) | Hostname, Python 3.12.3 and app private IP |
 | [App test services ready](screenshots/lab09-app-test-services-ready.png) | Both listeners active and both local requests return HTTP 200 |
+
+## Reviewed evidence — batch 2
+
+These six app VM screenshots were reviewed for personal information and credentials; the VM overview has its subscription ID redacted.
+
+| Screenshot | Evidence |
+|---|---|
+| [App VM basics](screenshots/lab09-app-vm-basics.png) | Central US, Ubuntu 24.04 LTS x64, B2ts_v2 and no infrastructure redundancy selected |
+| [App VM disk configuration](screenshots/lab09-app-vm-disk-configuration.png) | Standard SSD, platform-managed key, delete with VM enabled and no data disks |
+| [App VM management](screenshots/lab09-app-vm-management-configuration.png) | Managed identity, Entra login and auto-shutdown off; image-default patch orchestration |
+| [App VM monitoring](screenshots/lab09-app-vm-monitoring-configuration.png) | Managed boot diagnostics enabled; guest diagnostics, recommended alerts and application health monitoring off |
+| [App VM deployment complete](screenshots/lab09-app-vm-deployment-complete.png) | Portal confirms successful deployment |
+| [App VM created](screenshots/lab09-app-vm-created.png) | Running B2ts_v2 VM, ready agent, private IP 10.90.20.4, no public IP and four lab tags |
+
+Creation-form cost figures are monthly estimates, not the lab's actual charges.
 
 Client traffic, quota, final VM review, membership changes and cleanup screenshots will be linked as their reviewed batches are published.
 
