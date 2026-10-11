@@ -91,11 +91,12 @@ Creation-form cost figures are monthly estimates, not the lab's actual charges.
 
 ## Reviewed evidence — batch 3
 
-Nine screenshots cleared for publication after privacy review. The upper app VM review screenshot is withheld because its preferred email address remains visible.
+Ten screenshots cleared for publication after privacy review. The upper app VM review uses the author's replacement with its preferred email address redacted.
 
 | Screenshot | Evidence and limits |
 |---|---|
 | [App VM networking](screenshots/lab09-app-vm-networking-configuration.png) | App subnet selected, public IP and NIC NSG set to None, NIC deletion enabled; accelerated networking required |
+| [App VM final review](screenshots/lab09-app-vm-review.png) | B2ts_v2, no infrastructure redundancy, Standard SSD LRS, no public IP, no NIC NSG and accelerated networking on; email redacted |
 | [App VM lower review](screenshots/lab09-app-vm-review-networking.png) | NIC deletion enabled, management and monitoring settings reviewed, full tag values visible; tag target labels do not establish deployment of an availability set or public IP |
 | [App VM tags](screenshots/lab09-app-vm-tags.png) | Four tag keys selected; Project field truncated here, with full value visible in lower review |
 | [B1s unavailable reason](screenshots/lab09-b1s-unavailable-reason.png) | Portal reports NotAvailableForSubscription in Central US |
