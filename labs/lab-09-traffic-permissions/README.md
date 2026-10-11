@@ -2,11 +2,22 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Technical validation complete](https://img.shields.io/badge/Status-Technical_validation_complete-2E7D32)
 
-**Status:** Technical testing and resource group cleanup completed on October 10, 2026. Posted cost review remains pending. Screenshot publication is in progress; reviewed batches are linked below.
+**Status:** Technical testing and resource group cleanup completed on October 10, 2026. Posted cost review remains pending. All submitted screenshots have been reviewed and published.
 
 ## Purpose
 
 Restrict client-to-application traffic using application security group (ASG) membership and network security group (NSG) rules, then test access removal and restoration using actual HTTP requests.
+
+## Architecture
+
+```mermaid
+flowchart TD
+  V["VNet 10.90.0.0/16"] --> C["Client subnet 10.90.10.0/24"]
+  V --> A["App subnet 10.90.20.0/24"]
+  C --> CV["Client VM 10.90.10.4 • Client ASG"]
+  A --> AV["App VM 10.90.20.4 • App ASG"]
+  CV -->|"TCP 8080 allowed by app-subnet NSG"| AV
+```
 
 ## Deployed environment
 
@@ -55,128 +66,115 @@ The lab resource group and its VMs, disks, NICs, SSH key resources, ASGs, NSG an
 
 October Cost analysis showed “No cost reported during this period” and Actual cost `--` after cleanup. This is unreported cost data, not a zero-cost result. The posted VM/disk cost review remains pending.
 
-## Reviewed evidence — batch 1
+## Validation evidence
 
-The following twelve screenshots were visually inspected for personal information and secrets. Duplicate upload suffixes were removed from repository filenames. The app ASG membership and outbound-subnet screenshots use the author's redacted replacements. Generated recreations are not used as evidence.
+Published screenshots were visually reviewed for personal information and credentials. Where necessary, the author's redacted replacements hide subscription IDs and email addresses. Filenames omit duplicate upload suffixes. Setup forms, deployed state, troubleshooting and test results are captioned separately.
+
+### Network foundation
 
 | Screenshot | Evidence and limits |
 |---|---|
-| [Alternative VM sizes](screenshots/lab09-alternative-vm-size-review.png) | Size comparison during troubleshooting; monthly estimates are not incurred charges |
-| [App ASG review](screenshots/lab09-app-asg-review.png) | Creation validation passed |
-| [App ASG created](screenshots/lab09-app-asg-created.png) | Provisioning succeeded; four lab tags visible; initial empty membership |
-| [App deny rule configuration](screenshots/lab09-app-deny-rule-configuration.png) | Priority 200 deny form targeting the app ASG |
 | [Initial app subnet configuration](screenshots/lab09-app-subnet-configuration.png) | Initial private-subnet form; outbound setting changed later |
 | [App subnet outbound configuration](screenshots/lab09-app-subnet-default-outbound-enabled.png) | Edit form shows private-subnet setting unchecked, app NSG selected and no NAT gateway; Subnet ID redacted |
 | [App subnet NSG association](screenshots/lab09-app-subnet-nsg-associated.png) | App NSG associated with snet-app |
+| [Initial client subnet configuration](screenshots/lab09-client-subnet-configuration.png) | 10.90.10.0/24 within 10.90.0.0/16; private subnet initially checked, changed before VM deployment |
+| [Client subnet outbound configuration](screenshots/lab09-client-subnet-default-outbound-enabled.png) | Edit form shows private-subnet setting unchecked, 10.90.10.0/24, no NAT gateway, NSG or route table; Subnet ID redacted |
+| [Initial deployed subnets](screenshots/lab09-deployed-subnets-verified.png) | Client 10.90.10.0/24 and app 10.90.20.0/24 deployed; no NSG associated at this initial stage |
+| [Resource group created](screenshots/lab09-resource-group-created.png) | Central US group with four tags and no deployments; subscription ID redacted |
+| [VNet deployment complete](screenshots/lab09-vnet-deployment-complete.png) | Portal confirms successful VNet deployment |
+| [Initial VNet review](screenshots/lab09-vnet-review.png) | 10.90.0.0/16 and two /24 subnets, both initially private; Bastion, Firewall and DDoS Network Protection disabled |
+| [VNet subnet configuration form](screenshots/lab09-vnet-subnets-configured.png) | Two /24 subnets within the /16; no NAT gateway selected |
+
+### Traffic rules and ASG membership
+
+| Screenshot | Evidence and limits |
+|---|---|
+| [App ASG review](screenshots/lab09-app-asg-review.png) | Creation validation passed |
+| [App ASG created](screenshots/lab09-app-asg-created.png) | Provisioning succeeded; four lab tags visible; initial empty membership |
+| [App deny rule configuration](screenshots/lab09-app-deny-rule-configuration.png) | Priority 200 deny form targeting the app ASG |
 | [App VM ASG membership](screenshots/lab09-app-vm-asg-membership.png) | App NIC and private IP linked to app ASG; subscription ID redacted |
+| [Client access after ASG removal](screenshots/lab09-client-without-asg-access-denied.png) | Fresh requests to ports 8080 and 8081 both timed out |
+| [Custom NSG inbound rules](screenshots/lab09-nsg-custom-inbound-rules.png) | Priority 100 client-ASG to app-ASG TCP 8080 allow; priority 200 other inbound to app-ASG deny; default rules visible |
+| [Client ASG membership removed](screenshots/lab09-client-asg-membership-removed.png) | Client ASG table empty; subscription ID redacted |
+| [Client ASG membership restored](screenshots/lab09-client-asg-membership-restored.png) | Client NIC vm-mrtg-lab09-client333 and private IP 10.90.10.4 linked to client ASG; subscription ID redacted |
+| [Client access restored](screenshots/lab09-client-asg-access-restored.png) | After membership restoration, port 8080 returns HTTP 200 and expected body; port 8081 still times out |
+| [Client ASG review](screenshots/lab09-client-asg-review.png) | Creation validation passed for the client ASG in Central US |
+| [Client ASG created](screenshots/lab09-client-asg-created.png) | Provisioning succeeded with four lab tags and initially empty membership; subscription ID redacted |
+| [Client-to-app allow rule form](screenshots/lab09-client-to-app-allow-rule-configuration.png) | Priority 100, client ASG to app ASG, TCP destination 8080, source ports *, Allow |
+| [Initial client VM ASG membership](screenshots/lab09-client-vm-asg-membership.png) | Client NIC vm-mrtg-lab09-client333 and private IP 10.90.10.4 linked to client ASG; subscription ID redacted |
+| [Default NSG inbound rules](screenshots/lab09-nsg-default-inbound-rules.png) | Initial AllowVnetInBound, AllowAzureLoadBalancerInBound and DenyAllInBound rules before custom rules |
+
+### VM deployment and configuration
+
+| Screenshot | Evidence and limits |
+|---|---|
 | [App VM authentication](screenshots/lab09-app-vm-authentication.png) | SSH key generation selection and no public inbound ports; no private key content |
 | [App VM advanced configuration](screenshots/lab09-app-vm-advanced-configuration.png) | No extensions, custom data or capacity reservation selected |
 | [App Run Command readiness](screenshots/lab09-app-run-command-ready.png) | Hostname, Python 3.12.3 and app private IP |
-| [App test services ready](screenshots/lab09-app-test-services-ready.png) | Both listeners active and both local requests return HTTP 200 |
-
-## Reviewed evidence — batch 2
-
-These six app VM screenshots were reviewed for personal information and credentials; the VM overview has its subscription ID redacted.
-
-| Screenshot | Evidence |
-|---|---|
 | [App VM basics](screenshots/lab09-app-vm-basics.png) | Central US, Ubuntu 24.04 LTS x64, B2ts_v2 and no infrastructure redundancy selected |
 | [App VM disk configuration](screenshots/lab09-app-vm-disk-configuration.png) | Standard SSD, platform-managed key, delete with VM enabled and no data disks |
 | [App VM management](screenshots/lab09-app-vm-management-configuration.png) | Managed identity, Entra login and auto-shutdown off; image-default patch orchestration |
 | [App VM monitoring](screenshots/lab09-app-vm-monitoring-configuration.png) | Managed boot diagnostics enabled; guest diagnostics, recommended alerts and application health monitoring off |
 | [App VM deployment complete](screenshots/lab09-app-vm-deployment-complete.png) | Portal confirms successful deployment |
 | [App VM created](screenshots/lab09-app-vm-created.png) | Running B2ts_v2 VM, ready agent, private IP 10.90.20.4, no public IP and four lab tags |
-
-Creation-form cost figures are monthly estimates, not the lab's actual charges.
-
-## Reviewed evidence — batch 3
-
-Ten screenshots cleared for publication after privacy review. The upper app VM review uses the author's replacement with its preferred email address redacted.
-
-| Screenshot | Evidence and limits |
-|---|---|
 | [App VM networking](screenshots/lab09-app-vm-networking-configuration.png) | App subnet selected, public IP and NIC NSG set to None, NIC deletion enabled; accelerated networking required |
 | [App VM final review](screenshots/lab09-app-vm-review.png) | B2ts_v2, no infrastructure redundancy, Standard SSD LRS, no public IP, no NIC NSG and accelerated networking on; email redacted |
 | [App VM lower review](screenshots/lab09-app-vm-review-networking.png) | NIC deletion enabled, management and monitoring settings reviewed, full tag values visible; tag target labels do not establish deployment of an availability set or public IP |
 | [App VM tags](screenshots/lab09-app-vm-tags.png) | Four tag keys selected; Project field truncated here, with full value visible in lower review |
+| [Client VM monitoring](screenshots/lab09-client-vm-monitoring-configuration.png) | Managed boot diagnostics enabled; recommended alerts, guest diagnostics and application health monitoring off |
+| [Earlier client VM networking form](screenshots/lab09-client-vm-network-configuration.png) | Client subnet, no public IP or NIC NSG and NIC deletion enabled; accelerated networking was off at this earlier stage and enabled before final deployment |
+| [Client VM final review](screenshots/lab09-client-vm-review.png) | B2ts_v2, Ubuntu 24.04 LTS, no infrastructure redundancy, Secure Boot and vTPM enabled, Standard SSD LRS, no public IP or NIC NSG and accelerated networking on; email redacted |
+| [Client VM lower review](screenshots/lab09-client-vm-review-networking.png) | Accelerated networking on, NIC deletion enabled, management options off and boot diagnostics on; tag target labels do not prove deployment of an availability set or public IP |
+| [Client VM advanced configuration](screenshots/lab09-client-vm-advanced-configuration.png) | No extensions, VM applications, custom data or capacity reservation selected |
+| [Client VM created](screenshots/lab09-client-vm-created.png) | Running Ubuntu 24.04 B2ts_v2 VM, ready agent, private IP 10.90.10.4, no public IP, Secure Boot and vTPM enabled; subscription ID redacted |
+| [Client VM deployment complete](screenshots/lab09-client-vm-deployment-complete.png) | Portal confirms successful client VM deployment |
+| [Client VM disk configuration](screenshots/lab09-client-vm-disk-configuration.png) | Image-default 30 GiB Standard SSD, platform-managed key, delete with VM enabled and no data disks; estimate uses 32 GiB billing tier |
+| [Client VM management configuration](screenshots/lab09-client-vm-management-configuration.png) | Managed identity, Entra login, auto-shutdown and periodic assessment off; image-default patch orchestration |
+| [Client B2ts_v2 size selection](screenshots/lab09-client-vm-b2ts-v2-size-selection.png) | Selected size has two vCPUs and 1 GiB RAM; displayed monthly compute estimate is not actual cost |
+| [Client VM tags](screenshots/lab09-client-vm-tags.png) | Four lab tag keys selected; full Project value confirmed in final review |
+
+### Quota and deployment troubleshooting
+
+| Screenshot | Evidence and limits |
+|---|---|
+| [Alternative VM sizes](screenshots/lab09-alternative-vm-size-review.png) | Size comparison during troubleshooting; monthly estimates are not incurred charges |
 | [B1s unavailable reason](screenshots/lab09-b1s-unavailable-reason.png) | Portal reports NotAvailableForSubscription in Central US |
 | [Accelerated networking required](screenshots/lab09-b2ts-v2-accelerated-networking-required.png) | Portal control states the selected size requires accelerated networking |
 | [Basv2 quota baseline](screenshots/lab09-basv2-family-quota-baseline.png) | Central US Basv2 family current usage 0 and quota limit 0 |
 | [Basv2 quota request pending](screenshots/lab09-basv2-quota-request-pending.png) | Request for family limit 4 under review; not an approval |
 | [Basv2 request unsuccessful](screenshots/lab09-basv2-quota-request-unsuccessful.png) | Request unsuccessful; 0 of 4 received; reason not displayed |
 | [BS family quota review](screenshots/lab09-bs-family-quota-review.png) | Legacy BS family shows usage 0 of limit 10 and End of Life category; quota does not prove SKU availability |
-
-## Reviewed evidence — batch 4
-
-Eight screenshots cleared for publication. Client ASG removal/restoration overview images use the author's replacements with subscription IDs redacted. The post-restoration HTTP result completes the published access removal/restoration sequence.
-
-| Screenshot | Evidence and limits |
-|---|---|
-| [Initial client port tests](screenshots/lab09-client-to-app-port-tests.png) | HTTP 200 and expected body on port 8080; port 8081 timed out |
-| [Client access after ASG removal](screenshots/lab09-client-without-asg-access-denied.png) | Fresh requests to ports 8080 and 8081 both timed out |
-| [Custom NSG inbound rules](screenshots/lab09-nsg-custom-inbound-rules.png) | Priority 100 client-ASG to app-ASG TCP 8080 allow; priority 200 other inbound to app-ASG deny; default rules visible |
-| [Resource group cleanup](screenshots/lab09-resource-group-cleanup.png) | Resource group list shows only NetworkWatcherRG; lab resource group absent |
-| [Client ASG membership removed](screenshots/lab09-client-asg-membership-removed.png) | Client ASG table empty; subscription ID redacted |
-| [Client ASG membership restored](screenshots/lab09-client-asg-membership-restored.png) | Client NIC vm-mrtg-lab09-client333 and private IP 10.90.10.4 linked to client ASG; subscription ID redacted |
-| [Client access restored](screenshots/lab09-client-asg-access-restored.png) | After membership restoration, port 8080 returns HTTP 200 and expected body; port 8081 still times out |
-| [Cost review after cleanup](screenshots/lab09-final-cost-review.png) | October 2026 subscription scope, no cost reported and Actual cost --; posted charges remain pending |
-
-
-## Reviewed evidence — batch 5
-
-Ten screenshots cleared after visual privacy review. The client ASG overview and final VM review already contain the author's redactions. Creation-form monthly estimates are not incurred charges.
-
-| Screenshot | Evidence and limits |
-|---|---|
 | [Bsv2 family quota baseline](screenshots/lab09-bsv2-family-quota-review.png) | Central US usage 0 and family limit 0 before the request |
 | [Bsv2 quota request pending](screenshots/lab09-bsv2-quota-request-pending.png) | Requested limit 4 under review; approval not yet granted |
 | [Bsv2 quota increase approved](screenshots/lab09-bsv2-quota-increase-approved.png) | Request succeeded, 4 of 4 received and new family limit 4; received quota is not deployed usage |
-| [Client ASG review](screenshots/lab09-client-asg-review.png) | Creation validation passed for the client ASG in Central US |
-| [Client ASG created](screenshots/lab09-client-asg-created.png) | Provisioning succeeded with four lab tags and initially empty membership; subscription ID redacted |
-| [Client VM monitoring](screenshots/lab09-client-vm-monitoring-configuration.png) | Managed boot diagnostics enabled; recommended alerts, guest diagnostics and application health monitoring off |
-| [Earlier client VM networking form](screenshots/lab09-client-vm-network-configuration.png) | Client subnet, no public IP or NIC NSG and NIC deletion enabled; accelerated networking was off at this earlier stage and enabled before final deployment |
-| [Client VM final review](screenshots/lab09-client-vm-review.png) | B2ts_v2, Ubuntu 24.04 LTS, no infrastructure redundancy, Secure Boot and vTPM enabled, Standard SSD LRS, no public IP or NIC NSG and accelerated networking on; email redacted |
-| [Client VM lower review](screenshots/lab09-client-vm-review-networking.png) | Accelerated networking on, NIC deletion enabled, management options off and boot diagnostics on; tag target labels do not prove deployment of an availability set or public IP |
-
 | [Earlier client VM quota validation failure](screenshots/lab09-client-vm-quota-validation-failed.png) | Basv2 quota exceeded in Central US: current family limit 0, usage 0 and two additional vCPUs required; email and subscription-specific URL redacted. This earlier B2ats_v2 form does not represent the final B2ts_v2 deployment configuration. |
-
-## Reviewed evidence — batch 6
-
-Ten screenshots cleared after visual privacy review. The outbound subnet and ASG membership images use the author's redacted replacements. Earlier forms are distinguished from the final deployed settings. Monthly creation estimates are not actual charges.
-
-| Screenshot | Evidence and limits |
-|---|---|
-| [Initial client subnet configuration](screenshots/lab09-client-subnet-configuration.png) | 10.90.10.0/24 within 10.90.0.0/16; private subnet initially checked, changed before VM deployment |
-| [Client-to-app allow rule form](screenshots/lab09-client-to-app-allow-rule-configuration.png) | Priority 100, client ASG to app ASG, TCP destination 8080, source ports *, Allow |
-| [Client VM advanced configuration](screenshots/lab09-client-vm-advanced-configuration.png) | No extensions, VM applications, custom data or capacity reservation selected |
-| [Client VM created](screenshots/lab09-client-vm-created.png) | Running Ubuntu 24.04 B2ts_v2 VM, ready agent, private IP 10.90.10.4, no public IP, Secure Boot and vTPM enabled; subscription ID redacted |
-| [Client VM deployment complete](screenshots/lab09-client-vm-deployment-complete.png) | Portal confirms successful client VM deployment |
-| [Client VM disk configuration](screenshots/lab09-client-vm-disk-configuration.png) | Image-default 30 GiB Standard SSD, platform-managed key, delete with VM enabled and no data disks; estimate uses 32 GiB billing tier |
 | [Client VM form reset](screenshots/lab09-client-vm-form-reset.png) | Troubleshooting snapshot: blank VM name, zone 1 and unavailable D2s_v3 selected; settings restored before deployment, reset cause unconfirmed |
-| [Client VM management configuration](screenshots/lab09-client-vm-management-configuration.png) | Managed identity, Entra login, auto-shutdown and periodic assessment off; image-default patch orchestration |
+| [Regional vCPU quota baseline](screenshots/lab09-regional-vcpu-quota-baseline.png) | Total Regional vCPUs in Central US shows usage 0 and limit 10; separate from VM-family quota |
 
-| [Client subnet outbound configuration](screenshots/lab09-client-subnet-default-outbound-enabled.png) | Edit form shows private-subnet setting unchecked, 10.90.10.0/24, no NAT gateway, NSG or route table; Subnet ID redacted |
-| [Initial client VM ASG membership](screenshots/lab09-client-vm-asg-membership.png) | Client NIC vm-mrtg-lab09-client333 and private IP 10.90.10.4 linked to client ASG; subscription ID redacted |
-
-## Reviewed evidence — batch 7
-
-Eleven screenshots cleared after visual privacy review. The resource group overview uses the author's redacted replacement.
+### HTTP validation
 
 | Screenshot | Evidence and limits |
 |---|---|
-| [Client B2ts_v2 size selection](screenshots/lab09-client-vm-b2ts-v2-size-selection.png) | Selected size has two vCPUs and 1 GiB RAM; displayed monthly compute estimate is not actual cost |
-| [Client VM tags](screenshots/lab09-client-vm-tags.png) | Four lab tag keys selected; full Project value confirmed in final review |
+| [App test services ready](screenshots/lab09-app-test-services-ready.png) | Both listeners active and both local requests return HTTP 200 |
+| [Initial client port tests](screenshots/lab09-client-to-app-port-tests.png) | HTTP 200 and expected body on port 8080; port 8081 timed out |
+
+### Cleanup and cost review
+
+| Screenshot | Evidence and limits |
+|---|---|
+| [Resource group cleanup](screenshots/lab09-resource-group-cleanup.png) | Resource group list shows only NetworkWatcherRG; lab resource group absent |
+| [Cost review after cleanup](screenshots/lab09-final-cost-review.png) | October 2026 subscription scope, no cost reported and Actual cost --; posted charges remain pending |
 | [Cost baseline before VMs](screenshots/lab09-cost-before-vms.png) | October subscription scope shows no cost reported, Actual cost -- and forecast unavailable; not a confirmed zero-cost baseline |
-| [Initial deployed subnets](screenshots/lab09-deployed-subnets-verified.png) | Client 10.90.10.0/24 and app 10.90.20.0/24 deployed; no NSG associated at this initial stage |
-| [Default NSG inbound rules](screenshots/lab09-nsg-default-inbound-rules.png) | Initial AllowVnetInBound, AllowAzureLoadBalancerInBound and DenyAllInBound rules before custom rules |
 | [NSG creation review](screenshots/lab09-nsg-review.png) | Validation passed in Central US with four lab tags |
-| [Regional vCPU quota baseline](screenshots/lab09-regional-vcpu-quota-baseline.png) | Total Regional vCPUs in Central US shows usage 0 and limit 10; separate from VM-family quota |
-| [Resource group created](screenshots/lab09-resource-group-created.png) | Central US group with four tags and no deployments; subscription ID redacted |
-| [VNet deployment complete](screenshots/lab09-vnet-deployment-complete.png) | Portal confirms successful VNet deployment |
-| [Initial VNet review](screenshots/lab09-vnet-review.png) | 10.90.0.0/16 and two /24 subnets, both initially private; Bastion, Firewall and DDoS Network Protection disabled |
-| [VNet subnet configuration form](screenshots/lab09-vnet-subnets-configured.png) | Two /24 subnets within the /16; no NAT gateway selected |
+| [Resources before cleanup](screenshots/lab09-resources-before-cleanup.png) | Twelve lab resources visible: two ASGs, two SSH key resources, NSG, two VMs, two NICs, two OS disks and VNet; subscription ID redacted |
+| [Resources removed during cleanup](screenshots/lab09-resources-cleanup-verified.png) | Resource group shows no matching resources with type/location filters set to all; intermediate cleanup state, followed by final group deletion; subscription ID redacted |
 
-Two resource inventory screenshots (before cleanup and empty resource group during cleanup) remain withheld pending subscription-ID redaction. The published resource group list already verifies final deletion. All other submitted evidence batches are published.
+## Lessons learned
 
+- Check regional and VM-family quotas separately; a quota increase does not guarantee SKU capacity.
+- Review the complete VM form before deployment, including size, zone, public IP and required accelerated networking.
+- Apply the app-subnet NSG and both ASG memberships before interpreting traffic tests. Use fresh requests after membership changes.
+- Prove both permitted and denied traffic, then prove removal and restoration. Network reachability does not establish user authorization.
+- Verify resource group deletion separately from an empty resource list. Review posted charges after cleanup; missing cost data is not zero cost.
 
 [All labs](../../docs/progress.md)
