@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**8/32 labs validated.** Labs 01–08 document completed portal work and cleanup, with evidence limits stated in each lab; Lab 09 technical testing and cleanup are complete, with all submitted evidence published and posted cost review pending; Labs 10–32 remain planned.
+**9/32 labs validated.** Labs 01–09 document completed portal work and cleanup, with evidence limits stated in each lab. Lab 09 includes posted cost review; Labs 10–32 remain planned.
 
 ## Lab index
 
@@ -14,7 +14,7 @@
 | 06 | [Password reset and account recovery operations](../labs/lab-06-password-recovery-and-licensing/README.md) | Validated — administrator-assisted recovery |
 | 07 | [Access review and cost review](../labs/lab-07-access-review-and-cost-review/README.md) | Validated — manual access and cost review |
 | 08 | [Address plan and subnets](../labs/lab-08-address-plan-and-subnets/README.md) | Validated — subnet configuration and overlap validation |
-| 09 | [Traffic permissions](../labs/lab-09-traffic-permissions/README.md) | Technical validation complete — posted cost review pending |
+| 09 | [Traffic permissions](../labs/lab-09-traffic-permissions/README.md) | Validated — ASG traffic tests, cleanup and posted cost review |
 | 10 | [Peering and route investigation](../labs/lab-10-peering-and-route-investigation/README.md) | Planned |
 | 11 | [Name resolution and application availability](../labs/lab-11-name-resolution-and-application-availability/README.md) | Planned |
 | 12 | [Private access and administrator entry](../labs/lab-12-private-access-and-administrator-entry/README.md) | Planned |

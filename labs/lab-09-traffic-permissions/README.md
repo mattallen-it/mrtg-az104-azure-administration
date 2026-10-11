@@ -1,8 +1,8 @@
 # Lab 09 — Traffic permissions
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Technical validation complete](https://img.shields.io/badge/Status-Technical_validation_complete-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-**Status:** Technical testing and resource group cleanup completed on October 10, 2026. Posted cost review remains pending. All submitted screenshots have been reviewed and published.
+**Status:** Validated. Technical testing and resource group cleanup completed on October 10, 2026; posted cost review completed on October 11. All submitted screenshots have been reviewed and published.
 
 ## Purpose
 
@@ -64,7 +64,7 @@ Final deployment reviews corrected unexpected availability-zone and public-IP se
 
 The lab resource group and its VMs, disks, NICs, SSH key resources, ASGs, NSG and VNet were deleted. The resource group list subsequently showed only NetworkWatcherRG. No private SSH key files are published.
 
-October Cost analysis showed “No cost reported during this period” and Actual cost `--` after cleanup. This is unreported cost data, not a zero-cost result. The posted VM/disk cost review remains pending.
+October Cost analysis showed “No cost reported during this period” and Actual cost `--` after cleanup. This is unreported cost data, not a zero-cost result. On October 11, the billing-account Cost analysis view filtered to `rg-mrtg-lab09-traffic` showed USD 0.02 total, Virtual Machines USD 0.02, Storage below USD 0.01 and Bandwidth below USD 0.01. The personal billing-account name is redacted. This is the rounded posted-usage snapshot at review time, not a finalized invoice or cash-payment amount; later reporting can change the total.
 
 ## Validation evidence
 
@@ -168,6 +168,8 @@ Published screenshots were visually reviewed for personal information and creden
 | [NSG creation review](screenshots/lab09-nsg-review.png) | Validation passed in Central US with four lab tags |
 | [Resources before cleanup](screenshots/lab09-resources-before-cleanup.png) | Twelve lab resources visible: two ASGs, two SSH key resources, NSG, two VMs, two NICs, two OS disks and VNet; subscription ID redacted |
 | [Resources removed during cleanup](screenshots/lab09-resources-cleanup-verified.png) | Resource group shows no matching resources with type/location filters set to all; intermediate cleanup state, followed by final group deletion; subscription ID redacted |
+
+| [Posted cost review — October 11](screenshots/lab09-posted-cost-review.png) | October 2026 billing-account view filtered to rg-mrtg-lab09-traffic: USD 0.02 displayed total; VM USD 0.02, Storage and Bandwidth each below USD 0.01. Billing name redacted; posted snapshot, not final invoice. |
 
 ## Lessons learned
 

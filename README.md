@@ -1,6 +1,6 @@
 # MRTG Azure Administration
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-8_of_32-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-9_of_32-2E7D32)
 
 Hands-on Azure administration for the fictional **Monroe Redstone Technology Group**, with an emphasis on identity, access control, troubleshooting, and operational accountability.
 
@@ -8,7 +8,7 @@ Each completed lab documents the business problem, configuration decisions, work
 
 ## Labs
 
-**8 of 32 labs validated.** Labs 01–08 include completed Azure work and cleanup evidence, with evidence limits stated in each lab; Lab 09 technical testing and cleanup are complete, with all submitted evidence published and posted cost review pending; Labs 10–32 remain planned.
+**9 of 32 labs validated.** Labs 01–09 include completed Azure work and cleanup evidence, with evidence limits stated in each lab; Lab 09 also includes posted cost review. Labs 10–32 remain planned.
 
 | Lab | Demonstrated work | Status |
 |---|---|---|
@@ -20,11 +20,11 @@ Each completed lab documents the business problem, configuration decisions, work
 | [06 — Password reset and account recovery operations](labs/lab-06-password-recovery-and-licensing/README.md) | Administrator reset, password-change and recovery sign-in evidence, reset-target audit review, and active-user cleanup | Validated — administrator-assisted recovery |
 | [07 — Access review and cost review](labs/lab-07-access-review-and-cost-review/README.md) | Excessive Contributor corrected to Reader; reviewer read succeeded and tag write was denied; temporary objects removed | Validated — manual review |
 | [08 — Address plan and subnets](labs/lab-08-address-plan-and-subnets/README.md) | Two private subnets deployed; overlapping range rejected by portal validation; original subnets verified and resource group removed | Validated — address planning |
-| [09 — Traffic permissions](labs/lab-09-traffic-permissions/README.md) | ASG-based HTTP access tested through removal and restoration; port 8081 blocked; resource group deleted | Technical validation complete — cost review pending |
+| [09 — Traffic permissions](labs/lab-09-traffic-permissions/README.md) | ASG-based HTTP access tested through removal and restoration; port 8081 blocked; resource group deleted | Validated — traffic filtering and posted cost review |
 
 [View all 32 labs and their status](docs/progress.md)
 
-The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, and policy guardrails. Lab 06 adds administrator-assisted account recovery and audit traceability; forgotten-password SSPR remains outside the tested scope. Lab 07 demonstrates a manual access review with least-privilege remediation and a denied write request. Lab 08 adds a deployed address plan and subnet overlap validation, followed by cleanup. Lab 09 demonstrates ASG-based traffic filtering with actual HTTP tests and access removal/restoration. All submitted evidence is published; posted cost review remains pending. Further connectivity, storage, compute, monitoring, and recovery labs remain planned.
+The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, and policy guardrails. Lab 06 adds administrator-assisted account recovery and audit traceability; forgotten-password SSPR remains outside the tested scope. Lab 07 demonstrates a manual access review with least-privilege remediation and a denied write request. Lab 08 adds a deployed address plan and subnet overlap validation, followed by cleanup. Lab 09 demonstrates ASG-based traffic filtering with actual HTTP tests and access removal/restoration. All submitted evidence is published, including the October 11 posted-cost snapshot. Further connectivity, storage, compute, monitoring, and recovery labs remain planned.
 
 The series uses **Microsoft Entra ID Free**. No paid Entra or Microsoft 365 license purchase or trial is planned. Labs use assigned groups, ordinary Azure RBAC, manual access reviews and managed identities; premium identity features remain study/design topics. Azure resource charges and software rights are checked separately before deployment.
 
