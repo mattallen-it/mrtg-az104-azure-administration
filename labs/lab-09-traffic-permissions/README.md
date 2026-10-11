@@ -142,7 +142,7 @@ Ten screenshots cleared after visual privacy review. The client ASG overview and
 
 ## Reviewed evidence — batch 6
 
-Eight screenshots cleared after visual privacy review. Earlier forms are distinguished from the final deployed settings. Monthly creation estimates are not actual charges.
+Ten screenshots cleared after visual privacy review. The outbound subnet and ASG membership images use the author's redacted replacements. Earlier forms are distinguished from the final deployed settings. Monthly creation estimates are not actual charges.
 
 | Screenshot | Evidence and limits |
 |---|---|
@@ -155,7 +155,8 @@ Eight screenshots cleared after visual privacy review. Earlier forms are disting
 | [Client VM form reset](screenshots/lab09-client-vm-form-reset.png) | Troubleshooting snapshot: blank VM name, zone 1 and unavailable D2s_v3 selected; settings restored before deployment, reset cause unconfirmed |
 | [Client VM management configuration](screenshots/lab09-client-vm-management-configuration.png) | Managed identity, Entra login, auto-shutdown and periodic assessment off; image-default patch orchestration |
 
-The client subnet outbound form and initial client VM ASG membership overview are withheld pending redaction of their subscription IDs. Previously published redacted membership-restoration evidence remains available.
+| [Client subnet outbound configuration](screenshots/lab09-client-subnet-default-outbound-enabled.png) | Edit form shows private-subnet setting unchecked, 10.90.10.0/24, no NAT gateway, NSG or route table; Subnet ID redacted |
+| [Initial client VM ASG membership](screenshots/lab09-client-vm-asg-membership.png) | Client NIC vm-mrtg-lab09-client333 and private IP 10.90.10.4 linked to client ASG; subscription ID redacted |
 
 Additional client deployment and network configuration screenshots will be linked as their reviewed batches are published.
 
