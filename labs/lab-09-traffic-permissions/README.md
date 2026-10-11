@@ -124,7 +124,7 @@ Eight screenshots cleared for publication. Client ASG removal/restoration overvi
 
 ## Reviewed evidence — batch 5
 
-Nine screenshots cleared after visual privacy review. The client ASG overview and final VM review already contain the author's redactions. Creation-form monthly estimates are not incurred charges.
+Ten screenshots cleared after visual privacy review. The client ASG overview and final VM review already contain the author's redactions. Creation-form monthly estimates are not incurred charges.
 
 | Screenshot | Evidence and limits |
 |---|---|
@@ -138,7 +138,7 @@ Nine screenshots cleared after visual privacy review. The client ASG overview an
 | [Client VM final review](screenshots/lab09-client-vm-review.png) | B2ts_v2, Ubuntu 24.04 LTS, no infrastructure redundancy, Secure Boot and vTPM enabled, Standard SSD LRS, no public IP or NIC NSG and accelerated networking on; email redacted |
 | [Client VM lower review](screenshots/lab09-client-vm-review-networking.png) | Accelerated networking on, NIC deletion enabled, management options off and boot diagnostics on; tag target labels do not prove deployment of an availability set or public IP |
 
-The client VM quota-validation error screenshot is withheld pending redaction of its preferred email address and the subscription ID embedded in the error URL. It documents an earlier Basv2 quota failure, not the final Bsv2 deployment configuration.
+| [Earlier client VM quota validation failure](screenshots/lab09-client-vm-quota-validation-failed.png) | Basv2 quota exceeded in Central US: current family limit 0, usage 0 and two additional vCPUs required; email and subscription-specific URL redacted. This earlier B2ats_v2 form does not represent the final B2ts_v2 deployment configuration. |
 
 Additional client deployment and network configuration screenshots will be linked as their reviewed batches are published.
 
