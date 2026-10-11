@@ -158,6 +158,25 @@ Ten screenshots cleared after visual privacy review. The outbound subnet and ASG
 | [Client subnet outbound configuration](screenshots/lab09-client-subnet-default-outbound-enabled.png) | Edit form shows private-subnet setting unchecked, 10.90.10.0/24, no NAT gateway, NSG or route table; Subnet ID redacted |
 | [Initial client VM ASG membership](screenshots/lab09-client-vm-asg-membership.png) | Client NIC vm-mrtg-lab09-client333 and private IP 10.90.10.4 linked to client ASG; subscription ID redacted |
 
-Additional client deployment and network configuration screenshots will be linked as their reviewed batches are published.
+## Reviewed evidence — batch 7
+
+Eleven screenshots cleared after visual privacy review. The resource group overview uses the author's redacted replacement.
+
+| Screenshot | Evidence and limits |
+|---|---|
+| [Client B2ts_v2 size selection](screenshots/lab09-client-vm-b2ts-v2-size-selection.png) | Selected size has two vCPUs and 1 GiB RAM; displayed monthly compute estimate is not actual cost |
+| [Client VM tags](screenshots/lab09-client-vm-tags.png) | Four lab tag keys selected; full Project value confirmed in final review |
+| [Cost baseline before VMs](screenshots/lab09-cost-before-vms.png) | October subscription scope shows no cost reported, Actual cost -- and forecast unavailable; not a confirmed zero-cost baseline |
+| [Initial deployed subnets](screenshots/lab09-deployed-subnets-verified.png) | Client 10.90.10.0/24 and app 10.90.20.0/24 deployed; no NSG associated at this initial stage |
+| [Default NSG inbound rules](screenshots/lab09-nsg-default-inbound-rules.png) | Initial AllowVnetInBound, AllowAzureLoadBalancerInBound and DenyAllInBound rules before custom rules |
+| [NSG creation review](screenshots/lab09-nsg-review.png) | Validation passed in Central US with four lab tags |
+| [Regional vCPU quota baseline](screenshots/lab09-regional-vcpu-quota-baseline.png) | Total Regional vCPUs in Central US shows usage 0 and limit 10; separate from VM-family quota |
+| [Resource group created](screenshots/lab09-resource-group-created.png) | Central US group with four tags and no deployments; subscription ID redacted |
+| [VNet deployment complete](screenshots/lab09-vnet-deployment-complete.png) | Portal confirms successful VNet deployment |
+| [Initial VNet review](screenshots/lab09-vnet-review.png) | 10.90.0.0/16 and two /24 subnets, both initially private; Bastion, Firewall and DDoS Network Protection disabled |
+| [VNet subnet configuration form](screenshots/lab09-vnet-subnets-configured.png) | Two /24 subnets within the /16; no NAT gateway selected |
+
+Two resource inventory screenshots (before cleanup and empty resource group during cleanup) remain withheld pending subscription-ID redaction. The published resource group list already verifies final deletion. All other submitted evidence batches are published.
+
 
 [All labs](../../docs/progress.md)
