@@ -106,6 +106,19 @@ Ten screenshots cleared for publication after privacy review. The upper app VM r
 | [Basv2 request unsuccessful](screenshots/lab09-basv2-quota-request-unsuccessful.png) | Request unsuccessful; 0 of 4 received; reason not displayed |
 | [BS family quota review](screenshots/lab09-bs-family-quota-review.png) | Legacy BS family shows usage 0 of limit 10 and End of Life category; quota does not prove SKU availability |
 
+## Reviewed evidence — batch 4
+
+Five screenshots cleared for publication. Client ASG removal/restoration overview images await subscription ID redaction, and the post-restoration HTTP test screenshot has not yet been supplied as a named upload.
+
+| Screenshot | Evidence and limits |
+|---|---|
+| [Initial client port tests](screenshots/lab09-client-to-app-port-tests.png) | HTTP 200 and expected body on port 8080; port 8081 timed out |
+| [Client access after ASG removal](screenshots/lab09-client-without-asg-access-denied.png) | Fresh requests to ports 8080 and 8081 both timed out |
+| [Custom NSG inbound rules](screenshots/lab09-nsg-custom-inbound-rules.png) | Priority 100 client-ASG to app-ASG TCP 8080 allow; priority 200 other inbound to app-ASG deny; default rules visible |
+| [Resource group cleanup](screenshots/lab09-resource-group-cleanup.png) | Resource group list shows only NetworkWatcherRG; lab resource group absent |
+| [Cost review after cleanup](screenshots/lab09-final-cost-review.png) | October 2026 subscription scope, no cost reported and Actual cost --; posted charges remain pending |
+
+
 Client traffic, quota, final VM review, membership changes and cleanup screenshots will be linked as their reviewed batches are published.
 
 [All labs](../../docs/progress.md)
