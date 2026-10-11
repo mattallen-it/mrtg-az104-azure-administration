@@ -108,7 +108,7 @@ Ten screenshots cleared for publication after privacy review. The upper app VM r
 
 ## Reviewed evidence — batch 4
 
-Five screenshots cleared for publication. Client ASG removal/restoration overview images await subscription ID redaction, and the post-restoration HTTP test screenshot has not yet been supplied as a named upload.
+Eight screenshots cleared for publication. Client ASG removal/restoration overview images use the author's replacements with subscription IDs redacted. The post-restoration HTTP result completes the published access removal/restoration sequence.
 
 | Screenshot | Evidence and limits |
 |---|---|
@@ -116,9 +116,12 @@ Five screenshots cleared for publication. Client ASG removal/restoration overvie
 | [Client access after ASG removal](screenshots/lab09-client-without-asg-access-denied.png) | Fresh requests to ports 8080 and 8081 both timed out |
 | [Custom NSG inbound rules](screenshots/lab09-nsg-custom-inbound-rules.png) | Priority 100 client-ASG to app-ASG TCP 8080 allow; priority 200 other inbound to app-ASG deny; default rules visible |
 | [Resource group cleanup](screenshots/lab09-resource-group-cleanup.png) | Resource group list shows only NetworkWatcherRG; lab resource group absent |
+| [Client ASG membership removed](screenshots/lab09-client-asg-membership-removed.png) | Client ASG table empty; subscription ID redacted |
+| [Client ASG membership restored](screenshots/lab09-client-asg-membership-restored.png) | Client NIC vm-mrtg-lab09-client333 and private IP 10.90.10.4 linked to client ASG; subscription ID redacted |
+| [Client access restored](screenshots/lab09-client-asg-access-restored.png) | After membership restoration, port 8080 returns HTTP 200 and expected body; port 8081 still times out |
 | [Cost review after cleanup](screenshots/lab09-final-cost-review.png) | October 2026 subscription scope, no cost reported and Actual cost --; posted charges remain pending |
 
 
-Client traffic, quota, final VM review, membership changes and cleanup screenshots will be linked as their reviewed batches are published.
+Additional client deployment, quota approval and network configuration screenshots will be linked as their reviewed batches are published.
 
 [All labs](../../docs/progress.md)
