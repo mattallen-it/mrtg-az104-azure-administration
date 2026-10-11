@@ -89,6 +89,22 @@ These six app VM screenshots were reviewed for personal information and credenti
 
 Creation-form cost figures are monthly estimates, not the lab's actual charges.
 
+## Reviewed evidence — batch 3
+
+Nine screenshots cleared for publication after privacy review. The upper app VM review screenshot is withheld because its preferred email address remains visible.
+
+| Screenshot | Evidence and limits |
+|---|---|
+| [App VM networking](screenshots/lab09-app-vm-networking-configuration.png) | App subnet selected, public IP and NIC NSG set to None, NIC deletion enabled; accelerated networking required |
+| [App VM lower review](screenshots/lab09-app-vm-review-networking.png) | NIC deletion enabled, management and monitoring settings reviewed, full tag values visible; tag target labels do not establish deployment of an availability set or public IP |
+| [App VM tags](screenshots/lab09-app-vm-tags.png) | Four tag keys selected; Project field truncated here, with full value visible in lower review |
+| [B1s unavailable reason](screenshots/lab09-b1s-unavailable-reason.png) | Portal reports NotAvailableForSubscription in Central US |
+| [Accelerated networking required](screenshots/lab09-b2ts-v2-accelerated-networking-required.png) | Portal control states the selected size requires accelerated networking |
+| [Basv2 quota baseline](screenshots/lab09-basv2-family-quota-baseline.png) | Central US Basv2 family current usage 0 and quota limit 0 |
+| [Basv2 quota request pending](screenshots/lab09-basv2-quota-request-pending.png) | Request for family limit 4 under review; not an approval |
+| [Basv2 request unsuccessful](screenshots/lab09-basv2-quota-request-unsuccessful.png) | Request unsuccessful; 0 of 4 received; reason not displayed |
+| [BS family quota review](screenshots/lab09-bs-family-quota-review.png) | Legacy BS family shows usage 0 of limit 10 and End of Life category; quota does not prove SKU availability |
+
 Client traffic, quota, final VM review, membership changes and cleanup screenshots will be linked as their reviewed batches are published.
 
 [All labs](../../docs/progress.md)
