@@ -140,6 +140,23 @@ Ten screenshots cleared after visual privacy review. The client ASG overview and
 
 | [Earlier client VM quota validation failure](screenshots/lab09-client-vm-quota-validation-failed.png) | Basv2 quota exceeded in Central US: current family limit 0, usage 0 and two additional vCPUs required; email and subscription-specific URL redacted. This earlier B2ats_v2 form does not represent the final B2ts_v2 deployment configuration. |
 
+## Reviewed evidence — batch 6
+
+Eight screenshots cleared after visual privacy review. Earlier forms are distinguished from the final deployed settings. Monthly creation estimates are not actual charges.
+
+| Screenshot | Evidence and limits |
+|---|---|
+| [Initial client subnet configuration](screenshots/lab09-client-subnet-configuration.png) | 10.90.10.0/24 within 10.90.0.0/16; private subnet initially checked, changed before VM deployment |
+| [Client-to-app allow rule form](screenshots/lab09-client-to-app-allow-rule-configuration.png) | Priority 100, client ASG to app ASG, TCP destination 8080, source ports *, Allow |
+| [Client VM advanced configuration](screenshots/lab09-client-vm-advanced-configuration.png) | No extensions, VM applications, custom data or capacity reservation selected |
+| [Client VM created](screenshots/lab09-client-vm-created.png) | Running Ubuntu 24.04 B2ts_v2 VM, ready agent, private IP 10.90.10.4, no public IP, Secure Boot and vTPM enabled; subscription ID redacted |
+| [Client VM deployment complete](screenshots/lab09-client-vm-deployment-complete.png) | Portal confirms successful client VM deployment |
+| [Client VM disk configuration](screenshots/lab09-client-vm-disk-configuration.png) | Image-default 30 GiB Standard SSD, platform-managed key, delete with VM enabled and no data disks; estimate uses 32 GiB billing tier |
+| [Client VM form reset](screenshots/lab09-client-vm-form-reset.png) | Troubleshooting snapshot: blank VM name, zone 1 and unavailable D2s_v3 selected; settings restored before deployment, reset cause unconfirmed |
+| [Client VM management configuration](screenshots/lab09-client-vm-management-configuration.png) | Managed identity, Entra login, auto-shutdown and periodic assessment off; image-default patch orchestration |
+
+The client subnet outbound form and initial client VM ASG membership overview are withheld pending redaction of their subscription IDs. Previously published redacted membership-restoration evidence remains available.
+
 Additional client deployment and network configuration screenshots will be linked as their reviewed batches are published.
 
 [All labs](../../docs/progress.md)
