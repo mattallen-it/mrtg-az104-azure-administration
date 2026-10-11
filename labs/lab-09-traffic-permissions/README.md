@@ -122,6 +122,24 @@ Eight screenshots cleared for publication. Client ASG removal/restoration overvi
 | [Cost review after cleanup](screenshots/lab09-final-cost-review.png) | October 2026 subscription scope, no cost reported and Actual cost --; posted charges remain pending |
 
 
-Additional client deployment, quota approval and network configuration screenshots will be linked as their reviewed batches are published.
+## Reviewed evidence — batch 5
+
+Nine screenshots cleared after visual privacy review. The client ASG overview and final VM review already contain the author's redactions. Creation-form monthly estimates are not incurred charges.
+
+| Screenshot | Evidence and limits |
+|---|---|
+| [Bsv2 family quota baseline](screenshots/lab09-bsv2-family-quota-review.png) | Central US usage 0 and family limit 0 before the request |
+| [Bsv2 quota request pending](screenshots/lab09-bsv2-quota-request-pending.png) | Requested limit 4 under review; approval not yet granted |
+| [Bsv2 quota increase approved](screenshots/lab09-bsv2-quota-increase-approved.png) | Request succeeded, 4 of 4 received and new family limit 4; received quota is not deployed usage |
+| [Client ASG review](screenshots/lab09-client-asg-review.png) | Creation validation passed for the client ASG in Central US |
+| [Client ASG created](screenshots/lab09-client-asg-created.png) | Provisioning succeeded with four lab tags and initially empty membership; subscription ID redacted |
+| [Client VM monitoring](screenshots/lab09-client-vm-monitoring-configuration.png) | Managed boot diagnostics enabled; recommended alerts, guest diagnostics and application health monitoring off |
+| [Earlier client VM networking form](screenshots/lab09-client-vm-network-configuration.png) | Client subnet, no public IP or NIC NSG and NIC deletion enabled; accelerated networking was off at this earlier stage and enabled before final deployment |
+| [Client VM final review](screenshots/lab09-client-vm-review.png) | B2ts_v2, Ubuntu 24.04 LTS, no infrastructure redundancy, Secure Boot and vTPM enabled, Standard SSD LRS, no public IP or NIC NSG and accelerated networking on; email redacted |
+| [Client VM lower review](screenshots/lab09-client-vm-review-networking.png) | Accelerated networking on, NIC deletion enabled, management options off and boot diagnostics on; tag target labels do not prove deployment of an availability set or public IP |
+
+The client VM quota-validation error screenshot is withheld pending redaction of its preferred email address and the subscription ID embedded in the error URL. It documents an earlier Basv2 quota failure, not the final Bsv2 deployment configuration.
+
+Additional client deployment and network configuration screenshots will be linked as their reviewed batches are published.
 
 [All labs](../../docs/progress.md)
