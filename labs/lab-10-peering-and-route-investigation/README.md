@@ -86,11 +86,11 @@ The /24 route matched the Security VM destination more specifically than the /16
 
 ### Cost review
 
-The October 18 capture was reviewed and showed USD 0.13. Its upload remains pending; the earlier [October 17 cost update](screenshots/lab10-cost-review-update.png) is published.
+![October 18 posted cost review](screenshots/lab10-final-cost-review.png)
 
 ## Cleanup and costs
 
-The reviewed pre-cleanup inventory contained two VMs, two NICs, two OS disks, two VNets, two SSH key resources, and one route table. The published [post-deletion list](screenshots/lab10-resource-group-cleanup.png) shows only NetworkWatcherRG in the selected subscription; its contents were not inspected. Sanitized Security VM readiness and both subnet outbound-settings captures are included. Superseded captures with visible identifiers are excluded. Four additional reviewed captures remain unpublished pending upload clearance: the resource inventory, October 18 cost review, Operations VM readiness, and route-removal overview. Restored effective routes and successful connectivity tests are published.
+The [pre-cleanup inventory](screenshots/lab10-resources-before-cleanup.png) contained two VMs, two NICs, two OS disks, two VNets, two SSH key resources, and one route table. The published [post-deletion list](screenshots/lab10-resource-group-cleanup.png) shows only NetworkWatcherRG in the selected subscription; its contents were not inspected. Sanitized [Operations VM readiness](screenshots/lab10-operations-vm-ready-for-testing.png), Security VM readiness, and both subnet outbound-settings captures are included. Superseded captures with visible identifiers are excluded. The [route-removal overview](screenshots/lab10-blackhole-route-removed.png), restored effective routes, and successful connectivity tests document recovery.
 
 | Review | Scope and observation |
 |---|---|
@@ -111,7 +111,7 @@ Values are rounded posted snapshots, not a finalized invoice or verified cash sp
 
 ## Evidence index
 
-The public gallery contains 34 reviewed screenshots. Duplicate uploads and captures with unredacted identifiers are excluded.
+The public gallery contains 38 reviewed screenshots. Duplicate uploads and captures with unredacted identifiers are excluded.
 
 - [resource group created](screenshots/lab10-resource-group-created.png)
 - [operations vnet review](screenshots/lab10-operations-vnet-review.png)
@@ -147,6 +147,11 @@ The public gallery contains 34 reviewed screenshots. Duplicate uploads and captu
 - [security vm ready for testing](screenshots/lab10-security-vm-ready-for-testing.png)
 - [resource group cleanup](screenshots/lab10-resource-group-cleanup.png)
 - [operations subnet outbound](screenshots/lab10-operations-subnet-outbound.png)
+
+- [resources before cleanup](screenshots/lab10-resources-before-cleanup.png)
+- [final cost review](screenshots/lab10-final-cost-review.png)
+- [operations vm ready for testing](screenshots/lab10-operations-vm-ready-for-testing.png)
+- [blackhole route removed](screenshots/lab10-blackhole-route-removed.png)
 
 ## References
 
