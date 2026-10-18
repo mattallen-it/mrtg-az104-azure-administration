@@ -1,14 +1,22 @@
 # MRTG architecture
 
-**Status: Labs 01–08 validated across baseline, organization, identity lifecycle, scoped Azure RBAC, governance, administrator-assisted recovery, manual access review, and address planning; workload architecture remains proposed.**
+**Status: Labs 01–10 validated. Labs 09 and 10 deployed disposable VMs for traffic filtering, peering, and routing tests, then removed their resource groups. Future storage, managed-identity, monitoring, and recovery architecture remains proposed.**
 
-The last verified baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. This is recorded evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
+The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
 ## Observed Azure organization
 
 [Lab 02](../labs/lab-02-resource-organization-and-management-hierarchy/README.md) recorded the subscription directly under **Tenant Root Group**. Two empty departmental groups in Central US were created and tagged, then deleted. The final resource-group list was empty. No management groups were created and the subscription was not moved.
 
 [Lab 04](../labs/lab-04-scoped-administration/README.md) recreated separate temporary Operations and Security resource groups. Assigned security groups received Reader and Contributor on Operations only. A Reader tag write was rejected, while the Operator saved a tag change; that Operator received 401 on Security and could not add a role assignment on Operations. Cleanup captures show no matching Lab 04 groups or resource groups and only the original administrator in active users; permanent deletion was not checked.
+
+## Demonstrated workload networking
+
+[Lab 09](../labs/lab-09-traffic-permissions/README.md) tested ASG-based HTTP access and a denied alternate port. Removing and restoring client ASG membership changed observed access; its resource group was deleted.
+
+[Lab 10](../labs/lab-10-peering-and-route-investigation/README.md) connected Operations (`10.100.0.0/16`) and Security (`10.101.0.0/16`) by VNet peering. Ubuntu VMs at `10.100.10.4` and `10.101.10.4` passed ICMP and TCP/22 tests initiated from both sides. An Operations-subnet user route for `10.101.10.0/24` with next hop None caused packet loss and TCP failure. Removing the route restored the tested connectivity. Both VMs had no public IP; temporary default outbound access was explicitly enabled on their subnets. The Lab 10 group was removed, and its October 18 posted cost review showed USD 0.13.
+
+These results establish the tested network behavior. They do not establish application authentication, production hardening, hybrid connectivity, or a retained running environment.
 
 ## Existing foundation
 
@@ -50,8 +58,10 @@ Network reachability and identity authorization must both be tested; success at 
 | Lab 07 manual review environment | Contributor corrected to Reader; reviewer read/write boundary tested; temporary assignment, resource group, group, and active user cleaned up | [Lab 07](../labs/lab-07-access-review-and-cost-review/README.md) | Historical evidence; no Lab 07 workload retained |
 | Lab 08 address plan | VNet and two private subnets deployed; portal overlap validation captured; lab resource group deleted | [Lab 08](../labs/lab-08-address-plan-and-subnets/README.md) | Historical evidence; no Lab 08 VNet retained |
 | NetworkWatcherRG | Present in the final unfiltered resource-group list; contents not inspected | Lab 08 cleanup capture | Inspect before using Network Watcher features |
-| Traffic controls and storage boundary | Planned | None | Labs 09–17 |
-| Workload and managed identity | Planned | None | Lab 19 |
+| Lab 09 traffic controls | ASG HTTP tests, access removal/restoration, and cleanup validated | [Lab 09](../labs/lab-09-traffic-permissions/README.md) | Historical evidence; no Lab 09 workload retained |
+| Lab 10 peering and routes | Two-VM connectivity, user-route failure, and recovery validated; group removed | [Lab 10](../labs/lab-10-peering-and-route-investigation/README.md); sanitized cleanup evidence reviewed; image publication pending | Historical evidence; no Lab 10 workload retained |
+| DNS, private access and storage boundary | Planned | None | Labs 11–17 |
+| Managed identity for workloads | Planned; earlier traffic-test VMs did not establish identity-based data access | None | Later workload labs |
 | Alerts and verified restore | Planned | None | Labs 25–29 |
 | Hybrid identity or connectivity | Not implemented by this series | None | Optional later extension |
 
