@@ -68,29 +68,29 @@ The /24 route matched the Security VM destination more specifically than the /16
 
 ### Working baseline
 
-**Operations to Security baseline:** `lab10-operations-to-security-baseline.png` — reviewed; publication pending.
+![Operations to Security baseline](screenshots/lab10-operations-to-security-baseline.png)
 
-Reverse-direction baseline: `lab10-security-to-operations-baseline.png` (publication pending) · Operations routes: `lab10-operations-effective-routes-baseline.png` (publication pending) · Security routes: `lab10-security-effective-routes-baseline.png` (publication pending)
+[Reverse-direction baseline](screenshots/lab10-security-to-operations-baseline.png) · [Operations routes](screenshots/lab10-operations-effective-routes-baseline.png) · [Security routes](screenshots/lab10-security-effective-routes-baseline.png)
 
 ### Controlled failure
 
-**Active user-defined drop route:** `lab10-operations-effective-routes-blackhole.png` — reviewed; publication pending.
+![Active user-defined drop route](screenshots/lab10-operations-effective-routes-blackhole.png)
 
-**Traffic failure with the drop route:** `lab10-operations-to-security-route-failure.png` — reviewed; publication pending.
+![Traffic failure with the drop route](screenshots/lab10-operations-to-security-route-failure.png)
 
 ### Verified recovery
 
-**Traffic recovered after route removal:** `lab10-operations-to-security-connectivity-restored.png` — reviewed; publication pending.
+![Traffic recovered after route removal](screenshots/lab10-operations-to-security-connectivity-restored.png)
 
-Restored effective routes: `lab10-operations-effective-routes-restored.png` (publication pending)
+[Restored effective routes](screenshots/lab10-operations-effective-routes-restored.png)
 
 ### Cost review
 
-**October 18 posted cost review:** `lab10-final-cost-review.png` — reviewed; publication pending.
+The October 18 capture was reviewed and showed USD 0.13. Its upload remains pending; the earlier [October 17 cost update](screenshots/lab10-cost-review-update.png) is published.
 
 ## Cleanup and costs
 
-The pre-cleanup inventory contained two VMs, two NICs, two OS disks, two VNets, two SSH key resources, and one route table. The post-deletion list was reviewed and showed only NetworkWatcherRG in the selected subscription. Its contents were not inspected. The cleanup, route-removal, and VM readiness captures were reviewed; sanitized replacements were supplied. Automatic upload review blocked further image publication. Those images and the remaining traffic-test/cost captures await explicit publication approval. Superseded captures with visible identifiers are excluded. The currently published gallery contains configuration and baseline preparation evidence; the validation results above also rely on the reviewed screenshots awaiting publication.
+The reviewed pre-cleanup inventory contained two VMs, two NICs, two OS disks, two VNets, two SSH key resources, and one route table. The published [post-deletion list](screenshots/lab10-resource-group-cleanup.png) shows only NetworkWatcherRG in the selected subscription; its contents were not inspected. Sanitized Security VM readiness and both subnet outbound-settings captures are included. Superseded captures with visible identifiers are excluded. Four additional reviewed captures remain unpublished pending upload clearance: the resource inventory, October 18 cost review, Operations VM readiness, and route-removal overview. Restored effective routes and successful connectivity tests are published.
 
 | Review | Scope and observation |
 |---|---|
@@ -111,7 +111,7 @@ Values are rounded posted snapshots, not a finalized invoice or verified cash sp
 
 ## Evidence index
 
-The public gallery currently contains 11 reviewed screenshots. A further 26 reviewed screenshots await publication approval after automatic upload review. Duplicate uploads and captures with unredacted identifiers are excluded.
+The public gallery contains 34 reviewed screenshots. Duplicate uploads and captures with unredacted identifiers are excluded.
 
 - [resource group created](screenshots/lab10-resource-group-created.png)
 - [operations vnet review](screenshots/lab10-operations-vnet-review.png)
@@ -124,32 +124,29 @@ The public gallery currently contains 11 reviewed screenshots. A further 26 revi
 - [bsv2 quota baseline](screenshots/lab10-bsv2-quota-baseline.png)
 - [regional vcpu quota baseline](screenshots/lab10-regional-vcpu-quota-baseline.png)
 - [security subnet outbound](screenshots/lab10-security-subnet-outbound.png)
-- operations vm review: `lab10-operations-vm-review.png` (publication pending)
-- operations vm review networking: `lab10-operations-vm-review-networking.png` (publication pending)
-- operations vm created: `lab10-operations-vm-created.png` (publication pending)
-- security vm review networking: `lab10-security-vm-review-networking.png` (publication pending)
-- security vm deployment complete: `lab10-security-vm-deployment-complete.png` (publication pending)
-- security vm created: `lab10-security-vm-created.png` (publication pending)
-- operations to security baseline: `lab10-operations-to-security-baseline.png` (publication pending)
-- security to operations baseline: `lab10-security-to-operations-baseline.png` (publication pending)
-- operations effective routes baseline: `lab10-operations-effective-routes-baseline.png` (publication pending)
-- security effective routes baseline: `lab10-security-effective-routes-baseline.png` (publication pending)
-- route table review: `lab10-route-table-review.png` (publication pending)
-- blackhole route created: `lab10-blackhole-route-created.png` (publication pending)
-- route table subnet associated: `lab10-route-table-subnet-associated.png` (publication pending)
-- operations effective routes blackhole: `lab10-operations-effective-routes-blackhole.png` (publication pending)
-- operations to security route failure: `lab10-operations-to-security-route-failure.png` (publication pending)
-- operations effective routes restored: `lab10-operations-effective-routes-restored.png` (publication pending)
-- operations to security connectivity restored: `lab10-operations-to-security-connectivity-restored.png` (publication pending)
-- resources before cleanup: `lab10-resources-before-cleanup.png` (publication pending)
-- cost review after cleanup: `lab10-cost-review-after-cleanup.png` (publication pending)
-- cost review update: `lab10-cost-review-update.png` (publication pending)
-- final cost review: `lab10-final-cost-review.png` (publication pending)
-- security vm review: `lab10-security-vm-review.png` (publication pending)
-- operations vm ready for testing: `lab10-operations-vm-ready-for-testing.png` (publication pending)
-- security vm ready for testing: `lab10-security-vm-ready-for-testing.png` (publication pending)
-- blackhole route removed: `lab10-blackhole-route-removed.png` (publication pending)
-- resource group cleanup: `lab10-resource-group-cleanup.png` (publication pending)
+- [operations vm review](screenshots/lab10-operations-vm-review.png)
+- [operations vm review networking](screenshots/lab10-operations-vm-review-networking.png)
+- [operations vm created](screenshots/lab10-operations-vm-created.png)
+- [security vm review networking](screenshots/lab10-security-vm-review-networking.png)
+- [security vm deployment complete](screenshots/lab10-security-vm-deployment-complete.png)
+- [security vm created](screenshots/lab10-security-vm-created.png)
+- [operations to security baseline](screenshots/lab10-operations-to-security-baseline.png)
+- [security to operations baseline](screenshots/lab10-security-to-operations-baseline.png)
+- [operations effective routes baseline](screenshots/lab10-operations-effective-routes-baseline.png)
+- [security effective routes baseline](screenshots/lab10-security-effective-routes-baseline.png)
+- [route table review](screenshots/lab10-route-table-review.png)
+- [blackhole route created](screenshots/lab10-blackhole-route-created.png)
+- [route table subnet associated](screenshots/lab10-route-table-subnet-associated.png)
+- [operations effective routes blackhole](screenshots/lab10-operations-effective-routes-blackhole.png)
+- [operations to security route failure](screenshots/lab10-operations-to-security-route-failure.png)
+- [operations effective routes restored](screenshots/lab10-operations-effective-routes-restored.png)
+- [operations to security connectivity restored](screenshots/lab10-operations-to-security-connectivity-restored.png)
+- [cost review after cleanup](screenshots/lab10-cost-review-after-cleanup.png)
+- [cost review update](screenshots/lab10-cost-review-update.png)
+- [security vm review](screenshots/lab10-security-vm-review.png)
+- [security vm ready for testing](screenshots/lab10-security-vm-ready-for-testing.png)
+- [resource group cleanup](screenshots/lab10-resource-group-cleanup.png)
+- [operations subnet outbound](screenshots/lab10-operations-subnet-outbound.png)
 
 ## References
 
