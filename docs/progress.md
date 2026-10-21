@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**10/32 labs validated.** Labs 01–10 document completed work and cleanup, with evidence limits stated in each lab. Labs 09 and 10 include posted cost review; Labs 11–32 remain planned.
+**11/32 labs validated.** Labs 01–11 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–11 include posted cost review; Labs 12–32 remain planned.
 
 ## Lab index
 
@@ -16,7 +16,7 @@
 | 08 | [Address plan and subnets](../labs/lab-08-address-plan-and-subnets/README.md) | Validated — subnet configuration and overlap validation |
 | 09 | [Traffic permissions](../labs/lab-09-traffic-permissions/README.md) | Validated — ASG traffic tests, cleanup and posted cost review |
 | 10 | [Peering and route investigation](../labs/lab-10-peering-and-route-investigation/README.md) | Validated — peering, route failure/recovery, cleanup and posted costs |
-| 11 | [Name resolution and application availability](../labs/lab-11-name-resolution-and-application-availability/README.md) | Planned |
+| 11 | [Name resolution and application availability](../labs/lab-11-name-resolution-and-application-availability/README.md) | Validated — private DNS, load balancing, backend and DNS recovery, cleanup and posted costs |
 | 12 | [Private access and administrator entry](../labs/lab-12-private-access-and-administrator-entry/README.md) | Planned |
 | 13 | [Storage baseline and transfer](../labs/lab-13-storage-baseline-and-transfer/README.md) | Planned |
 | 14 | [Data access boundaries](../labs/lab-14-data-access-boundaries/README.md) | Planned |
@@ -38,3 +38,4 @@
 | 30 | [Joiner, mover, leaver across services](../labs/lab-30-joiner-mover-leaver-across-services/README.md) | Planned |
 | 31 | [MRTG Azure operations capstone](../labs/lab-31-mrtg-azure-operations-capstone/README.md) | Planned |
 | 32 | [Independent rebuild and operations handover](../labs/lab-32-rebuild-review-and-exam-readiness/README.md) | Planned |
+
