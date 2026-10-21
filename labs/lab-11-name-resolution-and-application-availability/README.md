@@ -102,7 +102,7 @@ The DNS fault was a wrong address, not a failure to resolve the name. Successful
 
 ## Cleanup and cost review
 
-The reviewed pre-cleanup inventory contained 19 resources: three SSH key resources, three VMs, three NICs, three OS disks, two NSGs, a VNet, private DNS zone, load balancer, NAT gateway, and public IP. The [empty inventory](screenshots/lab11-resources-cleanup-verified.png) and resource-group list document cleanup. NetworkWatcherRG remained; its contents were not inspected.
+The [sanitized pre-cleanup inventory](screenshots/lab11-resources-before-cleanup.png) contained 19 resources: three SSH key resources, three VMs, three NICs, three OS disks, two NSGs, a VNet, private DNS zone, load balancer, NAT gateway, and public IP. The [empty inventory](screenshots/lab11-resources-cleanup-verified.png) and resource-group list document cleanup. NetworkWatcherRG remained; its contents were not inspected.
 
 | Review | Scope and observation |
 |---|---|
@@ -112,7 +112,7 @@ The reviewed pre-cleanup inventory contained 19 resources: three SSH key resourc
 
 The October 21 service breakdown showed NAT Gateway USD 0.07, Virtual Machines USD 0.03, Azure DNS USD 0.02, Storage USD 0.01, Load Balancer USD 0.01, Virtual Network below USD 0.01, and Bandwidth USD 0.00. Rounded categories may not sum to the displayed total. This is posted usage subject to reporting updates, not a finalized invoice or verified cash spend. Credits were not assumed; creation-screen monthly estimates were not session costs. No paid Entra or Microsoft 365 license purchase or trial was used. Budget alerts were not revalidated during this lab.
 
-Cost screenshots were reviewed, but the available originals still expose the personal billing name and are withheld from the public gallery. The pre-cleanup inventory and VM-readiness captures with visible subscription or NAT public-IP details are also withheld. Configuration and functional evidence below is published from the reviewed captures; superseded configurations and duplicate uploads are excluded.
+Cost screenshots were reviewed, but the available originals still expose the personal billing name and are withheld from the public gallery. The corrected resource-group review and pre-cleanup inventory are included with the subscription ID hidden. VM-readiness captures with visible subscription or NAT public-IP details remain withheld. Configuration and functional evidence below is published from the reviewed captures; superseded configurations and duplicate uploads are excluded.
 
 ## Lessons learned
 
@@ -123,9 +123,11 @@ Cost screenshots were reviewed, but the available originals still expose the per
 - Preserve evidence of failure, the corrective change, and recovery. Do not label a one-backend response sample as proof that both backends recovered.
 - Explicit egress is a separate design decision from private inbound access. Include NAT and public-IP resources in cleanup and cost review.
 
+[Resource-group configuration and tags](screenshots/lab11-resource-group-review.png) · [Resources before cleanup](screenshots/lab11-resources-before-cleanup.png)
+
 ## Evidence index
 
-The gallery contains 33 reviewed screenshots. See the linked configuration captures and test results below.
+The gallery contains 35 reviewed screenshots. See the linked configuration captures and test results below.
 
 - [deployed subnets verified](screenshots/lab11-deployed-subnets-verified.png)
 - [private dns vnet link verified](screenshots/lab11-private-dns-vnet-link-verified.png)
@@ -160,6 +162,9 @@ The gallery contains 33 reviewed screenshots. See the linked configuration captu
 - [dns recovery application access verified](screenshots/lab11-dns-recovery-application-access-verified.png)
 - [resources cleanup verified](screenshots/lab11-resources-cleanup-verified.png)
 - [resource group cleanup verified](screenshots/lab11-resource-group-cleanup-verified.png)
+
+- [resource group review](screenshots/lab11-resource-group-review.png)
+- [resources before cleanup](screenshots/lab11-resources-before-cleanup.png)
 
 ## References
 
