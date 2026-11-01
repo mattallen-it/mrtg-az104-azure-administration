@@ -137,7 +137,7 @@ The review covered October 24–31, 2026 at billing-account scope, grouped by re
 
 The deployed role and successful read were verified. Write denial, cross-container denial, identity-role removal enforcement, VPN connectivity, paid Bastion features, and production hardening were not tested. The public-access-disabled screenshot shows the selected configuration; the subsequent private read and home denial corroborate the final behavior. Resource-group deletion does not establish permanent erasure of every recoverable storage item.
 
-Results are based on reviewed operator-supplied screenshots. Public screenshot publication is pending; this update contains the written results, not an image gallery. Configuration-review captures establish intended settings; runtime tests carry the functional conclusions. These are synthetic lab results, not a regulatory-compliance attestation.
+Results are based on reviewed operator-supplied screenshots. The private-endpoint HTTP 200 screenshot is published in the gallery. Other reviewed screenshots remain pending public publication. Configuration-review captures establish intended settings; runtime tests carry the functional conclusions. These are synthetic lab results, not a regulatory-compliance attestation.
 
 ## References
 
@@ -147,4 +147,4 @@ Results are based on reviewed operator-supplied screenshots. Public screenshot p
 - [Linux VM managed identity and Storage access](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access)
 - [Deploy and connect with Bastion in the portal](https://learn.microsoft.com/en-us/azure/bastion/quickstart-host-portal)
 
-[Evidence publication status](screenshots/README.md) · [All labs](../../docs/progress.md) · [Architecture](../../docs/architecture.md) · [Cost ledger](../../docs/cost-ledger.md)
+[Evidence gallery](screenshots/README.md) · [All labs](../../docs/progress.md) · [Architecture](../../docs/architecture.md) · [Cost ledger](../../docs/cost-ledger.md)
