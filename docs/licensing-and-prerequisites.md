@@ -21,7 +21,7 @@ Entra Free is already part of the Azure environment. Azure subscription charges,
 | 09 | [Traffic permissions](../labs/lab-09-traffic-permissions/README.md) | NSG/ASG rules and traffic tests. |
 | 10 | [Peering and route investigation](../labs/lab-10-peering-and-route-investigation/README.md) | Peering/routes; peering and traffic may incur charges. |
 | 11 | [Name resolution and application availability](../labs/lab-11-name-resolution-and-application-availability/README.md) | DNS/load balancer/backend workloads incur service charges. |
-| 12 | [Private access and administrator entry](../labs/lab-12-private-access-and-administrator-entry/README.md) | Endpoints and administrator access; private endpoints/Bastion/VPN have their own pricing. Avoid adding Entra Private Access without license review. |
+| 12 | [Private access and administrator entry](../labs/lab-12-private-access-and-administrator-entry/README.md) | Completed using Entra Free, a system-assigned managed identity, Storage endpoints and free Bastion Developer. VM, disk, Storage, private endpoint and DNS usage can incur Azure charges; no paid user license or trial was used. |
 | 13 | [Storage baseline and transfer](../labs/lab-13-storage-baseline-and-transfer/README.md) | Storage capacity, operations and transfer costs. |
 | 14 | [Data access boundaries](../labs/lab-14-data-access-boundaries/README.md) | Azure data roles, SAS, revocation and keys. |
 | 15 | [Recover an accidental document deletion](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Versions, soft deletion and retained data can increase storage charges. |

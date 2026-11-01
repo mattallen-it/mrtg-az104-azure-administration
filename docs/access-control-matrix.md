@@ -49,12 +49,20 @@ No added group or role assignments were shown at creation. The recovery account 
 
 [Lab 07](../labs/lab-07-access-review-and-cost-review/README.md) distinguishes the group's administrator owner from its sole reviewer member. The existing subscription Owner remained inherited. No automated Entra Access Reviews, PIM, data-plane authorization, or post-removal session enforcement was tested.
 
-## Proposed data access
+## Lab 12 — Managed identity and network access
+
+| Identity | Role and scope | Observed result | Evidence limit |
+|---|---|---|---|
+| MRTG Cloud Operations | Subscription Owner; Storage Blob Data Contributor at storage-account scope | Entra-authenticated blob upload/read baseline; home portal later returned 403 under network restrictions | Network rejection does not prove a missing RBAC permission |
+| `vm-mrtg-lab12-client` system-assigned managed identity | Storage Blob Data Reader on `lab12-evidence` container | IMDS-issued token used for HTTP 200 blob reads through service endpoint and private endpoint | No write-denial, other-container or role-removal enforcement test |
+
+[Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) separated identity authorization from network reachability. The final read succeeded with public network access disabled and private DNS resolving to `10.120.20.4`. The lab resource group was deleted after validation.
+
+## Proposed additional data access
 
 | Identity | Business need | Proposed role | Proposed scope | Expected allowed action | Expected denied action | Actual/evidence |
 |---|---|---|---|---|---|---|
 | MRTG-AZ104-Document-Readers | Read synthetic documents | Storage Blob Data Reader | One test container | Read a known blob | Upload or delete a blob | Pending |
-| Test workload managed identity | Read required application data without stored credentials | Storage Blob Data Reader | One test container | Read the required blob | Write data or access another container | Pending |
 
 
-These data-plane candidate permissions have not been assigned or tested in this series. Contributor is broad; its suitability depends on the workload operation. Future results must distinguish management-plane roles from storage data access.
+The proposed document-reader group above has not been assigned or tested. The workload managed-identity read was tested separately in Lab 12. Contributor is broad; its suitability depends on the workload operation. Future results must distinguish management-plane roles from storage data access.

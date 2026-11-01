@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**11/32 labs validated.** Labs 01–11 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–11 include posted cost review; Labs 12–32 remain planned.
+**12/32 labs validated.** Labs 01–12 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–32 remain planned.
 
 ## Lab index
 
@@ -17,7 +17,7 @@
 | 09 | [Traffic permissions](../labs/lab-09-traffic-permissions/README.md) | Validated — ASG traffic tests, cleanup and posted cost review |
 | 10 | [Peering and route investigation](../labs/lab-10-peering-and-route-investigation/README.md) | Validated — peering, route failure/recovery, cleanup and posted costs |
 | 11 | [Name resolution and application availability](../labs/lab-11-name-resolution-and-application-availability/README.md) | Validated — private DNS, load balancing, backend and DNS recovery, cleanup and posted costs |
-| 12 | [Private access and administrator entry](../labs/lab-12-private-access-and-administrator-entry/README.md) | Planned |
+| 12 | [Private access and administrator entry](../labs/lab-12-private-access-and-administrator-entry/README.md) | Validated — service/private endpoints, managed-identity blob read, Bastion, private DNS, public denial, cleanup and posted costs |
 | 13 | [Storage baseline and transfer](../labs/lab-13-storage-baseline-and-transfer/README.md) | Planned |
 | 14 | [Data access boundaries](../labs/lab-14-data-access-boundaries/README.md) | Planned |
 | 15 | [Recover an accidental document deletion](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Planned |

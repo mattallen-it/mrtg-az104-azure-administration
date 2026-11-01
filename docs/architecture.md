@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–11 validated. Labs 09–11 deployed disposable VMs for traffic filtering, peering, routing, DNS, and application availability tests, then removed their resource groups. Future storage, managed-identity, monitoring, and recovery architecture remains proposed.**
+**Status: Labs 01–12 validated. Disposable workload groups were removed after testing. Lab 12 adds demonstrated private storage access, managed identity and Bastion entry; future storage lifecycle, monitoring and recovery exercises remain proposed.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -18,6 +18,8 @@ The initial Lab 01 baseline used the existing Entra directory and active `MRTG-A
 
 [Lab 11](../labs/lab-11-name-resolution-and-application-availability/README.md) linked `mrtg.internal` to `vnet-mrtg-lab11-app` (`10.110.0.0/16`). The client at `10.110.20.4` resolved `app.mrtg.internal` to the internal Standard load balancer at `10.110.10.10`, serving nginx on web01 (`10.110.10.4`) and web02 (`10.110.10.5`). Stopping web02 nginx left successful requests through web01; restarting it returned both backends to observed traffic. An incorrect DNS A record caused named access to time out while direct frontend-IP access worked; restoring the record restored named access. Private subnets used explicit NAT egress and NIC NSGs. The group was deleted; October 21 posted cost was USD 0.15.
 
+[Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) used `vnet-mrtg-lab12-private` (`10.120.0.0/16`), a client VM at `10.120.10.4`, and a Blob private endpoint at `10.120.20.4`. Bastion Developer provided SSH entry without a VM public IP. A container-scoped managed identity read the test blob with HTTP 200 through a Storage service endpoint, then through the private endpoint with public network access disabled. Private DNS resolved the normal storage hostname to the endpoint IP; the home portal received 403. The 11-resource group was deleted; the October 24–31 cost snapshot showed USD 1.74.
+
 These results establish the tested network behavior. They do not establish application authentication, production hardening, hybrid connectivity, or a retained running environment.
 
 ## Existing foundation
@@ -26,7 +28,7 @@ The earlier IAM repository documents Hyper-V, `mrtg.local`, `MRTG-DC01`, `MRTG-D
 
 ## Proposed Azure workload
 
-Every node below is a target design, not deployment evidence. Dashed arrows denote proposed relationships. The diagram deliberately shows no on-premises synchronization or VPN connection: neither is established by this series yet.
+This diagram remains a target design, not a live deployment inventory. Lab 12 separately demonstrated the managed-identity and protected-storage relationship described above. Dashed arrows denote proposed relationships. The diagram deliberately shows no on-premises synchronization or VPN connection: neither is established by this series yet.
 
 ```mermaid
 flowchart TD
@@ -63,8 +65,8 @@ Network reachability and identity authorization must both be tested; success at 
 | Lab 09 traffic controls | ASG HTTP tests, access removal/restoration, and cleanup validated | [Lab 09](../labs/lab-09-traffic-permissions/README.md) | Historical evidence; no Lab 09 workload retained |
 | Lab 10 peering and routes | Two-VM connectivity, user-route failure, and recovery validated; group removed | [Lab 10](../labs/lab-10-peering-and-route-investigation/README.md); sanitized cleanup evidence published | Historical evidence; no Lab 10 workload retained |
 | Lab 11 DNS and application availability | Private DNS, internal load balancing, backend failure/recovery and DNS fault isolation/recovery validated; group deleted | [Lab 11](../labs/lab-11-name-resolution-and-application-availability/README.md) | Historical evidence; no Lab 11 workload retained |
-| Private access and storage boundary | Planned | None | Labs 12–17 |
-| Managed identity for workloads | Planned; earlier traffic-test VMs did not establish identity-based data access | None | Later workload labs |
+| Private access and storage boundary | Service/private endpoint reads, private DNS and public denial validated; lab group deleted | [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) | Historical evidence; further storage lifecycle tests in Labs 13–17 |
+| Managed identity for workloads | Container-scoped Storage Blob Data Reader assigned to client VM; authenticated HTTP 200 read verified | [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) | Write denial and cross-container access not tested |
 | Alerts and verified restore | Planned | None | Labs 25–29 |
 | Hybrid identity or connectivity | Not implemented by this series | None | Optional later extension |
 
