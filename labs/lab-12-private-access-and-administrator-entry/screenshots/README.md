@@ -1,6 +1,6 @@
 # Lab 12 evidence gallery
 
-13 reviewed screenshots document private VM networking, Bastion entry, managed identity, private-endpoint access, DNS, network restrictions and cleanup. Corrected copies mask account identifiers, the home public IP and tenant domain. No private SSH keys or access token values are displayed.
+15 reviewed screenshots document private VM networking, Bastion entry, managed identity, service and private endpoint reads, DNS, network restrictions, cleanup and posted costs. Corrected copies mask account identifiers, the home public IP and tenant domain. No private SSH keys or access token values are displayed.
 
 ## Client vm networking verified
 
@@ -17,6 +17,10 @@
 ## Client blob reader role assigned
 
 ![Client blob reader role assigned](lab12-client-blob-reader-role-assigned.png)
+
+## Service endpoint blob read success
+
+![Service endpoint blob read success](lab12-service-endpoint-blob-read-success.png)
 
 ## Storage public dns baseline
 
@@ -54,7 +58,8 @@
 
 ![Resource group cleanup](lab12-resource-group-cleanup.png)
 
-## Evidence retained outside the public gallery
+## Final cost review
 
-The service-endpoint HTTP 200 capture and final cost screenshot were reviewed for the written lab results but are not published here. The private-endpoint HTTP 200 read is shown above. The [lab write-up](../README.md) records the service-endpoint result and the USD 1.74 posted-cost snapshot with its reporting limits.
+![Final cost review](lab12-final-cost-review.png)
 
+[Lab 12 results](../README.md)
