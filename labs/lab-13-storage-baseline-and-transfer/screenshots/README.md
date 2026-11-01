@@ -70,11 +70,11 @@ Reviewed screenshots of work performed on November 1, 2026. Subscription/object 
 
 ![Final comparison: all three files match](lab13-transfer-integrity-verified.png)
 
-## Reviewed evidence pending publication
+## 18 — One storage account before resource group deletion; subscription ID masked
 
-The following sanitized screenshots were reviewed in the lab session but are not included in this public gallery because automatic approval review blocked their upload pending explicit user approval:
+![One storage account before resource group deletion; subscription ID masked](lab13-resources-before-cleanup.png)
 
-- `lab13-resources-before-cleanup.png`: one storage account before deletion; subscription ID masked.
-- `lab13-resource-group-cleanup.png`: no matching Lab 13 group after cleanup; tenant domain masked.
+## 19 — No matching Lab 13 resource group after cleanup; tenant domain masked
 
-The lab results describe the reviewed evidence; these files are not claimed as published.
+![No matching Lab 13 resource group after cleanup; tenant domain masked](lab13-resource-group-cleanup.png)
+
