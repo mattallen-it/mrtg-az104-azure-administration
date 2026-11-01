@@ -1,6 +1,6 @@
 # MRTG Azure Administration
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-12_of_32-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-13_of_32-2E7D32)
 
 Hands-on Azure administration for the fictional **Monroe Redstone Technology Group**, with an emphasis on identity, access control, troubleshooting, and operational accountability.
 
@@ -8,7 +8,7 @@ Each completed lab documents the business problem, configuration decisions, work
 
 ## Labs
 
-**12 of 32 labs validated.** Labs 01–12 document completed Azure work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost reviews. Labs 13–32 remain planned.
+**13 of 32 labs validated.** Labs 01–13 document completed Azure work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost reviews; Lab 13 cost reporting has not been captured. Labs 14–32 remain planned.
 
 | Lab | Demonstrated work | Status |
 |---|---|---|
@@ -24,10 +24,11 @@ Each completed lab documents the business problem, configuration decisions, work
 | [10 — Peering and route investigation](labs/lab-10-peering-and-route-investigation/README.md) | Private-IP traffic verified across peered VNets; a more specific drop route caused failure; route removal restored connectivity; cleanup and posted costs reviewed | Validated — routing failure and recovery |
 | [11 — Name resolution and application availability](labs/lab-11-name-resolution-and-application-availability/README.md) | Private DNS and an internal load balancer tested with two web backends; backend failure and DNS misconfiguration isolated and recovered; cleanup verified; USD 0.15 posted cost reviewed | Validated — DNS and application recovery |
 | [12 — Private access and administrator entry](labs/lab-12-private-access-and-administrator-entry/README.md) | Service and private endpoint blob reads with a container-scoped managed identity; private DNS, Bastion entry, public access denial, cleanup and USD 1.74 posted cost reviewed | Validated — private storage access |
+| [13 — Storage baseline and transfer](labs/lab-13-storage-baseline-and-transfer/README.md) | Entra-authenticated upload/download of three synthetic files; SHA-256 mismatch detected, CSV downloaded again, all final hashes matched; resource group cleanup verified | Validated — transfer integrity |
 
 [View all 32 labs and their status](docs/progress.md)
 
-The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, policy guardrails, and workload networking. Labs 06–08 add administrator-assisted recovery, manual least-privilege review, and address planning. Lab 09 tests ASG-based HTTP access removal and restoration. Lab 10 connects two VNets, verifies ICMP and TCP reachability in both directions, and diagnoses a controlled routing failure using effective routes before proving recovery. Lab 11 separates DNS faults from backend failures, verifies continued service with one backend stopped, and proves recovery. Lab 12 validates storage access through service and private endpoints, container-scoped managed identity, private DNS, and Bastion entry without a VM public IP. These deployments were removed after validation; the architecture record distinguishes historical results from future plans.
+The completed labs connect subscription governance, resource organization, identity lifecycle, scoped access, policy guardrails, and workload networking. Labs 06–08 add administrator-assisted recovery, manual least-privilege review, and address planning. Lab 09 tests ASG-based HTTP access removal and restoration. Lab 10 connects two VNets, verifies ICMP and TCP reachability in both directions, and diagnoses a controlled routing failure using effective routes before proving recovery. Lab 11 separates DNS faults from backend failures, verifies continued service with one backend stopped, and proves recovery. Lab 12 validates storage access through service and private endpoints, container-scoped managed identity, private DNS, and Bastion entry without a VM public IP. Lab 13 adds an Entra-authenticated storage transfer baseline, detects a CSV hash mismatch, and verifies all three files after a fresh download. These deployments were removed after validation; the architecture record distinguishes historical results from future plans.
 
 The series uses **Microsoft Entra ID Free**. No paid Entra or Microsoft 365 license purchase or trial is planned. Labs use assigned groups, ordinary Azure RBAC, manual access reviews and managed identities; premium identity features remain study/design topics. Azure resource charges and software rights are checked separately before deployment.
 

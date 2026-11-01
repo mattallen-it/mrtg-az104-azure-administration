@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**12/32 labs validated.** Labs 01–12 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–32 remain planned.
+**13/32 labs validated.** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Lab 13 cost reporting has not been captured. Labs 14–32 remain planned.
 
 ## Lab index
 
@@ -18,7 +18,7 @@
 | 10 | [Peering and route investigation](../labs/lab-10-peering-and-route-investigation/README.md) | Validated — peering, route failure/recovery, cleanup and posted costs |
 | 11 | [Name resolution and application availability](../labs/lab-11-name-resolution-and-application-availability/README.md) | Validated — private DNS, load balancing, backend and DNS recovery, cleanup and posted costs |
 | 12 | [Private access and administrator entry](../labs/lab-12-private-access-and-administrator-entry/README.md) | Validated — service/private endpoints, managed-identity blob read, Bastion, private DNS, public denial, cleanup and posted costs |
-| 13 | [Storage baseline and transfer](../labs/lab-13-storage-baseline-and-transfer/README.md) | Planned |
+| 13 | [Storage baseline and transfer](../labs/lab-13-storage-baseline-and-transfer/README.md) | Validated — Entra-authenticated transfers, SHA-256 mismatch/retry and final matches, cleanup |
 | 14 | [Data access boundaries](../labs/lab-14-data-access-boundaries/README.md) | Planned |
 | 15 | [Recover an accidental document deletion](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Planned |
 | 16 | [Department file access and the AD bridge](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Planned |

@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–12 validated. Disposable workload groups were removed after testing. Lab 12 adds demonstrated private storage access, managed identity and Bastion entry; future storage lifecycle, monitoring and recovery exercises remain proposed.**
+**Status: Labs 01–13 validated. Disposable workload groups were removed after testing. Lab 12 demonstrated private storage access, managed identity and Bastion entry; Lab 13 demonstrated workstation transfers and SHA-256 integrity checks. Future storage lifecycle, monitoring and recovery exercises remain proposed.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -21,6 +21,10 @@ The initial Lab 01 baseline used the existing Entra directory and active `MRTG-A
 [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) used `vnet-mrtg-lab12-private` (`10.120.0.0/16`), a client VM at `10.120.10.4`, and a Blob private endpoint at `10.120.20.4`. Bastion Developer provided SSH entry without a VM public IP. A container-scoped managed identity read the test blob with HTTP 200 through a Storage service endpoint, then through the private endpoint with public network access disabled. Private DNS resolved the normal storage hostname to the endpoint IP; the home portal received 403. The 11-resource group was deleted; the October 24–31 cost snapshot showed USD 1.74.
 
 These results establish the tested network behavior. They do not establish application authentication, production hardening, hybrid connectivity, or a retained running environment.
+
+## Demonstrated workstation storage transfers
+
+[Lab 13](../labs/lab-13-storage-baseline-and-transfer/README.md) deployed one Standard LRS Hot storage account in Central US. A private container held three synthetic files uploaded using Microsoft Entra user authentication with a storage-account-scoped Storage Blob Data Contributor role. Public network access was enabled for the workstation transfers; anonymous blob access and account-key access were disabled. Two initial file comparisons passed and the CSV mismatched; downloading the CSV again produced a matching hash. All three final SHA-256 comparisons passed. The storage account resource group was deleted and absent from the filtered list. No Lab 13 cost capture was supplied.
 
 ## Existing foundation
 
@@ -65,8 +69,9 @@ Network reachability and identity authorization must both be tested; success at 
 | Lab 09 traffic controls | ASG HTTP tests, access removal/restoration, and cleanup validated | [Lab 09](../labs/lab-09-traffic-permissions/README.md) | Historical evidence; no Lab 09 workload retained |
 | Lab 10 peering and routes | Two-VM connectivity, user-route failure, and recovery validated; group removed | [Lab 10](../labs/lab-10-peering-and-route-investigation/README.md); sanitized cleanup evidence published | Historical evidence; no Lab 10 workload retained |
 | Lab 11 DNS and application availability | Private DNS, internal load balancing, backend failure/recovery and DNS fault isolation/recovery validated; group deleted | [Lab 11](../labs/lab-11-name-resolution-and-application-availability/README.md) | Historical evidence; no Lab 11 workload retained |
-| Private access and storage boundary | Service/private endpoint reads, private DNS and public denial validated; lab group deleted | [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) | Historical evidence; further storage lifecycle tests in Labs 13–17 |
+| Private access and storage boundary | Service/private endpoint reads, private DNS and public denial validated; lab group deleted | [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) | Historical evidence; further storage lifecycle tests in Labs 14–17 |
 | Managed identity for workloads | Container-scoped Storage Blob Data Reader assigned to client VM; authenticated HTTP 200 read verified | [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) | Write denial and cross-container access not tested |
+| Lab 13 storage transfers | Three files uploaded/downloaded with Entra authentication; final SHA-256 hashes matched; group removed | [Lab 13](../labs/lab-13-storage-baseline-and-transfer/README.md) | Historical evidence; mismatch cause and posted costs unverified |
 | Alerts and verified restore | Planned | None | Labs 25–29 |
 | Hybrid identity or connectivity | Not implemented by this series | None | Optional later extension |
 

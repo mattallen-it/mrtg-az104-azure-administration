@@ -58,6 +58,14 @@ No added group or role assignments were shown at creation. The recovery account 
 
 [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) separated identity authorization from network reachability. The final read succeeded with public network access disabled and private DNS resolving to `10.120.20.4`. The lab resource group was deleted after validation.
 
+## Lab 13 — Administrator storage transfers
+
+| Identity | Role and scope | Observed result | Evidence limit |
+|---|---|---|---|
+| MRTG Cloud Operations (Guest) | Storage Blob Data Contributor at `stmrtglab131101` storage-account scope | Three synthetic blobs uploaded with portal authentication explicitly showing Microsoft Entra user account; downloaded files ultimately matched local SHA-256 hashes | Role review and successful operations captured; no separate post-assignment IAM capture, write-denial, revocation or other-identity test |
+
+[Lab 13](../labs/lab-13-storage-baseline-and-transfer/README.md) used disabled account-key access and disabled anonymous blob access. The data role covered the temporary account rather than one container; this was an administrator transfer exercise, not a read-only boundary test. The resource group was removed.
+
 ## Proposed additional data access
 
 | Identity | Business need | Proposed role | Proposed scope | Expected allowed action | Expected denied action | Actual/evidence |
