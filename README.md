@@ -23,7 +23,6 @@ Each completed lab documents the business problem, configuration decisions, work
 | [09 — Traffic permissions](labs/lab-09-traffic-permissions/README.md) | ASG-based HTTP access tested through removal and restoration; port 8081 blocked; resource group deleted | Validated — traffic filtering and posted cost review |
 | [10 — Peering and route investigation](labs/lab-10-peering-and-route-investigation/README.md) | Private-IP traffic verified across peered VNets; a more specific drop route caused failure; route removal restored connectivity; cleanup and posted costs reviewed | Validated — routing failure and recovery |
 | [11 — Name resolution and application availability](labs/lab-11-name-resolution-and-application-availability/README.md) | Private DNS and an internal load balancer tested with two web backends; backend failure and DNS misconfiguration isolated and recovered; cleanup verified; USD 0.15 posted cost reviewed | Validated — DNS and application recovery |
-
 | [12 — Private access and administrator entry](labs/lab-12-private-access-and-administrator-entry/README.md) | Service and private endpoint blob reads with a container-scoped managed identity; private DNS, Bastion entry, public access denial, cleanup and USD 1.74 posted cost reviewed | Validated — private storage access |
 
 [View all 32 labs and their status](docs/progress.md)
