@@ -8,7 +8,7 @@ Each completed lab documents the business problem, configuration decisions, work
 
 ## Labs
 
-**13 of 32 labs validated.** Labs 01–13 document completed Azure work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost reviews; Lab 13 cost reporting has not been captured. Labs 14–32 remain planned.
+**13 of 32 labs validated.** Labs 01–13 document completed Azure work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost reviews; Lab 13 cost reporting has not been captured. Lab 14 results are documented, with screenshot publication pending. Labs 15–32 remain planned.
 
 | Lab | Demonstrated work | Status |
 |---|---|---|
@@ -25,6 +25,8 @@ Each completed lab documents the business problem, configuration decisions, work
 | [11 — Name resolution and application availability](labs/lab-11-name-resolution-and-application-availability/README.md) | Private DNS and an internal load balancer tested with two web backends; backend failure and DNS misconfiguration isolated and recovered; cleanup verified; USD 0.15 posted cost reviewed | Validated — DNS and application recovery |
 | [12 — Private access and administrator entry](labs/lab-12-private-access-and-administrator-entry/README.md) | Service and private endpoint blob reads with a container-scoped managed identity; private DNS, Bastion entry, public access denial, cleanup and USD 1.74 posted cost reviewed | Validated — private storage access |
 | [13 — Storage baseline and transfer](labs/lab-13-storage-baseline-and-transfer/README.md) | Entra-authenticated upload/download of three synthetic files; SHA-256 mismatch detected, CSV downloaded again, all final hashes matched; resource group cleanup verified | Validated — transfer integrity |
+
+| [14 — Data access boundaries](labs/lab-14-data-access-boundaries/README.md) | Container-scoped blob access, denied reads/writes, SAS tests and key rotation; evidence limits documented | Results documented — screenshots pending |
 
 [View all 32 labs and their status](docs/progress.md)
 
