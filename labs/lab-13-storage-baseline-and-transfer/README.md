@@ -2,7 +2,7 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-**Performed:** November 1, 2026. **Outcome:** Three synthetic files uploaded and downloaded with Microsoft Entra authentication; all final SHA-256 comparisons matched. One initial CSV mismatch was detected and resolved by a fresh download. The temporary resource group was removed. Posted costs were not captured.
+**Performed:** November 1, 2026. **Outcome:** Three synthetic files uploaded and downloaded with Microsoft Entra authentication; all final SHA-256 comparisons matched. One initial CSV mismatch was detected and resolved by a fresh download. The temporary resource group was removed. A November 3 cost review is documented below; the final total remains unverified.
 
 ## Business problem
 
@@ -105,15 +105,19 @@ This compares each original against its same-named download and reports False fo
 | Integrity control detects a difference | Initial CSV comparison returned FAIL |
 | Recovery and final integrity | Fresh CSV hash matched; all three final comparisons returned True |
 | Cleanup | One storage account before deletion; no matching resource group afterward |
-| Cost | No posted Lab 13 cost review captured; amount unverified |
+| Cost | November 3 review: breakdown tiles USD 0.00; Actual cost headline `--`; final amount unverified |
 
 No AzCopy/Storage Explorer transfer, anonymous-access denial, role-removal enforcement, cross-identity boundary, soft-delete recovery, version restore or replication test was performed. Protection settings were configured, not functionally tested. Matching SHA-256 hashes establish content equality for these local comparison pairs; they do not establish a production compliance posture or a signed chain of custody.
 
 ## Cleanup and cost
 
-Deleted `rg-mrtg-lab13-storage-transfer` after validation. The sanitized cleanup screenshot shows no matching resource group under the selected subscription filter. All 19 reviewed screenshots, including the pre-cleanup inventory and post-deletion evidence, are published in the gallery. Local synthetic files and evidence were retained. This was not a subscription-wide resource audit.
+Deleted `rg-mrtg-lab13-storage-transfer` after validation. The sanitized cleanup screenshot shows no matching resource group under the selected subscription filter. The 19 deployment and validation screenshots, including the pre-cleanup inventory and post-deletion evidence, are published in the gallery. Local synthetic files and evidence were retained. This was not a subscription-wide resource audit.
 
-One Standard LRS storage account was the only resource shown in the lab group. No paid Entra/Microsoft 365 user license or trial was used. Storage capacity, operations and transfer can incur Azure charges. No numeric final cost was supplied, and zero cost is not assumed; see the [cost ledger](../../docs/cost-ledger.md).
+One Standard LRS storage account was the only resource shown in the lab group. No paid Entra/Microsoft 365 user license or trial was used. Storage capacity, operations and transfer can incur Azure charges. Cost Analysis reviewed November 3, 2026 for November 2026, filtered to this lab's resource group. Storage and Bandwidth tiles each display USD 0.00; location and subscription tiles also display USD 0.00. The Actual cost headline displays `--`, so this capture does not establish a numeric final total or zero invoiced cost. Reporting may change as charges arrive.
+
+![November cost review filtered to Lab 13](screenshots/lab13-cost-review-2026-11-03.png)
+
+See the [cost ledger](../../docs/cost-ledger.md).
 
 ## Lessons learned
 

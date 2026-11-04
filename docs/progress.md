@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**13/32 labs validated.** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Lab 13 cost reporting has not been captured. Lab 14 results are documented, with screenshot publication pending. Labs 15–32 remain planned.
+**13/32 labs validated.** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 results and its cost screenshot are documented; access-test and cleanup screenshots remain pending. Labs 15–32 remain planned.
 
 ## Lab index
 

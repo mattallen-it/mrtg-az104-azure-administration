@@ -4,7 +4,7 @@
 
 ## Status and evidence
 
-Hands-on results are documented from the lab session screenshots and command output. Screenshot publication is pending; this README does not contain image links to files that have not been uploaded. Posted cost reporting has not been captured.
+Hands-on results are documented from the lab session screenshots and command output. The redacted November 3 cost-review screenshot is published below. Access-test and cleanup screenshot publication remains pending.
 
 ## Business problem
 
@@ -120,8 +120,14 @@ Cleanup screenshots showed no matching resource group under the selected subscri
 Remaining publication work:
 
 - Upload reviewed screenshots for the access tests, SAS tests, key rotation, final configuration, and cleanup.
-- Add a posted cost review when available; no zero-cost claim is made.
+- Recheck the final cost total when available; the November 3 review below is not a zero-cost confirmation.
 - If stronger revocation evidence is needed, capture a timestamped before/after sequence in a future disposable test.
+
+## Cost review — November 3, 2026
+
+Cost Analysis reviewed November 3, 2026 for November 2026, filtered to this lab's resource group. Storage and Bandwidth tiles each display USD 0.00; location and subscription tiles also display USD 0.00. The Actual cost headline displays `--`, so this capture does not establish a numeric final total or zero invoiced cost. Reporting may change as charges arrive.
+
+![November cost review filtered to Lab 14](screenshots/lab14-cost-review-2026-11-03.png)
 
 ## Outcome
 
