@@ -1,6 +1,6 @@
 # Lab 15 evidence gallery
 
-20 reviewed screenshots are published. Eight additional reviewed setup captures remain pending publication after automatic review flagged the lab subscription display name. The initial data-protection capture shows versioning disabled; versioning was enabled later for the overwrite test. The November 5 cost snapshot is separate from the November 6 follow-up. The lifecycle configuration does not prove a tier transition occurred.
+All 28 supplied screenshots are published. Fourteen matched the existing repository byte-for-byte and fourteen were added after review. The initial data-protection capture shows versioning disabled; it was enabled later for the overwrite test. November 5 and November 6 cost snapshots are separate reviews. The lifecycle configuration does not prove a tier transition occurred. Lab subscription and resource display names are retained; subscription IDs and object IDs are masked where applicable.
 
 ## admin blob data role review
 
@@ -66,9 +66,37 @@
 
 ![resource group cleanup](lab15-resource-group-cleanup.png)
 
+## resource group review
+
+![resource group review](lab15-resource-group-review.png)
+
 ## soft delete recovery hash match
 
 ![soft delete recovery hash match](lab15-soft-delete-recovery-hash-match.png)
+
+## storage account advanced
+
+![storage account advanced](lab15-storage-account-advanced.png)
+
+## storage account basics
+
+![storage account basics](lab15-storage-account-basics.png)
+
+## storage account deployment complete
+
+![storage account deployment complete](lab15-storage-account-deployment-complete.png)
+
+## storage account encryption
+
+![storage account encryption](lab15-storage-account-encryption.png)
+
+## storage account networking
+
+![storage account networking](lab15-storage-account-networking.png)
+
+## storage account review security tags
+
+![storage account review security tags](lab15-storage-account-review-security-tags.png)
 
 ## storage account review
 
@@ -78,19 +106,12 @@
 
 ![storage account security](lab15-storage-account-security.png)
 
+## storage account tags
+
+![storage account tags](lab15-storage-account-tags.png)
+
 ## version recovery hash match
 
 ![version recovery hash match](lab15-version-recovery-hash-match.png)
-
-## Pending publication
-
-- `lab15-resource-group-review.png`
-- `lab15-storage-account-advanced.png`
-- `lab15-storage-account-basics.png`
-- `lab15-storage-account-deployment-complete.png`
-- `lab15-storage-account-encryption.png`
-- `lab15-storage-account-networking.png`
-- `lab15-storage-account-review-security-tags.png`
-- `lab15-storage-account-tags.png`
 
 [Lab results](../README.md)

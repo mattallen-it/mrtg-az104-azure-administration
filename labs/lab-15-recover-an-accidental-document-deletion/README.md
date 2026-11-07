@@ -72,7 +72,7 @@ After cleanup on November 5, the subscription resource-group list showed only `N
 
 ## Evidence
 
-[Full screenshot gallery](screenshots/README.md): 20 published images; eight additional setup captures pending publication.
+[Complete screenshot gallery](screenshots/README.md): all 28 reviewed source screenshots are published, including setup, access review, baseline hashes, recovery, lifecycle configuration, cleanup and both cost snapshots.
 
 
 ### storage account review
