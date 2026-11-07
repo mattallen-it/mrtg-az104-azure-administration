@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–13 validated. Lab 15 results documented; recovery screenshot publication pending. Disposable workload groups were removed after testing. Lab 12 demonstrated private storage access, managed identity and Bastion entry; Lab 13 demonstrated workstation transfers and SHA-256 integrity checks. Lab 15 demonstrated blob recovery and saved lifecycle configuration; lifecycle execution, monitoring and broader backup/recovery exercises remain untested.**
+**Status: Labs 01–13 and 15 validated. Disposable workload groups were removed after testing. Lab 12 demonstrated private storage access, managed identity and Bastion entry; Lab 13 demonstrated workstation transfers and SHA-256 integrity checks. Lab 15 demonstrated blob recovery and saved lifecycle configuration; lifecycle execution, monitoring and broader backup/recovery exercises remain untested.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 

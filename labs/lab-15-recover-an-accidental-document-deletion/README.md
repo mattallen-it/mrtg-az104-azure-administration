@@ -1,6 +1,6 @@
 # Lab 15 — Recover an accidental document deletion
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Results documented](https://img.shields.io/badge/Status-Results_documented-yellow)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
 ## Outcome
 
@@ -70,12 +70,62 @@ After cleanup on November 5, the subscription resource-group list showed only `N
 - Point-in-time restore, Azure Backup, container recovery, and regional disaster recovery were not tested.
 - This was a disposable public-endpoint lab using authenticated access, not a production network design.
 
-## Evidence publication status
+## Evidence
 
-The recovery, hash-match, lifecycle, cleanup and redacted November 6 cost screenshots were reviewed in the working session. Their GitHub upload remains pending; the results above describe those supplied captures. Only the two setup screenshots below are published in this update.
+### storage account review
 
 ![lab15 storage account review](screenshots/lab15-storage-account-review.png)
 
+### storage account security
+
 ![lab15 storage account security](screenshots/lab15-storage-account-security.png)
+
+### original blob uploaded
+
+![lab15 original blob uploaded](screenshots/lab15-original-blob-uploaded.png)
+
+### blob soft deleted
+
+![lab15 blob soft deleted](screenshots/lab15-blob-soft-deleted.png)
+
+### blob restored
+
+![lab15 blob restored](screenshots/lab15-blob-restored.png)
+
+### soft delete recovery hash match
+
+![lab15 soft delete recovery hash match](screenshots/lab15-soft-delete-recovery-hash-match.png)
+
+### blob versioning enabled
+
+![lab15 blob versioning enabled](screenshots/lab15-blob-versioning-enabled.png)
+
+### blob overwritten content
+
+![lab15 blob overwritten content](screenshots/lab15-blob-overwritten-content.png)
+
+### blob version history
+
+![lab15 blob version history](screenshots/lab15-blob-version-history.png)
+
+### original version restored
+
+![lab15 original version restored](screenshots/lab15-original-version-restored.png)
+
+### version recovery hash match
+
+![lab15 version recovery hash match](screenshots/lab15-version-recovery-hash-match.png)
+
+### lifecycle policy json
+
+![lab15 lifecycle policy json](screenshots/lab15-lifecycle-policy-json.png)
+
+### resource group cleanup
+
+![lab15 resource group cleanup](screenshots/lab15-resource-group-cleanup.png)
+
+### cost review 2026 11 06
+
+![lab15 cost review 2026 11 06](screenshots/lab15-cost-review-2026-11-06.png)
 
 [All labs](../../docs/progress.md)
