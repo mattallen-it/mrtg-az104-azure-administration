@@ -72,6 +72,9 @@ After cleanup on November 5, the subscription resource-group list showed only `N
 
 ## Evidence
 
+[Full screenshot gallery](screenshots/README.md): 20 published images; eight additional setup captures pending publication.
+
+
 ### storage account review
 
 ![lab15 storage account review](screenshots/lab15-storage-account-review.png)
