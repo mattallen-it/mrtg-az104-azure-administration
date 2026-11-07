@@ -1,6 +1,6 @@
 # Lab 13 evidence
 
-Reviewed screenshots of work performed on November 1, 2026. Subscription/object IDs are masked in the applicable capture. The initial mismatch is retained alongside the successful retry; its cause was not established.
+All 21 supplied screenshots are published. Deployment and validation work was performed on November 1, 2026; the cost review was captured November 3, 2026. Subscription/object IDs are masked in the applicable capture. The initial mismatch is retained alongside the successful retry; its cause was not established.
 
 ## 01 — Resource group review and tags
 
@@ -78,3 +78,15 @@ Reviewed screenshots of work performed on November 1, 2026. Subscription/object 
 
 ![No matching Lab 13 resource group after cleanup; tenant domain masked](lab13-resource-group-cleanup.png)
 
+
+## 20 — Resource group created
+
+![Lab 13 resource group in the selected subscription](lab13-resource-group-created.png)
+
+## 21 — November 3 cost review
+
+![Resource-group-filtered November cost review](lab13-cost-review-2026-11-03.png)
+
+The breakdown tiles display USD 0.00, while the Actual cost headline is `--`. This does not establish a final numeric total or zero invoiced cost.
+
+[Lab 13 results](../README.md)

@@ -111,7 +111,7 @@ No AzCopy/Storage Explorer transfer, anonymous-access denial, role-removal enfor
 
 ## Cleanup and cost
 
-Deleted `rg-mrtg-lab13-storage-transfer` after validation. The sanitized cleanup screenshot shows no matching resource group under the selected subscription filter. The 19 deployment and validation screenshots, including the pre-cleanup inventory and post-deletion evidence, are published in the gallery. Local synthetic files and evidence were retained. This was not a subscription-wide resource audit.
+Deleted `rg-mrtg-lab13-storage-transfer` after validation. The sanitized cleanup screenshot shows no matching resource group under the selected subscription filter. All 21 supplied screenshots are published in the gallery, including resource-group creation, deployment and validation, pre-cleanup inventory, post-deletion evidence, and the November 3 cost review. Local synthetic files and evidence were retained. This was not a subscription-wide resource audit.
 
 One Standard LRS storage account was the only resource shown in the lab group. No paid Entra/Microsoft 365 user license or trial was used. Storage capacity, operations and transfer can incur Azure charges. Cost Analysis reviewed November 3, 2026 for November 2026, filtered to this lab's resource group. Storage and Bandwidth tiles each display USD 0.00; location and subscription tiles also display USD 0.00. The Actual cost headline displays `--`, so this capture does not establish a numeric final total or zero invoiced cost. Reporting may change as charges arrive.
 
