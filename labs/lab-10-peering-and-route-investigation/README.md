@@ -2,9 +2,11 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-Two private-IP Ubuntu VMs communicated across peered Operations and Security VNets. A more specific user-defined drop route then broke Operations-to-Security connectivity. Effective routes exposed the cause; removing the route restored ICMP and TCP/22 connectivity. The lab resource group was deleted, and the October 18 cost review showed **USD 0.13 posted usage**.
+[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Evidence gallery](screenshots/README.md)
 
-[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Cost ledger](../../docs/cost-ledger.md)
+## Outcome
+
+Verified private-IP connectivity across peered VNets, introduced a more specific drop route, and restored connectivity by removing it. Cleanup was verified; the October 18 review showed USD 0.13 posted usage.
 
 ## Business problem
 
@@ -64,29 +66,13 @@ The VNets were initially reviewed with private subnets enabled. Before VM deploy
 
 The /24 route matched the Security VM destination more specifically than the /16 peering route. Its next hop None dropped matching traffic. Recovery after removing that route, with the same destination and test, supports the routing diagnosis. The fault and recovery were tested from Operations; reverse-initiated traffic was tested only at baseline. TCP/22 PASS proves connection establishment, not an authenticated SSH session or application authorization.
 
-## Key evidence
+## Troubleshooting and lessons
 
-### Working baseline
-
-![Operations to Security baseline](screenshots/lab10-operations-to-security-baseline.png)
-
-[Reverse-direction baseline](screenshots/lab10-security-to-operations-baseline.png) · [Operations routes](screenshots/lab10-operations-effective-routes-baseline.png) · [Security routes](screenshots/lab10-security-effective-routes-baseline.png)
-
-### Controlled failure
-
-![Active user-defined drop route](screenshots/lab10-operations-effective-routes-blackhole.png)
-
-![Traffic failure with the drop route](screenshots/lab10-operations-to-security-route-failure.png)
-
-### Verified recovery
-
-![Traffic recovered after route removal](screenshots/lab10-operations-to-security-connectivity-restored.png)
-
-[Restored effective routes](screenshots/lab10-operations-effective-routes-restored.png)
-
-### Cost review
-
-![October 18 posted cost review](screenshots/lab10-final-cost-review.png)
+- Verify the destination IP, source VM, and actual traffic before interpreting a configuration status.
+- A broader peering route can remain active while a more specific route drops the workload's traffic.
+- Capture working, failed, and restored behavior using the same test to make the diagnosis reviewable.
+- Separate reachability from identity authorization; an open TCP port does not establish who may sign in.
+- Verify cleanup and recheck delayed costs, preserving the scope and filters used.
 
 ## Cleanup and costs
 
@@ -101,58 +87,16 @@ The [pre-cleanup inventory](screenshots/lab10-resources-before-cleanup.png) cont
 
 Values are rounded posted snapshots, not a finalized invoice or verified cash spend. The unfiltered billing-account total was excluded from Lab 10 attribution. VM creation estimates were monthly projections, not session totals. No paid Entra or Microsoft 365 license or trial was used; budget alerts were not revalidated during this lab.
 
-## Lessons learned
+## Evidence and limits
 
-- Verify the destination IP, source VM, and actual traffic before interpreting a configuration status.
-- A broader peering route can remain active while a more specific route drops the workload's traffic.
-- Capture working, failed, and restored behavior using the same test to make the diagnosis reviewable.
-- Separate reachability from identity authorization; an open TCP port does not establish who may sign in.
-- Verify cleanup and recheck delayed costs, preserving the scope and filters used.
+![Lab 10 validation checkpoint](screenshots/lab10-operations-to-security-connectivity-restored.png)
 
-## Evidence index
+**39 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
 
-The public gallery contains 38 reviewed screenshots. Duplicate uploads and captures with unredacted identifiers are excluded.
-
-- [resource group created](screenshots/lab10-resource-group-created.png)
-- [operations vnet review](screenshots/lab10-operations-vnet-review.png)
-- [operations vnet deployment complete](screenshots/lab10-operations-vnet-deployment-complete.png)
-- [security vnet review](screenshots/lab10-security-vnet-review.png)
-- [security vnet deployment complete](screenshots/lab10-security-vnet-deployment-complete.png)
-- [operations peering connected](screenshots/lab10-operations-peering-connected.png)
-- [security peering connected](screenshots/lab10-security-peering-connected.png)
-- [cost before vms](screenshots/lab10-cost-before-vms.png)
-- [bsv2 quota baseline](screenshots/lab10-bsv2-quota-baseline.png)
-- [regional vcpu quota baseline](screenshots/lab10-regional-vcpu-quota-baseline.png)
-- [security subnet outbound](screenshots/lab10-security-subnet-outbound.png)
-- [operations vm review](screenshots/lab10-operations-vm-review.png)
-- [operations vm review networking](screenshots/lab10-operations-vm-review-networking.png)
-- [operations vm created](screenshots/lab10-operations-vm-created.png)
-- [security vm review networking](screenshots/lab10-security-vm-review-networking.png)
-- [security vm deployment complete](screenshots/lab10-security-vm-deployment-complete.png)
-- [security vm created](screenshots/lab10-security-vm-created.png)
-- [operations to security baseline](screenshots/lab10-operations-to-security-baseline.png)
-- [security to operations baseline](screenshots/lab10-security-to-operations-baseline.png)
-- [operations effective routes baseline](screenshots/lab10-operations-effective-routes-baseline.png)
-- [security effective routes baseline](screenshots/lab10-security-effective-routes-baseline.png)
-- [route table review](screenshots/lab10-route-table-review.png)
-- [blackhole route created](screenshots/lab10-blackhole-route-created.png)
-- [route table subnet associated](screenshots/lab10-route-table-subnet-associated.png)
-- [operations effective routes blackhole](screenshots/lab10-operations-effective-routes-blackhole.png)
-- [operations to security route failure](screenshots/lab10-operations-to-security-route-failure.png)
-- [operations effective routes restored](screenshots/lab10-operations-effective-routes-restored.png)
-- [operations to security connectivity restored](screenshots/lab10-operations-to-security-connectivity-restored.png)
-- [cost review after cleanup](screenshots/lab10-cost-review-after-cleanup.png)
-- [cost review update](screenshots/lab10-cost-review-update.png)
-- [security vm review](screenshots/lab10-security-vm-review.png)
-- [security vm ready for testing](screenshots/lab10-security-vm-ready-for-testing.png)
-- [resource group cleanup](screenshots/lab10-resource-group-cleanup.png)
-- [operations subnet outbound](screenshots/lab10-operations-subnet-outbound.png)
-
-- [resources before cleanup](screenshots/lab10-resources-before-cleanup.png)
-- [final cost review](screenshots/lab10-final-cost-review.png)
-- [operations vm ready for testing](screenshots/lab10-operations-vm-ready-for-testing.png)
-- [blackhole route removed](screenshots/lab10-blackhole-route-removed.png)
-
-## References
+### References
 
 [Manage VNet peering](https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering) · [Diagnose routing problems](https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem) · [Manage route tables](https://learn.microsoft.com/en-us/azure/virtual-network/manage-route-table) · [Default outbound access](https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/default-outbound-access) · [Linux Run Command](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/run-command)
+
+---
+
+[← Lab 09](../lab-09-traffic-permissions/README.md) · [All labs](../../docs/progress.md) · [Lab 11 →](../lab-11-name-resolution-and-application-availability/README.md)

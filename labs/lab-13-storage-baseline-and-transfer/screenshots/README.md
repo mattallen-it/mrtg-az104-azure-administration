@@ -1,92 +1,31 @@
-# Lab 13 evidence
+# Lab 13 — Evidence gallery
 
-All 21 supplied screenshots are published. Deployment and validation work was performed on November 1, 2026; the cost review was captured November 3, 2026. Subscription/object IDs are masked in the applicable capture. The initial mismatch is retained alongside the successful retry; its cause was not established.
+[Lab results](../README.md) · [Portfolio](../../../README.md) · [All labs](../../../docs/progress.md)
 
-## 01 — Resource group review and tags
+**21 published screenshots.** Configuration forms show intended settings at capture time; deployed-state and test captures support the observed results. Scope, cleanup and evidence limits are recorded in the lab README.
 
-![Resource group review and tags](lab13-resource-group-review.png)
+## Screenshot index
 
-## 02 — Standard LRS storage account in Central US
-
-![Standard LRS storage account in Central US](lab13-storage-account-basics.png)
-
-## 03 — Hot access tier and advanced options
-
-![Hot access tier and advanced options](lab13-storage-account-advanced.png)
-
-## 04 — Public endpoint enabled for workstation transfers
-
-![Public endpoint enabled for workstation transfers](lab13-storage-account-networking.png)
-
-## 05 — Seven-day soft delete settings
-
-![Seven-day soft delete settings](lab13-storage-account-data-protection.png)
-
-## 06 — Entra default authorization; account keys and anonymous access disabled
-
-![Entra default authorization; account keys and anonymous access disabled](lab13-storage-account-security.png)
-
-## 07 — Microsoft-managed encryption keys
-
-![Microsoft-managed encryption keys](lab13-storage-account-encryption.png)
-
-## 08 — Lab ownership and project tags
-
-![Lab ownership and project tags](lab13-storage-account-tags.png)
-
-## 09 — Storage account configuration review
-
-![Storage account configuration review](lab13-storage-account-review.png)
-
-## 10 — Security, encryption and tags in the lower review pane
-
-![Security, encryption and tags in the lower review pane](lab13-storage-account-review-security-networking.png)
-
-## 11 — Storage deployment completed
-
-![Storage deployment completed](lab13-storage-account-deployment-complete.png)
-
-## 12 — Administrator data role review; subscription and object IDs masked
-
-![Administrator data role review; subscription and object IDs masked](lab13-admin-blob-data-role-review.png)
-
-## 13 — Private lab13-transfer container
-
-![Private lab13-transfer container](lab13-transfer-container-created.png)
-
-## 14 — Three blobs uploaded using Microsoft Entra user authentication
-
-![Three blobs uploaded using Microsoft Entra user authentication](lab13-files-uploaded.png)
-
-## 15 — Initial comparison: two PASS results and one CSV mismatch
-
-![Initial comparison: two PASS results and one CSV mismatch](lab13-transfer-integrity-mismatch.png)
-
-## 16 — Fresh CSV download matches the original SHA-256 hash
-
-![Fresh CSV download matches the original SHA-256 hash](lab13-csv-redownload-integrity-verified.png)
-
-## 17 — Final comparison: all three files match
-
-![Final comparison: all three files match](lab13-transfer-integrity-verified.png)
-
-## 18 — One storage account before resource group deletion; subscription ID masked
-
-![One storage account before resource group deletion; subscription ID masked](lab13-resources-before-cleanup.png)
-
-## 19 — No matching Lab 13 resource group after cleanup; tenant domain masked
-
-![No matching Lab 13 resource group after cleanup; tenant domain masked](lab13-resource-group-cleanup.png)
-
-
-## 20 — Resource group created
-
-![Lab 13 resource group in the selected subscription](lab13-resource-group-created.png)
-
-## 21 — November 3 cost review
-
-![Resource-group-filtered November cost review](lab13-cost-review-2026-11-03.png)
-
-The breakdown tiles display USD 0.00, while the Actual cost headline is `--`. This does not establish a final numeric total or zero invoiced cost.
-
-[Lab 13 results](../README.md)
+| Screenshot | Capture |
+|---|---|
+| [lab13-admin-blob-data-role-review.png](lab13-admin-blob-data-role-review.png) | admin blob data role review |
+| [lab13-cost-review-2026-11-03.png](lab13-cost-review-2026-11-03.png) | cost review 2026 11 03 |
+| [lab13-csv-redownload-integrity-verified.png](lab13-csv-redownload-integrity-verified.png) | csv redownload integrity verified |
+| [lab13-files-uploaded.png](lab13-files-uploaded.png) | files uploaded |
+| [lab13-resource-group-cleanup.png](lab13-resource-group-cleanup.png) | resource group cleanup |
+| [lab13-resource-group-created.png](lab13-resource-group-created.png) | resource group created |
+| [lab13-resource-group-review.png](lab13-resource-group-review.png) | resource group review |
+| [lab13-resources-before-cleanup.png](lab13-resources-before-cleanup.png) | resources before cleanup |
+| [lab13-storage-account-advanced.png](lab13-storage-account-advanced.png) | storage account advanced |
+| [lab13-storage-account-basics.png](lab13-storage-account-basics.png) | storage account basics |
+| [lab13-storage-account-data-protection.png](lab13-storage-account-data-protection.png) | storage account data protection |
+| [lab13-storage-account-deployment-complete.png](lab13-storage-account-deployment-complete.png) | storage account deployment complete |
+| [lab13-storage-account-encryption.png](lab13-storage-account-encryption.png) | storage account encryption |
+| [lab13-storage-account-networking.png](lab13-storage-account-networking.png) | storage account networking |
+| [lab13-storage-account-review-security-networking.png](lab13-storage-account-review-security-networking.png) | storage account review security networking |
+| [lab13-storage-account-review.png](lab13-storage-account-review.png) | storage account review |
+| [lab13-storage-account-security.png](lab13-storage-account-security.png) | storage account security |
+| [lab13-storage-account-tags.png](lab13-storage-account-tags.png) | storage account tags |
+| [lab13-transfer-container-created.png](lab13-transfer-container-created.png) | transfer container created |
+| [lab13-transfer-integrity-mismatch.png](lab13-transfer-integrity-mismatch.png) | transfer integrity mismatch |
+| [lab13-transfer-integrity-verified.png](lab13-transfer-integrity-verified.png) | transfer integrity verified |

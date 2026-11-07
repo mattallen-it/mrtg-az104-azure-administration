@@ -1,34 +1,28 @@
-# Lab 01 — Subscription Inventory and Cost Baseline
+# Lab 01 — Subscription inventory and cost baseline
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4)
-![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
-![Deployment and configuration](https://img.shields.io/badge/Lab-Deployment%20and%20configuration-555555)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-## Objective
+[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Evidence gallery](screenshots/README.md)
 
-Establish a usable Azure subscription for MRTG administration labs with verified access, a spending baseline, budget notifications, and a tested resource-group cleanup process.
+## Outcome
 
-In this lab, I:
+Established an active subscription with Owner access, saved a USD 10 monthly budget with four alert conditions, and verified creation and removal of an empty tagged resource group. Alert delivery was not tested.
 
-- Investigated the missing subscription and confirmed the previous subscription was deleted.
-- Created a new subscription and verified Active status and Owner access.
-- Configured and verified a $10 monthly budget with actual and forecast alerts.
-- Created an empty resource group using MRTG naming and tagging conventions.
-- Manually deleted the group and verified cleanup.
-
-## Business Problem Solved
+## Business problem
 
 Monroe Redstone Technology Group needed a controlled starting point for its simulated Azure environment. The previous lab subscription was no longer usable, and deploying workloads without confirming access, ownership, costs, and cleanup responsibilities could create administrative confusion and unexpected charges.
 
 This lab established the subscription and cost-notification baseline before any paid workload deployment. MRTG is a fictional organization; this work was performed in a personal learning environment.
 
-## Scenario
+## Environment and decisions
+
+### Scenario
 
 **Lab type: Deployment and configuration.**
 
 I used the existing Entra directory and dedicated MRTG account, upgraded the billing account to pay-as-you-go with Basic support, and created a new Azure subscription. I retained the subscription and monthly budget for later labs. The only resource group created for this exercise was empty and was deleted afterward.
 
-## Azure Services and Resources Used
+### Services used
 
 | Service or resource | Purpose |
 |---|---|
@@ -37,9 +31,6 @@ I used the existing Entra directory and dedicated MRTG account, upgraded the bil
 | Azure subscription and Azure RBAC | Established the resource/billing scope and verified Owner access |
 | Azure Cost Management budgets | Recorded reported spending and configured notifications |
 | Azure resource group | Practiced organization, tagging, and manual lifecycle management |
-
-## Environment
-
 | Item | Value |
 |---|---|
 | Organization | Monroe Redstone Technology Group — simulated enterprise |
@@ -54,7 +45,7 @@ I used the existing Entra directory and dedicated MRTG account, upgraded the bil
 | Reported spend at inspection | USD 0.00; not a final invoice |
 | Final resource-group state | Temporary group deleted; no groups listed |
 
-### Resource Naming and Tags
+#### Naming and tags
 
 Naming pattern: `<type>-mrtg-az104-labNN-centralus-001`.
 
@@ -72,7 +63,7 @@ The temporary resource group used these seven tags:
 
 The subscription was also tagged with Project, Environment, Owner, CostCenter, and ManagedBy. The DeleteAfter tag recorded the intended cleanup date; it did not perform deletion.
 
-## Steps Performed
+## Work performed
 
 Account identifiers and the alert recipient address were masked in the screenshots. Blank areas represent redaction, not missing configuration.
 
@@ -80,7 +71,7 @@ Account identifiers and the alert recipient address were masked in the screensho
 
 The resource-access subscription list was empty. I checked the billing subscription list and found `MRTG-AZ900-Lab-Subscription` with a Deleted status. Microsoft Entra ID Free remained active.
 
-![Previous AZ-900 subscription with Deleted status](screenshots/lab01-old-subscription-deleted.png)
+[Previous AZ-900 subscription with Deleted status](screenshots/lab01-old-subscription-deleted.png)
 
 **Validation:** The billing list established the subscription's status. The cause of deletion was not determined.
 
@@ -88,7 +79,7 @@ The resource-access subscription list was empty. I checked the billing subscript
 
 After upgrading the billing account, I created `MRTG-AZ104-Lab-Subscription` in the existing directory with the dedicated MRTG account as subscription owner. I confirmed an empty resource inventory before creating the test group.
 
-![Active AZ-104 subscription with Owner access and reported zero cost](screenshots/lab01-subscription-active-owner.png)
+[Active AZ-104 subscription with Owner access and reported zero cost](screenshots/lab01-subscription-active-owner.png)
 
 **Validation:** The overview showed Active status, Owner access, and 0.00 reported cost at inspection.
 
@@ -106,7 +97,7 @@ The subscription wizard initially produced an annual budget. Its reset period co
 | Recipient | Dedicated MRTG email; redacted in public evidence |
 | Action groups | None |
 
-![Saved monthly budget with actual and forecast alert thresholds](screenshots/lab01-monthly-budget-alerts.png)
+[Saved monthly budget with actual and forecast alert thresholds](screenshots/lab01-monthly-budget-alerts.png)
 
 **Validation:** The saved overview confirmed the monthly reset and all four alert conditions. Email delivery and threshold firing were not tested.
 
@@ -114,15 +105,15 @@ The subscription wizard initially produced an annual budget. Its reset period co
 
 I configured `rg-mrtg-az104-lab01-centralus-001` in Central US and applied the seven tags listed above.
 
-![Resource-group creation review showing name, region, and seven tags](screenshots/lab01-resource-group-tags.png)
+[Resource-group creation review showing name, region, and seven tags](screenshots/lab01-resource-group-tags.png)
 
-**Validation:** The pre-creation review showed the intended configuration. The deployed overview below confirmed the group actually existed.
+**Validation:** The pre-creation review showed the intended configuration. The linked deployed overview confirmed the group actually existed.
 
 ### 5. Verified the Group Was Empty
 
 I opened the created group's overview and inspected its resource list.
 
-![Created resource group with no resources listed](screenshots/lab01-resource-group-empty.png)
+[Created resource group with no resources listed](screenshots/lab01-resource-group-empty.png)
 
 **Validation:** The group existed in Central US, with no resources listed and the type/location filters set to all.
 
@@ -130,11 +121,11 @@ I opened the created group's overview and inspected its resource list.
 
 I manually deleted only the named temporary group, then refreshed the resource-group list.
 
-![Resource-group list showing no resource groups after cleanup](screenshots/lab01-cleanup-confirmed.png)
+[Resource-group list showing no resource groups after cleanup](screenshots/lab01-cleanup-confirmed.png)
 
 **Validation:** The list showed “No resource groups to display.” The subscription and monthly budget were retained.
 
-## Validation
+## Validation results
 
 | Check | Expected | Observed result |
 |---|---|---|
@@ -150,19 +141,32 @@ I manually deleted only the named temporary group, then refreshed the resource-g
 
 The observed operational blocker was the missing usable subscription; the retest showed the new subscription Active with Owner access. No permission-denial test was performed in this inventory exercise.
 
-## IAM and Security Relevance
+## Troubleshooting and lessons
 
-The lab separated three concepts:
+| Issue | Investigation and resolution | Retest |
+|---|---|---|
+| No subscription in the resource-access list | Checked billing subscriptions; old subscription showed Deleted. Upgraded billing account and created a new subscription. Deletion cause remained unknown. | New subscription showed Active and Owner access |
+| Annual budget instead of monthly | Found an annual reset period; could not change it in the edit screen. Replaced the initial budget. | Saved replacement showed monthly reset and all four alerts |
 
-| Concept | Role in this lab |
-|---|---|
-| Entra tenant | Identity directory containing users, groups, and applications |
-| Azure subscription | Resource-management and billing boundary linked to a directory |
-| Azure RBAC | Authorization to manage resources at an assigned scope |
+### Production considerations
 
-Owner access was observed for the lab administrator. This exercise did not demonstrate least-privilege delegation or changes to directory roles. Broad lab ownership should not be presented as a production access model.
+- Use approved subscription provisioning and defined billing ownership.
+- Assign routine administrative permissions at the narrowest practical scope instead of relying on standing subscription Owner access.
+- Establish workload budgets, monitored recipients, and an operational response when alerts arrive.
+- Require review of resource ownership and dependencies before deletion.
+- Use policy and documented lifecycle procedures where required; descriptive tags alone do not enforce controls.
 
-## Governance and Cost Decisions
+These are proposed production practices, not controls implemented or tested in this lab.
+
+- An empty resource-access list does not by itself prove that a subscription was deleted.
+- A tenant is an identity directory; the Azure portal is the management interface.
+- Verify saved budget settings rather than assuming the creation wizard chose the intended period.
+- I initially expected a budget to block spending. The corrected understanding is that alerts do not stop running resources or prevent further charges.
+- DeleteAfter communicates intent; manual action performed the deletion.
+
+## Cleanup and costs
+
+### Cost decisions
 
 | Decision | Reason |
 |---|---|
@@ -177,33 +181,6 @@ Reported spending was USD 0.00 at inspection. Remaining credit was not verified 
 
 **A budget is an alerting mechanism, not a spending cap.** A running VM can continue generating charges after the budget threshold is reached.
 
-## Troubleshooting Notes
-
-| Issue | Investigation and resolution | Retest |
-|---|---|---|
-| No subscription in the resource-access list | Checked billing subscriptions; old subscription showed Deleted. Upgraded billing account and created a new subscription. Deletion cause remained unknown. | New subscription showed Active and Owner access |
-| Annual budget instead of monthly | Found an annual reset period; could not change it in the edit screen. Replaced the initial budget. | Saved replacement showed monthly reset and all four alerts |
-
-## What I Would Do Differently in Production
-
-- Use approved subscription provisioning and defined billing ownership.
-- Assign routine administrative permissions at the narrowest practical scope instead of relying on standing subscription Owner access.
-- Establish workload budgets, monitored recipients, and an operational response when alerts arrive.
-- Require review of resource ownership and dependencies before deletion.
-- Use policy and documented lifecycle procedures where required; descriptive tags alone do not enforce controls.
-
-These are proposed production practices, not controls implemented or tested in this lab.
-
-## Lessons Learned
-
-- An empty resource-access list does not by itself prove that a subscription was deleted.
-- A tenant is an identity directory; the Azure portal is the management interface.
-- Verify saved budget settings rather than assuming the creation wizard chose the intended period.
-- I initially expected a budget to block spending. The corrected understanding is that alerts do not stop running resources or prevent further charges.
-- DeleteAfter communicates intent; manual action performed the deletion.
-
-## Cleanup
-
 | Resource or configuration | Final state | Reason |
 |---|---|---|
 | AZ-104 subscription | Retained | Required for subsequent labs |
@@ -212,19 +189,24 @@ These are proposed production practices, not controls implemented or tested in t
 | Temporary Lab 01 resource group | Deleted and absence verified | Lifecycle exercise complete |
 | VMs and other paid workloads | Not deployed | Not required for this lab |
 
-## Outcome and Completion Checklist
+## Evidence and limits
 
-The portal baseline and cleanup exercise are validated. MRTG has an active subscription, documented administrative access, a saved monthly budget, and evidence of controlled resource-group creation and removal.
+![Lab 01 validation checkpoint](screenshots/lab01-monthly-budget-alerts.png)
 
-- [x] Confirmed subscription status and role
-- [x] Recorded the empty starting inventory and reported cost
-- [x] Verified monthly budget and alert configuration
-- [x] Created and inspected the tagged test group
-- [x] Deleted the group and verified its absence
-- [x] Reviewed the tenant/subscription distinction and budget limitations
-- [x] Published six sanitized screenshots with captions
+**6 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
 
-**Follow-up:** Alert delivery remains untested. CLI/PowerShell inventory validation was outside this portal-based lab’s scope.
+### Identity and access boundaries
 
+The lab separated three concepts:
 
-[All labs](../../docs/progress.md)
+| Concept | Role in this lab |
+|---|---|
+| Entra tenant | Identity directory containing users, groups, and applications |
+| Azure subscription | Resource-management and billing boundary linked to a directory |
+| Azure RBAC | Authorization to manage resources at an assigned scope |
+
+Owner access was observed for the lab administrator. This exercise did not demonstrate least-privilege delegation or changes to directory roles. Broad lab ownership should not be presented as a production access model.
+
+---
+
+[All labs](../../docs/progress.md) · [Lab 02 →](../lab-02-resource-organization-and-management-hierarchy/README.md)

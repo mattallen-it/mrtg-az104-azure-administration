@@ -2,9 +2,11 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-A private DNS name directed a separate client VM to an internal Standard Load Balancer with two nginx backends. Stopping one backend left the application available through the other. An incorrect DNS record broke named access while direct frontend-IP access still worked. Both faults were reversed and recovery tested. The resource group was deleted; the October 21 review showed **USD 0.15 in posted usage**.
+[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Evidence gallery](screenshots/README.md)
 
-[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Cost ledger](../../docs/cost-ledger.md)
+## Outcome
+
+Verified private DNS and two load-balanced web backends, continued service with one backend stopped, and isolated a wrong DNS address from the working application path. Recovery and cleanup were verified; USD 0.15 posted usage was reviewed.
 
 ## Business problem
 
@@ -74,33 +76,18 @@ The recovery count script also counted 30 blank lines because it printed an extr
 
 The DNS fault was a wrong address, not a failure to resolve the name. Successful direct-IP access during the fault isolated the incorrect DNS mapping from the functioning application path. These tests establish HTTP reachability and service recovery; they do not establish user authentication, application authorization, TLS, regulatory compliance, or production availability guarantees. NSG hardening and denied-port tests were not performed in this lab. Per-backend probe metrics were not captured; availability conclusions use observed client responses and service status.
 
-## Key evidence
+## Troubleshooting and lessons
 
-### Baseline through the private application name
+- Establish direct backend access, frontend-IP access, and named access separately to isolate faults.
+- A running VM is not proof of a working web service; verify the service and its response.
+- A load balancer can continue serving while a backend service is down; verify client behavior after changing it.
+- Successful DNS resolution can still return the wrong address. Compare the returned address with the intended frontend.
+- Preserve evidence of failure, the corrective change, and recovery. Do not label a one-backend response sample as proof that both backends recovered.
+- Explicit egress is a separate design decision from private inbound access. Include NAT and public-IP resources in cleanup and cost review.
 
-![Private DNS resolution and named HTTP access](screenshots/lab11-private-dns-application-access-verified.png)
+[Resource-group configuration and tags](screenshots/lab11-resource-group-review.png) · [Resources before cleanup](screenshots/lab11-resources-before-cleanup.png)
 
-[Direct backend tests](screenshots/lab11-client-to-web-backends-verified.png) · [Frontend IP test](screenshots/lab11-load-balancer-private-ip-test.png) · [Deployed backend pool](screenshots/lab11-load-balancer-backend-pool-verified.png)
-
-### Backend failure and recovery
-
-![Successful requests while web02 nginx was stopped](screenshots/lab11-backend-failure-application-available.png)
-
-![Both backends serving after recovery](screenshots/lab11-load-balancer-backend-recovery-verified.png)
-
-[Stopped service](screenshots/lab11-web02-service-stopped.png) · [Restored service and local page](screenshots/lab11-web02-service-restored.png)
-
-### DNS fault isolation and recovery
-
-![Incorrect DNS mapping fails while the correct frontend IP works](screenshots/lab11-dns-fault-isolated-from-application.png)
-
-![Named access recovered after restoring the record](screenshots/lab11-dns-recovery-application-access-verified.png)
-
-### Cleanup
-
-![Lab resource group absent after deletion](screenshots/lab11-resource-group-cleanup-verified.png)
-
-## Cleanup and cost review
+## Cleanup and costs
 
 The [sanitized pre-cleanup inventory](screenshots/lab11-resources-before-cleanup.png) contained 19 resources: three SSH key resources, three VMs, three NICs, three OS disks, two NSGs, a VNet, private DNS zone, load balancer, NAT gateway, and public IP. The [empty inventory](screenshots/lab11-resources-cleanup-verified.png) and resource-group list document cleanup. NetworkWatcherRG remained; its contents were not inspected.
 
@@ -114,92 +101,16 @@ The October 21 service breakdown showed NAT Gateway USD 0.07, Virtual Machines U
 
 The [October 21 cost review](screenshots/lab11-final-cost-review.png) shows USD 0.15 in posted usage. The three VM readiness captures hide the subscription ID and NAT public IP. The sanitized [initial web01 agent warning](screenshots/lab11-web01-vm-agent-not-ready.png) records the provisioning state before the later agent-ready captures.
 
-## Lessons learned
+## Evidence and limits
 
-- Establish direct backend access, frontend-IP access, and named access separately to isolate faults.
-- A running VM is not proof of a working web service; verify the service and its response.
-- A load balancer can continue serving while a backend service is down; verify client behavior after changing it.
-- Successful DNS resolution can still return the wrong address. Compare the returned address with the intended frontend.
-- Preserve evidence of failure, the corrective change, and recovery. Do not label a one-backend response sample as proof that both backends recovered.
-- Explicit egress is a separate design decision from private inbound access. Include NAT and public-IP resources in cleanup and cost review.
+![Lab 11 validation checkpoint](screenshots/lab11-dns-fault-isolated-from-application.png)
 
-[Resource-group configuration and tags](screenshots/lab11-resource-group-review.png) · [Resources before cleanup](screenshots/lab11-resources-before-cleanup.png)
+**65 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
 
-## Evidence index
-
-The gallery contains 65 reviewed screenshots. All 65 source screenshots are accounted for: 32 unchanged images, two existing sanitized copies, 30 added captures including the newly sanitized agent warning, and one image already published under a different name. `lab11-load-balancer-health-probe-configuration.png` is byte-identical to the published `lab11-load-balancer-http-rule-configuration.png`; only the latter is retained to avoid duplication. Creation-screen captures show settings at capture time; final reviews and test results establish the deployed behavior.
-
-- [deployed subnets verified](screenshots/lab11-deployed-subnets-verified.png)
-- [private dns vnet link verified](screenshots/lab11-private-dns-vnet-link-verified.png)
-- [nat gateway review](screenshots/lab11-nat-gateway-review.png)
-- [nat gateway subnets verified](screenshots/lab11-nat-gateway-subnets-verified.png)
-- [web01 vm review](screenshots/lab11-web01-vm-review.png)
-- [web01 vm review networking](screenshots/lab11-web01-vm-review-networking.png)
-- [web01 local http verified](screenshots/lab11-web01-local-http-verified.png)
-- [web02 vm review](screenshots/lab11-web02-vm-review.png)
-- [web02 vm review networking](screenshots/lab11-web02-vm-review-networking.png)
-- [web02 local http verified](screenshots/lab11-web02-local-http-verified.png)
-- [client vm review](screenshots/lab11-client-vm-review.png)
-- [client vm review networking](screenshots/lab11-client-vm-review-networking.png)
-- [client to web backends verified](screenshots/lab11-client-to-web-backends-verified.png)
-- [load balancer frontend configuration](screenshots/lab11-load-balancer-frontend-configuration.png)
-- [load balancer backend members selected](screenshots/lab11-load-balancer-backend-members-selected.png)
-- [load balancer backend pool configuration](screenshots/lab11-load-balancer-backend-pool-configuration.png)
-- [load balancer http rule configuration](screenshots/lab11-load-balancer-http-rule-configuration.png)
-- [load balancer review](screenshots/lab11-load-balancer-review.png)
-- [load balancer deployment complete](screenshots/lab11-load-balancer-deployment-complete.png)
-- [load balancer backend pool verified](screenshots/lab11-load-balancer-backend-pool-verified.png)
-- [load balancer private ip test](screenshots/lab11-load-balancer-private-ip-test.png)
-- [private dns app record configuration](screenshots/lab11-private-dns-app-record-configuration.png)
-- [private dns application access verified](screenshots/lab11-private-dns-application-access-verified.png)
-- [web02 service stopped](screenshots/lab11-web02-service-stopped.png)
-- [backend failure application available](screenshots/lab11-backend-failure-application-available.png)
-- [web02 service restored](screenshots/lab11-web02-service-restored.png)
-- [load balancer backend recovery verified](screenshots/lab11-load-balancer-backend-recovery-verified.png)
-- [private dns incorrect record](screenshots/lab11-private-dns-incorrect-record.png)
-- [dns fault isolated from application](screenshots/lab11-dns-fault-isolated-from-application.png)
-- [private dns record restored](screenshots/lab11-private-dns-record-restored.png)
-- [dns recovery application access verified](screenshots/lab11-dns-recovery-application-access-verified.png)
-- [resources cleanup verified](screenshots/lab11-resources-cleanup-verified.png)
-- [resource group cleanup verified](screenshots/lab11-resource-group-cleanup-verified.png)
-
-- [resource group review](screenshots/lab11-resource-group-review.png)
-- [resources before cleanup](screenshots/lab11-resources-before-cleanup.png)
-
-### Additional setup, readiness and cost evidence
-
-- [bsv2 quota baseline](screenshots/lab11-bsv2-quota-baseline.png)
-- [bsv2 quota increase approved](screenshots/lab11-bsv2-quota-increase-approved.png)
-- [bsv2 quota verified](screenshots/lab11-bsv2-quota-verified.png)
-- [client vm ready for testing](screenshots/lab11-client-vm-ready-for-testing.png)
-- [cost before vms](screenshots/lab11-cost-before-vms.png)
-- [cost filter not yet available](screenshots/lab11-cost-filter-not-yet-available.png)
-- [cost review pending final charges](screenshots/lab11-cost-review-pending-final-charges.png)
-- [final cost review](screenshots/lab11-final-cost-review.png)
-- [nat gateway basics](screenshots/lab11-nat-gateway-basics.png)
-- [nat gateway deployment complete](screenshots/lab11-nat-gateway-deployment-complete.png)
-- [nat gateway outbound ip](screenshots/lab11-nat-gateway-outbound-ip.png)
-- [nat gateway subnet associations](screenshots/lab11-nat-gateway-subnet-associations.png)
-- [nat gateway tags](screenshots/lab11-nat-gateway-tags.png)
-- [private dns vnet link configuration](screenshots/lab11-private-dns-vnet-link-configuration.png)
-- [private dns zone review](screenshots/lab11-private-dns-zone-review.png)
-- [regional vcpu quota baseline](screenshots/lab11-regional-vcpu-quota-baseline.png)
-- [resource group created](screenshots/lab11-resource-group-created.png)
-- [vnet deployment complete](screenshots/lab11-vnet-deployment-complete.png)
-- [vnet review](screenshots/lab11-vnet-review.png)
-- [web01 boot diagnostics](screenshots/lab11-web01-boot-diagnostics.png)
-- [web01 vm advanced configuration](screenshots/lab11-web01-vm-advanced-configuration.png)
-- [web01 vm basics](screenshots/lab11-web01-vm-basics.png)
-- [web01 vm disk configuration](screenshots/lab11-web01-vm-disk-configuration.png)
-- [web01 vm management configuration](screenshots/lab11-web01-vm-management-configuration.png)
-- [web01 vm monitoring configuration](screenshots/lab11-web01-vm-monitoring-configuration.png)
-- [web01 vm networking configuration](screenshots/lab11-web01-vm-networking-configuration.png)
-- [web01 vm ready for testing](screenshots/lab11-web01-vm-ready-for-testing.png)
-- [web01 vm tags](screenshots/lab11-web01-vm-tags.png)
-- [web02 vm ready for testing](screenshots/lab11-web02-vm-ready-for-testing.png)
-
-- [web01 initial agent not ready (sanitized)](screenshots/lab11-web01-vm-agent-not-ready.png)
-
-## References
+### References
 
 [Internal load balancer](https://learn.microsoft.com/en-us/azure/load-balancer/quickstart-load-balancer-standard-internal-portal) · [Private DNS](https://learn.microsoft.com/en-us/azure/dns/private-dns-getstarted-portal) · [NAT gateway](https://learn.microsoft.com/en-us/azure/nat-gateway/nat-overview) · [Linux Run Command](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/run-command)
+
+---
+
+[← Lab 10](../lab-10-peering-and-route-investigation/README.md) · [All labs](../../docs/progress.md) · [Lab 12 →](../lab-12-private-access-and-administrator-entry/README.md)

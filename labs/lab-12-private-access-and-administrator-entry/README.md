@@ -2,9 +2,15 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-MRTG needed a workload to read a private document without storing a Storage account key, while keeping the client VM off the public internet. This exercise compared a Storage service endpoint with a Blob private endpoint, kept data authorization scoped to one container, and verified administrator SSH entry through Bastion Developer.
+[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Evidence gallery](screenshots/README.md)
 
-**Result:** the VM read the synthetic blob with HTTP 200 before and after the private endpoint transition. The final read used private DNS with public network access disabled; the home administrator's portal request received 403. The lab resource group was removed after testing. The October 24–31 cost view showed **USD 1.74 posted usage**, subject to delayed reporting.
+## Outcome
+
+Verified managed-identity blob reads through service and private endpoints, private DNS, Bastion entry, and external data-access denial. The lab group was removed; the cost review showed USD 1.74 posted usage.
+
+## Business problem
+
+MRTG needed a workload to read a private document without storing an account key, while keeping the client VM without a public IP. The exercise separates network reachability, private DNS, workload data authorization and administrator entry.
 
 ## Environment and decisions
 
@@ -49,27 +55,7 @@ flowchart TD
 8. Disabled storage public network access and repeated the same managed-identity read from the VM. It returned HTTP 200 and the expected text. The home portal continued to return 403.
 9. Captured the 11-resource inventory, deleted the resource group, checked its absence in the filtered group list, and reviewed posted costs.
 
-## Observed access boundaries
-
-| Test | Observation | What it establishes |
-|---|---|---|
-| Administrator baseline upload/read | Synthetic blob uploaded and opened | Administrator had working data access before network restriction |
-| Home portal after selected-network restriction | 403 with network/firewall explanation | The home request was rejected under the configured network boundary |
-| Bastion SSH entry | Hostname, `azureuser` and `10.120.10.4` displayed | Administrator entry worked without a VM public IP |
-| Managed identity through service endpoint | HTTP 200 and expected blob contents | Identity-based data read worked during the selected-subnet stage |
-| DNS before private endpoint | Azure public service IP | A service endpoint did not assign a private IP to Storage |
-| Private endpoint and DNS | Approved endpoint; VM resolved normal Blob hostname to `10.120.20.4` | Private endpoint provisioning and client DNS resolution worked |
-| Managed identity after public access disabled | HTTP 200 and expected contents | Blob read remained available through the private endpoint |
-| Home portal after private endpoint transition | 403 | External portal data access remained blocked |
-| Cleanup | No matching lab resource group | Resource-group cleanup was checked after deletion |
-
-The test document contained only:
-
-```text
-MRTG Lab 12 - Private storage access test.
-```
-
-## Validation commands
+### Validation commands
 
 The VM ran `hostname`, `whoami`, `hostname -I`, and:
 
@@ -112,6 +98,26 @@ except urllib.error.URLError as error:
     print("Connection error:", error.reason)
 ```
 
+## Validation results
+
+| Test | Observation | What it establishes |
+|---|---|---|
+| Administrator baseline upload/read | Synthetic blob uploaded and opened | Administrator had working data access before network restriction |
+| Home portal after selected-network restriction | 403 with network/firewall explanation | The home request was rejected under the configured network boundary |
+| Bastion SSH entry | Hostname, `azureuser` and `10.120.10.4` displayed | Administrator entry worked without a VM public IP |
+| Managed identity through service endpoint | HTTP 200 and expected blob contents | Identity-based data read worked during the selected-subnet stage |
+| DNS before private endpoint | Azure public service IP | A service endpoint did not assign a private IP to Storage |
+| Private endpoint and DNS | Approved endpoint; VM resolved normal Blob hostname to `10.120.20.4` | Private endpoint provisioning and client DNS resolution worked |
+| Managed identity after public access disabled | HTTP 200 and expected contents | Blob read remained available through the private endpoint |
+| Home portal after private endpoint transition | 403 | External portal data access remained blocked |
+| Cleanup | No matching lab resource group | Resource-group cleanup was checked after deletion |
+
+The test document contained only:
+
+```text
+MRTG Lab 12 - Private storage access test.
+```
+
 ## Troubleshooting and lessons
 
 An initial multi-line Bastion paste joined commands to the prompt instead of executing `nslookup`. Running cache flush and lookup separately produced a usable DNS result. The malformed paste is excluded from success evidence.
@@ -133,13 +139,17 @@ The pre-cleanup list contained 11 resources: SSH key resource, endpoint NIC, pri
 
 The review covered October 24–31, 2026 at billing-account scope, grouped by resource group; Lab 12 was the displayed series. This is a posted-usage snapshot, not a final invoice or verified cash charge. Private endpoint/DNS charges were not separately visible in this capture and may appear later. The budget and credits were not revalidated. VM creation estimates were monthly rates, not the lab's actual total.
 
-## Evidence limits
+## Evidence and limits
+
+![Lab 12 validation checkpoint](screenshots/lab12-private-endpoint-blob-read-success.png)
+
+**55 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
 
 The deployed role and successful read were verified. Write denial, cross-container denial, identity-role removal enforcement, VPN connectivity, paid Bastion features, and production hardening were not tested. The public-access-disabled screenshot shows the selected configuration; the subsequent private read and home denial corroborate the final behavior. Resource-group deletion does not establish permanent erasure of every recoverable storage item.
 
-Results are based on reviewed operator-supplied screenshots. The gallery contains 55 reviewed screenshots, including setup, service-endpoint and private-endpoint reads, and posted cost review. Of 55 supplied captures, 15 were already published unchanged and 40 were added, including a sanitized selected-network configuration with the home public IP hidden. Configuration-review captures establish intended settings; runtime tests carry the functional conclusions. These are synthetic lab results, not a regulatory-compliance attestation.
+Results are based on reviewed operator-supplied screenshots. The gallery contains 55 reviewed screenshots, including setup, service-endpoint and private-endpoint reads, and posted cost review. Configuration-review captures establish intended settings; runtime tests carry the functional conclusions. These are synthetic lab results, not a regulatory-compliance attestation.
 
-## References
+### References
 
 - [Storage private endpoints and DNS](https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints)
 - [Storage virtual-network access rules](https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-virtual-networks)
@@ -147,4 +157,6 @@ Results are based on reviewed operator-supplied screenshots. The gallery contain
 - [Linux VM managed identity and Storage access](https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/tutorial-linux-managed-identities-vm-access)
 - [Deploy and connect with Bastion in the portal](https://learn.microsoft.com/en-us/azure/bastion/quickstart-host-portal)
 
-[Evidence gallery](screenshots/README.md) · [All labs](../../docs/progress.md) · [Architecture](../../docs/architecture.md) · [Cost ledger](../../docs/cost-ledger.md)
+---
+
+[← Lab 11](../lab-11-name-resolution-and-application-availability/README.md) · [All labs](../../docs/progress.md) · [Lab 13 →](../lab-13-storage-baseline-and-transfer/README.md)

@@ -2,13 +2,17 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-**Performed:** November 1, 2026. **Outcome:** Three synthetic files uploaded and downloaded with Microsoft Entra authentication; all final SHA-256 comparisons matched. One initial CSV mismatch was detected and resolved by a fresh download. The temporary resource group was removed. A November 3 cost review is documented below; the final total remains unverified.
+[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Evidence gallery](screenshots/README.md)
+
+## Outcome
+
+Transferred three synthetic files using Microsoft Entra authentication. A CSV hash mismatch was detected; a fresh download and final three-file SHA-256 comparison matched. Cleanup was verified; final cost remains unverified.
 
 ## Business problem
 
 MRTG needs an administrator to transfer a small synthetic document collection to Azure Blob Storage and verify that the retrieved files preserve the original bytes. This exercise combines a storage baseline, identity-based authorization, transfer validation and cleanup.
 
-## Configuration and access decisions
+## Environment and decisions
 
 | Item | Implemented value |
 |---|---|
@@ -39,23 +43,7 @@ The administrator received a storage data role for transfers. The assignment cov
 6. Downloaded the blobs into a separate `downloaded` directory, compared SHA-256 hashes, investigated a CSV mismatch and repeated the comparison.
 7. Captured the one-account inventory, deleted the resource group and verified no matching group in the refreshed filtered list.
 
-## Synthetic files and results
-
-| File | Size shown in uploaded blob list | Initial comparison | Final comparison |
-|---|---|---|---|
-| `data-handling-note.txt` | 58 B | PASS | True — hashes match |
-| `sample-assets.csv` | 73 B | FAIL | True — hashes match after fresh download |
-| `transfer-test.txt` | 48 B | PASS | True — hashes match |
-
-The collection contained a lab transfer message, two fictional asset records and a note identifying the data as synthetic. No real employee or customer data was used.
-
-## Troubleshooting: CSV mismatch
-
-The first comparison showed two passes and one failure for `sample-assets.csv`. A mismatch establishes that the compared bytes differ; it does not identify which step changed them. The next instruction was to preserve the mismatching copy and download the CSV again without opening/resaving it in Excel. The fresh download's SHA-256 matched the original, and the final three-file comparison showed True for every file.
-
-The root cause was **not established**. Application resaving, encoding, line endings or selection of a different local copy were possibilities, not verified findings. No corruption within Azure Storage is inferred from this evidence. The initial mismatch and successful retry are both preserved in the [evidence gallery](screenshots/README.md).
-
-## PowerShell used
+### PowerShell used
 
 Create the original synthetic collection once, before upload. Keep the originals unchanged throughout validation. These commands do not require an elevated PowerShell session.
 
@@ -95,7 +83,17 @@ $results | Format-Table -AutoSize
 
 This compares each original against its same-named download and reports False for a missing download. It does not reject extra files in the download directory. File creation defaults can differ across PowerShell versions; validation compares the actual original and downloaded bytes rather than assuming a universal expected hash.
 
-## Validation and evidence limits
+## Validation results
+
+### Synthetic files and results
+
+| File | Size shown in uploaded blob list | Initial comparison | Final comparison |
+|---|---|---|---|
+| `data-handling-note.txt` | 58 B | PASS | True — hashes match |
+| `sample-assets.csv` | 73 B | FAIL | True — hashes match after fresh download |
+| `transfer-test.txt` | 48 B | PASS | True — hashes match |
+
+The collection contained a lab transfer message, two fictional asset records and a note identifying the data as synthetic. No real employee or customer data was used.
 
 | Check | Observed evidence |
 |---|---|
@@ -109,21 +107,35 @@ This compares each original against its same-named download and reports False fo
 
 No AzCopy/Storage Explorer transfer, anonymous-access denial, role-removal enforcement, cross-identity boundary, soft-delete recovery, version restore or replication test was performed. Protection settings were configured, not functionally tested. Matching SHA-256 hashes establish content equality for these local comparison pairs; they do not establish a production compliance posture or a signed chain of custody.
 
-## Cleanup and cost
+## Troubleshooting and lessons
 
-Deleted `rg-mrtg-lab13-storage-transfer` after validation. The sanitized cleanup screenshot shows no matching resource group under the selected subscription filter. All 21 supplied screenshots are published in the gallery, including resource-group creation, deployment and validation, pre-cleanup inventory, post-deletion evidence, and the November 3 cost review. Local synthetic files and evidence were retained. This was not a subscription-wide resource audit.
+### Troubleshooting: CSV mismatch
 
-One Standard LRS storage account was the only resource shown in the lab group. No paid Entra/Microsoft 365 user license or trial was used. Storage capacity, operations and transfer can incur Azure charges. Cost Analysis reviewed November 3, 2026 for November 2026, filtered to this lab's resource group. Storage and Bandwidth tiles each display USD 0.00; location and subscription tiles also display USD 0.00. The Actual cost headline displays `--`, so this capture does not establish a numeric final total or zero invoiced cost. Reporting may change as charges arrive.
+The first comparison showed two passes and one failure for `sample-assets.csv`. A mismatch establishes that the compared bytes differ; it does not identify which step changed them. The next instruction was to preserve the mismatching copy and download the CSV again without opening/resaving it in Excel. The fresh download's SHA-256 matched the original, and the final three-file comparison showed True for every file.
 
-![November cost review filtered to Lab 13](screenshots/lab13-cost-review-2026-11-03.png)
-
-See the [cost ledger](../../docs/cost-ledger.md).
-
-## Lessons learned
+The root cause was **not established**. Application resaving, encoding, line endings or selection of a different local copy were possibilities, not verified findings. No corruption within Azure Storage is inferred from this evidence. The initial mismatch and successful retry are both preserved in the [evidence gallery](screenshots/README.md).
 
 - Data authorization and network reachability are separate controls; a private container can use a public endpoint with authenticated access.
 - A completed upload is not sufficient evidence of content integrity. Compare the retrieved bytes with the retained originals.
 - Keep an initial failure and successful retest together. Record an unknown root cause honestly instead of turning a possible explanation into a finding.
 - Preserve evidence and verify cleanup before moving to the next disposable deployment.
 
-[Screenshot gallery](screenshots/README.md) · [All labs](../../docs/progress.md) · [Access matrix](../../docs/access-control-matrix.md)
+## Cleanup and costs
+
+Deleted `rg-mrtg-lab13-storage-transfer` after validation. The sanitized cleanup screenshot shows no matching resource group under the selected subscription filter. All 21 supplied screenshots are published in the gallery, including resource-group creation, deployment and validation, pre-cleanup inventory, post-deletion evidence, and the November 3 cost review. Local synthetic files and evidence were retained. This was not a subscription-wide resource audit.
+
+One Standard LRS storage account was the only resource shown in the lab group. No paid Entra/Microsoft 365 user license or trial was used. Storage capacity, operations and transfer can incur Azure charges. Cost Analysis reviewed November 3, 2026 for November 2026, filtered to this lab's resource group. Storage and Bandwidth tiles each display USD 0.00; location and subscription tiles also display USD 0.00. The Actual cost headline displays `--`, so this capture does not establish a numeric final total or zero invoiced cost. Reporting may change as charges arrive.
+
+[November cost review filtered to Lab 13](screenshots/lab13-cost-review-2026-11-03.png)
+
+See the [cost ledger](../../docs/cost-ledger.md).
+
+## Evidence and limits
+
+![Lab 13 validation checkpoint](screenshots/lab13-transfer-integrity-verified.png)
+
+**21 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
+
+---
+
+[← Lab 12](../lab-12-private-access-and-administrator-entry/README.md) · [All labs](../../docs/progress.md) · [Lab 14 →](../lab-14-data-access-boundaries/README.md)

@@ -2,13 +2,17 @@
 
 ![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-**Completed:** October 6, 2026. **Status:** Validated — address configuration, portal overlap validation, and cleanup.
+[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Evidence gallery](screenshots/README.md)
+
+## Outcome
+
+Deployed two private subnets, observed portal rejection of an overlapping proposal, and verified that the original ranges remained unchanged. The lab resource group was removed.
 
 ## Business problem
 
 MRTG needs a clear address plan for future Operations and Security workloads. This exercise establishes separate subnet ranges and tests how the portal handles an overlapping proposal before workloads are introduced.
 
-## Environment and address plan
+## Environment and decisions
 
 Subscription: `MRTG-AZ104-Lab-Subscription`. Resource group: `rg-mrtg-lab08-network`. Region: Central US.
 
@@ -23,7 +27,7 @@ Tags: Environment = Lab; Project = MRTG-AZ104-Administration; Lab = Lab-08; Owne
 
 Both subnets were configured with private subnet enabled (no default outbound access). NAT gateway, network security group, route table, and delegation were set to None; service endpoints were unselected. The deployment review showed Bastion, Firewall, and DDoS Network Protection disabled. No compute workloads were deployed.
 
-## Work performed and validation
+## Work performed
 
 1. Created the tagged resource group and captured its empty resource list.
 2. Replaced the wizard's default address plan with `10.80.0.0/16` and configured the two /24 subnets.
@@ -34,31 +38,18 @@ Both subnets were configured with private subnet enabled (no default outbound ac
 7. Verified that the lab resource group contained only the VNet, deleted the group, and captured the final unfiltered resource-group list.
 8. Reviewed October subscription costs after cleanup: Actual cost displayed `--` with “No cost reported during this period.”
 
-## Evidence
+## Validation results
 
-All 13 screenshots are preserved with consistent filenames. Configuration and review screens establish intended settings; deployment and resource screens establish the deployed state.
+| Check | Observed result |
+|---|---|
+| Deployed address plan | Two intended /24 subnets; 251 available IPs each |
+| Overlap test | Unsaved /25 proposal rejected by portal validation |
+| Retest | Original two subnet CIDRs unchanged |
+| Cleanup | Lab group absent; NetworkWatcherRG remained |
 
-| # | Screenshot | Checkpoint |
-|---|---|---|
-| 1 | [lab08-final-cost-review.png](screenshots/lab08-final-cost-review.png) | Final subscription cost review |
-| 2 | [lab08-operations-subnet-configuration.png](screenshots/lab08-operations-subnet-configuration.png) | Operations subnet configuration |
-| 3 | [lab08-overlapping-subnet-rejected.png](screenshots/lab08-overlapping-subnet-rejected.png) | Overlapping subnet validation error |
-| 4 | [lab08-resource-group-cleanup.png](screenshots/lab08-resource-group-cleanup.png) | Unfiltered resource-group cleanup |
-| 5 | [lab08-resource-group-created.png](screenshots/lab08-resource-group-created.png) | Tagged resource group created |
-| 6 | [lab08-resources-before-cleanup.png](screenshots/lab08-resources-before-cleanup.png) | Resources before cleanup |
-| 7 | [lab08-security-subnet-configuration.png](screenshots/lab08-security-subnet-configuration.png) | Security subnet configuration |
-| 8 | [lab08-subnets-unchanged-after-rejection.png](screenshots/lab08-subnets-unchanged-after-rejection.png) | Subnets unchanged after rejected overlap |
-| 9 | [lab08-subnets-verified.png](screenshots/lab08-subnets-verified.png) | Deployed subnet list |
-| 10 | [lab08-vnet-address-configuration.png](screenshots/lab08-vnet-address-configuration.png) | VNet address configuration |
-| 11 | [lab08-vnet-created.png](screenshots/lab08-vnet-created.png) | Created VNet overview |
-| 12 | [lab08-vnet-deployment-complete.png](screenshots/lab08-vnet-deployment-complete.png) | Deployment completed |
-| 13 | [lab08-vnet-review.png](screenshots/lab08-vnet-review.png) | Validated deployment review |
+## Troubleshooting and lessons
 
-## Cleanup and retained state
-
-The final unfiltered list no longer contained `rg-mrtg-lab08-network`; only `NetworkWatcherRG` remained. Its contents were not inspected. The lab VNet and its subnets were removed with their resource group.
-
-## Findings and evidence limits
+### Findings and evidence limits
 
 The attempted /25 lies entirely inside the Operations /24. The captured result is portal validation of an unsaved proposal, not a submitted deployment failure.
 
@@ -66,8 +57,20 @@ Separate subnet ranges establish address organization, not a tested traffic secu
 
 The final cost view records the subscription's reported state at capture time. It does not prove a final $0 bill, remaining credits, or a current budget alert. No paid Entra or Microsoft 365 license or trial was used.
 
-## Next lab
+## Cleanup and costs
+
+The final unfiltered list no longer contained `rg-mrtg-lab08-network`; only `NetworkWatcherRG` remained. Its contents were not inspected. The lab VNet and its subnets were removed with their resource group.
+
+## Evidence and limits
+
+![Lab 08 validation checkpoint](screenshots/lab08-overlapping-subnet-rejected.png)
+
+**13 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
+
+### Next lab
 
 [Lab 09 — Traffic permissions](../lab-09-traffic-permissions/README.md) extends the network work into traffic controls.
 
-[All labs](../../docs/progress.md) · [Architecture](../../docs/architecture.md) · [Cost ledger](../../docs/cost-ledger.md)
+---
+
+[← Lab 07](../lab-07-access-review-and-cost-review/README.md) · [All labs](../../docs/progress.md) · [Lab 09 →](../lab-09-traffic-permissions/README.md)

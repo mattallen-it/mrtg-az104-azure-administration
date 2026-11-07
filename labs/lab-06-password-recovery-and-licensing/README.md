@@ -1,16 +1,22 @@
 # Lab 06 — Password reset and account recovery operations
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Status](https://img.shields.io/badge/Status-Validated-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-## Business problem and scope
+[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Evidence gallery](screenshots/README.md)
+
+## Outcome
+
+Completed administrator-assisted password recovery for a synthetic user, reviewed reset-target and password-change audit evidence, and verified active-user cleanup. Forgotten-password SSPR was outside scope.
+
+## Business problem
 
 MRTG needs an administrator-assisted recovery workflow for a synthetic cloud-only user who has forgotten their password. This exercise created a non-admin account, established a sign-in baseline, performed an administrator reset, tested password rejection and required password change, verified recovered sign-in, reviewed audit evidence, and removed the account from active users.
 
-**Status: validated — administrator-assisted recovery and active-user cleanup.** Eleven published execution screenshots support the revised workflow. The earlier license inventory remains separate background evidence.
-
 The exercise used Entra Free with no paid user-license purchase or trial. Administrator-assisted reset is distinct from end-user forgotten-password self-service password reset (SSPR). SSPR configuration, hybrid writeback, MFA reset, and application authorization were outside scope.
 
-## Test identity and administration
+## Environment and decisions
+
+### Test identity and administration
 
 | Setting | Observed value |
 |---|---|
@@ -23,7 +29,7 @@ The exercise used Entra Free with no paid user-license purchase or trial. Admini
 
 Separate administrator and test-user browser sessions were used in the checkpoint procedure. A successful reset demonstrates that this operator could reset this target; it does not establish the least-privileged role required for every account type.
 
-## Work performed and validation evidence
+## Work performed
 
 | Step | Reviewed result | Evidence |
 |---|---|---|
@@ -41,7 +47,38 @@ Separate administrator and test-user browser sessions were used in the checkpoin
 
 The source upload named `lab-06-password-recovery-and-licensing.png` contained the user-creation review; it is published as [lab06-recovery-user-review.png](screenshots/lab06-recovery-user-review.png). Duplicate download suffixes were removed from the final repository filenames.
 
-## Evidence boundaries
+## Validation results
+
+| Check | Observed result |
+|---|---|
+| Administrator reset | Portal confirmation and successful reset audit event targeting the recovery user |
+| Old-password attempt | Incorrect account/password error; submitted secret was not recorded |
+| Password change | Required-change prompt and successful user password-change audit event |
+| Recovery | Signed-in recovery identity visible after the fresh-session procedure |
+| Cleanup | Active-user search returned zero matching users |
+
+## Troubleshooting and lessons
+
+- Separate administrator assistance, known-password change, and forgotten-password self-service recovery.
+- Confirm the target account's source and identity before resetting credentials.
+- Test recovery through a fresh sign-in procedure and preserve the limits of screenshot evidence.
+- Review both the audit activity and its target; a successful event alone does not identify whose password changed.
+- In production, verify the requester's identity and authorization before resetting credentials. This synthetic exercise does not validate a real identity-proofing process.
+- Capture audit evidence before cleanup and distinguish active-user deletion from permanent removal.
+
+## Cleanup and costs
+
+The synthetic account was deleted, and a refreshed All users search for `lab06.recovery` returned **0 users found / No results**. This validates absence from active users. Permanent deletion and the Deleted users state were not separately captured; recoverable deletion must not be described as permanent removal. The existing administrator, directory, subscription, and budget were retained.
+
+No metered Azure workload was deployed for the recovery exercise. Billing was not independently verified. Private lab credentials should be removed after closing the test sessions.
+
+## Evidence and limits
+
+![Lab 06 validation checkpoint](screenshots/lab06-password-reset-audit-target.png)
+
+**12 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
+
+### Evidence boundaries
 
 - Initial and recovered account-page screenshots establish signed-in identity. They do not independently reveal which password was entered or prove browser-session freshness. The checkpoint procedure required closing all test InPrivate windows and signing in again with the new password.
 - The controlled old-password test produced an incorrect account/password message. The screenshot cannot independently prove the submitted secret; no password was captured.
@@ -51,30 +88,22 @@ The source upload named `lab-06-password-recovery-and-licensing.png` contained t
 - Administrator identifiers and IP address were redacted from the redacted reset activity capture. Synthetic recovery-user identifiers remain visible to connect the evidence.
 - No live session-revocation test, MFA reset, hybrid writeback, or application access test was performed.
 
-## Cleanup
-
-The synthetic account was deleted, and a refreshed All users search for `lab06.recovery` returned **0 users found / No results**. This validates absence from active users. Permanent deletion and the Deleted users state were not separately captured; recoverable deletion must not be described as permanent removal. The existing administrator, directory, subscription, and budget were retained.
-
-No metered Azure workload was deployed for the recovery exercise. Billing was not independently verified. Private lab credentials should be removed after closing the test sessions.
-
-## Previous readiness assessment — background
-
-## Observed results
+### Earlier readiness observations
 
 | Check | Observed result | Evidence boundary |
 |---|---|---|
 | Directory overview | Microsoft Entra ID Free; operator's card displayed Global Administrator | Screenshot reviewed during the exercise; not evidence of every API permission |
-| Licenses → All products | “No account SKUs found” | Published inventory below; no eligible SKU shown at inspection |
+| Licenses → All products | “No account SKUs found” | Published license-inventory capture; no eligible SKU shown at inspection |
 | License usage | Feature reported a Premium license requirement | Applies to that feature; not an inventory result |
 | Password reset → Properties | Page opened and displayed the end-user/admin distinction | Current saved selection was not confidently established from the capture |
 | Password reset → Authentication methods | 403: “Read password reset policy forbidden” | Refresh returned the same error, reported by the operator; cause unresolved |
 | Live end-user recovery | Not attempted | No successful reset, registration or sign-in validation claimed |
 
-![All products inventory with no account SKUs found](screenshots/lab06-license-inventory.png)
+[All products inventory with no account SKUs found](screenshots/lab06-license-inventory.png)
 
 The earlier consumer-account access error and the later 403 are access observations. Neither is proven to be caused by missing licensing. A license purchase must not be represented as a verified fix.
 
-## Licensing assessment
+### Licensing assessment
 
 Microsoft's scenario-specific SSPR guidance distinguishes changing a known password from resetting a forgotten password. Entra Free supports the former; cloud-only end-user recovery requires an eligible Microsoft 365 or Entra P1/P2 license. Hybrid writeback has additional requirements. Any user intended to benefit must be appropriately licensed.
 
@@ -82,17 +111,7 @@ A Global Administrator recovery experience would not validate the planned ordina
 
 The [series licensing review](../../docs/licensing-and-prerequisites.md) covers all 32 current scopes. No Premium purchase is required to continue after revising this lab; planned service tiers and the Lab 16 identity source still need deployment-specific review.
 
-
-## Lessons learned
-
-- Separate administrator assistance, known-password change, and forgotten-password self-service recovery.
-- Confirm the target account's source and identity before resetting credentials.
-- Test recovery through a fresh sign-in procedure and preserve the limits of screenshot evidence.
-- Review both the audit activity and its target; a successful event alone does not identify whose password changed.
-- In production, verify the requester's identity and authorization before resetting credentials. This synthetic exercise does not validate a real identity-proofing process.
-- Capture audit evidence before cleanup and distinguish active-user deletion from permanent removal.
-
-## References
+### References
 
 - [Create and delete users](https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users)
 - [Administrator password reset](https://learn.microsoft.com/en-us/entra/fundamentals/users-reset-password-azure-portal)
@@ -100,4 +119,6 @@ The [series licensing review](../../docs/licensing-and-prerequisites.md) covers 
 - [SSPR licensing](https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing)
 - [Series licensing and prerequisites](../../docs/licensing-and-prerequisites.md)
 
-[All labs](../../docs/progress.md)
+---
+
+[← Lab 05](../lab-05-guardrails-with-policy-and-locks/README.md) · [All labs](../../docs/progress.md) · [Lab 07 →](../lab-07-access-review-and-cost-review/README.md)

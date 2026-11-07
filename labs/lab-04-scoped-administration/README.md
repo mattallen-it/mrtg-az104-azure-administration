@@ -1,12 +1,20 @@
 # Lab 04 — Scoped administration
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Status](https://img.shields.io/badge/Status-Validated-2E7D32) ![Cleanup](https://img.shields.io/badge/Cleanup-Active_state_verified-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
-## Purpose
+[Portfolio](../../README.md) · [All labs](../../docs/progress.md) · [Evidence gallery](screenshots/README.md)
+
+## Outcome
+
+Tested group-based Reader and Contributor access at Operations resource-group scope. Reader writes and Operator access to Security were denied; an Operator tag update succeeded and was restored. Cleanup was verified in the captured lists.
+
+## Business problem
 
 MRTG needed an operator who could manage the Operations environment without controlling a separate Security environment or granting permissions to others. A reader needed visibility into Operations without write access. Success meant testing both permitted and rejected actions under the actual synthetic identities, not just checking that roles appeared in a list.
 
-## Access design
+## Environment and decisions
+
+### Access design
 
 ```mermaid
 flowchart TB
@@ -27,23 +35,23 @@ Both resource groups were in Central US under `MRTG-AZ104-Lab-Subscription`. Azu
 
 Contributor is broad within its assigned scope; it is used here to demonstrate scope and the distinction between resource administration and permission delegation. No workload, data-plane permission, or custom role was tested.
 
-## Implementation
+## Work performed
 
 Two temporary resource groups established the administration boundary.
 
-![Operations and Security resource groups created](screenshots/lab04-resource-groups-created.png)
+[Operations and Security resource groups created](screenshots/lab04-resource-groups-created.png)
 
 The two synthetic accounts were Member users. Each had one assigned security-group membership, shown below.
 
-![Operator in Operators group](screenshots/lab04-operators-membership.png)
+[Operator in Operators group](screenshots/lab04-operators-membership.png)
 
-![Reader in Readers group](screenshots/lab04-readers-membership.png)
+[Reader in Readers group](screenshots/lab04-readers-membership.png)
 
 The Operations IAM list displayed **Contributor** for the Operators group and **Reader** for the Readers group, each scoped to **This resource**. The administrator Owner entry showed **Subscription (Inherited)**.
 
-![Role assignments and scope on Operations resource group](screenshots/lab04-operations-role-assignments.png)
+[Role assignments and scope on Operations resource group](screenshots/lab04-operations-role-assignments.png)
 
-## Validation
+## Validation results
 
 | Test identity | Action | Observed result | Evidence |
 |---|---|---|---|
@@ -54,28 +62,38 @@ The Operations IAM list displayed **Contributor** for the Operators group and **
 
 The Operator restored `Environment: Lab` afterward; the saved chip and **No changes** state are visible in the final capture.
 
-![Original Operations tag restored](screenshots/lab04-operations-tag-restored.png)
+[Original Operations tag restored](screenshots/lab04-operations-tag-restored.png)
 
 The Reader rejection screenshot identifies `lab04.reader` in the portal header; the Operator screenshots identify `lab04.operator` or include the account in the access error. No independent activity-log export or API authorization test was collected.
 
-## Lessons learned
+## Troubleshooting and lessons
 
 The portal allowed a Reader to type a new tag value, which could have been mistaken for edit access. The actual permission check happened on **Save**: Azure rejected the write and retained the original value. For access reviews, test the final operation and verify persisted state. Contributor permitted a resource-group tag update but did not let the Operator assign Azure roles, and its Operations grant did not extend to Security.
 
-## Cleanup and limits
+## Cleanup and costs
+
+### Cleanup and limits
 
 After validation, the resource-group list filtered to `lab04` showed **no matching resource groups** under the portal's all-subscriptions and all-locations filters.
 
-![No Lab 04 resource groups match the filter](screenshots/lab04-resource-groups-cleanup-confirmed.png)
+[No Lab 04 resource groups match the filter](screenshots/lab04-resource-groups-cleanup-confirmed.png)
 
 The Entra groups list filtered to `lab04` showed **0 groups found**, and the active-user list showed only the original administrator.
 
-![No Lab 04 groups match the filter](screenshots/lab04-groups-cleanup-confirmed.png)
+[No Lab 04 groups match the filter](screenshots/lab04-groups-cleanup-confirmed.png)
 
-![Only the original administrator remains in active users](screenshots/lab04-users-cleanup-confirmed.png)
+[Only the original administrator remains in active users](screenshots/lab04-users-cleanup-confirmed.png)
 
 These captures verify the absence of the Lab 04 groups and resource groups from the filtered lists and the absence of the two synthetic accounts from **active users** at capture time. The operator separately confirmed the two Lab 04 role assignments were removed. The screenshots do not show a role-assignment deletion audit event, a permanent deletion check under **Deleted users**, or a complete Azure resource inventory. The existing administrator, subscription, and budget were outside cleanup scope.
 
 No metered workload was deployed. No post-session cost or invoice capture was collected; see the [cost ledger](../../docs/cost-ledger.md). The lab demonstrates Azure management-plane authorization for these specific actions, not application access, data-plane access, or regulatory compliance.
 
-[All labs](../../docs/progress.md) · [Access matrix](../../docs/access-control-matrix.md)
+## Evidence and limits
+
+![Lab 04 validation checkpoint](screenshots/lab04-reader-tag-change-denied.png)
+
+**12 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
+
+---
+
+[← Lab 03](../lab-03-employee-and-contractor-lifecycle/README.md) · [All labs](../../docs/progress.md) · [Lab 05 →](../lab-05-guardrails-with-policy-and-locks/README.md)
