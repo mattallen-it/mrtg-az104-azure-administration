@@ -112,7 +112,7 @@ The [sanitized pre-cleanup inventory](screenshots/lab11-resources-before-cleanup
 
 The October 21 service breakdown showed NAT Gateway USD 0.07, Virtual Machines USD 0.03, Azure DNS USD 0.02, Storage USD 0.01, Load Balancer USD 0.01, Virtual Network below USD 0.01, and Bandwidth USD 0.00. Rounded categories may not sum to the displayed total. This is posted usage subject to reporting updates, not a finalized invoice or verified cash spend. Credits were not assumed; creation-screen monthly estimates were not session costs. No paid Entra or Microsoft 365 license purchase or trial was used. Budget alerts were not revalidated during this lab.
 
-Cost screenshots were reviewed, but the available originals still expose the personal billing name and are withheld from the public gallery. The corrected resource-group review and pre-cleanup inventory are included with the subscription ID hidden. VM-readiness captures with visible subscription or NAT public-IP details remain withheld. Configuration and functional evidence below is published from the reviewed captures; superseded configurations and duplicate uploads are excluded.
+The [October 21 cost review](screenshots/lab11-final-cost-review.png) shows USD 0.15 in posted usage. The three VM readiness captures hide the subscription ID and NAT public IP. The sanitized [initial web01 agent warning](screenshots/lab11-web01-vm-agent-not-ready.png) records the provisioning state before the later agent-ready captures.
 
 ## Lessons learned
 
@@ -127,7 +127,7 @@ Cost screenshots were reviewed, but the available originals still expose the per
 
 ## Evidence index
 
-The gallery contains 35 reviewed screenshots. See the linked configuration captures and test results below.
+The gallery contains 65 reviewed screenshots. All 65 source screenshots are accounted for: 32 unchanged images, two existing sanitized copies, 30 added captures including the newly sanitized agent warning, and one image already published under a different name. `lab11-load-balancer-health-probe-configuration.png` is byte-identical to the published `lab11-load-balancer-http-rule-configuration.png`; only the latter is retained to avoid duplication. Creation-screen captures show settings at capture time; final reviews and test results establish the deployed behavior.
 
 - [deployed subnets verified](screenshots/lab11-deployed-subnets-verified.png)
 - [private dns vnet link verified](screenshots/lab11-private-dns-vnet-link-verified.png)
@@ -165,6 +165,40 @@ The gallery contains 35 reviewed screenshots. See the linked configuration captu
 
 - [resource group review](screenshots/lab11-resource-group-review.png)
 - [resources before cleanup](screenshots/lab11-resources-before-cleanup.png)
+
+### Additional setup, readiness and cost evidence
+
+- [bsv2 quota baseline](screenshots/lab11-bsv2-quota-baseline.png)
+- [bsv2 quota increase approved](screenshots/lab11-bsv2-quota-increase-approved.png)
+- [bsv2 quota verified](screenshots/lab11-bsv2-quota-verified.png)
+- [client vm ready for testing](screenshots/lab11-client-vm-ready-for-testing.png)
+- [cost before vms](screenshots/lab11-cost-before-vms.png)
+- [cost filter not yet available](screenshots/lab11-cost-filter-not-yet-available.png)
+- [cost review pending final charges](screenshots/lab11-cost-review-pending-final-charges.png)
+- [final cost review](screenshots/lab11-final-cost-review.png)
+- [nat gateway basics](screenshots/lab11-nat-gateway-basics.png)
+- [nat gateway deployment complete](screenshots/lab11-nat-gateway-deployment-complete.png)
+- [nat gateway outbound ip](screenshots/lab11-nat-gateway-outbound-ip.png)
+- [nat gateway subnet associations](screenshots/lab11-nat-gateway-subnet-associations.png)
+- [nat gateway tags](screenshots/lab11-nat-gateway-tags.png)
+- [private dns vnet link configuration](screenshots/lab11-private-dns-vnet-link-configuration.png)
+- [private dns zone review](screenshots/lab11-private-dns-zone-review.png)
+- [regional vcpu quota baseline](screenshots/lab11-regional-vcpu-quota-baseline.png)
+- [resource group created](screenshots/lab11-resource-group-created.png)
+- [vnet deployment complete](screenshots/lab11-vnet-deployment-complete.png)
+- [vnet review](screenshots/lab11-vnet-review.png)
+- [web01 boot diagnostics](screenshots/lab11-web01-boot-diagnostics.png)
+- [web01 vm advanced configuration](screenshots/lab11-web01-vm-advanced-configuration.png)
+- [web01 vm basics](screenshots/lab11-web01-vm-basics.png)
+- [web01 vm disk configuration](screenshots/lab11-web01-vm-disk-configuration.png)
+- [web01 vm management configuration](screenshots/lab11-web01-vm-management-configuration.png)
+- [web01 vm monitoring configuration](screenshots/lab11-web01-vm-monitoring-configuration.png)
+- [web01 vm networking configuration](screenshots/lab11-web01-vm-networking-configuration.png)
+- [web01 vm ready for testing](screenshots/lab11-web01-vm-ready-for-testing.png)
+- [web01 vm tags](screenshots/lab11-web01-vm-tags.png)
+- [web02 vm ready for testing](screenshots/lab11-web02-vm-ready-for-testing.png)
+
+- [web01 initial agent not ready (sanitized)](screenshots/lab11-web01-vm-agent-not-ready.png)
 
 ## References
 
