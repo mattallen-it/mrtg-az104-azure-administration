@@ -4,7 +4,7 @@
 
 ## Status and evidence
 
-Hands-on results are documented from the lab session screenshots and command output. The [evidence gallery](screenshots/README.md) publishes seven reviewed screenshots. The remaining 30 source images, including key rotation and cleanup, are pending publication after an automatic approval-review block.
+Hands-on results are documented from the lab session screenshots and command output. The [evidence gallery](screenshots/README.md) publishes 11 reviewed screenshots, including the key-rotation results. The remaining 26 source images, including SAS tests and cleanup, are pending publication after an automatic approval-review block.
 
 ## Business problem
 

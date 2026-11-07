@@ -1,10 +1,6 @@
 # Lab 14 evidence gallery
 
-7 reviewed screenshots are published: the existing cost capture and six additional images. The remaining 30 reviewed source images are pending publication because automatic approval review blocked their upload. Full test results and evidence limits are recorded in the [lab README](../README.md).
-
-## cost review 2026 11 03
-
-![cost review 2026 11 03](lab14-cost-review-2026-11-03.png)
+11 reviewed screenshots are published; 26 reviewed source images remain pending because automatic approval review blocked their upload. See the [lab README](../README.md) for full results and evidence limits. Keys, connection strings and SAS credentials are not displayed.
 
 ## access keys before rotation
 
@@ -22,6 +18,10 @@
 
 ![container reader upload denied](lab14-container-reader-upload-denied.png)
 
+## cost review 2026 11 03
+
+![cost review 2026 11 03](lab14-cost-review-2026-11-03.png)
+
 ## data access after role removal
 
 ![data access after role removal](lab14-data-access-after-role-removal.png)
@@ -30,12 +30,24 @@
 
 ![documents blob uploaded](lab14-documents-blob-uploaded.png)
 
+## key1 before rotation read success
+
+![key1 before rotation read success](lab14-key1-before-rotation-read-success.png)
+
+## new key1 after rotation read success
+
+![new key1 after rotation read success](lab14-new-key1-after-rotation-read-success.png)
+
+## old key1 after rotation denied
+
+![old key1 after rotation denied](lab14-old-key1-after-rotation-denied.png)
+
+## private containers created
+
+![private containers created](lab14-private-containers-created.png)
+
 ## Pending publication
 
-- `lab14-key1-before-rotation-read-success.png`
-- `lab14-new-key1-after-rotation-read-success.png`
-- `lab14-old-key1-after-rotation-denied.png`
-- `lab14-private-containers-created.png`
 - `lab14-read-only-sas-read-success.png`
 - `lab14-read-only-sas-write-denied.png`
 - `lab14-read-only-user-delegation-sas-settings.png`
