@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**14/32 labs validated (Labs 01–13 and 15).** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 results and its cost screenshot are documented; access-test and cleanup screenshots remain pending. Lab 15 recovery, cleanup and cost screenshots are published. Lifecycle execution was not observed. Labs 16–32 remain planned.
+**15/32 labs validated (Labs 01–15).** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 publishes all 37 reviewed screenshots for scoped access, SAS tests, key rotation and cleanup, with attribution limits stated. Lab 15 recovery, cleanup and cost screenshots are published. Lifecycle execution was not observed. Labs 16–32 remain planned.
 
 ## Lab index
 
@@ -19,7 +19,7 @@
 | 11 | [Name resolution and application availability](../labs/lab-11-name-resolution-and-application-availability/README.md) | Validated — private DNS, load balancing, backend and DNS recovery, cleanup and posted costs |
 | 12 | [Private access and administrator entry](../labs/lab-12-private-access-and-administrator-entry/README.md) | Validated — service/private endpoints, managed-identity blob read, Bastion, private DNS, public denial, cleanup and posted costs |
 | 13 | [Storage baseline and transfer](../labs/lab-13-storage-baseline-and-transfer/README.md) | Validated — Entra-authenticated transfers, SHA-256 mismatch/retry and final matches, cleanup |
-| 14 | [Data access boundaries](../labs/lab-14-data-access-boundaries/README.md) | Results documented — scoped access, SAS tests and key rotation; screenshots pending |
+| 14 | [Data access boundaries](../labs/lab-14-data-access-boundaries/README.md) | Validated — scoped access, read-only SAS, key rotation and cleanup; SAS attribution limit documented |
 | 15 | [Recover an accidental document deletion](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Validated — soft-delete/version recovery and SHA-256 matches; lifecycle configuration, cleanup and cost review |
 | 16 | [Department file access and the AD bridge](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Planned |
 | 17 | [Replication and storage incident drill](../labs/lab-17-replication-and-storage-incident-drill/README.md) | Planned |

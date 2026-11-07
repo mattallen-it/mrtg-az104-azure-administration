@@ -1,10 +1,10 @@
 # Lab 14 — Data access boundaries
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Status](https://img.shields.io/badge/Status-Results_documented-blue)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Validated](https://img.shields.io/badge/Status-Validated-2E7D32)
 
 ## Status and evidence
 
-Hands-on results are documented from the lab session screenshots and command output. The [evidence gallery](screenshots/README.md) publishes 11 reviewed screenshots, including the key-rotation results. The remaining 26 source images, including SAS tests and cleanup, are pending publication after an automatic approval-review block.
+All 37 reviewed screenshots are published in the [evidence gallery](screenshots/README.md), covering configuration, scoped access, SAS tests, key rotation, cleanup, and the November 3 cost review. Evidence limits remain stated below.
 
 ## Business problem
 
@@ -113,13 +113,11 @@ A later document-container screenshot also showed an authorization denial after 
 - SAS permission tests, delegation-key revocation, and account-key rotation were separate exercises.
 - The old-key failure and replacement-key success provided a recovery check after rotation.
 
-## Cleanup and remaining evidence
+## Cleanup and evidence limits
 
 Cleanup screenshots showed no matching resource group under the selected subscription/filter and an active-user list containing only the administrator, with the test reader absent. These are portal-state observations, not a deletion audit trail or proof of permanent directory deletion.
 
-Remaining publication work:
-
-- Upload reviewed screenshots for the access tests, SAS tests, key rotation, final configuration, and cleanup.
+Remaining validation limits:
 - Recheck the final cost total when available; the November 3 review below is not a zero-cost confirmation.
 - If stronger revocation evidence is needed, capture a timestamped before/after sequence in a future disposable test.
 
@@ -131,6 +129,6 @@ Cost Analysis reviewed November 3, 2026 for November 2026, filtered to this lab'
 
 ## Outcome
 
-The session demonstrated scoped blob access, denied writes and cross-container reads, read-only temporary sharing, and account-key rotation with successful use of the replacement key. Results are documented now; the screenshot evidence package remains pending.
+The session demonstrated scoped blob access, denied writes and cross-container reads, read-only temporary sharing, and account-key rotation with successful use of the replacement key. The full reviewed screenshot package is published; causal attribution for the SAS denial and the final cost total remain limited as described above.
 
 [All labs](../../docs/progress.md)

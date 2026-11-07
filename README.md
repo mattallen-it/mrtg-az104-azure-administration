@@ -1,6 +1,6 @@
 # MRTG Azure Administration
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-14_of_32-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-15_of_32-2E7D32)
 
 Hands-on Azure administration for the fictional **Monroe Redstone Technology Group**, with an emphasis on identity, access control, troubleshooting, and operational accountability.
 
@@ -8,7 +8,7 @@ Each completed lab documents the business problem, configuration decisions, work
 
 ## Labs
 
-**14 of 32 labs validated (Labs 01–13 and 15).** Labs 01–13 document completed Azure work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost reviews; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 results and its cost screenshot are documented; access-test and cleanup screenshots remain pending. Lab 15 validates soft-delete and version recovery with matching SHA-256 hashes, with published lifecycle configuration, cleanup, and a November 6 cost snapshot below USD 0.01. Labs 16–32 remain planned.
+**15 of 32 labs validated (Labs 01–15).** Labs 01–13 document completed Azure work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost reviews; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 publishes all 37 reviewed access-test, key-rotation, configuration, cleanup and cost screenshots, with SAS attribution limits stated. Lab 15 validates soft-delete and version recovery with matching SHA-256 hashes, with published lifecycle configuration, cleanup, and a November 6 cost snapshot below USD 0.01. Labs 16–32 remain planned.
 
 | Lab | Demonstrated work | Status |
 |---|---|---|
@@ -25,8 +25,7 @@ Each completed lab documents the business problem, configuration decisions, work
 | [11 — Name resolution and application availability](labs/lab-11-name-resolution-and-application-availability/README.md) | Private DNS and an internal load balancer tested with two web backends; backend failure and DNS misconfiguration isolated and recovered; cleanup verified; USD 0.15 posted cost reviewed | Validated — DNS and application recovery |
 | [12 — Private access and administrator entry](labs/lab-12-private-access-and-administrator-entry/README.md) | Service and private endpoint blob reads with a container-scoped managed identity; private DNS, Bastion entry, public access denial, cleanup and USD 1.74 posted cost reviewed | Validated — private storage access |
 | [13 — Storage baseline and transfer](labs/lab-13-storage-baseline-and-transfer/README.md) | Entra-authenticated upload/download of three synthetic files; SHA-256 mismatch detected, CSV downloaded again, all final hashes matched; resource group cleanup verified | Validated — transfer integrity |
-| [14 — Data access boundaries](labs/lab-14-data-access-boundaries/README.md) | Account Reader versus blob-data access tested; container-scoped reads allowed, restricted-container reads and uploads denied; read-only SAS GET 200/PUT 403; old/new key rotation tests and redacted cost review | Results documented — access-test and cleanup screenshots pending |
-
+| [14 — Data access boundaries](labs/lab-14-data-access-boundaries/README.md) | Account Reader versus blob-data access tested; container-scoped reads allowed, restricted-container reads and uploads denied; read-only SAS GET 200/PUT 403; old/new key rotation tests and redacted cost review | Validated — scoped data access and credential rotation |
 | [15 — Recover an accidental document deletion](labs/lab-15-recover-an-accidental-document-deletion/README.md) | Soft-delete and overwritten-version recovery verified by SHA-256; lifecycle policy exported; cleanup and reported cost below USD 0.01 reviewed | Validated — recovery; lifecycle execution not observed |
 
 [View all 32 labs and their status](docs/progress.md)
