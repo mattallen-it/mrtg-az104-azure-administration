@@ -4,7 +4,7 @@
 
 ## Status and evidence
 
-Hands-on results are documented from the lab session screenshots and command output. The redacted November 3 cost-review screenshot is published below. Access-test and cleanup screenshot publication remains pending.
+Hands-on results are documented from the lab session screenshots and command output. The [evidence gallery](screenshots/README.md) publishes seven reviewed screenshots. The remaining 30 source images, including key rotation and cleanup, are pending publication after an automatic approval-review block.
 
 ## Business problem
 
@@ -101,7 +101,7 @@ Keys and connection strings are intentionally omitted from this record. The fina
 
 ## Troubleshooting
 
-The initial Windows PowerShell 5.1 HTTP test failed because `System.Net.Http.HttpClient` was unavailable in that session. Loading the assembly with `Add-Type -AssemblyName System.Net.Http` allowed client creation. The corrected script kept `try`, `catch`, and `finally` together and completed the HTTP request.
+The initial Windows PowerShell 5.1 HTTP test failed because `System.Net.Http.HttpClient` was unavailable in that session. Loading the assembly with `Add-Type -AssemblyName System.Net.Http` allowed client creation. The GET/PUT capture shows completed requests, followed by a separately entered `finally` block; it is not proof of successful disposal through that block. The later original-SAS retest kept `try`, `catch`, and `finally` together.
 
 A later document-container screenshot also showed an authorization denial after earlier successful listing. The intervening role state was not captured, so this is not attributed to a specific permission change.
 
