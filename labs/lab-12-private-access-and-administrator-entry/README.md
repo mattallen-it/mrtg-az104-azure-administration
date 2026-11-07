@@ -137,7 +137,7 @@ The review covered October 24–31, 2026 at billing-account scope, grouped by re
 
 The deployed role and successful read were verified. Write denial, cross-container denial, identity-role removal enforcement, VPN connectivity, paid Bastion features, and production hardening were not tested. The public-access-disabled screenshot shows the selected configuration; the subsequent private read and home denial corroborate the final behavior. Resource-group deletion does not establish permanent erasure of every recoverable storage item.
 
-Results are based on reviewed operator-supplied screenshots. All 15 selected, reviewed screenshots are published in the gallery, including the service-endpoint read and posted cost review. Configuration-review captures establish intended settings; runtime tests carry the functional conclusions. These are synthetic lab results, not a regulatory-compliance attestation.
+Results are based on reviewed operator-supplied screenshots. The gallery contains 55 reviewed screenshots, including setup, service-endpoint and private-endpoint reads, and posted cost review. Of 55 supplied captures, 15 were already published unchanged and 40 were added, including a sanitized selected-network configuration with the home public IP hidden. Configuration-review captures establish intended settings; runtime tests carry the functional conclusions. These are synthetic lab results, not a regulatory-compliance attestation.
 
 ## References
 
