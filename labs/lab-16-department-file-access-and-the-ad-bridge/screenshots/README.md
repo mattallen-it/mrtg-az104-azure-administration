@@ -1,10 +1,11 @@
 # Lab 16 — Screenshot evidence
 
-**34 published screenshots.**
+**35 published screenshots.**
 
 | Screenshot | Evidence and qualification |
 |---|---|
 | [lab16-azure-files-smb-connectivity-failed.png](lab16-azure-files-smb-connectivity-failed.png) | CLIENT01 TCP 445 failure; not a permissions-denial test. |
+| [lab16-cost-review-2026-11-08.png](lab16-cost-review-2026-11-08.png) | November 2026 filtered to the Lab 16 group: breakdown tiles <0.01; Actual cost unavailable; chart reports no cost; currency not visible. |
 | [lab16-cleanup-complete.png](lab16-cleanup-complete.png) | Successful Azure resource-group deletion and remaining NetworkWatcherRG. |
 | [lab16-client-domain-trust-verified.png](lab16-client-domain-trust-verified.png) | Secure-channel test returned True. |
 | [lab16-client-network-and-domain-verified.png](lab16-client-network-and-domain-verified.png) | Domain DNS, TCP 443 baseline, and secure-channel health. |
@@ -39,7 +40,7 @@
 | [lab16-storage-account-tags.png](lab16-storage-account-tags.png) | Storage account tags; configuration/creation evidence, not a department access test. |
 | [lab16-storage-https-connectivity-passed.png](lab16-storage-https-connectivity-passed.png) | Physical-host TCP 443 retest succeeds. |
 
-All 34 screenshots are indexed. Updated sanitized copies replace the affected originals; subscription ID, physical host name, and correlation ID are removed where applicable.
+All 35 screenshots are indexed. Updated sanitized copies replace the affected originals; subscription ID, physical host name, and correlation ID are removed where applicable.
 
 Storage setup pages do not independently establish final settings. Duplicate connectivity and restoration captures preserve intermediate observations. No TCP failure is presented as an authorization denial. The restored text was visually verified, without a captured hash comparison.
 

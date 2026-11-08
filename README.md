@@ -30,7 +30,7 @@ An Azure administration portfolio for the fictional **Monroe Redstone Technology
 
 ## Lab 16 — Partial validation
 
-[Department file access and the AD bridge](labs/lab-16-department-file-access-and-the-ad-bridge/README.md): Azure Files snapshot recovery and restored text verified; local AD users/groups and client trust checked; SMB connectivity blocked. Azure Files AD DS authentication and Finance/HR access tests were not completed. Azure cleanup verified; final cost not captured. [34-image evidence gallery](labs/lab-16-department-file-access-and-the-ad-bridge/screenshots/README.md).
+[Department file access and the AD bridge](labs/lab-16-department-file-access-and-the-ad-bridge/README.md): Azure Files snapshot recovery and restored text verified; local AD users/groups and client trust checked; SMB connectivity blocked. Azure Files AD DS authentication and Finance/HR access tests were not completed. Azure cleanup verified; cost breakdown below 0.01 with Actual cost unavailable. [35-image evidence gallery](labs/lab-16-department-file-access-and-the-ad-bridge/screenshots/README.md).
 
 [View all 32 labs and planned work](docs/progress.md)
 

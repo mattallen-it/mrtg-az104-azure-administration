@@ -73,13 +73,13 @@ On **November 7, 2026 (America/Chicago)**, Azure confirmed deletion of `rg-mrtg-
 
 The local Hyper-V environment and AD test identities were not removed by Azure cleanup. VM shutdown was requested but is not evidenced in the package; local object deletion is not claimed.
 
-**No Lab 16 cost-analysis capture or final billed total was supplied.** Storage, transactions, and snapshot usage may produce delayed charges. Cleanup is verified; zero cost is not claimed. See the [cost ledger](../../docs/cost-ledger.md).
+The **November 8, 2026** billing-account Cost analysis view was filtered to `rg-mrtg-lab16-files` for November 2026. Storage, Central US, and subscription breakdown tiles each displayed **`<0.01`**. The Actual cost total remained **`--`**, and the chart reported **No cost reported during this period**. Currency is not visible in this sanitized capture. The breakdown observation is recorded without interpreting the unavailable total as zero or a finalized charge. Storage, transaction, and snapshot charges may report later. See the [cost ledger](../../docs/cost-ledger.md).
 
 ## Evidence and limits
 
 ![Restored Finance document in the live Azure file share](screenshots/lab16-file-restored-to-live-share.png)
 
-**34 published screenshots:** [complete evidence gallery](screenshots/README.md). Setup captures, successful tests, failed probes, and unconfigured features are distinguished in the gallery.
+**35 published screenshots:** [complete evidence gallery](screenshots/README.md). Setup captures, successful tests, failed probes, and unconfigured features are distinguished in the gallery.
 
 The sanitized pre-cleanup inventory and successful deletion captures are published. Subscription ID, physical host name, and correlation ID were removed from the affected screenshots. The content-verification screenshot contains no visible SAS query string. No permissions matrix enforcement, identity synchronization, Azure Files AD DS registration, VPN/private endpoint deployment, or production/compliance claim is made.
 
