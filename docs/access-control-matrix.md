@@ -74,3 +74,13 @@ No added group or role assignments were shown at creation. The recovery account 
 
 
 The proposed document-reader group above has not been assigned or tested. The workload managed-identity read was tested separately in Lab 12. Contributor is broad; its suitability depends on the workload operation. Future results must distinguish management-plane roles from storage data access.
+
+## Lab 16 — Department file access boundary not validated
+
+| Identity or path | Observed state | Authorization limit |
+|---|---|---|
+| `lab16.finance` via `GG-Lab16-Finance` | Local domain identity and group token captured | No Azure Files allowed/denied operation tested |
+| `lab16.hr` via `GG-Lab16-HR` | Local domain identity and group token captured | No Azure Files allowed/denied operation tested |
+| Portal administrator using access key | Created folders and recovered Finance document from snapshot | Administrative recovery does not validate per-user isolation |
+
+[Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) left Azure Files identity sources disabled. TCP 445 failed before authentication testing. Share-level role enforcement and directory ACLs remain untested; no hybrid identity synchronization is claimed. Azure storage resources were removed; local AD object cleanup was not captured.

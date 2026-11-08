@@ -90,4 +90,4 @@ After cleanup on November 5, the subscription resource-group list showed only `N
 
 ---
 
-[← Lab 14](../lab-14-data-access-boundaries/README.md) · [All labs](../../docs/progress.md)
+[← Lab 14](../lab-14-data-access-boundaries/README.md) · [All labs](../../docs/progress.md) · [Lab 16 →](../lab-16-department-file-access-and-the-ad-bridge/README.md)

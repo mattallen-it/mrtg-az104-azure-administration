@@ -78,7 +78,8 @@ Network reachability and identity authorization must both be tested; success at 
 | Lab 13 storage transfers | Three files uploaded/downloaded with Entra authentication; final SHA-256 hashes matched; group removed | [Lab 13](../labs/lab-13-storage-baseline-and-transfer/README.md) | Historical evidence; mismatch cause and final cost total unverified |
 | Lab 15 blob recovery | Soft-delete and version recovery verified by SHA-256; lifecycle configured; group removed | [Lab 15](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Historical evidence; lifecycle execution not observed |
 | Alerts and backup-service restore | Planned | None | Labs 25–29 |
-| Hybrid identity or connectivity | Not implemented by this series | None | Optional later extension |
+| Lab 16 AD prerequisites and Azure Files | Local domain trust and users/groups verified; share snapshot recovery verified; Azure resource group removed | [Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Azure Files AD DS integration, identity sync, department authorization and private connectivity not implemented |
+| Hybrid identity or connectivity | No Azure identity synchronization or private hybrid connection implemented | Lab 16 records local AD prerequisites only | Optional later extension |
 
 Removed deployments remain documented as historical evidence. The proposed workload diagram does not represent running resources.
 
