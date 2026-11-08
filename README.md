@@ -4,7 +4,7 @@
 
 An Azure administration portfolio for the fictional **Monroe Redstone Technology Group (MRTG)**. The work connects identity and access control, resource governance, networking, storage, troubleshooting, and recovery.
 
-**15 of 32 labs validated: Labs 01–15.** Labs 16–32 are planned. Each completed lab follows the same structure: outcome, business problem, environment, work performed, validation, troubleshooting, cleanup, and evidence limits.
+**15 of 32 labs validated: Labs 01–15.** Lab 16 is partially validated: file-share recovery and domain prerequisites are evidenced; Azure Files identity configuration and authorization tests remain incomplete. Labs 17–32 are planned. Each completed lab follows the same structure: outcome, business problem, environment, work performed, validation, troubleshooting, cleanup, and evidence limits.
 
 [Lab progress](docs/progress.md) · [Architecture](docs/architecture.md) · [Access matrix](docs/access-control-matrix.md) · [Cost ledger](docs/cost-ledger.md)
 
@@ -28,6 +28,10 @@ An Azure administration portfolio for the fictional **Monroe Redstone Technology
 | [14 — Data access boundaries](labs/lab-14-data-access-boundaries/README.md) | Account Reader versus blob-data access tested; container-scoped reads allowed, restricted-container reads and uploads denied; read-only SAS GET 200/PUT 403; old/new key rotation tests and redacted cost review | Validated |
 | [15 — Recover an accidental document deletion](labs/lab-15-recover-an-accidental-document-deletion/README.md) | Soft-delete and overwritten-version recovery verified by SHA-256; lifecycle policy exported; cleanup and reported cost below USD 0.01 reviewed | Validated |
 
+## Lab 16 — Partial validation
+
+[Department file access and the AD bridge](labs/lab-16-department-file-access-and-the-ad-bridge/README.md): Azure Files snapshot recovery and restored text verified; local AD users/groups and client trust checked; SMB connectivity blocked. Azure Files AD DS authentication and Finance/HR access tests were not completed. Azure cleanup verified; final cost not captured. [34-image evidence gallery](labs/lab-16-department-file-access-and-the-ad-bridge/screenshots/README.md).
+
 [View all 32 labs and planned work](docs/progress.md)
 
 ## How to review this portfolio
@@ -36,7 +40,7 @@ Start with a lab's **Outcome** and **Validation results**, then inspect its **Ev
 
 - **Identity and governance — Labs 01–07:** subscription ownership, organization, joiner/mover/leaver administration, scoped Azure RBAC, policy and locks, administrator-assisted account recovery, and manual least-privilege review.
 - **Networking — Labs 08–12:** address planning, ASG traffic tests, peering and route failure/recovery, DNS and backend fault isolation, and managed-identity storage access through service and private endpoints.
-- **Storage and recovery — Labs 13–15:** byte-level transfer verification, container-scoped permissions, read-only SAS tests, key rotation, soft-delete recovery, and version recovery.
+- **Storage and recovery — Labs 13–16:** byte-level transfer verification, container-scoped permissions, read-only SAS tests, key rotation, soft-delete recovery, version recovery, and Lab 16 file-share snapshot recovery with an explicit SMB access-testing limitation.
 
 ## Evidence and operating boundaries
 
