@@ -1,10 +1,10 @@
 # MRTG Azure Administration
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-15_of_32-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-16_of_32-2E7D32)
 
 An Azure administration portfolio for the fictional **Monroe Redstone Technology Group (MRTG)**. The work connects identity and access control, resource governance, networking, storage, troubleshooting, and recovery.
 
-**15 of 32 labs validated: Labs 01–15.** Lab 16 is partially validated: file-share recovery and domain prerequisites are evidenced; Azure Files identity configuration and authorization tests remain incomplete. Labs 17–32 are planned. Each completed lab follows the same structure: outcome, business problem, environment, work performed, validation, troubleshooting, cleanup, and evidence limits.
+**16 of 32 labs validated: Labs 01–15 and 17.** Lab 16 is partially validated: file-share recovery and domain prerequisites are evidenced; Azure Files identity configuration and authorization tests remain incomplete. Labs 18–32 are planned. Each completed lab follows the same structure: outcome, business problem, environment, work performed, validation, troubleshooting, cleanup, and evidence limits.
 
 [Lab progress](docs/progress.md) · [Architecture](docs/architecture.md) · [Access matrix](docs/access-control-matrix.md) · [Cost ledger](docs/cost-ledger.md)
 
@@ -26,7 +26,8 @@ An Azure administration portfolio for the fictional **Monroe Redstone Technology
 | [12 — Private access and administrator entry](labs/lab-12-private-access-and-administrator-entry/README.md) | Service and private endpoint blob reads with a container-scoped managed identity; private DNS, Bastion entry, public access denial, cleanup and USD 1.74 posted cost reviewed | Validated |
 | [13 — Storage baseline and transfer](labs/lab-13-storage-baseline-and-transfer/README.md) | Entra-authenticated upload/download of three synthetic files; SHA-256 mismatch detected, CSV downloaded again, all final hashes matched; resource group cleanup verified | Validated |
 | [14 — Data access boundaries](labs/lab-14-data-access-boundaries/README.md) | Account Reader versus blob-data access tested; container-scoped reads allowed, restricted-container reads and uploads denied; read-only SAS GET 200/PUT 403; old/new key rotation tests and redacted cost review | Validated |
-| [15 — Recover an accidental document deletion](labs/lab-15-recover-an-accidental-document-deletion/README.md) | Soft-delete and overwritten-version recovery verified by SHA-256; lifecycle policy exported; cleanup and reported cost below USD 0.01 reviewed | Validated |
+| [15 — Recover an accidental document deletion](labs/lab-15-recover-an-accidental-document-deletion/README.md) | Soft-delete and overwritten-version recovery verified by SHA-256; lifecycle policy exported; cleanup verified | Validated |
+| [17 — Replication and storage incident drill](labs/lab-17-replication-and-storage-incident-drill/README.md) | New block blob replicated; source status Complete; initial and post-network-recovery SHA-256 matches; 403 fault/recovery, cleanup verified | Validated |
 
 ## Lab 16 — Partial validation
 
@@ -40,7 +41,7 @@ Start with a lab's **Outcome** and **Validation results**, then inspect its **Ev
 
 - **Identity and governance — Labs 01–07:** subscription ownership, organization, joiner/mover/leaver administration, scoped Azure RBAC, policy and locks, administrator-assisted account recovery, and manual least-privilege review.
 - **Networking — Labs 08–12:** address planning, ASG traffic tests, peering and route failure/recovery, DNS and backend fault isolation, and managed-identity storage access through service and private endpoints.
-- **Storage and recovery — Labs 13–16:** byte-level transfer verification, container-scoped permissions, read-only SAS tests, key rotation, soft-delete recovery, version recovery, and Lab 16 file-share snapshot recovery with an explicit SMB access-testing limitation.
+- **Storage and recovery — Labs 13–17:** byte-level transfer verification, container-scoped permissions, read-only SAS tests, key rotation, soft-delete recovery, version recovery, and Lab 16 file-share snapshot recovery with an explicit SMB access-testing limitation; Lab 17 object replication, SHA-256 verification and a controlled network fault/recovery.
 
 ## Evidence and operating boundaries
 

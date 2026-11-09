@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**15/32 labs validated (Labs 01–15).** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 publishes all 37 reviewed screenshots for scoped access, SAS tests, key rotation and cleanup, with attribution limits stated. Lab 15 recovery, cleanup and cost screenshots are published. Lifecycle execution was not observed. Lab 16 is partially validated: snapshot recovery, domain prerequisites, connectivity investigation and Azure cleanup are evidenced; Azure Files identity configuration and department authorization remain incomplete. Lab 16’s November 8 cost review shows breakdown tiles below 0.01 with an unavailable Actual cost total; no finalized cost is claimed. Labs 17–32 remain planned.
+**16/32 labs validated (Labs 01–15 and 17).** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 publishes all 37 reviewed screenshots for scoped access, SAS tests, key rotation and cleanup, with attribution limits stated. Lab 15 recovery, cleanup and cost screenshots are published. Lifecycle execution was not observed. Lab 16 is partially validated: snapshot recovery, domain prerequisites, connectivity investigation and Azure cleanup are evidenced; Azure Files identity configuration and department authorization remain incomplete. Lab 16’s November 8 cost review shows breakdown tiles below 0.01 with an unavailable Actual cost total; no finalized cost is claimed. Lab 17 replication, SHA-256 integrity, network fault/recovery, cleanup are validated. Labs 18–32 remain planned.
 
 ## Lab index
 
@@ -22,7 +22,7 @@
 | 14 | [Data access boundaries](../labs/lab-14-data-access-boundaries/README.md) | Validated — scoped access, read-only SAS, key rotation and cleanup; SAS attribution limit documented |
 | 15 | [Recover an accidental document deletion](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Validated — soft-delete/version recovery and SHA-256 matches; lifecycle configuration, cleanup and cost review |
 | 16 | [Department file access and the AD bridge](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Partially validated — recovery and local AD prerequisites verified; SMB blocked; Azure Files authentication and department access untested; Azure cleanup verified |
-| 17 | [Replication and storage incident drill](../labs/lab-17-replication-and-storage-incident-drill/README.md) | Planned |
+| 17 | [Replication and storage incident drill](../labs/lab-17-replication-and-storage-incident-drill/README.md) | Validated — new-blob object replication, Complete status, matching initial/post-recovery hashes, 403 network fault/recovery and cleanup |
 | 18 | [Reproducible MRTG deployment](../labs/lab-18-reproducible-mrtg-deployment/README.md) | Planned |
 | 19 | [VM lifecycle](../labs/lab-19-vm-lifecycle/README.md) | Planned |
 | 20 | [Disk recovery and relocation](../labs/lab-20-disk-recovery-and-relocation/README.md) | Planned |

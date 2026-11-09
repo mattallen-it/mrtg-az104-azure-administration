@@ -51,7 +51,14 @@ def check_portfolio(root):
     completed = int(badge[1])
     if not 1 <= completed <= 32:
         return ['README.md: validated count must be between 1 and 32']
-    for number in range(1, completed + 1):
+    # A partial lab can sit between validated labs; use explicit index membership.
+    rows = re.findall(r'^\| \[([0-9]{2}) —', main, re.M)
+    validated = [int(number) for number in rows]
+    if len(validated) != completed:
+        errors.append('README.md: validated index count differs from badge')
+    if validated != sorted(set(validated)) or any(not 1 <= n <= 32 for n in validated):
+        errors.append('README.md: validated index must list unique lab numbers in order, within 01–32')
+    for number in sorted(set(n for n in validated if 1 <= n <= 32)):
         matches = sorted((root / 'labs').glob(f'lab-{number:02}-*/README.md'))
         if len(matches) != 1:
             errors.append(f'Lab {number:02}: expected one results README')
@@ -102,14 +109,14 @@ def check_portfolio(root):
             if f']({name})' not in content:
                 errors.append(f'{gallery.relative_to(root)}: unindexed image: {name}')
     main = (root / 'README.md').read_text(encoding='utf-8')
-    rows = re.findall(r'^\| \[([0-9]{2}) —', main, re.M)
-    if rows != [f'{n:02}' for n in range(1, completed + 1)]:
-        errors.append(f'README.md: completed index must list 01–{completed:02} once, in order')
     if f'{completed} of 32 labs validated' not in main:
         errors.append('README.md: completed count is inconsistent')
     progress = (root / 'docs/progress.md').read_text(encoding='utf-8')
     if f'{completed}/32 labs validated' not in progress:
         errors.append('docs/progress.md: completed count is inconsistent')
+    progress_rows = re.findall(r'^\| ([0-9]{2}) \| .* \| (Validated[^|]*) \|$', progress, re.M)
+    if [int(number) for number, status in progress_rows] != validated:
+        errors.append('docs/progress.md: validated lab numbers differ from main index')
     return errors
 
 if __name__ == '__main__':
