@@ -34,11 +34,13 @@ Replication is asynchronous. The network restriction tested workstation access; 
 
 ## Cleanup and costs
 
-Azure confirmed deletion of the temporary lab resource group. Billing details are omitted from this documentation update.
+Azure confirmed deletion of the temporary lab resource group. The redacted cost-review screenshot is included in the evidence gallery. Its displayed amounts are a dated snapshot, not a final invoice.
 
 ## Evidence and limits
 
-[17 uploaded screenshots](screenshots/README.md) cover the role review, destination setup, copied blob, controlled network denial, restored access, and cleanup. Other session evidence was reviewed, but its upload remains incomplete. This gallery does not contain every screenshot used to assess the results.
+[41 reviewed screenshots](screenshots/README.md) document setup, inherited access, replication configuration, source completion status, initial and post-recovery hash comparisons, the controlled network fault, restored access, cleanup, and the redacted cost review. Subscription IDs, administrator object IDs, deployment correlation IDs, billing identity, and diagnostic identifiers are removed where applicable.
+
+![Original and replica SHA-256 comparison](screenshots/lab17-replicated-file-sha256-match.png)
 
 The test covered one synthetic blob. Overwrites, deletions, prefix filters, cross-region recovery, and production hardening were not validated.
 
