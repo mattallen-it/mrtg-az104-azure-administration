@@ -1,6 +1,6 @@
 # Lab 16 evidence gallery
 
-**71 published screenshots.** Evidence covers two disposable deployments. The initial November 7 recovery/connectivity phase is distinct from the November 10–12 rebuild and successful department access tests. An old unconfigured identity page or failed public SMB probe does not describe the final rebuilt state.
+**72 published screenshots.** Evidence covers two disposable deployments. The initial November 7 recovery/connectivity phase is distinct from the November 10–12 rebuild and successful department access tests. An old unconfigured identity page or failed public SMB probe does not describe the final rebuilt state.
 
 ## Initial deployment — recovery and public SMB investigation
 
@@ -83,10 +83,16 @@
 | [lab16-client-hosts-cleanup-verified.png](lab16-client-hosts-cleanup-verified.png) | DNS flush succeeds and hosts search for rebuilt storage name returns nothing. |
 | [lab16-storage-ad-object-cleanup-verified.png](lab16-storage-ad-object-cleanup-verified.png) | Storage AD computer deletion confirmed; remaining matching computer count zero. |
 
+## November 13 — Reported cost review
+
+| Screenshot | Observation and limit |
+|---|---|
+| [lab16-cost-review-2026-11-13.png](lab16-cost-review-2026-11-13.png) | November 2026 filtered to rg-mrtg-lab16-files: USD 5.88 reported total, including USD 5.48 VPN Gateway. Billing-account name removed. Can include both deployments; not a final invoice. |
+
 ## Interpretation and publication boundaries
 
 Setup forms show proposed settings. Final domain/share readback, ACL output, two user sessions, permitted file operations, denied cross-department reads and CIFS ticket metadata establish the tested results. No PFX, password, private key, storage key or VPN profile is included. Submitted sanitized images are used without altering test output.
 
-The client used a temporary hosts override; Azure private DNS association is not evidence of hybrid DNS forwarding. The November 8 cost screenshot belongs to the first deployment only. Final rebuild costs, local installed-certificate removal, PFX deletion and VM shutdown are not independently verified. Cross-department write/delete and revocation were not separately tested. Root-certificate public data and certificate/ticket metadata are not private-key or exported-ticket material.
+The client used a temporary hosts override; Azure private DNS association is not evidence of hybrid DNS forwarding. The November 8 cost screenshot belongs to the first deployment only. The November 13 view reports USD 5.88 for the resource-group/month; rebuild-only and final invoiced costs remain unverified. Local installed-certificate removal, PFX deletion and VM shutdown are not independently verified. Cross-department write/delete and revocation were not separately tested. Root-certificate public data and certificate/ticket metadata are not private-key or exported-ticket material.
 
 [Lab results](../README.md)
