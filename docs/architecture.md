@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–13 and 15 validated. Disposable workload groups were removed after testing. Lab 12 demonstrated private storage access, managed identity and Bastion entry; Lab 13 demonstrated workstation transfers and SHA-256 integrity checks. Lab 15 demonstrated blob recovery and saved lifecycle configuration; lifecycle execution, monitoring and broader backup/recovery exercises remain untested.**
+**Status: Labs 01–17 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -20,7 +20,7 @@ The initial Lab 01 baseline used the existing Entra directory and active `MRTG-A
 
 [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) used `vnet-mrtg-lab12-private` (`10.120.0.0/16`), a client VM at `10.120.10.4`, and a Blob private endpoint at `10.120.20.4`. Bastion Developer provided SSH entry without a VM public IP. A container-scoped managed identity read the test blob with HTTP 200 through a Storage service endpoint, then through the private endpoint with public network access disabled. Private DNS resolved the normal storage hostname to the endpoint IP; the home portal received 403. The 11-resource group was deleted; the October 24–31 cost snapshot showed USD 1.74.
 
-These results establish the tested network behavior. They do not establish application authentication, production hardening, hybrid connectivity, or a retained running environment.
+These results establish the tested network behavior. Those Labs 09–12 results do not establish application authentication, production hardening, or a retained running environment. Lab 16 hybrid connectivity and SMB authentication are documented separately below.
 
 ## Demonstrated workstation storage transfers
 
@@ -32,11 +32,11 @@ These results establish the tested network behavior. They do not establish appli
 
 ## Existing foundation
 
-The earlier IAM repository documents Hyper-V, `mrtg.local`, `MRTG-DC01`, `MRTG-DC02`, `MRTG-LOG01` (Splunk), and `MRTG-CLIENT-01`. Their present runtime state has not been verified in this series.
+The earlier IAM repository documents Hyper-V, `mrtg.local`, `MRTG-DC01`, `MRTG-DC02`, `MRTG-LOG01` (Splunk), and `MRTG-CLIENT-01`. Lab 16 verified CLIENT01 domain sign-ins and trust against MRTG-DC01 and MRTG-DC02. The other systems and present runtime state are not revalidated.
 
 ## Proposed Azure workload
 
-This diagram remains a target design, not a live deployment inventory. Lab 12 separately demonstrated the managed-identity and protected-storage relationship described above. Dashed arrows denote proposed relationships. The diagram deliberately shows no on-premises synchronization or VPN connection: neither is established by this series yet.
+This diagram remains a target design, not a live deployment inventory. Lab 12 separately demonstrated the managed-identity and protected-storage relationship described above. Dashed arrows denote proposed relationships. The diagram omits the separate, historical Lab 16 VPN/file-share path shown below. On-premises identity synchronization remains unimplemented.
 
 ```mermaid
 flowchart TD
@@ -78,8 +78,23 @@ Network reachability and identity authorization must both be tested; success at 
 | Lab 13 storage transfers | Three files uploaded/downloaded with Entra authentication; final SHA-256 hashes matched; group removed | [Lab 13](../labs/lab-13-storage-baseline-and-transfer/README.md) | Historical evidence; mismatch cause and final cost total unverified |
 | Lab 15 blob recovery | Soft-delete and version recovery verified by SHA-256; lifecycle configured; group removed | [Lab 15](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Historical evidence; lifecycle execution not observed |
 | Alerts and backup-service restore | Planned | None | Labs 25–29 |
-| Lab 16 AD prerequisites and Azure Files | Local domain trust and users/groups verified; share snapshot recovery verified; Azure resource group removed | [Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Azure Files AD DS integration, identity sync, department authorization and private connectivity not implemented |
-| Hybrid identity or connectivity | No Azure identity synchronization or private hybrid connection implemented | Lab 16 records local AD prerequisites only | Optional later extension |
+| Lab 16 AD DS and Azure Files | Snapshot recovery; rebuilt P2S/private endpoint, Kerberos and Finance/HR folder tests passed; Azure group, hosts override and storage AD object removed | [Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Historical evidence; final rebuild cost unverified; local test users/groups/OU retained |
+| Hybrid connectivity and identity | Lab 16 private VPN SMB path and local AD DS Kerberos demonstrated; no Entra synchronization | Lab 16 user connectivity and CIFS ticket evidence | Hybrid DNS forwarding, identity sync and narrower share assignments remain future work |
 
 Removed deployments remain documented as historical evidence. The proposed workload diagram does not represent running resources.
 
+
+## Lab 16 — Historical AD DS file-access bridge
+
+CLIENT01 (`192.168.10.20`) retained local DC connectivity while its Azure VPN interface received `172.30.240.2` from pool `172.30.240.0/24`. OpenVPN SSL terminated at `vpngw-mrtg-lab16` in VNet `10.160.0.0/16`. The `file` private endpoint was `10.160.1.4` in subnet `10.160.1.0/24`; GatewaySubnet was `10.160.255.0/26`. Storage public network access was disabled.
+
+```mermaid
+flowchart TD
+    C["CLIENT01: Finance or HR session"] -->|"P2S certificate VPN"| P["Azure file private endpoint: 10.160.1.4"]
+    C -->|"Kerberos ticket request"| D["Local AD DS: mrtg.local"]
+    P --> S["Azure Files: departments"]
+    D -.->|"Storage account registration"| S
+    S --> A["Finance and HR folder ACLs"]
+```
+
+The Azure private DNS zone was integrated with the endpoint, but CLIENT01 resolved the normal storage hostname through a temporary hosts entry. This is not proof of DNS forwarding over VPN. The default SMB Share Contributor permission covered authenticated users; group-based Windows ACLs implemented folder separation. Azure resources, the client override and the storage-account AD computer object were removed after testing; the diagram is historical, not a retained deployment.

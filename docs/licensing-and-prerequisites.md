@@ -25,7 +25,7 @@ Entra Free is already part of the Azure environment. Azure subscription charges,
 | 13 | [Storage baseline and transfer](../labs/lab-13-storage-baseline-and-transfer/README.md) | Completed with ordinary Azure RBAC and Entra user authentication, without paid user licenses or trials. One Standard LRS storage account; capacity, operations and transfer may incur Azure charges. Resource group removed; posted cost not captured. |
 | 14 | [Data access boundaries](../labs/lab-14-data-access-boundaries/README.md) | Azure data roles, SAS, revocation and keys. |
 | 15 | [Recover an accidental document deletion](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Versions, soft deletion and retained data can increase storage charges. |
-| 16 | [Department file access and the AD bridge](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Conditional infrastructure dependency: choose AD DS, Entra Domain Services or Entra Kerberos; validate clients, identity sync and licensing before deployment. P1 alone does not create a domain. |
+| 16 | [Department file access and the AD bridge](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Implemented with existing local AD DS, default share permission and folder ACLs; no Entra synchronization or paid user-license purchase/trial. Metered Azure VPN/private endpoint/storage; Windows rights remain separate. |
 | 17 | [Replication and storage incident drill](../labs/lab-17-replication-and-storage-incident-drill/README.md) | Two storage accounts, replication and network costs. |
 | 18 | [Reproducible MRTG deployment](../labs/lab-18-reproducible-mrtg-deployment/README.md) | ARM/Bicep needs no premium identity license; deployed resources cost money. |
 | 19 | [VM lifecycle](../labs/lab-19-vm-lifecycle/README.md) | VM/disks and managed identity; managed identities have no license requirement. Review OS image terms. |
@@ -62,11 +62,13 @@ The classification is an engineering inference from the published scope and the 
 
 Do not buy one license and assume it covers every beneficiary. Scope and license the users involved according to the feature's rules. A tenant-wide control being technically accessible does not establish licensing entitlement.
 
-## Lab 16: decision still needed
+## Lab 16: implemented AD DS path
 
-Azure Files supports multiple identity sources, and enabling identity authentication on the storage account has no extra service charge. A functioning identity source and compatible clients are still necessary. AD DS means domain controllers, connectivity and identity synchronization for user-specific share permissions; Entra Domain Services means a separate managed-domain service; Entra Kerberos has its own identity/client prerequisites. These are not interchangeable with buying P1.
+Lab 16 used existing Hyper-V domain controllers and a domain-joined Windows client, AD DS storage registration, a certificate-based P2S VPN and a file private endpoint. No Entra synchronization, Entra Domain Services deployment, or new paid Entra/Microsoft 365 user license/trial was introduced.
 
-Before Lab 16, choose a supported path and estimate storage, client/VM and directory costs. Verify Windows/Windows Server rights for chosen images and devices. If identity-based SMB cannot be implemented within the budget, explicitly separate tested share/snapshot work from an untested identity design.
+The tested share permission was default Storage File Data SMB Share Contributor for authenticated identities. Department groups received Windows folder ACLs; Finance/HR allowed and denied reads plus own-folder file creation were verified. This path did not test department-specific Azure RBAC share assignments. Microsoft documents default share permission as an option when local AD identities are not synchronized; see [share permission choices](https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions).
+
+Azure VPN gateway, public IP, private endpoint and storage charges are separate from identity licensing. The rebuilt Azure group was deleted November 12; final rebuild charges were not captured. Windows/Windows Server software rights are separate prerequisites and were not audited by these tests. No production licensing-entitlement claim is made.
 
 ## Monitoring and service tiers
 

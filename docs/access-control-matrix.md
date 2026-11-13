@@ -75,12 +75,15 @@ No added group or role assignments were shown at creation. The recovery account 
 
 The proposed document-reader group above has not been assigned or tested. The workload managed-identity read was tested separately in Lab 12. Contributor is broad; its suitability depends on the workload operation. Future results must distinguish management-plane roles from storage data access.
 
-## Lab 16 — Department file access boundary not validated
+## Lab 16 — Department file access validated
 
-| Identity or path | Observed state | Authorization limit |
-|---|---|---|
-| `lab16.finance` via `GG-Lab16-Finance` | Local domain identity and group token captured | No Azure Files allowed/denied operation tested |
-| `lab16.hr` via `GG-Lab16-HR` | Local domain identity and group token captured | No Azure Files allowed/denied operation tested |
-| Portal administrator using access key | Created folders and recovered Finance document from snapshot | Administrative recovery does not validate per-user isolation |
+| Identity or path | Share-level permission | Folder permission | Observed operation |
+|---|---|---|---|
+| `MRTG\lab16.finance` via `GG-Lab16-Finance` | Default Storage File Data SMB Share Contributor | Root Read/Execute; Finance Modify | Finance seed read and file create/readback succeeded; HR seed read denied |
+| `MRTG\lab16.hr` via `GG-Lab16-HR` | Same default permission | Root Read/Execute; HR Modify | HR seed read and file create/readback succeeded; Finance seed read denied |
+| Administrator with storage key | Administrative bootstrap | Applied root and folder ACLs | Setup only; not used as explicit credentials in department tests |
+| Initial portal access-key session | Administrative access | Not a per-user boundary test | Share-snapshot recovery and visual content check |
 
-[Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) left Azure Files identity sources disabled. TCP 445 failed before authentication testing. Share-level role enforcement and directory ACLs remain untested; no hybrid identity synchronization is claimed. Azure storage resources were removed; local AD object cleanup was not captured.
+[Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) rebuilt storage with AD DS registration in `mrtg.local`. Both users obtained AES-256 CIFS Kerberos tickets from MRTG-DC02 and reached the private endpoint at `10.160.1.4` over P2S VPN. Certificate-based VPN admission and domain-user file authentication are distinct controls. The department groups also received CLIENT01 local Remote Desktop Users membership for sign-in; this did not grant local administrator rights.
+
+Default share permission applied to authenticated identities; Windows folder ACLs enforced the department boundary. No department-specific Azure RBAC assignment or Entra identity synchronization was tested. Cross-folder write/delete, ACL changes and permission-revocation enforcement were not separately tested. Azure resources, the temporary hosts entry and the storage AD computer object were removed. Local department identities/groups and client RDP memberships were retained.
