@@ -92,7 +92,19 @@ The initial Azure group was deleted November 7, 2026 (America/Chicago). The Nove
 
 The rebuilt environment was removed November 12, 2026 (America/Chicago). The matching resource group was absent from the selected subscription; CLIENT01's hosts entry was removed, DNS flushed, and the storage-account AD computer object deleted with a zero remaining-object count. Azure deletion does not remove local AD objects automatically. All three VPN profiles were removed per operator confirmation. Exported PFX deletion was instructed but not independently verified; installed user/root certificates, the local OU, department users/groups, Remote Desktop Users membership and Hyper-V VMs are not claimed removed. No VM shutdown evidence was retained.
 
-The rebuild provisioned a metered VpnGw1AZ gateway, public IP, private endpoint and storage, including an overnight pause. Disconnecting a VPN client does not delete its gateway. No final rebuild cost capture, numeric session estimate, finalized cash total, subscription-wide orphan audit, or budget revalidation was collected. Delayed charges remain possible. See the [cost ledger](../../docs/cost-ledger.md).
+The rebuild provisioned a metered VpnGw1AZ gateway, public IP, private endpoint and storage, including an overnight pause. Disconnecting a VPN client does not delete its gateway.
+
+The **November 13, 2026** billing-account Cost analysis review, filtered to `rg-mrtg-lab16-files` for **November 2026**, showed **Actual cost USD 5.88**. This resource-group/month view can include both deployments; it does not isolate the rebuild's charge.
+
+| Service | Displayed cost (USD) |
+|---|---|
+| VPN Gateway | 5.48 |
+| Virtual Network | 0.39 |
+| Azure DNS | 0.02 |
+| Storage | <0.01 |
+| Bandwidth | 0.00 |
+
+Service figures are independently rounded and need not sum exactly to the displayed total. The VPN gateway accounts for approximately 93% of that total. This is a posted usage snapshot, not a final invoice or verified cash payment; delayed charges remain possible. No numeric predeployment session estimate or subscription-wide orphan audit was collected. The selected view showed Budget: None, which does not independently establish the state of the subscription budget configured in Lab 01. The supplied cost screenshot was reviewed but is withheld from the public gallery pending removal of the billing-account name. See the [cost ledger](../../docs/cost-ledger.md).
 
 ## Evidence and limits
 
