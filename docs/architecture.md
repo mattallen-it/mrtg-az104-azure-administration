@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–17 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
+**Status: Labs 01–18 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -77,6 +77,7 @@ Network reachability and identity authorization must both be tested; success at 
 | Managed identity for workloads | Container-scoped Storage Blob Data Reader assigned to client VM; authenticated HTTP 200 read verified | [Lab 12](../labs/lab-12-private-access-and-administrator-entry/README.md) | Write denial and cross-container access not tested |
 | Lab 13 storage transfers | Three files uploaded/downloaded with Entra authentication; final SHA-256 hashes matched; group removed | [Lab 13](../labs/lab-13-storage-baseline-and-transfer/README.md) | Historical evidence; mismatch cause and final cost total unverified |
 | Lab 15 blob recovery | Soft-delete and version recovery verified by SHA-256; lifecycle configured; group removed | [Lab 15](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Historical evidence; lifecycle execution not observed |
+| Lab 18 reproducible configuration | NSG, VNet/subnet and empty storage deployed and rebuilt from unchanged Bicep/parameters; same outputs and no-change plan; final group deleted | [Lab 18](../labs/lab-18-reproducible-mrtg-deployment/README.md) | Historical evidence; no traffic/data test or post-rebuild individual security readback; final cost unverified |
 | Alerts and backup-service restore | Planned | None | Labs 25–29 |
 | Lab 16 AD DS and Azure Files | Snapshot recovery; rebuilt P2S/private endpoint, Kerberos and Finance/HR folder tests passed; Azure group, hosts override and storage AD object removed | [Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Historical evidence; final rebuild cost unverified; local test users/groups/OU retained |
 | Hybrid connectivity and identity | Lab 16 private VPN SMB path and local AD DS Kerberos demonstrated; no Entra synchronization | Lab 16 user connectivity and CIFS ticket evidence | Hybrid DNS forwarding, identity sync and narrower share assignments remain future work |
@@ -98,3 +99,9 @@ flowchart TD
 ```
 
 The Azure private DNS zone was integrated with the endpoint, but CLIENT01 resolved the normal storage hostname through a temporary hosts entry. This is not proof of DNS forwarding over VPN. The default SMB Share Contributor permission covered authenticated users; group-based Windows ACLs implemented folder separation. Azure resources, the client override and the storage-account AD computer object were removed after testing; the diagram is historical, not a retained deployment.
+
+## Lab 18 — Historical Bicep baseline and rebuild
+
+[Lab 18](../labs/lab-18-reproducible-mrtg-deployment/README.md) created `rg-mrtg-lab18-iac` in Central US. Bicep declared `nsg-mrtg-lab18-app`, `vnet-mrtg-lab18` (`10.180.0.0/16`) with inline `snet-app` (`10.180.10.0/24`) associated with that NSG, and an empty Standard LRS Hot storage account. The custom inbound deny used priority 1000. Storage readback showed HTTPS required, TLS 1.2 minimum, disabled public network, Shared Key and anonymous blob access. No VM or private endpoint was created; no traffic or storage data access was tested.
+
+A parameter override changed all three Environment tags to Test. Priority 99 was rejected at provider preflight; priority 1000 remained, and baseline restoration succeeded. Deleting/recreating the same group and deploying unchanged source produced identical saved outputs and passing source hashes; final what-if reported three no-change resources. This proves the tested reconstruction, not workload data recovery or every-property equality. The final group was deleted and `az group exists` returned false. The proposed workload diagram above remains a separate target design.

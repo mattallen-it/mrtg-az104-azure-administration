@@ -87,3 +87,13 @@ The proposed document-reader group above has not been assigned or tested. The wo
 [Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) rebuilt storage with AD DS registration in `mrtg.local`. Both users obtained AES-256 CIFS Kerberos tickets from MRTG-DC02 and reached the private endpoint at `10.160.1.4` over P2S VPN. Certificate-based VPN admission and domain-user file authentication are distinct controls. The department groups also received CLIENT01 local Remote Desktop Users membership for sign-in; this did not grant local administrator rights.
 
 Default share permission applied to authenticated identities; Windows folder ACLs enforced the department boundary. No department-specific Azure RBAC assignment or Entra identity synchronization was tested. Cross-folder write/delete, ACL changes and permission-revocation enforcement were not separately tested. Azure resources, the temporary hosts entry and the storage AD computer object were removed. Local department identities/groups and client RDP memberships were retained.
+
+## Lab 18 — Deployment management plane
+
+| Identity or control | Observed operation | Evidence and boundary |
+|---|---|---|
+| Existing lab administrator in Cloud Shell | Created/deleted the lab group; deployed NSG, VNet and storage; read configuration and outputs | [Lab 18](../labs/lab-18-reproducible-mrtg-deployment/README.md); no new role assignment, deployment identity or minimum-role/denied-permission test |
+| Storage security configuration | Public network, Shared Key and anonymous blob access disabled; HTTPS and TLS 1.2 read back | Configuration only; no private endpoint or data-plane authentication test |
+| Resource-provider validation | NSG priority 99 rejected; existing priority 1000 read back | Input validation, not an identity authorization denial or partial-deployment rollback |
+
+The subscription administrator role baseline was not independently re-audited for this exercise. The rebuild adds matching outputs, source checksums and a no-change plan; explicit security readbacks were captured before rebuild. The disposable group was removed. No Lab 18 least-privilege, credential rotation or revocation claim is made.

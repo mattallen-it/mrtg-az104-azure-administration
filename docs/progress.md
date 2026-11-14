@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**17/32 labs validated (Labs 01–17).** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 publishes all 37 reviewed screenshots for scoped access, SAS tests, key rotation and cleanup, with attribution limits stated. Lab 15 recovery, cleanup and cost screenshots are published. Lifecycle execution was not observed. Lab 16 is validated: initial snapshot recovery and the later AD DS/VPN/private-endpoint rebuild are evidenced; Finance and HR own-folder read/write, cross-department read denial, AES-256 Kerberos and cleanup passed. Lab 16’s November 13 resource-group/month cost review showed USD 5.88, including USD 5.48 for VPN Gateway; it can include both deployments and is not a final invoice. The November 8 review covers only the first deployment. Lab 17 replication, SHA-256 integrity, network fault/recovery, cleanup are validated. Labs 18–32 remain planned.
+**18/32 labs validated (Labs 01–18).** Labs 01–13 document completed work and cleanup, with evidence limits stated in each lab. Labs 09–12 include posted cost review; Labs 13–14 include November 3 cost-review captures showing USD 0.00 breakdown tiles and an unavailable Actual cost total. Lab 14 publishes all 37 reviewed screenshots for scoped access, SAS tests, key rotation and cleanup, with attribution limits stated. Lab 15 recovery, cleanup and cost screenshots are published. Lifecycle execution was not observed. Lab 16 is validated: initial snapshot recovery and the later AD DS/VPN/private-endpoint rebuild are evidenced; Finance and HR own-folder read/write, cross-department read denial, AES-256 Kerberos and cleanup passed. Lab 16’s [November 13 cost review](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) is published with its scope and billing limits; it can include both deployments and is not a final invoice. The November 8 review covers only the first deployment. Lab 17 replication, SHA-256 integrity, network fault/recovery, cleanup are validated. Lab 18 validates Bicep deployment, tag override, provider preflight rejection, baseline restoration and a clean rebuild with matching outputs/source hashes, no-change what-if and final cleanup. Twenty screenshots and six original deployment files are published; final costs are unverified. Labs 19–32 remain planned.
 
 ## Lab index
 
@@ -23,7 +23,7 @@
 | 15 | [Recover an accidental document deletion](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Validated — soft-delete/version recovery and SHA-256 matches; lifecycle configuration, cleanup and cost review |
 | 16 | [Department file access and the AD bridge](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Validated — snapshot recovery; AD DS, VPN/private endpoint, department read/write and cross-read denial, AES-256 Kerberos; Azure/hosts/AD-object cleanup verified |
 | 17 | [Replication and storage incident drill](../labs/lab-17-replication-and-storage-incident-drill/README.md) | Validated — new-blob object replication, Complete status, matching initial/post-recovery hashes, 403 network fault/recovery and cleanup |
-| 18 | [Reproducible MRTG deployment](../labs/lab-18-reproducible-mrtg-deployment/README.md) | Planned |
+| 18 | [Reproducible MRTG deployment](../labs/lab-18-reproducible-mrtg-deployment/README.md) | Validated — Bicep baseline, controlled tag override, invalid-priority preflight rejection, unchanged-source rebuild, matching outputs, no-change plan and cleanup |
 | 19 | [VM lifecycle](../labs/lab-19-vm-lifecycle/README.md) | Planned |
 | 20 | [Disk recovery and relocation](../labs/lab-20-disk-recovery-and-relocation/README.md) | Planned |
 | 21 | [Availability and scale](../labs/lab-21-availability-and-scale/README.md) | Planned |
@@ -38,4 +38,3 @@
 | 30 | [Joiner, mover, leaver across services](../labs/lab-30-joiner-mover-leaver-across-services/README.md) | Planned |
 | 31 | [MRTG Azure operations capstone](../labs/lab-31-mrtg-azure-operations-capstone/README.md) | Planned |
 | 32 | [Independent rebuild and operations handover](../labs/lab-32-rebuild-review-and-exam-readiness/README.md) | Planned |
-

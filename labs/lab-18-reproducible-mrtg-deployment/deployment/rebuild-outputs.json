@@ -1,0 +1,18 @@
+{
+  "deployedEnvironment": {
+    "type": "String",
+    "value": "Lab"
+  },
+  "networkSecurityGroupName": {
+    "type": "String",
+    "value": "nsg-mrtg-lab18-app"
+  },
+  "storageAccountName": {
+    "type": "String",
+    "value": "stl185rfhirowkw57g"
+  },
+  "virtualNetworkName": {
+    "type": "String",
+    "value": "vnet-mrtg-lab18"
+  }
+}
