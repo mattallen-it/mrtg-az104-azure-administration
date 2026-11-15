@@ -97,3 +97,16 @@ Default share permission applied to authenticated identities; Windows folder ACL
 | Resource-provider validation | NSG priority 99 rejected; existing priority 1000 read back | Input validation, not an identity authorization denial or partial-deployment rollback |
 
 The subscription administrator role baseline was not independently re-audited for this exercise. The rebuild adds matching outputs, source checksums and a no-change plan; explicit security readbacks were captured before rebuild. The disposable group was removed. No Lab 18 least-privilege, credential rotation or revocation claim is made.
+
+## Lab 19 — Workload identity and OS sign-in
+
+| Identity or control | Role or scope | Observed behavior | Boundary |
+|---|---|---|---|
+| Administrator in Cloud Shell | Temporary Storage Blob Data Contributor at the new storage-account scope | Created both private containers and known fixture blobs with Entra login; exact bootstrap assignment deleted; matching role count 0 | Removal covers that data-role assignment, not all administrator access; fresh-token administrator denial not tested |
+| VM system-assigned identity | Storage Blob Data Reader only on `lab19-readable` | Permitted blob GET 200, attempted blob PUT 403 and known restricted-container GET 403; both denials reported AuthorizationPermissionMismatch; final permitted GET 200 | Container read boundary tested; no VM role-revocation or every-operation test |
+| Local Linux `azureuser` | SSH public-key OS account | Server fingerprint comparison, successful whoami and expected hostname; guest filesystem work | Independent of managed identity; no Entra OS login |
+| Storage firewall | Default Deny, bypass None, one subnet and zero IP rules; public network Enabled | Allowed VM subnet uses Microsoft.Storage service endpoint for authenticated requests | Network admission is separate from data authorization; no private endpoint or outside-source firewall denial test |
+| Temporary direct SSH entry | My IP source selection, TCP 22 to VM /32, priority 120 | Successful fallback SSH; key path later removed | Published rule image is pre-save with source CIDR omitted; final effective rule and external-source denial not independently captured |
+| Bastion Developer | Provisioning succeeded; candidate source exception attempted | Session creation failed; generic diagnostic did not execute | Entry and root cause unresolved; candidate exception is not a verified baseline |
+
+[Lab 19](../labs/lab-19-vm-lifecycle/README.md) used a managed-identity token held in a shell variable; no account key, SAS or interactive Azure login inside the VM was used for Blob requests. A successful permitted read before and after the two denied requests supports the tested data-role boundary. The lab group was deleted after validation. No premium identity feature, administrator least-privilege or production compliance claim is made.

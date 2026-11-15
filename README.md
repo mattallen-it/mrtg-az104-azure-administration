@@ -1,10 +1,10 @@
 # MRTG Azure Administration
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-18_of_32-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-19_of_32-2E7D32)
 
 An Azure administration portfolio for the fictional **Monroe Redstone Technology Group (MRTG)**. The work connects identity and access control, resource governance, networking, storage, troubleshooting, and recovery.
 
-**18 of 32 labs validated: Labs 01–18.** Lab 16 now includes AD DS authentication, private VPN connectivity, Finance/HR permission tests and cleanup. Lab 18 demonstrates a parameterized Bicep deployment, controlled changes, preflight rejection and a clean rebuild from unchanged source. Labs 19–32 are planned. Each completed lab follows the same structure: outcome, business problem, environment, work performed, validation, troubleshooting, cleanup, and evidence limits.
+**19 of 32 labs validated: Labs 01–19.** Lab 16 now includes AD DS authentication, private VPN connectivity, Finance/HR permission tests and cleanup. Lab 18 demonstrates a parameterized Bicep deployment, controlled changes, preflight rejection and a clean rebuild from unchanged source. Lab 19 validates VM capacity changes, UUID-based disk persistence and container-scoped managed-identity access using an SSH fallback; Bastion session failure remains unresolved. Labs 20–32 are planned. Each completed lab follows the same structure: outcome, business problem, environment, work performed, validation, troubleshooting, cleanup, and evidence limits.
 
 [Lab progress](docs/progress.md) · [Architecture](docs/architecture.md) · [Access matrix](docs/access-control-matrix.md) · [Cost ledger](docs/cost-ledger.md)
 
@@ -30,6 +30,7 @@ An Azure administration portfolio for the fictional **Monroe Redstone Technology
 | [16 — Department file access and the AD bridge](labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Snapshot recovery; rebuilt private-endpoint/VPN access with AD DS, Finance/HR folder boundaries, AES-256 Kerberos and cleanup | Validated |
 | [17 — Replication and storage incident drill](labs/lab-17-replication-and-storage-incident-drill/README.md) | New block blob replicated; source status Complete; initial and post-network-recovery SHA-256 matches; 403 fault/recovery, cleanup verified | Validated |
 | [18 — Reproducible MRTG deployment](labs/lab-18-reproducible-mrtg-deployment/README.md) | Parameterized Bicep baseline; tag override, invalid-priority preflight rejection, clean rebuild, identical outputs and source hashes, no-change plan and cleanup | Validated |
+| [19 — VM lifecycle](labs/lab-19-vm-lifecycle/README.md) | Ubuntu deployment, SSH fallback, data disk, deallocation/resize/return with matching SHA-256; managed-identity read 200, write/cross-container 403; cleanup | Validated |
 
 [View all 32 labs and planned work](docs/progress.md)
 
@@ -42,6 +43,8 @@ Start with a lab's **Outcome** and **Validation results**, then inspect its **Ev
 - **Storage and recovery — Labs 13–17:** byte-level transfer verification, container-scoped permissions, read-only SAS tests, key rotation, soft-delete recovery, version recovery, and Lab 16 file-share snapshot recovery plus AD DS authentication and department folder boundaries over VPN/private endpoint; Lab 17 object replication, SHA-256 verification and a controlled network fault/recovery.
 
 - **Infrastructure as code — Lab 18:** Bicep build, what-if review, parameter overrides, provider validation, baseline restoration and clean rebuild; preserved source, checksums and matching output exports.
+
+- **Compute and workload identity — Lab 19:** VM deployment, guest access, managed disk and UUID boot mount, resize and return with unchanged data; container-scoped managed identity with positive and negative access tests. Bastion provisioning succeeded but session entry remained unresolved.
 
 ## Evidence and operating boundaries
 
