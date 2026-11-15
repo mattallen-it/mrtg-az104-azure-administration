@@ -2,7 +2,7 @@
 
 [Lab results](../README.md) · [Portfolio](../../../README.md)
 
-**50 published screenshots.** Captured during the November 14, 2026 lab session (America/Chicago). Files retain the submitted PNG bytes, including the author's redactions. This is a chronological index of setup, live checks, unsuccessful troubleshooting, completed tests and cleanup.
+**51 published screenshots.** Fifty execution images were captured during the November 14, 2026 lab session (America/Chicago); the added cost review is dated November 15. Files retain the submitted PNG bytes, including the author's redactions. This is a chronological index of setup, live checks, unsuccessful troubleshooting, completed tests and cleanup.
 
 The submitted package contained 50 PNGs. The author supplied a corrected `lab19-bastion-inprivate-session-failed.png` with its account label redacted; that replacement is included here. The other 49 files retain the original package bytes. Filenames are descriptive labels, not additional proof: in particular, the SSH rule form does not establish its final effective source restriction.
 
@@ -58,5 +58,8 @@ The submitted package contained 50 PNGs. The author supplied a corrected `lab19-
 | 48 | [Final controls after restoring size](lab19-final-access-and-data-persistence-verified.png) | Permitted GET 200, 2 CPUs, 840 MiB memory, mount now /dev/sda1, checksum OK; token unset. |
 | 49 | [Azure resource cleanup](lab19-resource-group-cleanup-verified.png) | Ten-resource inventory, group deletion and az group exists false. |
 | 50 | [Local key path removed](lab19-local-private-key-removal-verified.png) | Remove-Item followed by Test-Path False for the downloaded PEM path; not proof of secure erasure or every copy. |
+| 51 | [November 15 cost review](lab19-cost-review-2026-11-15.png) | November 2026, billing-account scope filtered to Lab 19: Actual USD 0.05; VMs 0.03, Storage 0.01, Virtual Network/Bandwidth each below 0.01. Author-redacted identity; rounded posted snapshot, not final invoice. |
 
-Bastion session establishment was unsuccessful and its cause remains unresolved. Monthly prices shown are historical portal estimates; no final usage review is included. Read the lab results for test scope and conclusions.
+Bastion session establishment was unsuccessful and its cause remains unresolved. Monthly prices shown are historical portal estimates; the November 15 image records USD 0.05 in posted usage, not a final invoice. Read the lab results for test scope and conclusions.
+
+The additional November 15 cost image preserves the author-supplied redacted bytes. Only the first 50 images document the November 14 execution session.

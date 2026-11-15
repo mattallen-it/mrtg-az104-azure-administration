@@ -8,7 +8,7 @@
 
 **Validated November 14, 2026 (America/Chicago):** deployed an Ubuntu VM, connected through a temporary SSH fallback, attached and persistently mounted a managed data disk, deallocated and resized the VM, and verified unchanged data after returning to the original size. The system-assigned managed identity read its permitted blob with HTTP 200; a write and a read from a different container each returned HTTP 403 with `AuthorizationPermissionMismatch`. A final permitted read returned 200.
 
-The resource group was deleted and `az group exists` returned `false`. The downloaded private-key path was removed and `Test-Path` returned `False`. **Bastion Developer provisioned successfully but never established a session; its session error remains unresolved.** Validation of the VM lifecycle and storage boundary used the SSH fallback. Final Azure usage costs remain unverified.
+The resource group was deleted and `az group exists` returned `false`. The downloaded private-key path was removed and `Test-Path` returned `False`. **Bastion Developer provisioned successfully but never established a session; its session error remains unresolved.** Validation of the VM lifecycle and storage boundary used the SSH fallback. November 15 posted usage was USD 0.05; final billed charges remain unverified.
 
 ## Business problem
 
@@ -100,11 +100,17 @@ The final resource inventory contained VNet, NSG, SSH public-key resource, NIC, 
 | Initial displayed total | USD 11.01 | Original VM form, before later resources |
 | B2s_v2 resize target | USD 68.62 | Displayed compute estimate for the temporary larger size |
 
-These are historical portal estimates, not session spending, posted usage or invoice totals. The original total excludes later data-disk, public-IP and storage usage; it does not establish the final cost of diagnostics or other meters. Credits and final billed charges were not verified. Deallocation was used between capacity changes; the group was deleted at completion. A final usage review is still pending. [Series cost record](../../docs/cost-ledger.md).
+These are historical portal estimates, not session spending, posted usage or invoice totals. The original total excludes later data-disk, public-IP and storage usage; it does not establish the final cost of diagnostics or other meters. Credits and final billed charges were not verified. Deallocation was used between capacity changes; the group was deleted at completion. A November 15 posted-usage review is recorded below; final billing remains unverified. [Series cost record](../../docs/cost-ledger.md).
+
+### Cost review — November 15, 2026
+
+The [author-redacted cost capture](screenshots/lab19-cost-review-2026-11-15.png) shows November 2026 Actual cost of **USD 0.05**, at billing-account scope filtered to `rg-mrtg-lab19-vm`. The service breakdown displays Virtual Machines USD 0.03, Storage USD 0.01, Virtual Network below USD 0.01 and Bandwidth below USD 0.01. Location and subscription breakdowns each show USD 0.05. Rounded components need not sum exactly to the displayed total.
+
+This is a dated posted-usage snapshot, not a final invoice or verified out-of-pocket payment. Credits and later charges remain unverified. The selected view shows Budget None; this does not establish removal or absence of the subscription budget configured in Lab 01. Billing-name redactions preserve the filter, period, amounts and service categories.
 
 ## Evidence and limits
 
-[The chronological gallery](screenshots/README.md) publishes **50 reviewed PNGs**: 49 unchanged files from the submitted package and the author-supplied corrected InPrivate capture. Files are published as supplied; the gallery distinguishes setup selections, live readbacks, successful tests, failed attempts and cleanup.
+[The chronological gallery](screenshots/README.md) publishes **51 reviewed PNGs**: the 50 execution images, including the author-supplied corrected InPrivate capture, plus the November 15 author-redacted cost review. Files are published as supplied; the gallery distinguishes setup selections, live readbacks, successful tests, failed attempts and cleanup.
 
 The SSH rule image is a pre-save form with the source CIDR omitted. There is no independent final effective-rule readback or connection-denial test from another source. Successful SSH does not fill that evidence gap. Bastion root cause and remediation remain unverified; candidate rules and unexecuted diagnostic guidance are not recommended configuration baselines.
 

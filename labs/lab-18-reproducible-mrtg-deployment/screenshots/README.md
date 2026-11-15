@@ -1,6 +1,6 @@
 # Lab 18 evidence gallery
 
-**20 published screenshots.**
+**21 published screenshots.**
 
 Original submitted PNG bytes, ordered by execution phase. Subscription and tracking identifiers were redacted in the submitted images. The expected priority error is preflight validation, not a partial-deployment rollback. Configuration readback does not establish workload traffic or data access.
 
@@ -26,5 +26,8 @@ Original submitted PNG bytes, ordered by execution phase. Subscription and track
 | 18 | [Output and source comparison](lab18-rebuild-outputs-and-source-match.png) | Output comparison exit 0; both source checksums OK. |
 | 19 | [Rebuild consistency plan](lab18-rebuild-what-if-no-change.png) | Three no change after rebuild; scope identifier redacted. |
 | 20 | [Final cleanup](lab18-final-resource-group-cleanup-verified.png) | Named group deleted again; existence returned false. |
+| 21 | [Cost-filter no match](lab18-cost-filter-no-match.png) | November 14 review of November 2026; group-name search returns No items found. Cropped scope; not proof of zero cost. |
 
 [Lab results](../README.md) · [Deployment artifacts](../deployment/README.md)
+
+The added cost-filter capture is from November 14; the first 20 captures document execution. No attributable cost total or final invoice is verified.

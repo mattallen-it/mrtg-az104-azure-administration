@@ -54,7 +54,7 @@ Start with a lab's **Outcome** and **Validation results**, then inspect its **Ev
 
 These are historical disposable lab deployments. Temporary lab resources were removed after testing; retained subscription, budget, directory, and shared-resource state is recorded in each lab. Directory cleanup captures distinguish active-user removal from permanent deletion.
 
-Reported usage is a dated snapshot, not a final invoice. Labs 13–14 show USD 0.00 breakdown tiles with an unavailable Actual cost total; this does not establish zero final cost. Lab 14 states the limits of attributing a SAS denial to revocation. Lab 15 verifies both recovery downloads with matching SHA-256 hashes; the lifecycle tier transition was configured but not observed.
+Reported usage is a dated snapshot, not a final invoice. November 15 reviews show Lab 19 USD 0.05 and Lab 20 USD 0.03 across both groups. Lab 18 was unavailable in the November cost-filter search; its attributable cost remains unverified. Labs 13–14 show USD 0.00 breakdown tiles with an unavailable Actual cost total; this does not establish zero final cost. Lab 14 states the limits of attributing a SAS denial to revocation. Lab 15 verifies both recovery downloads with matching SHA-256 hashes; the lifecycle tier transition was configured but not observed.
 
 The series uses **Microsoft Entra ID Free** without a paid Entra or Microsoft 365 license purchase or trial. Premium identity features remain study/design topics. Azure resource charges and software rights are considered separately.
 

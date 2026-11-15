@@ -1,6 +1,6 @@
 # Lab 20 evidence gallery
 
-**36 published screenshots.**
+**37 published screenshots.**
 
 All published PNGs preserve the supplied bytes: 34 images from the ZIP and two author-supplied redacted replacements for the upper VM-review and final resource-group cleanup-list captures. No private keys, tokens or connection credentials are included.
 
@@ -43,7 +43,10 @@ All published PNGs preserve the supplied bytes: 34 images from the ZIP and two a
 
 | [lab20-vm-review-basics-and-disk.png](lab20-vm-review-basics-and-disk.png) | Author-supplied email-redacted final review: Ubuntu, size, Trusted Launch, Secure Boot/vTPM, SSH and OS-disk settings; fictional MRTG account label retained. Setup and estimates, not live-state or billing evidence. |
 | [lab20-resource-groups-cleanup-verified.png](lab20-resource-groups-cleanup-verified.png) | Author-supplied directory-redacted final portal list: no matching rg-mrtg-lab20 groups in selected subscription. Scope is the filter, not whole-subscription inventory. |
+| [lab20-cost-review-2026-11-15.png](lab20-cost-review-2026-11-15.png) | Author-redacted November 15 review: November 2026 Actual USD 0.03 across source and recovery groups, both confirmed in tooltip. VMs/Storage each 0.01; Virtual Network/Bandwidth each below 0.01. Rounded posted snapshot, not final invoice. |
 
-The client host-key comparison, private-key ACL correction, move activity log, final detach/deletion operations, data-disk Delete with VM setting and posted costs were not supplied as publishable captures. No effective-source or independent denied-source SSH test is claimed.
+The client host-key comparison, private-key ACL correction, move activity log, final detach/deletion operations, data-disk Delete with VM setting were not supplied as publishable captures. No effective-source or independent denied-source SSH test is claimed.
 
 [Lab results](../README.md) · [Portfolio](../../../README.md)
+
+The November 15 cost review is additional to the 36 execution images and preserves the author-supplied redacted bytes.

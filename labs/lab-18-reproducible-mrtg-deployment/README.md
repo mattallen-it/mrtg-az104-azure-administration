@@ -8,7 +8,7 @@
 
 **Validated:** deployed a parameterized Bicep baseline, inspected and applied a tag change, rejected an invalid NSG priority at provider preflight validation, restored the baseline, then deleted and rebuilt the resource group from unchanged source. The saved deployment outputs matched byte for byte, both source checksums passed, and the final what-if reported **3 no change**. Final deletion was verified with `az group exists` returning `false`.
 
-Executed November 13, 2026 local time (November 14 UTC). Twenty reviewed screenshots and all six submitted deployment artifacts are published. This is infrastructure configuration and rebuild evidence; workload traffic and storage data access were not tested.
+Executed November 13, 2026 local time (November 14 UTC). Twenty execution screenshots, one later cost-filter capture and all six submitted deployment artifacts are published. This is infrastructure configuration and rebuild evidence; workload traffic and storage data access were not tested.
 
 ## Business problem
 
@@ -76,9 +76,13 @@ The resource group was deleted before the clean rebuild and again after final va
 
 The deployment contained an empty Standard LRS Hot storage account and network configuration, without compute, a gateway or a private endpoint. **No numeric session estimate or posted Lab 18 cost capture was supplied.** Credits, invoiced cash cost and final charges remain unverified; removal does not establish zero cost. See the [cost ledger](../../docs/cost-ledger.md).
 
+### Cost-filter review — November 14, 2026
+
+The [November 2026 filter search](screenshots/lab18-cost-filter-no-match.png) for `rg-mrtg-lab18-iac` returned **No items found**. The cropped capture establishes only that the group name was unavailable in that view; it does not expose the full scope or establish a USD 0.00 total. No attributable Lab 18 cost is verified. The result must not be replaced with an unrelated view total.
+
 ## Evidence and limits
 
-[Twenty-screenshot gallery](screenshots/README.md) · [Original deployment artifacts and replay guide](deployment/README.md)
+[Twenty-one-screenshot gallery](screenshots/README.md) · [Original deployment artifacts and replay guide](deployment/README.md)
 
 - Submitted screenshots were reviewed with subscription/tracking identifiers redacted; the original submitted image bytes are preserved. The source contains no account keys, credentials or literal subscription identifier.
 - Rebuild was tested in the same subscription with the same resource-group name. A different scope changes the generated storage name; global name availability and cross-subscription portability were not tested.

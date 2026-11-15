@@ -8,7 +8,7 @@
 
 **Validated November 14, 2026 (America/Chicago):** recovered a deleted file and an overwritten configuration from an incremental managed-disk snapshot. All three synthetic files matched the unchanged original SHA-256 baseline. The restored disk was unmounted, detached, moved to a second resource group, reattached to the same VM and mounted read-only; all three hashes passed again.
 
-The reviewed final portal list contained no groups matching `rg-mrtg-lab20` in the selected subscription. Local private-key deletion returned `Test-Path=False`. Final usage costs remain unverified. Thirty-six screenshots are published, including the author-supplied redacted VM-review and cleanup-list replacements.
+The reviewed final portal list contained no groups matching `rg-mrtg-lab20` in the selected subscription. Local private-key deletion returned `Test-Path=False`. November 15 posted usage was USD 0.03 for both groups combined; final billed charges remain unverified. Thirty-seven screenshots are published, including the author-supplied redacted VM-review, cleanup-list and cost-review images.
 
 ## Business problem
 
@@ -92,11 +92,17 @@ Both data filesystems were unmounted. The final detach and group deletions were 
 
 Windows Remove-Item targeted `Downloads/key-mrtg-lab20.pem`; Test-Path returned False. This proves absence of that path, not secure erasure or absence of every possible copy.
 
-Portal monthly estimates showed USD 8.61 compute, USD 2.40 OS disk and USD 3.65 public IP, totaling USD 14.66 before the later data disks and snapshot. These are form estimates, not session spending. Boot-diagnostic storage, operations and other meters were not established by that total. **No posted cost review, remaining-credit balance or invoice was supplied.** See the [cost ledger](../../docs/cost-ledger.md).
+Portal monthly estimates showed USD 8.61 compute, USD 2.40 OS disk and USD 3.65 public IP, totaling USD 14.66 before the later data disks and snapshot. These are form estimates, not session spending. Boot-diagnostic storage, operations and other meters were not established by that total. A November 15 posted-cost review is recorded below; no remaining-credit balance or final invoice was supplied. See the [cost ledger](../../docs/cost-ledger.md).
+
+### Cost review — November 15, 2026
+
+The [author-redacted cost capture](screenshots/lab20-cost-review-2026-11-15.png) shows November 2026 Actual cost of **USD 0.03**, at billing-account scope filtered to **both** `rg-mrtg-lab20-source` and `rg-mrtg-lab20-recovery`; the tooltip shows both names. Virtual Machines and Storage each display USD 0.01; Virtual Network and Bandwidth each display below USD 0.01. Location and subscription breakdowns each show USD 0.03. Rounding means the component labels need not sum exactly to the displayed total.
+
+This is combined posted usage for the two selected groups, not separate group totals, a final invoice or verified cash spending. Credits and delayed charges remain unverified. Budget None applies to the selected view; the retained subscription budget was not revalidated. Billing identity was redacted by the author while period, filters, totals and breakdowns remain visible.
 
 ## Evidence and limits
 
-[Complete published gallery](screenshots/README.md): **36 PNGs**: 34 unchanged images from the ZIP and two author-supplied redacted replacements for the upper VM review and final group-list captures. All published bytes are preserved as supplied. Setup selections, live readbacks, failures and tests are distinguished in the gallery.
+[Complete published gallery](screenshots/README.md): **37 PNGs**: 34 unchanged images from the ZIP, two author-supplied redacted replacements for the upper VM review and final group-list captures, and the November 15 author-redacted cost review. All published bytes are preserved as supplied. Setup selections, live readbacks, failures and tests are distinguished in the gallery.
 
 - Recovery covers three synthetic files on a manually quiesced ext4 data disk. No database consistency, bootable OS restore, Backup vault, scheduled retention, regional failover, cross-subscription or full application recovery was tested. ZRS configuration alone is not proof of zone-failure recovery.
 - The original disk remained attached with changed data while the restored copy was inspected. Recovery created a new disk; it did not roll back the original in place.
