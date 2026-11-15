@@ -13,7 +13,7 @@ The checker validates relative Markdown file/image links, merge-conflict markers
 
 ## Completed lab format
 
-Validated labs (currently 01–15 and 17) use the same eight level-two headings, in this order:
+Validated labs use the same eight level-two headings, in this order:
 
 1. Outcome
 2. Business problem

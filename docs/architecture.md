@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–19 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
+**Status: Labs 01–20 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -116,3 +116,11 @@ The original B2ts_v2 VM was deallocated, changed to B2s_v2, started, then return
 Storage account `stmrtgl19aec191bf` held two private containers. The VM's system-assigned identity received Storage Blob Data Reader only on `lab19-readable`. Storage public network access stayed Enabled with default Deny, bypass None and one allowed subnet through the service endpoint; no private endpoint or private DNS path was deployed. IMDS-token REST tests returned readable GET 200, readable PUT 403 and restricted-container GET 403; a final readable GET returned 200. The temporary administrator account-scoped setup data role was removed before these tests. SSH used the local OS user, independently of the workload's Entra identity.
 
 The ten-resource group, including Bastion, temporary public IP, VM, both disks and storage, was deleted; group existence returned false. The downloaded private-key path was also removed. This describes removed historical resources and does not change the proposed workload diagram above into a live inventory.
+
+## Lab 20 — Historical data-disk recovery and group relocation
+
+[Lab 20](../labs/lab-20-disk-recovery-and-relocation/README.md) deployed an Ubuntu B2ts_v2 VM at `10.200.10.4` in private subnet `10.200.10.0/24` of `vnet-mrtg-lab20` (`10.200.0.0/16`). A subnet NSG allowed TCP 22 through a saved My IP rule whose source is redacted; a temporary public IP provided SSH entry. No Bastion, managed identity or Entra OS login was used.
+
+The 4 GiB Standard SSD LRS data disk at LUN 0 was unmounted before an incremental Standard_ZRS snapshot. Snapshot state was Available, completion 100, Succeeded and DenyAll. Deleting one fixture and overwriting another caused the expected missing-file and mismatch results while a CSV remained unchanged. A new Standard SSD LRS disk restored from the snapshot at LUN 1 passed all three original hashes on a read-only, no-journal-replay mount. Both copies retained the same filesystem UUID and were identified by LUN mapping.
+
+The restored disk was detached and moved from `rg-mrtg-lab20-source` to `rg-mrtg-lab20-recovery`, remaining in Central US. Reattachment to the original VM and the repeated three passing hashes verified the tested post-move data. This was a resource-group move, not a regional migration. Both data partitions were unmounted for cleanup; a published directory-redacted portal list had no matching lab groups, and downloaded-key removal returned False. These are removed historical resources; final billing is unverified.

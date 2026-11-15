@@ -110,3 +110,14 @@ The subscription administrator role baseline was not independently re-audited fo
 | Bastion Developer | Provisioning succeeded; candidate source exception attempted | Session creation failed; generic diagnostic did not execute | Entry and root cause unresolved; candidate exception is not a verified baseline |
 
 [Lab 19](../labs/lab-19-vm-lifecycle/README.md) used a managed-identity token held in a shell variable; no account key, SAS or interactive Azure login inside the VM was used for Blob requests. A successful permitted read before and after the two denied requests supports the tested data-role boundary. The lab group was deleted after validation. No premium identity feature, administrator least-privilege or production compliance claim is made.
+
+## Lab 20 — Local SSH and disk administration
+
+| Identity or control | Observed result | Boundary |
+|---|---|---|
+| Existing Azure administrator | Deployed VM, disks and snapshot; restored disk moved between groups; final group absence reviewed | No minimum-role test, RBAC denial, role-assignment comparison or post-move authorization test |
+| Local `azureuser` | SSH sign-in and sudo disk operations; read-only recovery and checksum comparisons | RSA user key and ED25519 server host key serve different purposes; client comparison and ACL correction were operator-observed, not in submitted ZIP; no Entra OS login |
+| Subnet NSG | Saved priority-100 TCP 22 allow to `10.200.10.0/24`; subnet association captured | My IP source redacted; default rules retained; no external-source denial or complete effective-rule test |
+| Snapshot/restored disk network policy | DenyAll in live overviews; restore and guest read succeeded | Export policy, not a filesystem ACL or a tested unauthorized-export denial |
+
+[Lab 20](../labs/lab-20-disk-recovery-and-relocation/README.md) tested file integrity and resource-group relocation, not workload identity authorization. Both data partitions were unmounted for cleanup; local key path absence was captured. Both named groups were absent in a published directory-redacted portal list. Final costs and unrelated subscription state remain unverified.
