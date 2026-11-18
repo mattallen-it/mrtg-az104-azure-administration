@@ -121,3 +121,14 @@ The subscription administrator role baseline was not independently re-audited fo
 | Snapshot/restored disk network policy | DenyAll in live overviews; restore and guest read succeeded | Export policy, not a filesystem ACL or a tested unauthorized-export denial |
 
 [Lab 20](../labs/lab-20-disk-recovery-and-relocation/README.md) tested file integrity and resource-group relocation, not workload identity authorization. Both data partitions were unmounted for cleanup; local key path absence was captured. Both named groups were absent in a published directory-redacted portal list. Final costs and unrelated subscription state remain unverified.
+
+## Lab 21 — Web entry and guest administration
+
+| Boundary | Configuration and observation | Limit |
+|---|---|---|
+| Client HTTP | Subnet NSG priority 100 TCP 80 MyIP allow to 10.210.10.0/24; successful frontend requests | Source redacted; no outside-source denial test |
+| Load-balancer probes | Priority 110 AzureLoadBalancer TCP 80 allow; priority 1000 deny other inbound; NSG subnet association captured | Full effective rules and detailed probe export absent |
+| Guest administration | Azure Run Command used for service checks, stop/start and transient load; NIC form has no public IP/NSG | No narrow administrator-role permission boundary tested; Entra OS login and managed identity off |
+| Application process | Cloud-init creates hostname page and systemd service; scale-out guest responded automatically | Demonstration HTTP service; no TLS or application identity authorization exercise |
+
+The [Lab 21](../labs/lab-21-availability-and-scale/README.md) group was absent in the published author-redacted cleanup list; local private-key path False is published. Microsoft.Insights provider registration was retained; unrelated subscription resources were not audited.

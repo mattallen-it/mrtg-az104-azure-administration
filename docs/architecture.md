@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–20 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
+**Status: Labs 01–21 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -126,3 +126,11 @@ The 4 GiB Standard SSD LRS data disk at LUN 0 was unmounted before an incrementa
 The restored disk was detached and moved from `rg-mrtg-lab20-source` to `rg-mrtg-lab20-recovery`, remaining in Central US. Reattachment to the original VM and the repeated three passing hashes verified the tested post-move data. This was a resource-group move, not a regional migration. Both data partitions were unmounted for cleanup; a published directory-redacted portal list had no matching lab groups, and downloaded-key removal returned False. These are removed historical resources; final billing is unverified.
 
 November 15 cost reviews recorded USD 0.05 for the Lab 19 group and USD 0.03 for both Lab 20 groups combined. These dated posted totals do not establish final billed or out-of-pocket charges. Lab 18 was unavailable in the November group-name filter; no attributable cost was established. See the [cost ledger](cost-ledger.md).
+
+## Lab 21 — Historical zonal web scale set
+
+[Lab 21](../labs/lab-21-availability-and-scale/README.md) used Flexible VMSS `vmss-mrtg-lab21-web` in `rg-mrtg-lab21-scale`, Central US. Initial Standard_B2ts_v2 Ubuntu instances were independently observed in zones 1 and 2. Private subnet `snet-web` (`10.210.10.0/24`) belonged to `vnet-mrtg-lab21` (`10.210.0.0/16`). NIC creation disabled per-instance public IPs and NIC NSGs; the subnet NSG allowed client HTTP and AzureLoadBalancer probes before denying other inbound traffic.
+
+Public Standard `lb-mrtg-lab21-web` used frontend `fe-web`, backend pool `be-web`, TCP 80 rule `rule-http`, `probe-http` and explicit outbound SNAT rule `out-web` (1024 ports per instance). Cloud-init supplied a Python hostname web page managed by systemd. Run Command provided administration without public SSH. Stopping one web service left sampled requests through the other backend; restoring it returned both hostnames. This was a service-failure test, not an availability-zone outage.
+
+Manual scaling and bounded CPU autoscale each completed 2 → 3 → 2. Autoscale min/default 2, max 3 respected the 6-vCPU Bsv2 family quota. Rules used >70% average CPU for 5 minutes to add 1 and <30% for 10 minutes to remove 1, with 5-minute cooldowns. Missing Microsoft.Insights registration initially prevented saving; registration resolved it. Successful scale-up/down events and final two-backend HTTP samples are published. Final zone placement was not re-inspected. Group absence was verified in the published author-redacted cleanup image, the local key path returned False, and November 16 posted usage was USD 0.34; final billing and unrelated resource state remain unverified.

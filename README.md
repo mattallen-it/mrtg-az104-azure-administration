@@ -1,10 +1,10 @@
 # MRTG Azure Administration
 
-![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-20_of_32-2E7D32)
+![AZ-104](https://img.shields.io/badge/Exam-AZ--104-0078D4) ![Labs validated](https://img.shields.io/badge/Labs_validated-21_of_32-2E7D32)
 
 An Azure administration portfolio for the fictional **Monroe Redstone Technology Group (MRTG)**. The work connects identity and access control, resource governance, networking, storage, troubleshooting, and recovery.
 
-**20 of 32 labs validated: Labs 01–20.** Lab 16 now includes AD DS authentication, private VPN connectivity, Finance/HR permission tests and cleanup. Lab 18 demonstrates a parameterized Bicep deployment, controlled changes, preflight rejection and a clean rebuild from unchanged source. Lab 19 validates VM capacity changes, UUID-based disk persistence and container-scoped managed-identity access using an SSH fallback; Bastion session failure remains unresolved. Lab 20 verifies snapshot recovery and resource-group relocation with original file hashes matching before and after the move. Labs 21–32 are planned. Each completed lab follows the same structure: outcome, business problem, environment, work performed, validation, troubleshooting, cleanup, and evidence limits.
+**21 of 32 labs validated: Labs 01–21.** Lab 16 now includes AD DS authentication, private VPN connectivity, Finance/HR permission tests and cleanup. Lab 18 demonstrates a parameterized Bicep deployment, controlled changes, preflight rejection and a clean rebuild from unchanged source. Lab 19 validates VM capacity changes, UUID-based disk persistence and container-scoped managed-identity access using an SSH fallback; Bastion session failure remains unresolved. Lab 20 verifies snapshot recovery and resource-group relocation with original file hashes matching before and after the move. Lab 21 verifies zonal scale-set placement, service failure/recovery and manual plus CPU-driven autoscale 2 → 3 → 2; posted usage was USD 0.34. Labs 22–32 are planned. Each completed lab follows the same structure: outcome, business problem, environment, work performed, validation, troubleshooting, cleanup, and evidence limits.
 
 [Lab progress](docs/progress.md) · [Architecture](docs/architecture.md) · [Access matrix](docs/access-control-matrix.md) · [Cost ledger](docs/cost-ledger.md)
 
@@ -31,8 +31,8 @@ An Azure administration portfolio for the fictional **Monroe Redstone Technology
 | [17 — Replication and storage incident drill](labs/lab-17-replication-and-storage-incident-drill/README.md) | New block blob replicated; source status Complete; initial and post-network-recovery SHA-256 matches; 403 fault/recovery, cleanup verified | Validated |
 | [18 — Reproducible MRTG deployment](labs/lab-18-reproducible-mrtg-deployment/README.md) | Parameterized Bicep baseline; tag override, invalid-priority preflight rejection, clean rebuild, identical outputs and source hashes, no-change plan and cleanup | Validated |
 | [19 — VM lifecycle](labs/lab-19-vm-lifecycle/README.md) | Ubuntu deployment, SSH fallback, data disk, deallocation/resize/return with matching SHA-256; managed-identity read 200, write/cross-container 403; cleanup | Validated |
-
 | [20 — Disk recovery and relocation](labs/lab-20-disk-recovery-and-relocation/README.md) | Incremental snapshot recovery after deletion/overwrite; three original SHA-256 matches before and after restored-disk resource-group move; cleanup reviewed | Validated |
+| [21 — Availability and scale](labs/lab-21-availability-and-scale/README.md) | Two-zone Flexible VMSS; service fault/recovery; cloud-init bootstrap; manual and CPU autoscale 2 → 3 → 2; cleanup reviewed and USD 0.34 posted cost | Validated |
 
 [View all 32 labs and planned work](docs/progress.md)
 
@@ -54,7 +54,7 @@ Start with a lab's **Outcome** and **Validation results**, then inspect its **Ev
 
 These are historical disposable lab deployments. Temporary lab resources were removed after testing; retained subscription, budget, directory, and shared-resource state is recorded in each lab. Directory cleanup captures distinguish active-user removal from permanent deletion.
 
-Reported usage is a dated snapshot, not a final invoice. November 15 reviews show Lab 19 USD 0.05 and Lab 20 USD 0.03 across both groups. Lab 18 was unavailable in the November cost-filter search; its attributable cost remains unverified. Labs 13–14 show USD 0.00 breakdown tiles with an unavailable Actual cost total; this does not establish zero final cost. Lab 14 states the limits of attributing a SAS denial to revocation. Lab 15 verifies both recovery downloads with matching SHA-256 hashes; the lifecycle tier transition was configured but not observed.
+Reported usage is a dated snapshot, not a final invoice. November 15 reviews show Lab 19 USD 0.05 and Lab 20 USD 0.03 across both groups. Lab 21’s November 16 review shows USD 0.34. Lab 18 was unavailable in the November cost-filter search; its attributable cost remains unverified. Labs 13–14 show USD 0.00 breakdown tiles with an unavailable Actual cost total; this does not establish zero final cost. Lab 14 states the limits of attributing a SAS denial to revocation. Lab 15 verifies both recovery downloads with matching SHA-256 hashes; the lifecycle tier transition was configured but not observed.
 
 The series uses **Microsoft Entra ID Free** without a paid Entra or Microsoft 365 license purchase or trial. Premium identity features remain study/design topics. Azure resource charges and software rights are considered separately.
 

@@ -24,3 +24,13 @@ Decisions distinguish accepted plans from configurations demonstrated in the lab
 | ADR-020A | Snapshot an unmounted ext4 data disk and retain the original SHA-256 manifest on the OS disk | Compare recovery with a baseline outside the incident data | Manual quiescing and three fixtures do not prove application-consistent or scheduled backup | Snapshot recovery passed after controlled deletion/overwrite in [Lab 20](../labs/lab-20-disk-recovery-and-relocation/README.md) |
 | ADR-020B | Identify restored copies by LUN and mount read-only with journal replay disabled | Original and restored filesystems share a UUID; avoid selecting the wrong copy or modifying recovery evidence | Explicit device identification required after attachment; no persistent boot-mount test | Three hashes passed before and after relocation |
 | ADR-020C | Detach and move the restored disk between groups in the same region, then reattach and retest | Separate resource-group placement from recovered data integrity | Resource scope changes; regional migration and RBAC effects not tested | Before/after group views and post-move hashes captured; groups removed, final billing unverified |
+
+## Lab 21 availability and capacity decisions
+
+| Decision | Reason | Demonstrated result and limit |
+|---|---|---|
+| Flexible VMSS initially in zones 1 and 2, public Standard LB, private backend NICs | Separate application entry from individual guest administration | Zonal placement and service-failure routing observed; no zone outage or production SLA test |
+| Cloud-init/systemd bootstrap in scale-set model | New capacity must arrive with the application | Manually added instance bootstrap verified; automatically added backend later served traffic; full original custom data not exported |
+| Automatic repairs off during controlled service fault | Observe routing while failed guest service stays stopped | Surviving backend served sampled requests; repair behavior untested |
+| Autoscale min/default 2, max 3; CPU >70%/5 min out and <30%/10 min in | Retain two backends and stay within 6-vCPU family quota | Successful 2 → 3 → 2 events; quota is not a spending cap or allocation guarantee |
+| Short-lived systemd CPU load with 1200-second runtime bound | Exercise autoscale with bounded load duration | Both units active, later inactive; exact termination timing not measured |

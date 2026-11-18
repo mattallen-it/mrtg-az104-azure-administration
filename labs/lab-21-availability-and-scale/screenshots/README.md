@@ -1,8 +1,8 @@
 # Lab 21 evidence gallery
 
-**17 published screenshots.**
+**33 published screenshots.**
 
-Supplied PNG bytes are preserved unchanged. All 52 supplied captures were reviewed. This gallery contains the 17 images accepted for upload so far; the other 35 remain pending after automatic approval review rejected some image uploads as unverified. The author-reviewed cost image hides billing identity. No credential or private-key contents are included.
+Supplied PNG bytes are preserved unchanged, including three author-reviewed replacements for cleanup, cost and NSG rules. Tenant domain, personal source IP and billing identity are hidden in the reviewed captures. No credential or private-key contents are published. Historical Azure lab IPs and synthetic resource names are retained for interpreting the tests.
 
 | Capture | What it establishes and limits |
 |---|---|
@@ -23,6 +23,22 @@ Supplied PNG bytes are preserved unchanged. All 52 supplied captures were review
 | [lab21-lb-http-both-backends-restored.png](lab21-lb-http-both-backends-restored.png) | 20 frontend requests include both original hostnames after service restoration. |
 | [lab21-lb-http-both-backends.png](lab21-lb-http-both-backends.png) | 20 separate initial curl requests include both original hostnames; not a throughput benchmark. |
 | [lab21-lb-http-first-response.png](lab21-lb-http-first-response.png) | Browser HTTP page through historical public frontend; T8EIPL hostname returned; HTTP is unencrypted. |
+| [lab21-lb-http-surviving-backend-only.png](lab21-lb-http-surviving-backend-only.png) | After stopping T8EIPL web service, 20 sampled responses all from SCSKHA; failover transition not timed. |
+| [lab21-lb-http-three-backends.png](lab21-lb-http-three-backends.png) | 30 frontend requests include original two and manually added 1A6D22 hostname. |
+| [lab21-lb-review-configuration.png](lab21-lb-review-configuration.png) | Validation passed before deployment; Standard public regional LB, pool, probe/rules and tags visible; frontend IP to be created. |
+| [lab21-local-private-key-deleted.png](lab21-local-private-key-deleted.png) | Specified Downloads PEM path removed and Test-Path False; no private key contents; other copies not checked. |
+| [lab21-microsoft-insights-provider-registered.png](lab21-microsoft-insights-provider-registered.png) | CLI confirms Microsoft.Insights Registered after initial autoscale-save failure. |
+| [lab21-nsg-inbound-rules.png](lab21-nsg-inbound-rules.png) | Three custom rules plus defaults; client source redacted, destination subnet and AzureLoadBalancer allowance visible. |
+| [lab21-nsg-subnet-associated.png](lab21-nsg-subnet-associated.png) | NSG associated with snet-web 10.210.10.0/24 in vnet-mrtg-lab21. |
+| [lab21-resource-group-deleted.png](lab21-resource-group-deleted.png) | Author-redacted selected-subscription list filtered to rg-mrtg-lab21-scale shows no matching group. |
+| [lab21-resource-group-created.png](lab21-resource-group-created.png) | Named group overview; no matching resources yet; Essentials collapsed, so not a live region/tag audit. |
+| [lab21-scale-out-instance-web-bootstrap-verified.png](lab21-scale-out-instance-web-bootstrap-verified.png) | Manually added 1A6D22 instance: cloud-init done with no reported errors, service active, local HTTP works. |
+| [lab21-subscription-sku-and-quota-check.png](lab21-subscription-sku-and-quota-check.png) | Subscription Enabled; B2ts_v2 restrictions empty and zones listed; regional 0/16 and Bsv2 family 0/6 vCPUs; capacity not guaranteed. |
+| [lab21-vmss-advanced-cloud-init.png](lab21-vmss-advanced-cloud-init.png) | Custom data populated with cloud-config/systemd service beginning; full script is outside visible textarea; not a complete export. |
+| [lab21-vmss-advanced-placement-settings.png](lab21-vmss-advanced-placement-settings.png) | User data off; no dedicated host/proximity group or capacity reservation selected. |
+| [lab21-vmss-basics-configuration.png](lab21-vmss-basics-configuration.png) | Intermediate Basics form shows Standard B2s v2; superseded by final review and running B2ts_v2 instances. |
+| [lab21-vmss-health-configuration.png](lab21-vmss-health-configuration.png) | Application health monitoring and automatic repair/zone balancing off in creation form. |
+| [lab21-vmss-instance-zone-1.png](lab21-vmss-instance-zone-1.png) | Original instance 96a40dc7 Running in Central US Zone 1; no zone outage tested. |
 
 
 The intermediate Basics screenshot is not the final VM size. Final review and deployed instance lists show Standard_B2ts_v2. The first restart check is intentionally retained despite its failed immediate curl; the later local and frontend checks establish recovery. Autoscale events and sampled traffic do not prove zero downtime, a zone outage, external-source denial, or final billing.

@@ -8,7 +8,7 @@
 
 **Validated November 15, 2026 (America/Chicago):** deployed a two-instance Flexible VM Scale Set across Central US zones 1 and 2 behind a public Standard load balancer. Stopping one web service left successful sampled requests through the other backend; restarting it restored both hostnames to traffic. Manual capacity changes and CPU-driven autoscale each completed **2 → 3 → 2**. A scale-out instance bootstrapped its application automatically.
 
-Final sampled HTTP requests succeeded through both remaining backends. The lab resource group was absent in a reviewed, author-redacted filtered cleanup capture (not published), and the downloaded private-key path returned `False`. A November 16 review showed **USD 0.34** posted usage; final billing remains unverified. This was a web-service fault test, not a simulated availability-zone outage or a production availability guarantee.
+Final sampled HTTP requests succeeded through both remaining backends. The lab resource group was absent in a reviewed, author-redacted filtered cleanup capture, and the downloaded private-key path returned `False`. A November 16 review showed **USD 0.34** posted usage; final billing remains unverified. This was a web-service fault test, not a simulated availability-zone outage or a production availability guarantee.
 
 ## Business problem
 
@@ -65,7 +65,7 @@ Administration uses Azure Run Command without public SSH. Application access is 
 | Automatic scale-out | Autoscale scale up completed/Succeeded; graph rose 2 → 3 | Control-plane event plus observed count; exact CPU trace/trigger payload not exported |
 | Automatic scale-in | Autoscale scale down completed/Succeeded; graph returned 3 → 2 | Both CPU load units subsequently inactive; policy remained enabled |
 | Post-autoscale application | Final two VMs Running/Succeeded; 20 frontend responses returned SCSKHA and DG1WO2 hostnames, no visible request errors | Newly autoscaled backend served traffic; full bootstrap log not separately captured for it |
-| Cleanup | No matching group in reviewed filtered portal list; local Downloads key path False | Author-redacted group capture reviewed privately; no inventory of unrelated resources or other key copies |
+| Cleanup | No matching group in reviewed filtered portal list; local Downloads key path False | Author-redacted group capture published; no inventory of unrelated resources or other key copies |
 
 ## Troubleshooting and lessons
 
@@ -77,7 +77,7 @@ Administration uses Azure Run Command without public SSH. Application access is 
 
 ## Cleanup and costs
 
-The November 15 filtered resource-group list showed no match for `rg-mrtg-lab21-scale` in the selected subscription. An author-redacted replacement was reviewed privately; its upload remains blocked by automatic approval review. Resource-group deletion was operator-performed; a separate CLI inventory of orphaned resources was not captured. A privately reviewed local PowerShell capture showed removal of `Downloads\key-mrtg-lab21.pem`; Test-Path returned False. This proves absence at that path, not secure erasure or absence of other copies.
+The November 15 filtered resource-group list showed no match for `rg-mrtg-lab21-scale` in the selected subscription. An author-redacted replacement is published in the gallery. Resource-group deletion was operator-performed; a separate CLI inventory of orphaned resources was not captured. Local PowerShell removed `Downloads\key-mrtg-lab21.pem`; Test-Path returned False. This proves absence at that path, not secure erasure or absence of other copies.
 
 Microsoft.Insights registration remains a subscription prerequisite; deregistration was not claimed. Existing subscription/directory, unrelated resources and budget configuration were outside cleanup verification.
 
@@ -97,7 +97,7 @@ Displayed components are rounded and need not sum to the total. This is posted u
 
 ![Successful automatic scale-out and scale-in](screenshots/lab21-autoscale-scale-out-and-in-succeeded.png)
 
-The [published gallery](screenshots/README.md) contains **17 published screenshots**, preserving supplied PNG bytes. All 52 supplied captures were reviewed; publication of the remaining 35 is pending because automatic approval review rejected some image uploads as unverified. The public gallery includes the dated cost review, scale rules/events and selected traffic results; the reviewed cleanup, key-removal, creation and guest-check captures are not yet public. Setup forms are distinguished from post-deployment observations. No original deployment template, full cloud-init export, complete effective NSG export, detailed probe configuration, CPU metric export or billing invoice is included.
+The [evidence gallery](screenshots/README.md) contains **33 published screenshots**, preserving supplied PNG bytes, including three author-reviewed replacements for cleanup, cost and NSG rules. Setup forms are distinguished from post-deployment observations. No original deployment template, full cloud-init export, complete effective NSG export, detailed probe configuration, CPU metric export or billing invoice is included.
 
 HTTP checks sampled the lab from the allowed client after each phase. They do not prove production performance, TLS security, uninterrupted existing connections, external-source denial, all failure modes, zone/region disaster recovery or a production SLA. Initial placement across two zones is verified; final post-autoscale zone placement was not separately inspected. The historical public IP is not a current endpoint.
 
