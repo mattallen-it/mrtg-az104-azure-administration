@@ -132,3 +132,14 @@ The subscription administrator role baseline was not independently re-audited fo
 | Application process | Cloud-init creates hostname page and systemd service; scale-out guest responded automatically | Demonstration HTTP service; no TLS or application identity authorization exercise |
 
 The [Lab 21](../labs/lab-21-availability-and-scale/README.md) group was absent in the published author-redacted cleanup list; local private-key path False is published. Microsoft.Insights provider registration was retained; unrelated subscription resources were not audited.
+
+## Lab 22 — Container registry image pulls
+
+| Identity or control | Scope / configuration | Observation and boundary |
+|---|---|---|
+| id-mrtg-lab22-pull user-assigned identity | AcrPull on the lab registry, RBAC mode | Role list verified AcrPull / ServicePrincipal; registry-wide, not repository-specific; push and other-registry denial not tested |
+| ACI and Container Apps registry settings | Same identity selected for image pull | ACI deployment command and app template use managed identity; application HTTP/HTTPS checks passed; no independent registry authentication audit log |
+| Registry admin account | Disabled at registry creation | No registry password embedded in the deployment templates; identity revocation and anonymous-pull denial not tested |
+| Application ingress | ACI public TCP 80; Container Apps public HTTPS to target port 80 | 8081 target produced 503, port 80 restored 200; routing test, not application identity authorization |
+
+[Lab 22](../labs/lab-22-container-delivery/README.md) group absence is verified. The templates contain resource-ID expressions rather than credentials. Minimum administrator permissions, post-deletion role inventory and unrelated subscription state were not independently tested.

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "resources": [
+    {
+      "type": "Microsoft.App/managedEnvironments",
+      "apiVersion": "2024-03-01",
+      "name": "cae-mrtg-lab22",
+      "location": "centralus",
+      "tags": {
+        "Environment": "Lab",
+        "Project": "MRTG-AZ104-Administration",
+        "Lab": "Lab-22"
+      },
+      "properties": {
+        "workloadProfiles": [
+          {
+            "name": "Consumption",
+            "workloadProfileType": "Consumption"
+          }
+        ],
+        "zoneRedundant": false
+      }
+    }
+  ]
+}

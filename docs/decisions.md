@@ -34,3 +34,13 @@ Decisions distinguish accepted plans from configurations demonstrated in the lab
 | Automatic repairs off during controlled service fault | Observe routing while failed guest service stays stopped | Surviving backend served sampled requests; repair behavior untested |
 | Autoscale min/default 2, max 3; CPU >70%/5 min out and <30%/10 min in | Retain two backends and stay within 6-vCPU family quota | Successful 2 → 3 → 2 events; quota is not a spending cap or allocation guarantee |
 | Short-lived systemd CPU load with 1200-second runtime bound | Exercise autoscale with bounded load duration | Both units active, later inactive; exact termination timing not measured |
+
+## Lab 22 container delivery decisions
+
+| Decision | Reason | Demonstrated result and limit |
+|---|---|---|
+| Basic registry, admin disabled, registry-scoped AcrPull identity | Deliver images without registry passwords | Role verified; ACI and Container Apps served the imported image; no push/revocation denial test |
+| Import sample image and retain its observed digest | Focus on delivery and runtime operation | v1/digest captured; no image build, source modification or digest-pinned deployment |
+| Stable API ARM templates after extension rejection | Make API selection explicit and retain successful artifacts | Environment/app deployments passed; original JSON hashes match; external prerequisites remain |
+| Consumption profile, 0–1 replicas, no persistent log destination | Bound configured capacity and avoid a lab Log Analytics workspace | Configuration verified, not scale execution or production observability |
+| Wrong ingress target port, then restore | Separate successful configuration from application reachability | 80/200 → 8081/503 → 80/200 sampled; no measured recovery-time guarantee |

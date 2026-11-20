@@ -1,0 +1,66 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "registryServer": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "pullIdentity": "[resourceId('Microsoft.ManagedIdentity/userAssignedIdentities', 'id-mrtg-lab22-pull')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.App/containerApps",
+      "apiVersion": "2024-03-01",
+      "name": "ca-mrtg-lab22-web",
+      "location": "centralus",
+      "tags": {
+        "Environment": "Lab",
+        "Project": "MRTG-AZ104-Administration",
+        "Lab": "Lab-22"
+      },
+      "identity": {
+        "type": "UserAssigned",
+        "userAssignedIdentities": {
+          "[variables('pullIdentity')]": {}
+        }
+      },
+      "properties": {
+        "managedEnvironmentId": "[resourceId('Microsoft.App/managedEnvironments', 'cae-mrtg-lab22')]",
+        "workloadProfileName": "Consumption",
+        "configuration": {
+          "activeRevisionsMode": "Single",
+          "ingress": {
+            "external": true,
+            "targetPort": 80,
+            "transport": "auto",
+            "allowInsecure": false
+          },
+          "registries": [
+            {
+              "server": "[parameters('registryServer')]",
+              "identity": "[variables('pullIdentity')]"
+            }
+          ]
+        },
+        "template": {
+          "containers": [
+            {
+              "name": "web",
+              "image": "[concat(parameters('registryServer'), '/mrtg-web:v1')]",
+              "resources": {
+                "cpu": 0.25,
+                "memory": "0.5Gi"
+              }
+            }
+          ],
+          "scale": {
+            "minReplicas": 0,
+            "maxReplicas": 1
+          }
+        }
+      }
+    }
+  ]
+}
