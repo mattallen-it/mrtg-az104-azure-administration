@@ -34,7 +34,6 @@ An Azure administration portfolio for the fictional **Monroe Redstone Technology
 | [20 — Disk recovery and relocation](labs/lab-20-disk-recovery-and-relocation/README.md) | Incremental snapshot recovery after deletion/overwrite; three original SHA-256 matches before and after restored-disk resource-group move; cleanup reviewed | Validated |
 | [21 — Availability and scale](labs/lab-21-availability-and-scale/README.md) | Two-zone Flexible VMSS; service fault/recovery; cloud-init bootstrap; manual and CPU autoscale 2 → 3 → 2; cleanup reviewed and USD 0.34 posted cost | Validated |
 | [22 — Container delivery](labs/lab-22-container-delivery/README.md) | Registry-scoped AcrPull; ACI HTTP 200; Container Apps HTTPS 200, wrong-port 503 and restored 200; original ARM templates, cleanup and USD 0.32 posted usage (November 20) | Validated |
-
 | [23 — Managed web application](labs/lab-23-managed-web-application/README.md) | Linux F1 Python deployment after quota resolution; configuration change, HTTPS 301/200, IPv4 restriction 403 and recovery 200; source hashes and cleanup | Validated |
 
 [View all 32 labs and planned work](docs/progress.md)
