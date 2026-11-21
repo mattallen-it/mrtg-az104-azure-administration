@@ -1,6 +1,6 @@
 # Lab 22 evidence gallery
 
-**16 published screenshots.** PNG bytes are preserved; the fault filename typo is corrected. The author hid billing identity in the cost capture. Historical disposable lab endpoints remain; no credentials are present.
+**16 published screenshots.** PNG bytes are preserved; the fault filename typo is corrected. The author hid billing identity in the published cost capture. Historical disposable lab endpoints remain; no credentials are present.
 
 | Capture | Observation and limit |
 |---|---|
