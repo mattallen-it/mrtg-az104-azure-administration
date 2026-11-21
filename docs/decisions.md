@@ -56,3 +56,15 @@ Decisions distinguish accepted plans from configurations demonstrated in the lab
 | Preserve missing-cost evidence | Avoid attributing broader billing totals to one lab | No matching group in November 21 filter; no verified zero or final charge |
 
 [Lab 23 results](../labs/lab-23-managed-web-application/README.md). Source was preserved before group deletion; provider registration and regional quota were retained.
+
+## Lab 24 — Controlled application release
+
+| Decision | Reason | Evidence and limit |
+|---|---|---|
+| One Linux S1 instance after quota and unit-price checks | Enable deployment slots for a disposable exercise | S1 0/30, regional 0/31; retail lookup USD 0.095/hour; actual usage not confirmed |
+| Embed release versions in separate source ZIPs | Distinguish code movement from environment settings | Production 1.0 → 2.0 → 1.0 through two swaps, without redeploying between them |
+| Mark LAB_ENVIRONMENT slot-specific | Keep environment labels attached to slots | Initial flags verified; staging saved/live Staging rechecked after both temporary mismatches |
+| Deliberately swap back from a healthy release | Exercise rollback mechanics with a known-good version | Rollback verified, not recovery from an injected defect or database change |
+| Retain original artifacts and remove paid plan | Preserve evidence before ending the deployment | Bundle and six member hashes matched; group existence=false; no-match cost capture retained |
+
+[Lab 24 results](../labs/lab-24-controlled-application-release/README.md). Request samples do not establish zero downtime, automatic rollback or a recovery-time guarantee.

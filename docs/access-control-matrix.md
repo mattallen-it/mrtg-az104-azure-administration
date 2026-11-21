@@ -153,3 +153,13 @@ The [Lab 21](../labs/lab-21-availability-and-scale/README.md) group was absent i
 | Same test after removal | Rule removed with explicit action Deny; Allow all displayed | Validation response, HTTPS 200 | No least-privilege application role or managed-identity test |
 
 [Lab 23 evidence](../labs/lab-23-managed-web-application/README.md) covers the application endpoint. SCM endpoint restrictions were not separately validated. Resource provisioning used the existing administrator session; no new scoped administration role was tested.
+
+## Lab 24 — Slot configuration boundary
+
+| Surface | Control / action | Observed result | Limit |
+|---|---|---|---|
+| Production and staging endpoints | HTTPS-only true on both | Application and static health requests 200 | No authentication or access-denial test |
+| Environment configuration | LAB_ENVIRONMENT marked slot-specific on both slots | Initial Production/True and Staging/True; staging saved/live Staging verified after both swaps | Initial post-swap staging responses temporarily showed Production; not isolation between security principals |
+| Release administration | Existing administrator session performed two swaps | Production code 1.0 → 2.0 → 1.0 | No new scoped role, separate operator identity or approval gate tested |
+
+[Lab 24 results](../labs/lab-24-controlled-application-release/README.md). Slots shared one plan instance; sticky settings distinguish environment configuration and do not establish identity or compute isolation.
