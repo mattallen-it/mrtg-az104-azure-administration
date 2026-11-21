@@ -44,3 +44,15 @@ Decisions distinguish accepted plans from configurations demonstrated in the lab
 | Stable API ARM templates after extension rejection | Make API selection explicit and retain successful artifacts | Environment/app deployments passed; original JSON hashes match; external prerequisites remain |
 | Consumption profile, 0–1 replicas, no persistent log destination | Bound configured capacity and avoid a lab Log Analytics workspace | Configuration verified, not scale execution or production observability |
 | Wrong ingress target port, then restore | Separate successful configuration from application reachability | 80/200 → 8081/503 → 80/200 sampled; no measured recovery-time guarantee |
+
+## Lab 23 — Managed web application
+
+| Decision | Reason | Observed evidence and limit |
+|---|---|---|
+| Keep Linux F1 and escalate quota | Complete the managed-app exercise without a paid-tier workaround | Central US and East US 2 attempts failed; support resolution preceded successful East US 2 plan creation |
+| Use Python 3.12 and original source ZIP | Keep the app small and retain deployment inputs | Build/runtime success and matching SHA-256 values; version ranges are not a lockfile |
+| Change LAB_ENVIRONMENT without code deployment | Separate configuration from source | Saved Validation and live Validation/200; immediate stale response was not counted as success |
+| Test HTTPS redirect and temporary IPv4 deny | Verify exposure through actual requests | HTTP 301, HTTPS 403 under restriction, then 200 after explicit Deny removal |
+| Preserve missing-cost evidence | Avoid attributing broader billing totals to one lab | No matching group in November 21 filter; no verified zero or final charge |
+
+[Lab 23 results](../labs/lab-23-managed-web-application/README.md). Source was preserved before group deletion; provider registration and regional quota were retained.

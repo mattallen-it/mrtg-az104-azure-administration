@@ -1,12 +1,14 @@
 # Lab Portfolio
 
-**22/32 labs validated (Labs 01–22).** Labs 23–32 remain planned. Each validated record separates configuration, observed results, troubleshooting, cleanup and evidence limits.
+**23/32 labs validated (Labs 01–23).** Labs 24–32 remain planned. Each validated record separates configuration, observed results, troubleshooting, cleanup and evidence limits.
 
 [Lab 21 — Availability and scale](../labs/lab-21-availability-and-scale/README.md) verifies initial placement across two zones, web-service failure/recovery, automatic application bootstrap on scale-out, and manual plus CPU-driven autoscale **2 → 3 → 2**. Final HTTP samples passed through both remaining backends. The gallery publishes **33 screenshots**, including author-redacted cleanup, cost and NSG captures.
 
 The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice. Earlier labs retain their own limits: configured features do not establish observed execution, failed administrator entry is not reported as successful, and unavailable cost data is not assumed zero. See each lab and the [cost ledger](cost-ledger.md) for scope and dates.
 
 [Lab 22 — Container delivery](../labs/lab-22-container-delivery/README.md) validates registry-scoped managed-identity image pulls to ACI and Container Apps, HTTP/HTTPS 200, ingress 503 → 200 recovery, matching template hashes and group absence. Its 17 screenshots, including both dated cost reviews, and two original ARM templates are published. Posted usage increased from **USD 0.28 on November 19** to **USD 0.32 on November 20**; neither snapshot is a final invoice.
+
+[Lab 23 — Managed web application](../labs/lab-23-managed-web-application/README.md) records quota escalation, successful Linux F1 deployment, a setting change without redeployment, HTTP 301 and IPv4 403 → 200. Its 15 screenshots and original source ZIP are retained; group absence is verified and attributable cost remains unconfirmed.
 
 ## Lab index
 
@@ -34,7 +36,7 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 | 20 | [Disk recovery and relocation](../labs/lab-20-disk-recovery-and-relocation/README.md) | Validated — snapshot recovery, three original SHA-256 matches before/after restored-disk group relocation; cleanup reviewed, local key removed |
 | 21 | [Availability and scale](../labs/lab-21-availability-and-scale/README.md) | Validated — zonal VMSS, service fault/recovery, manual and automatic 2 → 3 → 2 scaling; cleanup reviewed |
 | 22 | [Container delivery](../labs/lab-22-container-delivery/README.md) | Validated — managed-identity image delivery, ACI/Container Apps HTTP tests, ingress fault/recovery, templates and cleanup |
-| 23 | [Managed web application](../labs/lab-23-managed-web-application/README.md) | Planned |
+| 23 | [Managed web application](../labs/lab-23-managed-web-application/README.md) | Validated — F1 Python deployment, runtime setting, HTTPS redirect, network 403/recovery 200, hashes and cleanup; cost unconfirmed |
 | 24 | [Controlled application release](../labs/lab-24-controlled-application-release/README.md) | Planned |
 | 25 | [Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) | Planned |
 | 26 | [Actionable alerts](../labs/lab-26-actionable-alerts/README.md) | Planned |

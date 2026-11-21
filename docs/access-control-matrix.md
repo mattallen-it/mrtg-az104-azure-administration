@@ -143,3 +143,13 @@ The [Lab 21](../labs/lab-21-availability-and-scale/README.md) group was absent i
 | Application ingress | ACI public TCP 80; Container Apps public HTTPS to target port 80 | 8081 target produced 503, port 80 restored 200; routing test, not application identity authorization |
 
 [Lab 22](../labs/lab-22-container-delivery/README.md) group absence is verified. The templates contain resource-ID expressions rather than credentials. Minimum administrator permissions, post-deletion role inventory and unrelated subscription state were not independently tested.
+
+## Lab 23 — Application network boundary
+
+| Caller / surface | Control | Observed result | Limit |
+|---|---|---|---|
+| Public HTTP client | HTTPS-only web app | HTTP 301 to HTTPS | Redirect observed; not authentication |
+| Cloud Shell IPv4 HTTPS client | Lab23-Temporary-Deny, 0.0.0.0/0, priority 100 | 403 after rule propagation | Network denial, not identity authorization |
+| Same test after removal | Rule removed with explicit action Deny; Allow all displayed | Validation response, HTTPS 200 | No least-privilege application role or managed-identity test |
+
+[Lab 23 evidence](../labs/lab-23-managed-web-application/README.md) covers the application endpoint. SCM endpoint restrictions were not separately validated. Resource provisioning used the existing administrator session; no new scoped administration role was tested.
