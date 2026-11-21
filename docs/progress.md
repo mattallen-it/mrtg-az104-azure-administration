@@ -6,7 +6,7 @@
 
 The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice. Earlier labs retain their own limits: configured features do not establish observed execution, failed administrator entry is not reported as successful, and unavailable cost data is not assumed zero. See each lab and the [cost ledger](cost-ledger.md) for scope and dates.
 
-[Lab 22 — Container delivery](../labs/lab-22-container-delivery/README.md) validates registry-scoped managed-identity image pulls to ACI and Container Apps, HTTP/HTTPS 200, ingress 503 → 200 recovery, matching template hashes and group absence. Its 16 screenshots and two original ARM templates are published; the November 20 follow-up cost figures are documented, with that additional image unpublished. Posted usage increased from **USD 0.28 on November 19** to **USD 0.32 on November 20**; neither snapshot is a final invoice.
+[Lab 22 — Container delivery](../labs/lab-22-container-delivery/README.md) validates registry-scoped managed-identity image pulls to ACI and Container Apps, HTTP/HTTPS 200, ingress 503 → 200 recovery, matching template hashes and group absence. Its 17 screenshots, including both dated cost reviews, and two original ARM templates are published. Posted usage increased from **USD 0.28 on November 19** to **USD 0.32 on November 20**; neither snapshot is a final invoice.
 
 ## Lab index
 

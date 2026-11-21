@@ -71,7 +71,7 @@ MRTG needs to deliver a container image consistently across managed hosting serv
 
 The November 19 cleanup capture shows a delete attempt returning ResourceGroupNotFound for `rg-mrtg-lab22-containers`, followed by `az group exists` returning `false`. The group was absent at verification time. The retained templates are local evidence, not running infrastructure. Provider registrations remain; unrelated subscription resources, platform-managed infrastructure groups and budget settings were not independently inventoried after deletion.
 
-The author-redacted cost captures select **November 2026**, accumulated Actual cost at billing-account scope filtered to this lab group. The earlier snapshot remains published; the November 20 update is recorded below from the separately reviewed capture:
+The author-redacted cost captures select **November 2026**, accumulated Actual cost at billing-account scope filtered to this lab group. Both dated cost snapshots are published; the November 20 update follows the earlier November 19 review:
 
 | Item | November 19 | November 20 |
 |---|---:|---:|
@@ -88,7 +88,7 @@ Rounded components need not sum to the total. This posted snapshot can change as
 
 ![Container Apps ingress recovered to HTTPS 200](screenshots/lab22-containerapp-ingress-recovered-200.png)
 
-The [gallery](screenshots/README.md) publishes all **16 reviewed screenshots** supplied in the lab ZIP. The November 20 cost update was reviewed separately; that additional image is not published. The fault screenshot's `ab22-` filename was corrected to `lab22-`; PNG contents are unchanged. The published November 19 cost image is author-redacted; the November 20 figures above come from the separately reviewed author-redacted capture. No passwords, tokens, registry admin credentials, tenant IDs or subscription IDs are included in these captures or templates. Historical lab endpoint names and the disposable ACI IP remain for interpreting results.
+The [gallery](screenshots/README.md) publishes all **16 reviewed screenshots** supplied in the lab ZIP. The separately reviewed November 20 cost update is also published, bringing the gallery to **17 screenshots**. The fault screenshot's `ab22-` filename was corrected to `lab22-`; PNG contents are unchanged. Both published cost images are author-redacted. No passwords, tokens, registry admin credentials, tenant IDs or subscription IDs are included in these captures or templates. Historical lab endpoint names and the disposable ACI IP remain for interpreting results.
 
 The [two templates and checksum file](templates/README.md) preserve the submitted working artifacts. They are deployment fragments with external prerequisites, not a complete environment rebuild. The screenshot set does not independently archive every setup command, the intermediate logging-validation error or the template hash command; those details come from the reviewed session and uploaded files. The image was imported, not built. No registry push/revocation denial, application authentication, persistent-log query, zone resilience, autoscale execution or production security/performance claim is made.
 

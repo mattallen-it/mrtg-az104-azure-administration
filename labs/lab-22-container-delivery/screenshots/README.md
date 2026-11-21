@@ -1,6 +1,6 @@
 # Lab 22 evidence gallery
 
-**16 published screenshots.** PNG bytes are preserved; the fault filename typo is corrected. The author hid billing identity in the published cost capture. Historical disposable lab endpoints remain; no credentials are present.
+**17 published screenshots.** PNG bytes are preserved; the fault filename typo is corrected. The author hid billing identity in both published cost captures. Historical disposable lab endpoints remain; no credentials are present.
 
 | Capture | Observation and limit |
 |---|---|
@@ -20,5 +20,6 @@
 | [lab22-containerapp-ingress-recovered-200.png](lab22-containerapp-ingress-recovered-200.png) | Port 80 restored; HTTPS returned 200. |
 | [lab22-resource-group-deleted.png](lab22-resource-group-deleted.png) | Delete attempt found group absent; existence check false; deletion timing not established. |
 | [lab22-cost-review-2026-11-19.png](lab22-cost-review-2026-11-19.png) | Author-redacted monthly lab-group cost: USD 0.28 total/registry, ACI <0.01; snapshot, not invoice. |
+| [lab22-cost-review-2026-11-20.png](lab22-cost-review-2026-11-20.png) | November 20 author-redacted follow-up: USD 0.32 total/registry; ACI <0.01; earlier USD 0.28 review retained. Forecast unavailable for insufficient training data, not a final invoice. |
 
 [Lab results](../README.md) · [Templates](../templates/README.md)
