@@ -1,0 +1,9 @@
+AzureActivity
+| where TimeGenerated > ago(2h)
+| where ResourceGroup =~ "rg-mrtg-lab25-target"
+| extend CallerFingerprint=iff(
+    isempty(Caller), "missing",
+    substring(hash_sha256(tolower(Caller)), 0, 12))
+| project TimeGenerated, OperationNameValue, ActivityStatusValue,
+          CallerFingerprint, CorrelationId
+| order by TimeGenerated asc

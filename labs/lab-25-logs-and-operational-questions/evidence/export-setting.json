@@ -1,0 +1,37 @@
+{
+  "Logs": [
+    {
+      "category": "Administrative",
+      "enabled": true
+    },
+    {
+      "category": "Security",
+      "enabled": false
+    },
+    {
+      "category": "ServiceHealth",
+      "enabled": false
+    },
+    {
+      "category": "Alert",
+      "enabled": false
+    },
+    {
+      "category": "Recommendation",
+      "enabled": false
+    },
+    {
+      "category": "Policy",
+      "enabled": false
+    },
+    {
+      "category": "Autoscale",
+      "enabled": false
+    },
+    {
+      "category": "ResourceHealth",
+      "enabled": false
+    }
+  ],
+  "Name": "diag-mrtg-lab25-activity"
+}

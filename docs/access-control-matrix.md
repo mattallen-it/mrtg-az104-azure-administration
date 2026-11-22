@@ -163,3 +163,15 @@ The [Lab 21](../labs/lab-21-availability-and-scale/README.md) group was absent i
 | Release administration | Existing administrator session performed two swaps | Production code 1.0 → 2.0 → 1.0 | No new scoped role, separate operator identity or approval gate tested |
 
 [Lab 24 results](../labs/lab-24-controlled-application-release/README.md). Slots shared one plan instance; sticky settings distinguish environment configuration and do not establish identity or compute isolation.
+
+## Lab 25 — Log attribution and management lock
+
+| Identity or control | Observation | Boundary |
+|---|---|---|
+| Existing administrator session | Workspace/export and controlled target operations completed | No minimum-permission or separate operator role test |
+| CanNotDelete target lock | Delete failed with ScopeLocked/Conflict; retry succeeded after removal | Management lock, not RBAC denial; lock administrator permissions not narrowed |
+| Raw Caller fingerprint | Same value across eight timeline events; differs from account/object comparisons | Field meaning and mismatch remain unresolved |
+| Token object claim fingerprint | Failed request value c429cf354885 matched independent signed-in user object lookup | Supports directory-object attribution; not proof of a physical person |
+| Selected published exports | Identity comparison uses 12-character SHA-256 prefixes; correlation IDs retained | Pseudonymization, not complete anonymization |
+
+[Lab 25 evidence](../labs/lab-25-logs-and-operational-questions/README.md) records export removal and group absence. No sign-in-log analysis, new identity role or data-plane permission boundary was tested.

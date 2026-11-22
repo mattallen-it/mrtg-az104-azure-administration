@@ -1,0 +1,6 @@
+{
+  "Location": "eastus2",
+  "Name": "law-mrtg-lab25",
+  "RetentionDays": 30,
+  "SKU": "PerGB2018"
+}

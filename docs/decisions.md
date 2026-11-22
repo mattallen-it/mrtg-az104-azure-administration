@@ -68,3 +68,16 @@ Decisions distinguish accepted plans from configurations demonstrated in the lab
 | Retain original artifacts and remove paid plan | Preserve evidence before ending the deployment | Bundle and six member hashes matched; group existence=false; no-match cost capture retained |
 
 [Lab 24 results](../labs/lab-24-controlled-application-release/README.md). Request samples do not establish zero downtime, automatic rollback or a recovery-time guarantee.
+
+## Lab 25 — Logs and operational questions
+
+| Decision | Reason | Evidence and limit |
+|---|---|---|
+| Administrative category to a disposable workspace | Investigate resource-management operations | Destination compared; category export is subscription-wide, target scope is in KQL |
+| Separate empty target group and delete lock | Generate a controlled failure without workload data | ScopeLocked/Conflict recorded; pasted Bash guard also emitted an EOF error |
+| Check source log and older workspace events | Separate source operation from ingestion delay | Target events appeared later; no ingestion SLA measured |
+| Compare token object claim after Caller mismatch | Attribute the failed request using observed identity evidence | Signed-in object fingerprint matched; raw Caller mismatch unexplained |
+| Preserve five queries/results before cleanup | Retain failure, chronology and successful retry | Original 12-file manifest verified; relative windows need adjustment for historical replay |
+| Remove export and both groups | End disposable collection and resources | Empty export list and group absence; no permanent-purge or final-cost claim |
+
+[Lab 25 results](../labs/lab-25-logs-and-operational-questions/README.md). Twelve-character fingerprints are pseudonymized comparisons. Alert notification and response automation remain outside this exercise.

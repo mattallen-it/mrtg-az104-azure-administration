@@ -1,0 +1,14 @@
+AzureActivity
+| where TimeGenerated > ago(2h)
+| where ResourceGroup =~ "rg-mrtg-lab25-target"
+| where ActivityStatusValue =~ "Failure"
+| extend Details=parse_json(tostring(Properties_d.statusMessage))
+| extend ErrorCode=coalesce(
+    tostring(Details.error.code),
+    tostring(Details.code))
+| extend CallerFingerprint=iff(
+    isempty(Caller), "missing",
+    substring(hash_sha256(tolower(Caller)), 0, 12))
+| project TimeGenerated, OperationNameValue, ActivityStatusValue,
+          ActivitySubstatusValue, ErrorCode, CallerFingerprint, CorrelationId
+| order by TimeGenerated asc

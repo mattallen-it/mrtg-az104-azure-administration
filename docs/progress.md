@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**24/32 labs validated (Labs 01–24).** Labs 25–32 remain planned. Each validated record separates configuration, observed results, troubleshooting, cleanup and evidence limits.
+**25/32 labs validated (Labs 01–25).** Labs 26–32 remain planned. Each validated record separates configuration, observed results, troubleshooting, cleanup and evidence limits.
 
 [Lab 21 — Availability and scale](../labs/lab-21-availability-and-scale/README.md) verifies initial placement across two zones, web-service failure/recovery, automatic application bootstrap on scale-out, and manual plus CPU-driven autoscale **2 → 3 → 2**. Final HTTP samples passed through both remaining backends. The gallery publishes **33 screenshots**, including author-redacted cleanup, cost and NSG captures.
 
@@ -11,6 +11,8 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 [Lab 23 — Managed web application](../labs/lab-23-managed-web-application/README.md) records quota escalation, successful Linux F1 deployment, a setting change without redeployment, HTTP 301 and IPv4 403 → 200. Its 15 screenshots and original source ZIP are retained; group absence is verified and attributable cost remains unconfirmed.
 
 [Lab 24 — Controlled application release](../labs/lab-24-controlled-application-release/README.md) verifies production 1.0 → 2.0 → 1.0, staging environment rechecks after both swaps, HTTPS application/health samples, matching release hashes and group deletion. Its 15 screenshots and original artifacts are retained. November 21 attributable cost remains unconfirmed.
+
+[Lab 25 — Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) publishes 17 screenshots and five original KQL queries with saved results. ScopeLocked failure, matching token object fingerprint, successful retry and export/group cleanup are verified; raw Caller mismatch and unconfirmed cost remain documented.
 
 ## Lab index
 
@@ -40,7 +42,7 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 | 22 | [Container delivery](../labs/lab-22-container-delivery/README.md) | Validated — managed-identity image delivery, ACI/Container Apps HTTP tests, ingress fault/recovery, templates and cleanup |
 | 23 | [Managed web application](../labs/lab-23-managed-web-application/README.md) | Validated — F1 Python deployment, runtime setting, HTTPS redirect, network 403/recovery 200, hashes and cleanup; cost unconfirmed |
 | 24 | [Controlled application release](../labs/lab-24-controlled-application-release/README.md) | Validated — staging promotion and rollback, sticky-setting follow-ups, release hashes and cleanup; cost unconfirmed |
-| 25 | [Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) | Planned |
+| 25 | [Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) | Validated — Administrative export, KQL timeline/failure, token-object attribution, delete recovery and cleanup |
 | 26 | [Actionable alerts](../labs/lab-26-actionable-alerts/README.md) | Planned |
 | 27 | [Network incident response](../labs/lab-27-network-incident-response/README.md) | Planned |
 | 28 | [Backup with a proven restore](../labs/lab-28-backup-with-a-proven-restore/README.md) | Planned |

@@ -1,0 +1,5 @@
+AzureActivity
+| where TimeGenerated > ago(2h)
+| where ResourceGroup =~ "rg-mrtg-lab25-target"
+| summarize Records=count() by OperationNameValue, ActivityStatusValue
+| order by OperationNameValue asc, ActivityStatusValue asc

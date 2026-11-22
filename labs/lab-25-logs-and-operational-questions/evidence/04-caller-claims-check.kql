@@ -1,0 +1,12 @@
+AzureActivity
+| where TimeGenerated > ago(2h)
+| where ResourceGroup =~ "rg-mrtg-lab25-target"
+| where ActivityStatusValue =~ "Failure"
+| extend TokenObjectId=coalesce(
+    tostring(Claims_d["http://schemas.microsoft.com/identity/claims/objectidentifier"]),
+    tostring(Claims_d.oid))
+| project TimeGenerated,
+    CallerFingerprint=substring(hash_sha256(tolower(Caller)), 0, 12),
+    TokenObjectFingerprint=iff(isempty(TokenObjectId), "missing",
+        substring(hash_sha256(tolower(TokenObjectId)), 0, 12)),
+    CorrelationId

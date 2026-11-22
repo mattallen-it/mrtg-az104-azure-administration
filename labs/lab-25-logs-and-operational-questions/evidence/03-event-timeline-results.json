@@ -1,0 +1,66 @@
+[
+  {
+    "ActivityStatusValue": "Start",
+    "CallerFingerprint": "87d277775c36",
+    "CorrelationId": "2d8b4651-8cb8-43c1-8cb5-ef8bfb8fd993",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/WRITE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:19.3328471Z"
+  },
+  {
+    "ActivityStatusValue": "Success",
+    "CallerFingerprint": "87d277775c36",
+    "CorrelationId": "2d8b4651-8cb8-43c1-8cb5-ef8bfb8fd993",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/WRITE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:20.3953551Z"
+  },
+  {
+    "ActivityStatusValue": "Start",
+    "CallerFingerprint": "87d277775c36",
+    "CorrelationId": "3be994c0-cc5a-49f4-b7a6-2ea44b8e2a92",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/WRITE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:23.19934Z"
+  },
+  {
+    "ActivityStatusValue": "Success",
+    "CallerFingerprint": "87d277775c36",
+    "CorrelationId": "3be994c0-cc5a-49f4-b7a6-2ea44b8e2a92",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/WRITE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:24.371203Z"
+  },
+  {
+    "ActivityStatusValue": "Start",
+    "CallerFingerprint": "87d277775c36",
+    "CorrelationId": "6decd815-2bdb-4275-a3ca-bfff972f05b9",
+    "OperationNameValue": "MICROSOFT.AUTHORIZATION/LOCKS/WRITE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:26.3728043Z"
+  },
+  {
+    "ActivityStatusValue": "Success",
+    "CallerFingerprint": "87d277775c36",
+    "CorrelationId": "6decd815-2bdb-4275-a3ca-bfff972f05b9",
+    "OperationNameValue": "MICROSOFT.AUTHORIZATION/LOCKS/WRITE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:26.4665555Z"
+  },
+  {
+    "ActivityStatusValue": "Start",
+    "CallerFingerprint": "87d277775c36",
+    "CorrelationId": "11187121-9c30-41e3-a403-2774b0dadfa6",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/DELETE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:30.569422Z"
+  },
+  {
+    "ActivityStatusValue": "Failure",
+    "CallerFingerprint": "87d277775c36",
+    "CorrelationId": "11187121-9c30-41e3-a403-2774b0dadfa6",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/DELETE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:30.6475455Z"
+  }
+]

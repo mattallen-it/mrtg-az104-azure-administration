@@ -1,0 +1,18 @@
+[
+  {
+    "ActivityStatusValue": "Failure",
+    "CorrelationId": "11187121-9c30-41e3-a403-2774b0dadfa6",
+    "ErrorCode": "ScopeLocked",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/DELETE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:11:30.6475455Z"
+  },
+  {
+    "ActivityStatusValue": "Success",
+    "CorrelationId": "cfba7423-48f8-4c48-bd76-951db5d4e1e1",
+    "ErrorCode": "",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/DELETE",
+    "TableName": "PrimaryResult",
+    "TimeGenerated": "2026-11-22T03:30:46.7957431Z"
+  }
+]

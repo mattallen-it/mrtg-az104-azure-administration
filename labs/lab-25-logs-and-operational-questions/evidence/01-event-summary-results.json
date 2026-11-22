@@ -1,0 +1,38 @@
+[
+  {
+    "ActivityStatusValue": "Start",
+    "OperationNameValue": "MICROSOFT.AUTHORIZATION/LOCKS/WRITE",
+    "Records": "1",
+    "TableName": "PrimaryResult"
+  },
+  {
+    "ActivityStatusValue": "Success",
+    "OperationNameValue": "MICROSOFT.AUTHORIZATION/LOCKS/WRITE",
+    "Records": "1",
+    "TableName": "PrimaryResult"
+  },
+  {
+    "ActivityStatusValue": "Failure",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/DELETE",
+    "Records": "1",
+    "TableName": "PrimaryResult"
+  },
+  {
+    "ActivityStatusValue": "Start",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/DELETE",
+    "Records": "1",
+    "TableName": "PrimaryResult"
+  },
+  {
+    "ActivityStatusValue": "Start",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/WRITE",
+    "Records": "2",
+    "TableName": "PrimaryResult"
+  },
+  {
+    "ActivityStatusValue": "Success",
+    "OperationNameValue": "MICROSOFT.RESOURCES/SUBSCRIPTIONS/RESOURCEGROUPS/WRITE",
+    "Records": "2",
+    "TableName": "PrimaryResult"
+  }
+]

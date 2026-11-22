@@ -1,0 +1,12 @@
+AzureActivity
+| where TimeGenerated > ago(2h)
+| where ResourceGroup =~ "rg-mrtg-lab25-target"
+| where OperationNameValue endswith "/delete"
+| where ActivityStatusValue in~ ("Success", "Failure")
+| extend Details=parse_json(tostring(Properties_d.statusMessage))
+| extend ErrorCode=coalesce(
+    tostring(Details.error.code),
+    tostring(Details.code))
+| project TimeGenerated, OperationNameValue, ActivityStatusValue,
+          ErrorCode, CorrelationId
+| order by TimeGenerated asc
