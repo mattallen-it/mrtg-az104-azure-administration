@@ -175,3 +175,15 @@ The [Lab 21](../labs/lab-21-availability-and-scale/README.md) group was absent i
 | Selected published exports | Identity comparison uses 12-character SHA-256 prefixes; correlation IDs retained | Pseudonymization, not complete anonymization |
 
 [Lab 25 evidence](../labs/lab-25-logs-and-operational-questions/README.md) records export removal and group absence. No sign-in-log analysis, new identity role or data-plane permission boundary was tested.
+
+## Lab 26 — Detection versus notification control
+
+| Surface | Control | Observed boundary |
+|---|---|---|
+| Target management operation | CanNotDelete lock | Three deletion attempts returned ScopeLocked; target remained present during tests |
+| Alert detection | Failed Administrative group-delete rule scoped to target | Three distinct real fired instances; existing administrator used, no RBAC denial test |
+| Notification delivery | Verified email receiver in Global action group | Sample Success/email plus baseline and recovery live emails |
+| Processing rule | Target scope and exact alert-name filter; Suppress notifications | New alert remained Fired with Suppressed; later alert None with email after recovery |
+| Administration | Alert rule accidentally disabled, then re-enabled | Enabled readback preserved; no separate operator or approval boundary |
+
+[Lab 26 evidence](../labs/lab-26-actionable-alerts/README.md). Contact addresses and caller/subscription fields are redacted. Management locks and suppression do not establish identity authorization isolation. Final monitoring/target groups were absent; no per-child cleanup inventory was captured.

@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**25/32 labs validated (Labs 01–25).** Labs 26–32 remain planned. Each validated record separates configuration, observed results, troubleshooting, cleanup and evidence limits.
+**26/32 labs validated (Labs 01–26).** Labs 27–32 remain planned. Each validated record separates configuration, observed results, troubleshooting, cleanup and evidence limits.
 
 [Lab 21 — Availability and scale](../labs/lab-21-availability-and-scale/README.md) verifies initial placement across two zones, web-service failure/recovery, automatic application bootstrap on scale-out, and manual plus CPU-driven autoscale **2 → 3 → 2**. Final HTTP samples passed through both remaining backends. The gallery publishes **33 screenshots**, including author-redacted cleanup, cost and NSG captures.
 
@@ -13,6 +13,8 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 [Lab 24 — Controlled application release](../labs/lab-24-controlled-application-release/README.md) verifies production 1.0 → 2.0 → 1.0, staging environment rechecks after both swaps, HTTPS application/health samples, matching release hashes and group deletion. Its 15 screenshots and original artifacts are retained. November 21 attributable cost remains unconfirmed.
 
 [Lab 25 — Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) publishes 17 screenshots and five original KQL queries with saved results. ScopeLocked failure, matching token object fingerprint, successful retry and export/group cleanup are verified; raw Caller mismatch and unconfirmed cost remain documented.
+
+[Lab 26 — Actionable alerts](../labs/lab-26-actionable-alerts/README.md) publishes 22 screenshots of real failed-deletion alerts with suppression None → Suppressed → None and sample/live email delivery. Budget configuration and both groups absent are verified; exact deletion timing and attributable costs remain unverified.
 
 ## Lab index
 
@@ -43,7 +45,7 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 | 23 | [Managed web application](../labs/lab-23-managed-web-application/README.md) | Validated — F1 Python deployment, runtime setting, HTTPS redirect, network 403/recovery 200, hashes and cleanup; cost unconfirmed |
 | 24 | [Controlled application release](../labs/lab-24-controlled-application-release/README.md) | Validated — staging promotion and rollback, sticky-setting follow-ups, release hashes and cleanup; cost unconfirmed |
 | 25 | [Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) | Validated — Administrative export, KQL timeline/failure, token-object attribution, delete recovery and cleanup |
-| 26 | [Actionable alerts](../labs/lab-26-actionable-alerts/README.md) | Planned |
+| 26 | [Actionable alerts](../labs/lab-26-actionable-alerts/README.md) | Validated — real alerts, sample/live email, suppression and restored delivery, budget recheck and cleanup |
 | 27 | [Network incident response](../labs/lab-27-network-incident-response/README.md) | Planned |
 | 28 | [Backup with a proven restore](../labs/lab-28-backup-with-a-proven-restore/README.md) | Planned |
 | 29 | [Regional recovery exercise](../labs/lab-29-regional-recovery-exercise/README.md) | Planned |

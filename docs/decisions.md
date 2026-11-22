@@ -81,3 +81,16 @@ Decisions distinguish accepted plans from configurations demonstrated in the lab
 | Remove export and both groups | End disposable collection and resources | Empty export list and group absence; no permanent-purge or final-cost claim |
 
 [Lab 25 results](../labs/lab-25-logs-and-operational-questions/README.md). Twelve-character fingerprints are pseudonymized comparisons. Alert notification and response automation remain outside this exercise.
+
+## Lab 26 — Actionable alerts
+
+| Decision | Reason | Result and limit |
+|---|---|---|
+| Native Activity Log alert and empty locked group | Generate a real management failure without compute/workspace | ScopeLocked and real fired alerts; not a workload outage or RBAC test |
+| Test action group before live condition | Isolate email delivery from rule matching | Synthetic sample Success/email, then independent real email |
+| Exact-name processing-rule filter at target scope | Limit suppression to the intended lab alert | Fired/Suppressed observed; no reliance on inbox absence alone |
+| Re-enable detection after wrong-rule disable | Separate detection from notification suppression | Enabled readback and new unsuppressed alert/email verify recovery |
+| Planned propagation waits | Avoid treating configuration saves as immediate enforcement | New outcomes observed; exact change timestamps and propagation duration not exported |
+| Preserve final false checks with cleanup errors | Report observed state honestly | Groups absent; already-absent errors do not identify earlier deletion timing |
+
+[Lab 26 results](../labs/lab-26-actionable-alerts/README.md). USD 10 budget thresholds rechecked; budget email delivery and attributable lab cost unverified.
