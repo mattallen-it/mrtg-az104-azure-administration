@@ -1,6 +1,6 @@
 # Lab 25 evidence gallery
 
-**17 published screenshots.**
+**19 published screenshots.**
 
 Executed November 21, 2026 America/Chicago; event records use November 22 UTC. Images retain the supplied bytes and filenames.
 
@@ -107,3 +107,15 @@ Author-redacted cost review: no matching lab group; broader USD 6.69 actual and 
 ![Author-redacted cost review: no matching lab group; broader USD 6.69 actual and USD 9.83 forecast are not lab charges.](lab25-cost-filter-no-match.png)
 
 [Lab results](../README.md)
+
+## November 23 cost-filter follow-up: rg-mrtg-lab25-logs
+
+Search returned No items found. Cropped filter capture does not expose the full billing scope or establish zero cost. Review date comes from the author-supplied file/session context.
+
+![November 23 no-match search for rg-mrtg-lab25-logs](lab25-logs-cost-filter-no-match-2026-11-23.png)
+
+## November 23 cost-filter follow-up: rg-mrtg-lab25-target
+
+Search returned No items found. Cropped filter capture does not expose the full billing scope or establish zero cost. Review date comes from the author-supplied file/session context.
+
+![November 23 no-match search for rg-mrtg-lab25-target](lab25-target-cost-filter-no-match-2026-11-23.png)

@@ -12,9 +12,9 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 
 [Lab 24 — Controlled application release](../labs/lab-24-controlled-application-release/README.md) verifies production 1.0 → 2.0 → 1.0, staging environment rechecks after both swaps, HTTPS application/health samples, matching release hashes and group deletion. Its 15 screenshots and original artifacts are retained. November 21 attributable cost remains unconfirmed.
 
-[Lab 25 — Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) publishes 17 screenshots and five original KQL queries with saved results. ScopeLocked failure, matching token object fingerprint, successful retry and export/group cleanup are verified; raw Caller mismatch and unconfirmed cost remain documented.
+[Lab 25 — Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) publishes 19 screenshots and five original KQL queries with saved results. ScopeLocked failure, matching token object fingerprint, successful retry and export/group cleanup are verified; raw Caller mismatch and unconfirmed cost remain documented.
 
-[Lab 26 — Actionable alerts](../labs/lab-26-actionable-alerts/README.md) publishes 22 screenshots of real failed-deletion alerts with suppression None → Suppressed → None and sample/live email delivery. Budget configuration and both groups absent are verified; exact deletion timing and attributable costs remain unverified.
+[Lab 26 — Actionable alerts](../labs/lab-26-actionable-alerts/README.md) publishes 24 screenshots of real failed-deletion alerts with suppression None → Suppressed → None and sample/live email delivery. Budget configuration and both groups absent are verified; exact deletion timing and attributable costs remain unverified.
 
 ## Lab index
 

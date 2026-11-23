@@ -1,6 +1,6 @@
 # Lab 18 evidence gallery
 
-**21 published screenshots.**
+**22 published screenshots.**
 
 Original submitted PNG bytes, ordered by execution phase. Subscription and tracking identifiers were redacted in the submitted images. The expected priority error is preflight validation, not a partial-deployment rollback. Configuration readback does not establish workload traffic or data access.
 
@@ -31,3 +31,9 @@ Original submitted PNG bytes, ordered by execution phase. Subscription and track
 [Lab results](../README.md) · [Deployment artifacts](../deployment/README.md)
 
 The added cost-filter capture is from November 14; the first 20 captures document execution. No attributable cost total or final invoice is verified.
+
+## November 23 cost-filter follow-up: rg-mrtg-lab18-iac
+
+Search returned No items found. Cropped filter capture does not expose the full billing scope or establish zero cost. Review date comes from the author-supplied file/session context.
+
+![November 23 no-match search for rg-mrtg-lab18-iac](lab18-cost-filter-no-match-2026-11-23.png)

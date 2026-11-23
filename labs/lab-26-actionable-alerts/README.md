@@ -8,7 +8,7 @@
 
 Validated Azure Monitor email delivery for a real failed resource-group deletion, suppression of notifications while a second alert still fired, and restored delivery after suppression was disabled. The three alert instances show suppression states **None → Suppressed → None**. The target stayed protected by a CanNotDelete lock during all three attempts. Final existence checks returned false for both lab groups.
 
-Executed November 22, 2026 America/Chicago. Twenty-two author-redacted screenshots preserve configuration, sample delivery, real events, recovery and cleanup. No attributable posted Lab 26 cost was captured.
+Executed November 22, 2026 America/Chicago. Twenty-four author-redacted screenshots preserve configuration, sample delivery, real events, recovery and cleanup. A later cost review is documented below; the final total remains unverified.
 
 ## Business problem
 
@@ -75,12 +75,14 @@ The final commands requested lock removal and deletion of rg-mrtg-lab26-target a
 
 The subscription, administrator and existing USD 10 budget were retained. The budget was revalidated before this lab; earlier records stating it was not revalidated remain historical observations. Its evaluated spend USD 6.75 and forecast USD 9.89 are subscription preflight values, not Lab 26 charges or final cash spend. Budget email recipients were redacted; threshold delivery and automatic spending enforcement were not tested.
 
-The design used an Activity Log alert and a small number of email notifications, with no compute or workspace deployment. Microsoft lists Activity Log alerts at no charge and 1,000 included emails monthly; subscription allowance consumption and final billed costs were not independently verified. No attributable Lab 26 Cost Analysis capture was supplied. See the [cost ledger](../../docs/cost-ledger.md).
+The design used an Activity Log alert and a small number of email notifications, with no compute or workspace deployment. Microsoft lists Activity Log alerts at no charge and 1,000 included emails monthly; subscription allowance consumption and final billed costs were not independently verified. The initial package had no Cost Analysis capture; the November 23 follow-up below records the later observation. See the [cost ledger](../../docs/cost-ledger.md).
+
+**Cost follow-up — November 23, 2026:** The [target-group search](screenshots/lab26-target-cost-filter-no-match-2026-11-23.png) returned No items found. A separate author-supplied November 2026 view filtered to rg-mrtg-lab26-alerts displayed Azure Monitor, Global and subscription breakdowns USD 0.00, with Actual cost headline `--`. This is a displayed service-cost observation, not a confirmed final zero total. The [author-redacted full cost screenshot](screenshots/lab26-cost-review-2026-11-23.png) is published.
 
 ## Evidence and limits
 
-[Twenty-two published screenshots](screenshots/README.md) retain the supplied filenames and image bytes. Recipient addresses, caller identity fields and subscription IDs are author-redacted. Review screens show intended configuration; later created-state views and actual fired alerts establish observed behavior. The initial group-creation paste contains a malformed-looking echoed line; both Succeeded outputs are retained without claiming the displayed text is a clean reusable script.
+[Twenty-four published screenshots](screenshots/README.md) retain the supplied filenames and image bytes. Recipient addresses, caller identity fields and subscription IDs are author-redacted. Review screens show intended configuration; later created-state views and actual fired alerts establish observed behavior. The initial group-creation paste contains a malformed-looking echoed line; both Succeeded outputs are retained without claiming the displayed text is a clean reusable script.
 
-No original ARM/Bicep configuration export, alert payload JSON, processing-rule History capture, or attributable cost export is included. Suppression applies to notifications; the target failure remained visible. Restoring notification delivery did not resolve the target condition: the lock still blocked deletion until cleanup. Alert acknowledgment, automated remediation, recurrence scheduling, alternate receivers, delivery SLA, least-privilege administration and production compliance were not tested.
+No original ARM/Bicep configuration export, alert payload JSON, processing-rule History capture, or machine-readable cost export is included. Suppression applies to notifications; the target failure remained visible. Restoring notification delivery did not resolve the target condition: the lock still blocked deletion until cleanup. Alert acknowledgment, automated remediation, recurrence scheduling, alternate receivers, delivery SLA, least-privilege administration and production compliance were not tested.
 
 Official references: [Action groups](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/action-groups), [Activity Log alerts](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-activity-log), [Alert processing rules](https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules), [Azure Monitor pricing](https://azure.microsoft.com/en-us/pricing/details/monitor/).

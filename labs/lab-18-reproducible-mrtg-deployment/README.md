@@ -80,6 +80,8 @@ The deployment contained an empty Standard LRS Hot storage account and network c
 
 The [November 2026 filter search](screenshots/lab18-cost-filter-no-match.png) for `rg-mrtg-lab18-iac` returned **No items found**. The cropped capture establishes only that the group name was unavailable in that view; it does not expose the full scope or establish a USD 0.00 total. No attributable Lab 18 cost is verified. The result must not be replaced with an unrelated view total.
 
+**Cost follow-up — November 23, 2026:** The [repeated group-name search](screenshots/lab18-cost-filter-no-match-2026-11-23.png) again returned No items found for rg-mrtg-lab18-iac. No attributable cost data was available in that search; this does not establish zero cost. The cropped capture omits period and billing scope.
+
 ## Evidence and limits
 
 [Twenty-one-screenshot gallery](screenshots/README.md) · [Original deployment artifacts and replay guide](deployment/README.md)

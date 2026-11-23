@@ -1,6 +1,6 @@
 # Lab 26 evidence gallery
 
-**22 published screenshots.**
+**24 published screenshots.**
 
 November 22, 2026 America/Chicago. Author-redacted originals; configuration review, sample delivery, actual alerts and cleanup observations are distinguished.
 
@@ -137,3 +137,15 @@ Correct processing rule Disabled before the final notification recovery test; te
 ![Suppression processing rule Disabled](lab26-suppression-rule-disabled.png)
 
 [Lab results](../README.md)
+
+## November 23 cost-filter follow-up: rg-mrtg-lab26-target
+
+Search returned No items found. Cropped filter capture does not expose the full billing scope or establish zero cost. Review date comes from the author-supplied file/session context.
+
+![November 23 no-match search for rg-mrtg-lab26-target](lab26-target-cost-filter-no-match-2026-11-23.png)
+
+## November 23 alerts-group cost review
+
+November 2026 filtered to rg-mrtg-lab26-alerts: Azure Monitor, Global and subscription breakdowns USD 0.00; Actual cost headline --. Displayed service values are not a confirmed final zero total. Billing name is author-redacted.
+
+![November 23 alerts-group cost review](lab26-cost-review-2026-11-23.png)

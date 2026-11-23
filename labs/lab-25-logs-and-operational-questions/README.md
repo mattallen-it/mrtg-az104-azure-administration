@@ -72,9 +72,11 @@ The lock was removed, the target group deleted and its absence checked before fi
 
 The November 21 cost-filter search for `rg-mrtg-lab25-logs` returned **No items found**. Background **USD 6.69 Actual** and **USD 9.83 Forecast** are broader billing-scope values, not Lab 25 usage. The East US 2 USD 0.00 tile does not establish this lab's charge. Attributable cost remains unconfirmed; this is not a final invoice or a zero-cost claim. See the [cost ledger](../../docs/cost-ledger.md).
 
+**Cost follow-up — November 23, 2026:** Both [monitoring-group](screenshots/lab25-logs-cost-filter-no-match-2026-11-23.png) and [target-group](screenshots/lab25-target-cost-filter-no-match-2026-11-23.png) searches returned No items found. Attributable cost remains unavailable; neither result establishes zero cost. Cropped captures omit period and billing scope.
+
 ## Evidence and limits
 
-The [gallery](screenshots/README.md) publishes 17 screenshots. The [evidence directory](evidence/README.md) preserves five KQL queries, five result exports, selected export/workspace configuration, the original manifest and the byte-identical evidence ZIP.
+The [gallery](screenshots/README.md) publishes 19 screenshots. The [evidence directory](evidence/README.md) preserves five KQL queries, five result exports, selected export/workspace configuration, the original manifest and the byte-identical evidence ZIP.
 
 Original bundle SHA-256: `63bb688ec19555ffe20cb3e4d0e6c2bfbd2fcd819de7eff5f2e66a58993759ee`.
 
