@@ -1,6 +1,6 @@
 # Lab 24 evidence gallery
 
-**15 published screenshots.**
+**16 published screenshots.**
 
 November 21, 2026 local execution. Initial post-swap responses and later configuration verification are separate observations. Two uploaded filenames were reversed and corrected without changing image bytes.
 
@@ -95,3 +95,9 @@ Author-redacted November 21 group search returns No items found; background tota
 ![Author-redacted November 21 group search returns No items found; background totals are broader scope.](lab24-cost-filter-no-match.png)
 
 [Lab results](../README.md)
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual cost USD 0.06; Azure App Service and East US 2 USD 0.06. The lab group is now available in the filter; this is attributable posted usage, not the illustrative runtime estimate. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 24 cost review](lab24-cost-review-2026-11-22.png)

@@ -106,13 +106,15 @@ The **November 13, 2026** billing-account Cost analysis review, filtered to `rg-
 
 Service figures are independently rounded and need not sum exactly to the displayed total. The VPN gateway accounts for approximately 93% of that total. This is a posted usage snapshot, not a final invoice or verified cash payment; delayed charges remain possible. No numeric predeployment session estimate or subscription-wide orphan audit was collected. The selected view showed Budget: None, which does not independently establish the state of the subscription budget configured in Lab 01. The [redacted November 13 cost review](screenshots/lab16-cost-review-2026-11-13.png) is published with the billing-account name removed. See the [cost ledger](../../docs/cost-ledger.md).
 
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab16-cost-review-2026-11-22.png) shows: Actual cost USD 5.88; VPN Gateway USD 5.48, Virtual Network USD 0.39, Azure DNS USD 0.02, Storage below USD 0.01, Bandwidth USD 0.00. Rounded totals can include both Lab 16 deployments; not rebuild-only cost. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
+
 ## Evidence and limits
 
 ![Finance own-folder read and write succeed; HR read denied](screenshots/lab16-finance-access-validation.png)
 
 ![HR own-folder read and write succeed; Finance read denied](screenshots/lab16-hr-access-validation.png)
 
-**72 published screenshots:** [complete chronological evidence gallery](screenshots/README.md). The gallery labels the original recovery/connectivity phase separately from the successful rebuild and cleanup. Setup reviews show intended configuration; final readbacks and user operations establish the tested behavior. The submitted endpoint review has the subscription ID removed. No PFX, private key, password, storage key, or VPN XML is published.
+**73 published screenshots:** [complete chronological evidence gallery](screenshots/README.md). The gallery labels the original recovery/connectivity phase separately from the successful rebuild and cleanup. Setup reviews show intended configuration; final readbacks and user operations establish the tested behavior. The submitted endpoint review has the subscription ID removed. No PFX, private key, password, storage key, or VPN XML is published.
 
 The evidence demonstrates the two tested users' own-folder read/create/readback and cross-department read denial. It does not establish every ACL operation, revocation, share-specific Azure RBAC, Entra identity synchronization, production DNS, root-certificate removal, production hardening, regulatory compliance, or a final invoice. Snapshot recovery belongs to the first deployment and was not repeated on the rebuilt storage account.
 

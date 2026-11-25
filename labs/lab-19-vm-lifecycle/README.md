@@ -108,6 +108,8 @@ The [author-redacted cost capture](screenshots/lab19-cost-review-2026-11-15.png)
 
 This is a dated posted-usage snapshot, not a final invoice or verified out-of-pocket payment. Credits and later charges remain unverified. The selected view shows Budget None; this does not establish removal or absence of the subscription budget configured in Lab 01. Billing-name redactions preserve the filter, period, amounts and service categories.
 
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab19-cost-review-2026-11-22.png) shows: Actual cost USD 0.05; VMs USD 0.03, Storage USD 0.01, Virtual Network and Bandwidth each below USD 0.01. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
+
 ## Evidence and limits
 
 [The chronological gallery](screenshots/README.md) publishes **51 reviewed PNGs**: the 50 execution images, including the author-supplied corrected InPrivate capture, plus the November 15 author-redacted cost review. Files are published as supplied; the gallery distinguishes setup selections, live readbacks, successful tests, failed attempts and cleanup.

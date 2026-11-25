@@ -94,3 +94,7 @@ Decisions distinguish accepted plans from configurations demonstrated in the lab
 | Preserve final false checks with cleanup errors | Report observed state honestly | Groups absent; already-absent errors do not identify earlier deletion timing |
 
 [Lab 26 results](../labs/lab-26-actionable-alerts/README.md). USD 10 budget thresholds rechecked; budget email delivery and attributable lab cost unverified.
+
+## Cost follow-up reconciliation before Lab 27
+
+Publish the reviewed November 22 cost package and November 23 group-filter searches while retaining previous dated observations. Record displayed service USD 0.00 separately from an unavailable Actual headline; record no-match searches as unavailable attribution. Repeated cost snapshots describe the same accumulated usage and are not additive. Lab 24 now has an attributable USD 0.06 posted snapshot; final invoices, credit application and cash spending remain unverified. The subscription budget and notification thresholds were revalidated in Lab 26, without claiming budget email delivery or a spending stop. [Cost ledger](cost-ledger.md).

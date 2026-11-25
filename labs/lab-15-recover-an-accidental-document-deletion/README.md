@@ -82,11 +82,13 @@ The November 6 review, filtered to `rg-mrtg-lab15-recovery` for November 2026, s
 
 After cleanup on November 5, the subscription resource-group list showed only `NetworkWatcherRG`; the Lab 15 group was absent. This supports resource-group cleanup at capture time. NetworkWatcherRG contents and budget settings were not inspected in this exercise.
 
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab15-cost-review-2026-11-22.png) shows: Actual cost below USD 0.01; Storage below USD 0.01; Bandwidth USD 0.00. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
+
 ## Evidence and limits
 
 ![Lab 15 validation checkpoint](screenshots/lab15-version-recovery-hash-match.png)
 
-**28 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
+**29 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
 
 ---
 

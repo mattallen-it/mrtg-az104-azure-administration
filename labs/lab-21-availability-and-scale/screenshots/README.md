@@ -1,6 +1,6 @@
 # Lab 21 evidence gallery
 
-**33 published screenshots.**
+**34 published screenshots.**
 
 Supplied PNG bytes are preserved unchanged, including three author-reviewed replacements for cleanup, cost and NSG rules. Tenant domain, personal source IP and billing identity are hidden in the reviewed captures. No credential or private-key contents are published. Historical Azure lab IPs and synthetic resource names are retained for interpreting the tests.
 
@@ -44,3 +44,9 @@ Supplied PNG bytes are preserved unchanged, including three author-reviewed repl
 The intermediate Basics screenshot is not the final VM size. Final review and deployed instance lists show Standard_B2ts_v2. The first restart check is intentionally retained despite its failed immediate curl; the later local and frontend checks establish recovery. Autoscale events and sampled traffic do not prove zero downtime, a zone outage, external-source denial, or final billing.
 
 [Lab results](../README.md) · [Portfolio](../../../README.md)
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual cost USD 0.34; Load Balancer USD 0.17, VMs USD 0.09, Storage USD 0.04, Virtual Network USD 0.03, Bandwidth below USD 0.01. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 21 cost review](lab21-cost-review-2026-11-22.png)

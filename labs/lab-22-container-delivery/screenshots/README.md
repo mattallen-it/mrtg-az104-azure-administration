@@ -1,6 +1,6 @@
 # Lab 22 evidence gallery
 
-**17 published screenshots.** PNG bytes are preserved; the fault filename typo is corrected. The author hid billing identity in both published cost captures. Historical disposable lab endpoints remain; no credentials are present.
+**18 published screenshots.** PNG bytes are preserved; the fault filename typo is corrected. The author hid billing identity in both published cost captures. Historical disposable lab endpoints remain; no credentials are present.
 
 | Capture | Observation and limit |
 |---|---|
@@ -23,3 +23,9 @@
 | [lab22-cost-review-2026-11-20.png](lab22-cost-review-2026-11-20.png) | November 20 author-redacted follow-up: USD 0.32 total/registry; ACI <0.01; earlier USD 0.28 review retained. Forecast unavailable for insufficient training data, not a final invoice. |
 
 [Lab results](../README.md) · [Templates](../templates/README.md)
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual cost USD 0.32; Container Registry USD 0.32; ACI below USD 0.01; no separate Container Apps service line. Absence of that line is not proof of zero charge. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 22 cost review](lab22-cost-review-2026-11-22.png)

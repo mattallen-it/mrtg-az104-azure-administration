@@ -6,7 +6,7 @@
 
 ## Outcome
 
-Validated an App Service release and rollback on November 21, 2026. Production initially served v1.0 and staging v2.0. A swap promoted v2.0; a second swap restored v1.0 without redeploying code. HTTPS application and static health samples returned 200. Slot-specific environment values were verified before deployment and in staging after each swap settled. Original release artifacts match the captured SHA-256 values. The lab group was deleted; attributable cost remains unconfirmed.
+Validated an App Service release and rollback on November 21, 2026. Production initially served v1.0 and staging v2.0. A swap promoted v2.0; a second swap restored v1.0 without redeploying code. HTTPS application and static health samples returned 200. Slot-specific environment values were verified before deployment and in staging after each swap settled. Original release artifacts match the captured SHA-256 values. The lab group was deleted; November 22 attributable posted usage was USD 0.06; final billing remains unverified.
 
 ## Business problem
 
@@ -65,10 +65,12 @@ The screenshot archive reversed the initial-swap and follow-up-verification file
 
 Source preservation preceded `az group delete --name rg-mrtg-lab24-release --yes`. The subsequent `az group exists` returned false on November 21. The paid plan, application and staging slot were within that group. Provider registration and subscription quota were retained; unrelated resources and budgets were not re-audited.
 
-The November 21 cost-filter search for rg-mrtg-lab24-release returned **No items found**. USD 6.69 actual and USD 10.26 forecast on the background page are broader billing-scope totals, not Lab 24 usage. The USD 0.095/hour unit rate and illustrative USD 0.19/two-hour estimate do not establish actual runtime or billed cost. Attributable usage and final billing remain unconfirmed. See the [cost ledger](../../docs/cost-ledger.md).
+The November 21 cost-filter search for rg-mrtg-lab24-release returned **No items found**. USD 6.69 actual and USD 10.26 forecast on the background page are broader billing-scope totals, not Lab 24 usage. The USD 0.095/hour unit rate and illustrative USD 0.19/two-hour estimate do not establish actual runtime or billed cost. At that review, attributable usage and final billing were unconfirmed; the later posted result is recorded below. See the [cost ledger](../../docs/cost-ledger.md).
+
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab24-cost-review-2026-11-22.png) shows: Actual cost USD 0.06; Azure App Service and East US 2 USD 0.06. The lab group is now available in the filter; this is attributable posted usage, not the illustrative runtime estimate. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
 
 ## Evidence and limits
 
-The [gallery](screenshots/README.md) contains 15 reviewed screenshots, including author-redacted cost evidence. The [release artifacts](source/README.md) preserve original source, deployment ZIPs, manifest and bundle with verified hashes.
+The [gallery](screenshots/README.md) contains 16 reviewed screenshots, including author-redacted cost evidence. The [release artifacts](source/README.md) preserve original source, deployment ZIPs, manifest and bundle with verified hashes.
 
 Rollback was a deliberate exercise using two healthy releases, not recovery from an induced broken release. Sampled HTTPS 200 responses do not prove uninterrupted availability, zero dropped requests, load capacity or a recovery-time guarantee. The static /health route does not validate dependencies or configured App Service Health Check. There was no database/schema change, automated release pipeline, approval gate, traffic-percentage experiment, authentication, managed identity, private endpoint, access-denial test or independent infrastructure rebuild. Slot-specific environment values are configuration boundaries, not identity-security isolation; both slots shared compute.

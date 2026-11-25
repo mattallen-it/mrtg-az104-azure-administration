@@ -1,6 +1,6 @@
 # Lab 23 evidence gallery
 
-**15 published screenshots.**
+**16 published screenshots.**
 
 November 20–21, 2026 local execution. Setup, observed requests and cleanup are distinguished below.
 
@@ -95,3 +95,9 @@ November 21 cost-filter search returns No items found; billing name redacted; br
 ![November 21 cost-filter search returns No items found; billing name redacted; broader totals are not Lab 23 cost.](lab23-cost-filter-no-match.png)
 
 [Lab results](../README.md)
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual headline --; Azure App Service, East US 2 and subscription breakdowns USD 0.00. The lab group is now available in the filter. Displayed service cost is USD 0.00; a final zero total is not established. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 23 cost review](lab23-cost-review-2026-11-22.png)

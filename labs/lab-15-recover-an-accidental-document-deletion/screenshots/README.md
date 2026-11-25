@@ -2,7 +2,7 @@
 
 [Lab results](../README.md) · [Portfolio](../../../README.md) · [All labs](../../../docs/progress.md)
 
-**28 published screenshots.** Configuration forms show intended settings at capture time; deployed-state and test captures support the observed results. Scope, cleanup and evidence limits are recorded in the lab README.
+**29 published screenshots.** Configuration forms show intended settings at capture time; deployed-state and test captures support the observed results. Scope, cleanup and evidence limits are recorded in the lab README.
 
 ## Screenshot index
 
@@ -96,3 +96,9 @@
 ### cost review 2026 11 06
 
 [lab15 cost review 2026 11 06](lab15-cost-review-2026-11-06.png)
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual cost below USD 0.01; Storage below USD 0.01; Bandwidth USD 0.00. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 15 cost review](lab15-cost-review-2026-11-22.png)

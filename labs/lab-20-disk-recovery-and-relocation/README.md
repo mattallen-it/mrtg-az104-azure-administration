@@ -8,7 +8,7 @@
 
 **Validated November 14, 2026 (America/Chicago):** recovered a deleted file and an overwritten configuration from an incremental managed-disk snapshot. All three synthetic files matched the unchanged original SHA-256 baseline. The restored disk was unmounted, detached, moved to a second resource group, reattached to the same VM and mounted read-only; all three hashes passed again.
 
-The reviewed final portal list contained no groups matching `rg-mrtg-lab20` in the selected subscription. Local private-key deletion returned `Test-Path=False`. November 15 posted usage was USD 0.03 for both groups combined; final billed charges remain unverified. Thirty-seven screenshots are published, including the author-supplied redacted VM-review, cleanup-list and cost-review images.
+The reviewed final portal list contained no groups matching `rg-mrtg-lab20` in the selected subscription. Local private-key deletion returned `Test-Path=False`. November 15 posted usage was USD 0.03 for both groups combined; final billed charges remain unverified. Thirty-eight screenshots are published, including the author-supplied redacted VM-review, cleanup-list and cost-review images.
 
 ## Business problem
 
@@ -99,6 +99,8 @@ Portal monthly estimates showed USD 8.61 compute, USD 2.40 OS disk and USD 3.65 
 The [author-redacted cost capture](screenshots/lab20-cost-review-2026-11-15.png) shows November 2026 Actual cost of **USD 0.03**, at billing-account scope filtered to **both** `rg-mrtg-lab20-source` and `rg-mrtg-lab20-recovery`; the tooltip shows both names. Virtual Machines and Storage each display USD 0.01; Virtual Network and Bandwidth each display below USD 0.01. Location and subscription breakdowns each show USD 0.03. Rounding means the component labels need not sum exactly to the displayed total.
 
 This is combined posted usage for the two selected groups, not separate group totals, a final invoice or verified cash spending. Credits and delayed charges remain unverified. Budget None applies to the selected view; the retained subscription budget was not revalidated. Billing identity was redacted by the author while period, filters, totals and breakdowns remain visible.
+
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab20-cost-review-2026-11-22.png) shows: Actual cost USD 0.03 with both rg-mrtg-lab20-recovery and rg-mrtg-lab20-source confirmed in the filter tooltip; VMs USD 0.01, Storage USD 0.01, Virtual Network and Bandwidth each below USD 0.01. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
 
 ## Evidence and limits
 

@@ -135,11 +135,13 @@ Cost Analysis reviewed November 3, 2026 for November 2026, filtered to this lab'
 
 [November cost review filtered to Lab 14](screenshots/lab14-cost-review-2026-11-03.png)
 
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab14-cost-review-2026-11-22.png) shows: Actual headline --; Storage and Bandwidth USD 0.00; Central US and subscription breakdowns USD 0.00. Displayed rounded service costs, not a verified final zero total. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
+
 ## Evidence and limits
 
 ![Lab 14 validation checkpoint](screenshots/lab14-read-only-sas-write-denied.png)
 
-**37 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
+**38 published screenshots:** [complete evidence gallery](screenshots/README.md). The gallery indexes every image in this lab’s screenshot folder. Validation applies to the recorded tests and states; it does not establish production hardening or regulatory compliance.
 
 ---
 

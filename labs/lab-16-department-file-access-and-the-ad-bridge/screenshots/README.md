@@ -1,6 +1,6 @@
 # Lab 16 evidence gallery
 
-**72 published screenshots.** Evidence covers two disposable deployments. The initial November 7 recovery/connectivity phase is distinct from the November 10–12 rebuild and successful department access tests. An old unconfigured identity page or failed public SMB probe does not describe the final rebuilt state.
+**73 published screenshots.** Evidence covers two disposable deployments. The initial November 7 recovery/connectivity phase is distinct from the November 10–12 rebuild and successful department access tests. An old unconfigured identity page or failed public SMB probe does not describe the final rebuilt state.
 
 ## Initial deployment — recovery and public SMB investigation
 
@@ -96,3 +96,9 @@ Setup forms show proposed settings. Final domain/share readback, ACL output, two
 The client used a temporary hosts override; Azure private DNS association is not evidence of hybrid DNS forwarding. The November 8 cost screenshot belongs to the first deployment only. The November 13 view reports USD 5.88 for the resource-group/month; rebuild-only and final invoiced costs remain unverified. Local installed-certificate removal, PFX deletion and VM shutdown are not independently verified. Cross-department write/delete and revocation were not separately tested. Root-certificate public data and certificate/ticket metadata are not private-key or exported-ticket material.
 
 [Lab results](../README.md)
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual cost USD 5.88; VPN Gateway USD 5.48, Virtual Network USD 0.39, Azure DNS USD 0.02, Storage below USD 0.01, Bandwidth USD 0.00. Rounded totals can include both Lab 16 deployments; not rebuild-only cost. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 16 cost review](lab16-cost-review-2026-11-22.png)

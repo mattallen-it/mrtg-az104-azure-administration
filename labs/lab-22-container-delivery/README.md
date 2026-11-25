@@ -84,11 +84,13 @@ The displayed total rose by USD 0.04 after the earlier review. These snapshots d
 
 Rounded components need not sum to the total. This posted snapshot can change as reporting catches up; it is not a final invoice, verified cash charge or proof that Container Apps was free. Budget None describes the selected view, not a fresh audit of subscription budgets. See the [cost ledger](../../docs/cost-ledger.md).
 
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab22-cost-review-2026-11-22.png) shows: Actual cost USD 0.32; Container Registry USD 0.32; ACI below USD 0.01; no separate Container Apps service line. Absence of that line is not proof of zero charge. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
+
 ## Evidence and limits
 
 ![Container Apps ingress recovered to HTTPS 200](screenshots/lab22-containerapp-ingress-recovered-200.png)
 
-The [gallery](screenshots/README.md) publishes all **16 reviewed screenshots** supplied in the lab ZIP. The separately reviewed November 20 cost update is also published, bringing the gallery to **17 screenshots**. The fault screenshot's `ab22-` filename was corrected to `lab22-`; PNG contents are unchanged. Both published cost images are author-redacted. No passwords, tokens, registry admin credentials, tenant IDs or subscription IDs are included in these captures or templates. Historical lab endpoint names and the disposable ACI IP remain for interpreting results.
+The [gallery](screenshots/README.md) publishes all **16 reviewed screenshots** supplied in the lab ZIP. The separately reviewed November 20 cost update is also published, bringing the gallery to **18 screenshots**. The fault screenshot's `ab22-` filename was corrected to `lab22-`; PNG contents are unchanged. Both published cost images are author-redacted. No passwords, tokens, registry admin credentials, tenant IDs or subscription IDs are included in these captures or templates. Historical lab endpoint names and the disposable ACI IP remain for interpreting results.
 
 The [two templates and checksum file](templates/README.md) preserve the submitted working artifacts. They are deployment fragments with external prerequisites, not a complete environment rebuild. The screenshot set does not independently archive every setup command, the intermediate logging-validation error or the template hash command; those details come from the reviewed session and uploaded files. The image was imported, not built. No registry push/revocation denial, application authentication, persistent-log query, zone resilience, autoscale execution or production security/performance claim is made.
 

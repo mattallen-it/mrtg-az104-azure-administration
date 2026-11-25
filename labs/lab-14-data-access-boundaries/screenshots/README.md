@@ -2,7 +2,7 @@
 
 [Lab results](../README.md) · [Portfolio](../../../README.md) · [All labs](../../../docs/progress.md)
 
-**37 published screenshots.** Configuration forms show intended settings at capture time; deployed-state and test captures support the observed results. Scope, cleanup and evidence limits are recorded in the lab README.
+**38 published screenshots.** Configuration forms show intended settings at capture time; deployed-state and test captures support the observed results. Scope, cleanup and evidence limits are recorded in the lab README.
 
 ## Screenshot index
 
@@ -45,3 +45,9 @@
 | [lab14-test-user-review.png](lab14-test-user-review.png) | test user review |
 | [lab14-user-delegation-keys-revoked.png](lab14-user-delegation-keys-revoked.png) | user delegation keys revoked |
 | [lab14-user-delegation-sas-revoked.png](lab14-user-delegation-sas-revoked.png) | user delegation sas revoked |
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual headline --; Storage and Bandwidth USD 0.00; Central US and subscription breakdowns USD 0.00. Displayed rounded service costs, not a verified final zero total. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 14 cost review](lab14-cost-review-2026-11-22.png)

@@ -1,6 +1,6 @@
 # Lab 17 — Screenshot evidence
 
-**41 published screenshots.**
+**42 published screenshots.**
 
 | Screenshot | Evidence and qualification |
 |---|---|
@@ -49,3 +49,9 @@
 The supplied images were not generatively altered. Sanitized screenshots preserve their original tested states; no missing terminal output was added. Source and destination creation-review settings are distinguished from post-policy state.
 
 [Lab results](../README.md)
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual cost below USD 0.01; Storage below USD 0.01; Bandwidth USD 0.00. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 17 cost review](lab17-cost-review-2026-11-22.png)

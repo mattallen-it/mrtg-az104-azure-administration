@@ -1,6 +1,6 @@
 # Lab 20 evidence gallery
 
-**37 published screenshots.**
+**38 published screenshots.**
 
 All published PNGs preserve the supplied bytes: 34 images from the ZIP and two author-supplied redacted replacements for the upper VM-review and final resource-group cleanup-list captures. No private keys, tokens or connection credentials are included.
 
@@ -50,3 +50,9 @@ The client host-key comparison, private-key ACL correction, move activity log, f
 [Lab results](../README.md) · [Portfolio](../../../README.md)
 
 The November 15 cost review is additional to the 36 execution images and preserves the author-supplied redacted bytes.
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual cost USD 0.03 with both rg-mrtg-lab20-recovery and rg-mrtg-lab20-source confirmed in the filter tooltip; VMs USD 0.01, Storage USD 0.01, Virtual Network and Bandwidth each below USD 0.01. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 20 cost review](lab20-cost-review-2026-11-22.png)

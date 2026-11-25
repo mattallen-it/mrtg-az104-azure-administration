@@ -93,11 +93,13 @@ Microsoft.Insights registration remains a subscription prerequisite; deregistrat
 
 Displayed components are rounded and need not sum to the total. This is posted usage, not a final invoice or verified cash charge; credits are not assumed. Forecast was unavailable; Budget None refers to the selected view and does not establish absence of a subscription budget. See the [cost ledger](../../docs/cost-ledger.md).
 
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab21-cost-review-2026-11-22.png) shows: Actual cost USD 0.34; Load Balancer USD 0.17, VMs USD 0.09, Storage USD 0.04, Virtual Network USD 0.03, Bandwidth below USD 0.01. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
+
 ## Evidence and limits
 
 ![Successful automatic scale-out and scale-in](screenshots/lab21-autoscale-scale-out-and-in-succeeded.png)
 
-The [evidence gallery](screenshots/README.md) contains **33 published screenshots**, preserving supplied PNG bytes, including three author-reviewed replacements for cleanup, cost and NSG rules. Setup forms are distinguished from post-deployment observations. No original deployment template, full cloud-init export, complete effective NSG export, detailed probe configuration, CPU metric export or billing invoice is included.
+The [evidence gallery](screenshots/README.md) contains **34 published screenshots**, preserving supplied PNG bytes, including three author-reviewed replacements for cleanup, cost and NSG rules. Setup forms are distinguished from post-deployment observations. No original deployment template, full cloud-init export, complete effective NSG export, detailed probe configuration, CPU metric export or billing invoice is included.
 
 HTTP checks sampled the lab from the allowed client after each phase. They do not prove production performance, TLS security, uninterrupted existing connections, external-source denial, all failure modes, zone/region disaster recovery or a production SLA. Initial placement across two zones is verified; final post-autoscale zone placement was not separately inspected. The historical public IP is not a current endpoint.
 

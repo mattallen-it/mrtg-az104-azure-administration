@@ -36,9 +36,11 @@ Replication is asynchronous. The network restriction tested workstation access; 
 
 Azure confirmed deletion of the temporary lab resource group. The redacted cost-review screenshot is included in the evidence gallery. Its displayed amounts are a dated snapshot, not a final invoice.
 
+**Cost follow-up — November 22, 2026:** The [author-redacted November review](screenshots/lab17-cost-review-2026-11-22.png) shows: Actual cost below USD 0.01; Storage below USD 0.01; Bandwidth USD 0.00. This dated review preserves the earlier captures; no final invoice, applied credits or cash cost is verified. The selected-view Budget None does not establish absence of the subscription budget, which was separately revalidated in Lab 26.
+
 ## Evidence and limits
 
-[41 reviewed screenshots](screenshots/README.md) document setup, inherited access, replication configuration, source completion status, initial and post-recovery hash comparisons, the controlled network fault, restored access, cleanup, and the redacted cost review. Subscription IDs, administrator object IDs, deployment correlation IDs, billing identity, and diagnostic identifiers are removed where applicable.
+[42 reviewed screenshots](screenshots/README.md) document setup, inherited access, replication configuration, source completion status, initial and post-recovery hash comparisons, the controlled network fault, restored access, cleanup, and the redacted cost review. Subscription IDs, administrator object IDs, deployment correlation IDs, billing identity, and diagnostic identifiers are removed where applicable.
 
 ![Original and replica SHA-256 comparison](screenshots/lab17-replicated-file-sha256-match.png)
 

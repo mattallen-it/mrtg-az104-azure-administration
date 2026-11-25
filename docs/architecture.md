@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–22 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
+**Status: Labs 01–26 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -79,7 +79,9 @@ Network reachability and identity authorization must both be tested; success at 
 | Lab 15 blob recovery | Soft-delete and version recovery verified by SHA-256; lifecycle configured; group removed | [Lab 15](../labs/lab-15-recover-an-accidental-document-deletion/README.md) | Historical evidence; lifecycle execution not observed |
 | Lab 18 reproducible configuration | NSG, VNet/subnet and empty storage deployed and rebuilt from unchanged Bicep/parameters; same outputs and no-change plan; final group deleted | [Lab 18](../labs/lab-18-reproducible-mrtg-deployment/README.md) | Historical evidence; no traffic/data test or post-rebuild individual security readback; final cost unverified |
 | Lab 19 VM lifecycle and scoped data access | VM/disk resize and return passed persistence checks; container Reader GET 200, PUT/cross-container GET 403; group removed | [Lab 19](../labs/lab-19-vm-lifecycle/README.md) | Historical evidence; Bastion session failure unresolved; November 15 posted usage USD 0.05, final billing unverified |
-| Alerts and backup-service restore | Planned | None | Labs 25–29 |
+| Administrative log investigation | Export, KQL timeline/failure attribution and deletion recovery | [Lab 25](../labs/lab-25-logs-and-operational-questions/README.md) | Historical evidence; groups/export removed |
+| Alert notification control | Real email, suppression and restored delivery | [Lab 26](../labs/lab-26-actionable-alerts/README.md) | Historical evidence; monitoring and target groups absent |
+| Network incident response and backup-service restore | Planned | None | Labs 27–29 |
 | Lab 16 AD DS and Azure Files | Snapshot recovery; rebuilt P2S/private endpoint, Kerberos and Finance/HR folder tests passed; Azure group, hosts override and storage AD object removed | [Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Historical evidence; final rebuild cost unverified; local test users/groups/OU retained |
 | Hybrid connectivity and identity | Lab 16 private VPN SMB path and local AD DS Kerberos demonstrated; no Entra synchronization | Lab 16 user connectivity and CIFS ticket evidence | Hybrid DNS forwarding, identity sync and narrower share assignments remain future work |
 
@@ -156,3 +158,7 @@ A Consumption-profile Container Apps environment had no configured persistent lo
 ## Lab 26 — Historical alert notification control
 
 [Lab 26](../labs/lab-26-actionable-alerts/README.md) placed Global action group ag-mrtg-lab26-email, Activity Log alert alert-lab26-target-delete-failed and processing rule apr-lab26-suppress-delete-email in rg-mrtg-lab26-alerts. The separate empty rg-mrtg-lab26-target carried a CanNotDelete lock. An Administrative Failed resource-group delete triggered email. A target-scoped processing rule with exact alert-name filter suppressed actions while a new alert still fired; after disabling suppression and restoring the accidentally disabled alert rule, another alert showed None and email arrived. No VM, workspace or automated remediation was deployed. Final group checks both false; cleanup returned already-absent errors. The existing USD 10 subscription budget and thresholds were rechecked; attributable cost was not captured.
+
+## Cost evidence reconciliation — November 22–23, 2026
+
+The [cost ledger](cost-ledger.md) retains dated follow-ups without adding repeated snapshots together. Lab 16 remained USD 5.88, Lab 19 USD 0.05, Lab 20 USD 0.03 across both groups, Lab 21 USD 0.34, Lab 22 USD 0.32 and Lab 24 USD 0.06. Labs 15 and 17 each showed below USD 0.01. Labs 13, 14 and 23 displayed USD 0.00 service breakdowns with Actual --. Labs 18 and 25 remained unavailable in November 23 group-filter searches; Lab 26 showed Azure Monitor USD 0.00 with Actual -- and no target-group match. These are historical reported/displayed values, not final invoices or evidence of current resource state. Lab 26 separately revalidated the retained USD 10 monthly subscription budget and thresholds.

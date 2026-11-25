@@ -2,7 +2,7 @@
 
 [Lab results](../README.md) · [Portfolio](../../../README.md)
 
-**51 published screenshots.** Fifty execution images were captured during the November 14, 2026 lab session (America/Chicago); the added cost review is dated November 15. Files retain the submitted PNG bytes, including the author's redactions. This is a chronological index of setup, live checks, unsuccessful troubleshooting, completed tests and cleanup.
+**52 published screenshots.** Fifty execution images were captured during the November 14, 2026 lab session (America/Chicago); the added cost review is dated November 15. Files retain the submitted PNG bytes, including the author's redactions. This is a chronological index of setup, live checks, unsuccessful troubleshooting, completed tests and cleanup.
 
 The submitted package contained 50 PNGs. The author supplied a corrected `lab19-bastion-inprivate-session-failed.png` with its account label redacted; that replacement is included here. The other 49 files retain the original package bytes. Filenames are descriptive labels, not additional proof: in particular, the SSH rule form does not establish its final effective source restriction.
 
@@ -63,3 +63,9 @@ The submitted package contained 50 PNGs. The author supplied a corrected `lab19-
 Bastion session establishment was unsuccessful and its cause remains unresolved. Monthly prices shown are historical portal estimates; the November 15 image records USD 0.05 in posted usage, not a final invoice. Read the lab results for test scope and conclusions.
 
 The additional November 15 cost image preserves the author-supplied redacted bytes. Only the first 50 images document the November 14 execution session.
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual cost USD 0.05; VMs USD 0.03, Storage USD 0.01, Virtual Network and Bandwidth each below USD 0.01. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 19 cost review](lab19-cost-review-2026-11-22.png)

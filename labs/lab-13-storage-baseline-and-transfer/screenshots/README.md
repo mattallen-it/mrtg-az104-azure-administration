@@ -2,7 +2,7 @@
 
 [Lab results](../README.md) · [Portfolio](../../../README.md) · [All labs](../../../docs/progress.md)
 
-**21 published screenshots.** Configuration forms show intended settings at capture time; deployed-state and test captures support the observed results. Scope, cleanup and evidence limits are recorded in the lab README.
+**22 published screenshots.** Configuration forms show intended settings at capture time; deployed-state and test captures support the observed results. Scope, cleanup and evidence limits are recorded in the lab README.
 
 ## Screenshot index
 
@@ -29,3 +29,9 @@
 | [lab13-transfer-container-created.png](lab13-transfer-container-created.png) | transfer container created |
 | [lab13-transfer-integrity-mismatch.png](lab13-transfer-integrity-mismatch.png) | transfer integrity mismatch |
 | [lab13-transfer-integrity-verified.png](lab13-transfer-integrity-verified.png) | transfer integrity verified |
+
+## Cost follow-up — November 22, 2026
+
+November 2026 billing-account view filtered to the lab group(s). Actual headline --; Storage and Bandwidth USD 0.00; Central US and subscription breakdowns USD 0.00. Displayed rounded service costs, not a verified final zero total. Author-redacted billing identity; original amounts, date range and filters retained. Posted/displayed values are not final invoiced or cash costs.
+
+![November 22 Lab 13 cost review](lab13-cost-review-2026-11-22.png)
