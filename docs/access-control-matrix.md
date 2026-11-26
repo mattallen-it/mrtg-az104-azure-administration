@@ -187,3 +187,14 @@ The [Lab 21](../labs/lab-21-availability-and-scale/README.md) group was absent i
 | Administration | Alert rule accidentally disabled, then re-enabled | Enabled readback preserved; no separate operator or approval boundary |
 
 [Lab 26 evidence](../labs/lab-26-actionable-alerts/README.md). Contact addresses and caller/subscription fields are redacted. Management locks and suppression do not establish identity authorization isolation. Final monitoring/target groups were absent; no per-child cleanup inventory was captured.
+
+## Lab 27 — Network admission versus application health
+
+| Surface | Control / operation | Observed boundary |
+|---|---|---|
+| Client 10.27.1.4 to app 10.27.2.4:80 | App NSG priority-200 inbound TCP Deny-Client-HTTP, source/destination /32 | Client timed out; IP flow named the deny rule; removing it restored default AllowVnetInBound and HTTP 200 |
+| App localhost | Nginx service and local HTTP request during the fault | Active and HTTP 200; network denial did not stop the application |
+| Guest administration | Existing Azure session used Run Command | Management invocation succeeded even when curl failed; no minimum-role or separate operator test |
+| Application identity | Synthetic unauthenticated HTTP response | No managed identity, Entra OS login or application authorization boundary tested |
+
+[Lab 27 evidence](../labs/lab-27-network-incident-response/README.md). Requested no new inbound SSH rule; full effective rules and external-source denial were not independently captured. Both lab VMs/group and the separate monitor were removed according to final named checks. Generated Cloud Shell key paths are shown without secret material; key-file removal was not verified.

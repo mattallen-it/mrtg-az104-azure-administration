@@ -1,6 +1,6 @@
 # MRTG architecture
 
-**Status: Labs 01–26 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
+**Status: Labs 01–27 validated. Disposable Azure workload groups were removed after testing. Lab 16 additionally demonstrated local AD DS Kerberos authentication and department file access over a P2S VPN/file private endpoint; no Entra identity synchronization or production hybrid DNS is claimed.**
 
 The initial Lab 01 baseline used the existing Entra directory and active `MRTG-AZ104-Lab-Subscription` with Owner access. A $10 monthly budget was configured. The temporary tagged resource group was deleted; no paid workload was deployed. Later workload deployments and cleanup are recorded below. This is historical evidence, not a live inventory check. See [Lab 01](../labs/lab-01-subscription-inventory-and-cost-baseline/README.md).
 
@@ -81,7 +81,8 @@ Network reachability and identity authorization must both be tested; success at 
 | Lab 19 VM lifecycle and scoped data access | VM/disk resize and return passed persistence checks; container Reader GET 200, PUT/cross-container GET 403; group removed | [Lab 19](../labs/lab-19-vm-lifecycle/README.md) | Historical evidence; Bastion session failure unresolved; November 15 posted usage USD 0.05, final billing unverified |
 | Administrative log investigation | Export, KQL timeline/failure attribution and deletion recovery | [Lab 25](../labs/lab-25-logs-and-operational-questions/README.md) | Historical evidence; groups/export removed |
 | Alert notification control | Real email, suppression and restored delivery | [Lab 26](../labs/lab-26-actionable-alerts/README.md) | Historical evidence; monitoring and target groups absent |
-| Network incident response and backup-service restore | Planned | None | Labs 27–29 |
+| Network incident response | Validated; disposable group and connection monitor removed | [Lab 27](../labs/lab-27-network-incident-response/README.md) | Historical one-path incident evidence; cost follow-up pending |
+| Backup-service restore and regional recovery | Planned | None | Labs 28–29 |
 | Lab 16 AD DS and Azure Files | Snapshot recovery; rebuilt P2S/private endpoint, Kerberos and Finance/HR folder tests passed; Azure group, hosts override and storage AD object removed | [Lab 16](../labs/lab-16-department-file-access-and-the-ad-bridge/README.md) | Historical evidence; final rebuild cost unverified; local test users/groups/OU retained |
 | Hybrid connectivity and identity | Lab 16 private VPN SMB path and local AD DS Kerberos demonstrated; no Entra synchronization | Lab 16 user connectivity and CIFS ticket evidence | Hybrid DNS forwarding, identity sync and narrower share assignments remain future work |
 
@@ -162,3 +163,11 @@ A Consumption-profile Container Apps environment had no configured persistent lo
 ## Cost evidence reconciliation — November 22–23, 2026
 
 The [cost ledger](cost-ledger.md) retains dated follow-ups without adding repeated snapshots together. Lab 16 remained USD 5.88, Lab 19 USD 0.05, Lab 20 USD 0.03 across both groups, Lab 21 USD 0.34, Lab 22 USD 0.32 and Lab 24 USD 0.06. Labs 15 and 17 each showed below USD 0.01. Labs 13, 14 and 23 displayed USD 0.00 service breakdowns with Actual --. Labs 18 and 25 remained unavailable in November 23 group-filter searches; Lab 26 showed Azure Monitor USD 0.00 with Actual -- and no target-group match. These are historical reported/displayed values, not final invoices or evidence of current resource state. Lab 26 separately revalidated the retained USD 10 monthly subscription budget and thresholds.
+
+## Lab 27 — Historical private network incident response
+
+[Lab 27](../labs/lab-27-network-incident-response/README.md) used two Central US B2s_v2 Ubuntu VMs in vnet-mrtg-lab27 (10.27.0.0/16): client 10.27.1.4 in snet-client (10.27.1.0/24) and Nginx app 10.27.2.4 in snet-app (10.27.2.0/24). Run Command provided administration; deployment requested Standard public IPs for egress and no added SSH rule. A full effective-rule inventory was not captured. Separate NIC NSGs were requested; the app NSG was directly exercised.
+
+Connection Monitor cm-mrtg-lab27-client-app in NetworkWatcherRG used law-mrtg-lab27 and a TCP 80 test every 30 seconds. A priority-200 inbound Deny-Client-HTTP rule targeting the client /32 and app /32:80 changed client HTTP 200 to timeout/000. IP flow verify named that rule while localhost HTTP remained 200. Removing the rule restored AllowVnetInBound and client 200; monitor snapshots changed green/0% failed to red/53.5% over a mixed hour and back to green/0% in a short recovery window. No identity authorization or availability SLA was tested.
+
+The named connection monitor was deleted separately; final monitor count=0 and lab group exists=false. The shared Network Watcher was retained; key-file cleanup, permanent workspace purge, unrelated state and final cost were not verified.

@@ -98,3 +98,16 @@ Decisions distinguish accepted plans from configurations demonstrated in the lab
 ## Cost follow-up reconciliation before Lab 27
 
 Publish the reviewed November 22 cost package and November 23 group-filter searches while retaining previous dated observations. Record displayed service USD 0.00 separately from an unavailable Actual headline; record no-match searches as unavailable attribution. Repeated cost snapshots describe the same accumulated usage and are not additive. Lab 24 now has an attributable USD 0.06 posted snapshot; final invoices, credit application and cash spending remain unverified. The subscription budget and notification thresholds were revalidated in Lab 26, without claiming budget email delivery or a spending stop. [Cost ledger](cost-ledger.md).
+
+## Lab 27 — Diagnose the enforcing network rule
+
+| Decision | Reason | Result and limit |
+|---|---|---|
+| Check SKU restrictions after quota | Available family quota does not guarantee size availability | B2s restricted; B2s_v2 restrictions empty and deployment succeeded |
+| Separate client/app subnets and a narrow /32 TCP 80 deny | Reproduce a specific application-path incident | Client failed while localhost app stayed healthy |
+| Use IP flow verify plus real HTTP requests | Separate policy evaluation from actual reachability | Named deny rule; actual 200 → timeout → 200 |
+| Individual VM endpoints and dedicated workspace | Keep monitor scope and destination explicit | Corrected portal configuration retained; no endpoint JSON export |
+| Keep mixed fault window and narrow recovery window labeled | Avoid treating an aggregate rate as continuous loss | Red/53.5% over last hour, then green/0% in 8:05–8:07 PM window; no detection SLA |
+| Delete monitor separately from lab group | Monitor stored in shared NetworkWatcherRG | Named regional monitor count=0 and group exists=false; shared watcher retained |
+
+[Lab 27 results](../labs/lab-27-network-incident-response/README.md). No identity-license purchase, alert rule, automated remediation or final cost claim. Portal USD 0 banner and USD 0.3/month row were inconsistent estimates; combined session cost was not captured.

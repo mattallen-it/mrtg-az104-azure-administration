@@ -1,6 +1,6 @@
 # Lab Portfolio
 
-**26/32 labs validated (Labs 01–26).** Labs 27–32 remain planned. Each validated record separates configuration, observed results, troubleshooting, cleanup and evidence limits.
+**27/32 labs validated (Labs 01–27).** Labs 28–32 remain planned. Each validated record separates configuration, observed results, troubleshooting, cleanup and evidence limits.
 
 [Lab 21 — Availability and scale](../labs/lab-21-availability-and-scale/README.md) verifies initial placement across two zones, web-service failure/recovery, automatic application bootstrap on scale-out, and manual plus CPU-driven autoscale **2 → 3 → 2**. Final HTTP samples passed through both remaining backends. The gallery publishes **34 screenshots**, including author-redacted cleanup, cost and NSG captures.
 
@@ -17,6 +17,8 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 [Lab 26 — Actionable alerts](../labs/lab-26-actionable-alerts/README.md) publishes 24 screenshots of real failed-deletion alerts with suppression None → Suppressed → None and sample/live email delivery. Budget configuration and both groups absent are verified; exact deletion timing and attributable costs remain unverified.
 
 **Cost follow-ups reconciled:** November 22 reviewed captures are published for Labs 13–17 and 19–24. Labs 13, 14 and 23 show USD 0.00 service breakdowns with Actual --; Labs 15 and 17 each show below USD 0.01. Repeated totals are snapshots of the same usage and must not be added together. November 23 filter follow-ups for Labs 18, 25 and 26 are also published; no further screenshot is requested for these completed reviews.
+
+[Lab 27 — Network incident response](../labs/lab-27-network-incident-response/README.md) records private client HTTP 200 → timeout → 200, IP flow denial by the named NSG rule, local app health during the fault, Connection Monitor green → red → green and verified monitor/group cleanup. Twenty reviewed screenshots are indexed; final cost remains unverified.
 
 ## Lab index
 
@@ -48,7 +50,7 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 | 24 | [Controlled application release](../labs/lab-24-controlled-application-release/README.md) | Validated — staging promotion and rollback, sticky-setting follow-ups, release hashes and cleanup; posted USD 0.06 (November 22) |
 | 25 | [Logs and operational questions](../labs/lab-25-logs-and-operational-questions/README.md) | Validated — Administrative export, KQL timeline/failure, token-object attribution, delete recovery and cleanup |
 | 26 | [Actionable alerts](../labs/lab-26-actionable-alerts/README.md) | Validated — real alerts, sample/live email, suppression and restored delivery, budget recheck and cleanup |
-| 27 | [Network incident response](../labs/lab-27-network-incident-response/README.md) | Planned |
+| 27 | [Network incident response](../labs/lab-27-network-incident-response/README.md) | Validated — private HTTP fault/recovery, named NSG diagnosis, Connection Monitor and cleanup |
 | 28 | [Backup with a proven restore](../labs/lab-28-backup-with-a-proven-restore/README.md) | Planned |
 | 29 | [Regional recovery exercise](../labs/lab-29-regional-recovery-exercise/README.md) | Planned |
 | 30 | [Joiner, mover, leaver across services](../labs/lab-30-joiner-mover-leaver-across-services/README.md) | Planned |
