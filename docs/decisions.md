@@ -111,3 +111,5 @@ Publish the reviewed November 22 cost package and November 23 group-filter searc
 | Delete monitor separately from lab group | Monitor stored in shared NetworkWatcherRG | Named regional monitor count=0 and group exists=false; shared watcher retained |
 
 [Lab 27 results](../labs/lab-27-network-incident-response/README.md). No identity-license purchase, alert rule, automated remediation or final cost claim. Portal USD 0 banner and USD 0.3/month row were inconsistent estimates; combined session cost was not captured.
+
+Lab 27 cost follow-up — November 26: preserve the author-redacted USD 0.69 resource-group snapshot as posted usage. The monitor was stored in NetworkWatcherRG and is excluded by the group filter; do not treat this as the full final lab total or infer post-cleanup runtime from daily cost buckets. [Cost evidence](../labs/lab-27-network-incident-response/screenshots/lab27-cost-review-2026-11-26.png).

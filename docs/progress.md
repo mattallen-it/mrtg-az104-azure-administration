@@ -18,7 +18,7 @@ The November 16 Lab 21 posted-cost snapshot is **USD 0.34**, not a final invoice
 
 **Cost follow-ups reconciled:** November 22 reviewed captures are published for Labs 13–17 and 19–24. Labs 13, 14 and 23 show USD 0.00 service breakdowns with Actual --; Labs 15 and 17 each show below USD 0.01. Repeated totals are snapshots of the same usage and must not be added together. November 23 filter follow-ups for Labs 18, 25 and 26 are also published; no further screenshot is requested for these completed reviews.
 
-[Lab 27 — Network incident response](../labs/lab-27-network-incident-response/README.md) records private client HTTP 200 → timeout → 200, IP flow denial by the named NSG rule, local app health during the fault, Connection Monitor green → red → green and verified monitor/group cleanup. Twenty reviewed screenshots are indexed; final cost remains unverified.
+[Lab 27 — Network incident response](../labs/lab-27-network-incident-response/README.md) records private client HTTP 200 → timeout → 200, IP flow denial by the named NSG rule, local app health during the fault, Connection Monitor green → red → green and verified monitor/group cleanup. Twenty-one reviewed screenshots are indexed, including the November 26 cost follow-up: USD 0.69 posted for the disposable group. The separate monitor is outside that cost filter; final total remains unverified.
 
 ## Lab index
 

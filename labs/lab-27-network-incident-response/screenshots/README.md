@@ -1,6 +1,6 @@
 # Lab 27 evidence gallery
 
-**20 published screenshots.**
+**21 published screenshots.**
 
 November 25, 2026 America/Chicago; later CLI timestamps use November 26 UTC. Reviewed author-supplied originals; the creation image masks the subscription ID. Configuration, observed outcomes and evidence limits are distinguished.
 
@@ -125,3 +125,9 @@ Post-correction 8:05–8:07 PM window: green, zero failures, 2.61 ms RTT.
 Lab group exists=false and zero matching monitors after separate monitor/group deletion.
 
 ![Lab group exists=false and zero matching monitors after separate monitor/group deletion.](lab27-cleanup-verified.png)
+
+## 21. Cost follow-up — November 26, 2026
+
+November 2026 billing-account view filtered to rg-mrtg-lab27-network: Actual USD 0.69; VMs USD 0.62, Virtual Network USD 0.04, Storage USD 0.03, Bandwidth below USD 0.01 and Log Analytics USD 0.00. Author-redacted screenshot; rounded posted snapshot, not final billing. The separately stored NetworkWatcherRG monitor is outside this filter.
+
+![November 26 posted cost for the lab resource group: USD 0.69.](lab27-cost-review-2026-11-26.png)
